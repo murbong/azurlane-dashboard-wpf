@@ -1,0 +1,155 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.GrowthPlannerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Foreground="{DynamicResource TextBrush}"
+             FontSize="13">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Goal editor -->
+        <Expander Header="목표 추가 · 수정" IsExpanded="{Binding IsEditorExpanded, Mode=TwoWay}">
+            <StackPanel>
+                <TextBlock Text="함선을 고르고 목표를 저장하면, 현재 상태에 맞는 다음 행동을 제안합니다."
+                           Style="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,0,0,12" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="0,0,12,0">
+                        <Label Content="함선 검색" Target="{Binding ElementName=ShipSearch}" Padding="0,0,0,6"
+                               Foreground="{DynamicResource MutedBrush}" FontSize="12" />
+                        <TextBox x:Name="ShipSearch" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}"
+                                 AutomationProperties.Name="육성할 함선 이름 검색" ToolTip="이름·함종·진영으로 검색" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="육성할 함선" Target="{Binding ElementName=GoalShip}" Padding="0,0,0,6"
+                               Foreground="{DynamicResource MutedBrush}" FontSize="12" />
+                        <ComboBox x:Name="GoalShip" ItemsSource="{Binding ShipChoices}"
+                                  SelectedItem="{Binding SelectedShip, Mode=TwoWay}" IsSynchronizedWithCurrentItem="False"
+                                  IsEnabled="{Binding HasShips}" MaxDropDownHeight="300"
+                                  AutomationProperties.Name="육성할 함선 선택"
+                                  VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <Run Text="{Binding DisplayName, Mode=OneWay}" FontWeight="SemiBold" />
+                                        <Run Text="{Binding Level, Mode=OneWay, StringFormat= · Lv.{0}}" />
+                                        <Run Text="{Binding ShipUid, Mode=OneWay, StringFormat= · #{0}}" Foreground="{DynamicResource MutedBrush}" />
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </Grid>
+                <WrapPanel Margin="0,14,0,0">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,20,8">
+                        <CheckBox Content="목표 레벨" IsChecked="{Binding TrackLevel}" VerticalAlignment="Center" Margin="0,0,10,0" />
+                        <TextBox Width="68" Padding="6,0" Text="{Binding TargetLevelText, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding TrackLevel}" AutomationProperties.Name="목표 함선 레벨 1부터 125"
+                                 TextAlignment="Center" ToolTip="1~125 사이의 레벨" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,20,8">
+                        <CheckBox Content="목표 스킬" IsChecked="{Binding TrackSkills}" VerticalAlignment="Center" Margin="0,0,10,0" />
+                        <TextBox Width="60" Padding="6,0" Text="{Binding TargetSkillLevelText, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding TrackSkills}" AutomationProperties.Name="목표 스킬 레벨 1부터 10"
+                                 TextAlignment="Center"
+                                 ToolTip="훈련 가능한 각 스킬에 적용합니다. 스킬별 최대 레벨을 넘기지 않습니다." />
+                    </StackPanel>
+                    <Button Content="목표 저장" Style="{StaticResource PrimaryButton}" Command="{Binding SaveGoalCommand}" Margin="0,0,0,8" />
+                </WrapPanel>
+                <TextBlock Text="{Binding ValidationMessage}" TextWrapping="Wrap" Style="{StaticResource MutedText}" />
+                <TextBlock Text="{Binding Feedback}" TextWrapping="Wrap" FontSize="12"
+                           Foreground="{DynamicResource AccentBrush}" Margin="0,4,0,0"
+                           AutomationProperties.LiveSetting="Polite" />
+            </StackPanel>
+        </Expander>
+
+        <TextBlock Grid.Row="1" Text="{Binding Summary}" Style="{StaticResource EyebrowText}" FontSize="12" Margin="2,16,0,8" />
+
+        <Grid Grid.Row="2">
+            <!-- Empty state -->
+            <Border Style="{StaticResource SectionPanel}" BorderBrush="{DynamicResource SubtleLineBrush}"
+                    Visibility="{Binding IsEmpty, Converter={StaticResource BoolToVisibilityConverter}}">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="440">
+                    <TextBlock Text="&#xE7C1;" Style="{StaticResource IconText}" FontSize="22" HorizontalAlignment="Center" Foreground="{DynamicResource MutedBrush}" />
+                    <TextBlock Text="첫 육성 목표를 추가해 보세요" Style="{StaticResource SectionTitle}" TextAlignment="Center" Margin="0,10,0,0" />
+                    <TextBlock Text="목표 레벨과 스킬을 함께 관리할 수 있습니다. 목표는 현재 데이터베이스별로 보관되며 자동 갱신 때 진행 상태를 다시 계산합니다."
+                               TextWrapping="Wrap" TextAlignment="Center" Style="{StaticResource MutedText}" Margin="0,6,0,0" />
+                </StackPanel>
+            </Border>
+
+            <!-- Saved goals -->
+            <ListBox ItemsSource="{Binding Plans}" BorderThickness="0" Background="Transparent" MinWidth="0"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"
+                     VirtualizingPanel.ScrollUnit="Pixel"
+                     Visibility="{Binding HasPlans, Converter={StaticResource BoolToVisibilityConverter}}">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="Margin" Value="0,0,0,10" />
+                        <Setter Property="Template">
+                            <Setter.Value><ControlTemplate TargetType="ListBoxItem"><ContentPresenter /></ControlTemplate></Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource SectionPanel}">
+                            <StackPanel>
+                                <DockPanel>
+                                    <Border DockPanel.Dock="Right" CornerRadius="11" Padding="10,3" Margin="12,0,0,0" VerticalAlignment="Top" BorderThickness="1">
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Background" Value="{DynamicResource Surface2Brush}" />
+                                                <Setter Property="BorderBrush" Value="{DynamicResource LineBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsComplete}" Value="True">
+                                                        <Setter Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+                                                        <Setter Property="BorderBrush" Value="{DynamicResource GoodBrush}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding NeedsData}" Value="True">
+                                                        <Setter Property="Background" Value="{DynamicResource WarnSubtleBrush}" />
+                                                        <Setter Property="BorderBrush" Value="{DynamicResource WarnBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <TextBlock Text="{Binding Status}" FontSize="12" FontWeight="SemiBold" />
+                                    </Border>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding ShipName}" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap" />
+                                        <TextBlock Text="{Binding TargetSummary}" Style="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,2,0,0" />
+                                    </StackPanel>
+                                </DockPanel>
+                                <WrapPanel Margin="0,12,0,0">
+                                    <TextBlock Text="{Binding LevelSummary}" Margin="0,0,24,4" />
+                                    <TextBlock Text="{Binding SkillSummary}" Margin="0,0,0,4" />
+                                </WrapPanel>
+                                <TextBlock Text="{Binding EstimateSummary}" TextWrapping="Wrap" FontWeight="SemiBold" />
+                                <Border Style="{StaticResource InsetPanel}" Margin="0,10,0,0" BorderBrush="{DynamicResource AccentBrush}" BorderThickness="3,0,0,0" CornerRadius="4">
+                                    <StackPanel>
+                                        <TextBlock Text="다음 할 일" Style="{StaticResource EyebrowText}" Margin="0,0,0,4" />
+                                        <TextBlock Text="{Binding NextAction}" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Border>
+                                <TextBlock Text="{Binding Evidence}" Style="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                <WrapPanel Margin="0,12,0,0">
+                                    <Button Content="함선 상세" Command="{Binding DataContext.OpenShipCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Margin="0,0,8,0" />
+                                    <Button Content="목표 수정" Command="{Binding DataContext.EditGoalCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Margin="0,0,8,0" />
+                                    <Button Content="목표 삭제" Command="{Binding DataContext.RemoveGoalCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{StaticResource QuietButton}" Foreground="{DynamicResource DangerBrush}" ToolTip="저장한 육성 목표만 목록에서 삭제합니다." />
+                                </WrapPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</UserControl>

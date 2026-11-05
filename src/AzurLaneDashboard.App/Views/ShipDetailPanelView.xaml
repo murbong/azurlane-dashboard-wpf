@@ -1,0 +1,722 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.ShipDetailPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Foreground="{DynamicResource TextBrush}"
+             FontSize="13">
+    <UserControl.Resources>
+        <Style x:Key="DetailSection" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource LineBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="14" />
+            <Setter Property="Margin" Value="0,0,0,12" />
+        </Style>
+
+        <Style x:Key="DetailKv" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource Surface2Brush}" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="Margin" Value="0,0,8,8" />
+        </Style>
+
+        <Style x:Key="DetailStatCell" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource Surface2Brush}" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="10,6" />
+            <Setter Property="Margin" Value="0,0,8,8" />
+            <Setter Property="MinHeight" Value="42" />
+        </Style>
+
+        <Style x:Key="DetailChip" TargetType="Border">
+            <Setter Property="MinHeight" Value="24" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="8,3" />
+            <Setter Property="Margin" Value="0,0,6,6" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Background" Value="{DynamicResource Surface2Brush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource LineBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Kind}" Value="good">
+                    <Setter Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Kind}" Value="warn">
+                    <Setter Property="Background" Value="{DynamicResource WarnSubtleBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource WarnBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding StateKind}" Value="good">
+                    <Setter Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding StateKind}" Value="warn">
+                    <Setter Property="Background" Value="{DynamicResource WarnSubtleBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource WarnBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Kind}" Value="info">
+                    <Setter Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Kind}" Value="high">
+                    <Setter Property="Background" Value="{DynamicResource CommunityHighBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource CommunityHighBorderBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Kind}" Value="mid">
+                    <Setter Property="Background" Value="{DynamicResource CommunityMidBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource CommunityMidBorderBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Kind}" Value="low">
+                    <Setter Property="Background" Value="{DynamicResource CommunityLowBrush}" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource CommunityLowBorderBrush}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Border Background="{DynamicResource BgBrush}"
+            BorderBrush="{DynamicResource LineBrush}"
+            BorderThickness="1,0,0,0">
+        <Grid ClipToBounds="True">
+            <!-- Ship art sits behind the content; the scrim below keeps text readable in either theme. -->
+            <Image Source="{Binding SelectedShip.BackgroundUrl, Converter={StaticResource AssetImageConverter}}"
+                   Stretch="Uniform"
+                   Opacity="0.55"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   Width="520"
+                   Height="620" />
+            <Rectangle IsHitTestVisible="False" Fill="{DynamicResource BgBrush}">
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#F5000000" Offset="0" />
+                        <GradientStop Color="#D9000000" Offset="0.5" />
+                        <GradientStop Color="#66000000" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+
+            <DockPanel LastChildFill="True">
+                <Border DockPanel.Dock="Top"
+                        BorderBrush="{DynamicResource SubtleLineBrush}"
+                        BorderThickness="0,0,0,1"
+                        Padding="16,14,12,14">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid DataContext="{Binding SelectedShip}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border Width="52"
+                                    Height="52"
+                                    CornerRadius="8"
+                                    BorderThickness="0,0,0,3"
+                                    BorderBrush="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=bar}"
+                                    Background="{DynamicResource Surface2Brush}"
+                                    Margin="0,0,14,0">
+                                <Border CornerRadius="8,8,0,0">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="{Binding BackgroundUrl, Converter={StaticResource AssetImageConverter}}"
+                                                    Stretch="UniformToFill" />
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding DisplayName}"
+                                               FontSize="20"
+                                               Style="{StaticResource ProposedShipNameText}"
+                                               TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Center" />
+                                    <Border Style="{StaticResource RarityBadge}"
+                                            Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}"
+                                            Margin="10,2,0,0">
+                                        <TextBlock Text="{Binding Rarity}"
+                                                   Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                   HorizontalAlignment="Center" />
+                                    </Border>
+                                </StackPanel>
+                                <TextBlock Text="{Binding DetailHeaderSummary}"
+                                           Style="{StaticResource MutedText}"
+                                           TextTrimming="CharacterEllipsis"
+                                           Margin="0,3,0,0" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Button Grid.Column="1"
+                                Style="{StaticResource IconButton}"
+                                Content="&#xE8BB;"
+                                FontSize="12"
+                                VerticalAlignment="Top"
+                                ToolTip="닫기 (Esc)"
+                                AutomationProperties.Name="상세 닫기"
+                                Command="{Binding CloseShipDetailCommand}" />
+                    </Grid>
+                </Border>
+
+                <TabControl Margin="16,4,16,0">
+                    <TabItem Header="요약">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel Margin="0,0,4,14">
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="상태"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <ItemsControl ItemsSource="{Binding SelectedShip.StatusBadges}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Style="{StaticResource DetailChip}">
+                                                        <TextBlock Text="{Binding Label}"
+                                                                   FontSize="12"
+                                                                   FontWeight="SemiBold" />
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="커뮤니티 평가"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <ItemsControl ItemsSource="{Binding SelectedShip.CommunityRatings}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Style="{StaticResource DetailChip}"
+                                                            MinHeight="20"
+                                                            Padding="6,1"
+                                                            Margin="0,0,4,4">
+                                                        <TextBlock Text="{Binding Label}"
+                                                                   FontSize="11"
+                                                                   FontWeight="SemiBold" />
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        <TextBlock Text="{Binding SelectedShip.CommunitySummary}"
+                                                   Foreground="{DynamicResource MutedBrush}"
+                                                   TextWrapping="Wrap"
+                                                   FontSize="12"
+                                                   LineHeight="16"
+                                                   MaxHeight="48"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   Margin="0,4,0,0" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="요약"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <UniformGrid Columns="2">
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="레벨" Style="{StaticResource MutedText}" />
+                                                    <TextBlock
+                                                        Text="{Binding SelectedShip.Level, StringFormat=Lv.{0:N0}}"
+                                                        FontWeight="Bold" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="호감도" Style="{StaticResource MutedText}" />
+                                                    <TextBlock
+                                                        Text="{Binding SelectedShip.Intimacy, StringFormat={}{0:N0}}"
+                                                        FontWeight="Bold" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="기분" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.MoodText}"
+                                                               FontWeight="Bold" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="입수시간" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.CreateTimeText}"
+                                                               FontWeight="Bold"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}"
+                                                    ToolTip="{Binding SelectedShip.StatsDetail}">
+                                                <StackPanel>
+                                                    <TextBlock Text="스탯 요약" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.StatsSummary}"
+                                                               FontWeight="Bold"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="최근 전투" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.RecentBattleSummary}"
+                                                               FontWeight="Bold"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="추천 장비" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.RecommendationSummary}"
+                                                               FontWeight="Bold"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="스킬" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.SkillSummary}"
+                                                               FontWeight="Bold"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                        </UniformGrid>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="전체 스탯"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <ItemsControl ItemsSource="{Binding SelectedShip.StatRows}"
+                                                      ToolTip="{Binding SelectedShip.StatsDetail}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <UniformGrid Columns="3" />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Style="{StaticResource DetailStatCell}">
+                                                        <DockPanel LastChildFill="False">
+                                                            <TextBlock Text="{Binding Label}"
+                                                                       Style="{StaticResource MutedText}"
+                                                                       VerticalAlignment="Center" />
+                                                            <TextBlock DockPanel.Dock="Right"
+                                                                       Text="{Binding ValueText}"
+                                                                       FontSize="16"
+                                                                       FontWeight="Bold"
+                                                                       VerticalAlignment="Center"
+                                                                       TextAlignment="Right" />
+                                                        </DockPanel>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+
+                    <TabItem Header="장비">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel Margin="0,0,4,14">
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="현재 장착"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <!-- One row per slot: slot number, icon, name + stats, enhancement. -->
+                                        <ItemsControl ItemsSource="{Binding SelectedShip.EquipmentSlots}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Style="{StaticResource RarityAccentCell}"
+                                                            Padding="10,8"
+                                                            Margin="0,0,0,6"
+                                                            ToolTip="{Binding ToolTipText}">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="28" />
+                                                                <ColumnDefinition Width="Auto" />
+                                                                <ColumnDefinition Width="*" />
+                                                                <ColumnDefinition Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Text="{Binding SlotTag}"
+                                                                       Style="{StaticResource EyebrowText}"
+                                                                       FontSize="12"
+                                                                       VerticalAlignment="Center" />
+                                                            <Grid Grid.Column="1"
+                                                                  Width="40"
+                                                                  Height="40"
+                                                                  Margin="0,0,12,0">
+                                                                <Image
+                                                                    Source="{Binding DisplayIconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                                    Stretch="Uniform" />
+                                                                <Border Width="16"
+                                                                        Height="16"
+                                                                        HorizontalAlignment="Left"
+                                                                        VerticalAlignment="Bottom"
+                                                                        Background="{DynamicResource SurfaceBrush}"
+                                                                        BorderBrush="{DynamicResource LineBrush}"
+                                                                        BorderThickness="1"
+                                                                        CornerRadius="4"
+                                                                        Visibility="{Binding ShowSkinThumbnail, Converter={StaticResource BoolToVisibilityConverter}}">
+                                                                    <Image
+                                                                        Source="{Binding SkinIconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                                        Stretch="UniformToFill" />
+                                                                </Border>
+                                                                <TextBlock Text="{Binding SkinTag}"
+                                                                           HorizontalAlignment="Right"
+                                                                           VerticalAlignment="Top"
+                                                                           FontSize="10"
+                                                                           FontWeight="Bold" />
+                                                            </Grid>
+                                                            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                                                <TextBlock Text="{Binding DisplayName}"
+                                                                           FontWeight="SemiBold"
+                                                                           TextTrimming="CharacterEllipsis" />
+                                                                <TextBlock Text="{Binding Detail}"
+                                                                           Style="{StaticResource MutedText}"
+                                                                           TextWrapping="Wrap"
+                                                                           Margin="0,2,0,0" />
+                                                            </StackPanel>
+                                                            <TextBlock Grid.Column="3"
+                                                                       Text="{Binding EnhanceText}"
+                                                                       FontSize="15"
+                                                                       FontWeight="SemiBold"
+                                                                       Foreground="{DynamicResource AccentBrush}"
+                                                                       VerticalAlignment="Center"
+                                                                       Margin="12,0,4,0" />
+                                                        </Grid>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <DockPanel Margin="0,0,0,8" LastChildFill="False">
+                                            <TextBlock Text="슬롯별 장비 추천"
+                                                       Style="{StaticResource EyebrowText}" />
+                                            <TextBlock DockPanel.Dock="Right"
+                                                       Text="{Binding SelectedShip.GearRecommendationSummary}"
+                                                       Style="{StaticResource MutedText}" />
+                                        </DockPanel>
+                                        <ItemsControl ItemsSource="{Binding SelectedShip.GearRecommendationGroups}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Background="{DynamicResource Surface2Brush}"
+                                                            BorderBrush="{DynamicResource LineBrush}"
+                                                            BorderThickness="1"
+                                                            CornerRadius="8"
+                                                            Padding="8"
+                                                            Margin="0,0,0,8">
+                                                        <StackPanel>
+                                                            <DockPanel Margin="0,0,0,6" LastChildFill="False">
+                                                                <TextBlock Text="{Binding SlotLabel}"
+                                                                           FontWeight="Bold" />
+                                                                <TextBlock DockPanel.Dock="Right"
+                                                                           Text="{Binding Summary}"
+                                                                           Style="{StaticResource MutedText}" />
+                                                            </DockPanel>
+                                                            <ItemsControl ItemsSource="{Binding Items}">
+                                                                <ItemsControl.ItemTemplate>
+                                                                    <DataTemplate>
+                                                                        <Border
+                                                                            Style="{StaticResource RarityAccentCell}"
+                                                                            Padding="6"
+                                                                            Margin="0,0,0,6"
+                                                                            ToolTip="{Binding ToolTipText}">
+                                                                            <Grid>
+                                                                                <Grid.ColumnDefinitions>
+                                                                                    <ColumnDefinition Width="34" />
+                                                                                    <ColumnDefinition Width="42" />
+                                                                                    <ColumnDefinition Width="*" />
+                                                                                    <ColumnDefinition Width="70" />
+                                                                                    <ColumnDefinition Width="Auto" />
+                                                                                </Grid.ColumnDefinitions>
+                                                                                <Border Width="28"
+                                                                                    Height="28"
+                                                                                    Background="{DynamicResource SurfaceBrush}"
+                                                                                    BorderBrush="{DynamicResource LineBrush}"
+                                                                                    BorderThickness="1"
+                                                                                    CornerRadius="6"
+                                                                                    VerticalAlignment="Center">
+                                                                                    <TextBlock
+                                                                                        Text="{Binding RankLabel}"
+                                                                                        FontSize="11"
+                                                                                        FontWeight="Bold"
+                                                                                        HorizontalAlignment="Center"
+                                                                                        VerticalAlignment="Center" />
+                                                                                </Border>
+                                                                                <Image Grid.Column="1"
+                                                                                    Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                                                    Width="34"
+                                                                                    Height="34"
+                                                                                    Stretch="Uniform"
+                                                                                    Margin="0,0,8,0" />
+                                                                                <StackPanel Grid.Column="2"
+                                                                                    Margin="0,0,8,0">
+                                                                                    <TextBlock
+                                                                                        Text="{Binding DisplayTitle}"
+                                                                                        FontWeight="SemiBold"
+                                                                                        TextTrimming="CharacterEllipsis" />
+                                                                                    <TextBlock Text="{Binding Detail}"
+                                                                                        Style="{StaticResource MutedText}"
+                                                                                        TextWrapping="Wrap" />
+                                                                                </StackPanel>
+                                                                                <Border Grid.Column="3"
+                                                                                    Style="{StaticResource RarityBadge}"
+                                                                                    Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                                                                    <TextBlock Text="{Binding Rarity}"
+                                                                                        Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                                                        HorizontalAlignment="Center" />
+                                                                                </Border>
+                                                                                <Border Grid.Column="4"
+                                                                                    Style="{StaticResource DetailChip}"
+                                                                                    Margin="6,0,0,0">
+                                                                                    <TextBlock
+                                                                                        Text="{Binding StateText}"
+                                                                                        FontSize="11"
+                                                                                        FontWeight="SemiBold" />
+                                                                                </Border>
+                                                                            </Grid>
+                                                                        </Border>
+                                                                    </DataTemplate>
+                                                                </ItemsControl.ItemTemplate>
+                                                            </ItemsControl>
+                                                            <TextBlock Text="{Binding HiddenText}"
+                                                                       Style="{StaticResource MutedText}"
+                                                                       HorizontalAlignment="Right" />
+                                                        </StackPanel>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="현재 특수장비"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <ContentControl Content="{Binding SelectedShip.DisplaySpecialEquipmentSlot}">
+                                            <ContentControl.ContentTemplate>
+                                                <DataTemplate>
+                                                    <Border Style="{StaticResource RarityAccentCell}"
+                                                            CornerRadius="8"
+                                                            Padding="8">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Image
+                                                                Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                                Width="38"
+                                                                Height="38"
+                                                                Stretch="Uniform"
+                                                                Margin="0,0,10,0" />
+                                                            <StackPanel>
+                                                                <TextBlock Text="{Binding DisplayName}"
+                                                                           FontWeight="SemiBold" />
+                                                                <TextBlock Text="{Binding Detail}"
+                                                                           Style="{StaticResource MutedText}"
+                                                                           TextWrapping="Wrap" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ContentControl.ContentTemplate>
+                                        </ContentControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <DockPanel Margin="0,0,0,8" LastChildFill="False">
+                                            <TextBlock Text="특수장비 추천"
+                                                       Style="{StaticResource EyebrowText}" />
+                                            <TextBlock DockPanel.Dock="Right"
+                                                       Text="{Binding SelectedShip.AugmentRecommendationSummary}"
+                                                       Style="{StaticResource MutedText}" />
+                                        </DockPanel>
+                                        <ItemsControl ItemsSource="{Binding SelectedShip.AugmentRecommendations}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Style="{StaticResource RarityAccentCell}"
+                                                            Padding="6"
+                                                            Margin="0,0,0,6"
+                                                            ToolTip="{Binding ToolTipText}">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="34" />
+                                                                <ColumnDefinition Width="42" />
+                                                                <ColumnDefinition Width="*" />
+                                                                <ColumnDefinition Width="70" />
+                                                                <ColumnDefinition Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Border Width="28"
+                                                                    Height="28"
+                                                                    Background="{DynamicResource SurfaceBrush}"
+                                                                    BorderBrush="{DynamicResource LineBrush}"
+                                                                    BorderThickness="1"
+                                                                    CornerRadius="6"
+                                                                    VerticalAlignment="Center">
+                                                                <TextBlock Text="{Binding RankLabel}"
+                                                                           FontSize="11"
+                                                                           FontWeight="Bold"
+                                                                           HorizontalAlignment="Center"
+                                                                           VerticalAlignment="Center" />
+                                                            </Border>
+                                                            <Image Grid.Column="1"
+                                                                   Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                                   Width="34"
+                                                                   Height="34"
+                                                                   Stretch="Uniform"
+                                                                   Margin="0,0,8,0" />
+                                                            <StackPanel Grid.Column="2"
+                                                                        Margin="0,0,8,0">
+                                                                <TextBlock Text="{Binding DisplayTitle}"
+                                                                           FontWeight="SemiBold"
+                                                                           TextTrimming="CharacterEllipsis" />
+                                                                <TextBlock Text="{Binding Detail}"
+                                                                           Style="{StaticResource MutedText}"
+                                                                           TextWrapping="Wrap" />
+                                                            </StackPanel>
+                                                            <Border Grid.Column="3"
+                                                                    Style="{StaticResource RarityBadge}"
+                                                                    Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                                                <TextBlock Text="{Binding Rarity}"
+                                                                           Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                                           HorizontalAlignment="Center" />
+                                                            </Border>
+                                                            <Border Grid.Column="4"
+                                                                    Style="{StaticResource DetailChip}"
+                                                                    Margin="6,0,0,0">
+                                                                <TextBlock Text="{Binding StateText}"
+                                                                           FontSize="11"
+                                                                           FontWeight="SemiBold" />
+                                                            </Border>
+                                                        </Grid>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+
+                    <TabItem Header="스킬">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel Margin="0,0,4,14">
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="스킬"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <ItemsControl ItemsSource="{Binding SelectedShip.SkillDetails}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Background="{DynamicResource Surface2Brush}"
+                                                            BorderBrush="{DynamicResource LineBrush}"
+                                                            BorderThickness="1"
+                                                            CornerRadius="8"
+                                                            Padding="8"
+                                                            Margin="0,0,0,7">
+                                                        <DockPanel>
+                                                            <Border DockPanel.Dock="Right"
+                                                                    Style="{StaticResource DetailChip}">
+                                                                <TextBlock Text="{Binding LevelLabel}"
+                                                                           FontWeight="Bold" />
+                                                            </Border>
+                                                            <StackPanel>
+                                                                <TextBlock Text="{Binding Title}"
+                                                                           FontWeight="Bold" />
+                                                                <TextBlock Text="{Binding Detail}"
+                                                                           Style="{StaticResource MutedText}" />
+                                                            </StackPanel>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+
+                    <TabItem Header="기술">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel Margin="0,0,4,14">
+                                <Border Style="{StaticResource DetailSection}">
+                                    <StackPanel>
+                                        <TextBlock Text="함대 기술"
+                                                   Style="{StaticResource EyebrowText}"
+                                                   Margin="0,0,0,8" />
+                                        <UniformGrid Columns="2">
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="취득 보너스" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.FleetTechGetBonus}"
+                                                               FontWeight="Bold"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="120 보너스" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.FleetTechLevelBonus}"
+                                                               FontWeight="Bold"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="120 상태" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.FleetTechLevelPending}"
+                                                               FontWeight="Bold" />
+                                                </StackPanel>
+                                            </Border>
+                                            <Border Style="{StaticResource DetailKv}">
+                                                <StackPanel>
+                                                    <TextBlock Text="템플릿 ID" Style="{StaticResource MutedText}" />
+                                                    <TextBlock Text="{Binding SelectedShip.TemplateId}"
+                                                               FontWeight="Bold" />
+                                                </StackPanel>
+                                            </Border>
+                                        </UniformGrid>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+                </TabControl>
+            </DockPanel>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,222 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.GrowthQueueView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:AzurLaneDashboard.App.Views">
+    <!-- 육성 계획 › 쩔 대기열: the app's one growth order. DataContext is the FleetPlannerViewModel. -->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="FleetPlannerShared.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="OrderStep" TargetType="Border" BasedOn="{StaticResource PlannerChip}">
+                <Setter Property="Margin" Value="0,0,6,0" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- What the order means: the stage the battle counts are for, and the four steps of the order. -->
+        <Border Style="{StaticResource SectionPanel}" Padding="16,10" Margin="0,0,0,10">
+            <DockPanel LastChildFill="True">
+                <Button DockPanel.Dock="Right" Content="해역 바꾸기 · 쫄작 편성 보기 ›" Style="{StaticResource LinkButton}"
+                        VerticalAlignment="Center" Margin="12,0,0,0"
+                        Command="{Binding DataContext.OpenLevelingPlanCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
+                <WrapPanel VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" Margin="0,2,18,2">
+                        <Run Text="{Binding QueueStageTitle, Mode=OneWay}" FontWeight="Bold" FontSize="14" />
+                        <Run Text="{Binding QueueStageDetail, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <Border Style="{StaticResource OrderStep}"><TextBlock Text="① 육성 목표" /></Border>
+                        <TextBlock Text="→" Foreground="{DynamicResource MutedBrush}" Margin="0,0,6,0" VerticalAlignment="Center" />
+                        <Border Style="{StaticResource OrderStep}"><TextBlock Text="② 콘텐츠·META 후보" /></Border>
+                        <TextBlock Text="→" Foreground="{DynamicResource MutedBrush}" Margin="0,0,6,0" VerticalAlignment="Center" />
+                        <Border Style="{StaticResource OrderStep}"><TextBlock Text="③ 지금 쫄작 중" /></Border>
+                        <TextBlock Text="→" Foreground="{DynamicResource MutedBrush}" Margin="0,0,6,0" VerticalAlignment="Center" />
+                        <Border Style="{StaticResource OrderStep}"><TextBlock Text="④ 나머지 · 커뮤니티 평가순" /></Border>
+                    </StackPanel>
+                </WrapPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- Narrowing: by reason, and whether to keep ships this stage cannot farm. -->
+        <DockPanel Grid.Row="1" Margin="0,0,0,10" LastChildFill="True">
+            <Border DockPanel.Dock="Left" Style="{StaticResource SegmentFrame}">
+                <ItemsControl ItemsSource="{Binding QueueSegments}" Focusable="False">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource SegmentButton}" Tag="{Binding IsSelected}" Height="26" Padding="10,0"
+                                    Command="{Binding DataContext.SetQueueSegmentCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    AutomationProperties.Name="{Binding Label, StringFormat={}{0} 보기}">
+                                <TextBlock>
+                                    <Run Text="{Binding Label, Mode=OneWay}" />
+                                    <Run Text="{Binding CountText, Mode=OneWay}" FontWeight="Normal" Foreground="{DynamicResource MutedBrush}" />
+                                </TextBlock>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+            <CheckBox DockPanel.Dock="Right" Content="이 해역에서 못 키우는 함선도 표시" IsChecked="{Binding ShowUnfarmable}"
+                      VerticalAlignment="Center" Margin="12,0,0,0" />
+            <TextBlock Text="{Binding Feedback}" Foreground="{DynamicResource GoodBrush}" FontSize="12" Margin="16,0,0,0"
+                       VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+        </DockPanel>
+
+        <DataGrid Grid.Row="2" x:Name="QueueGrid"
+                  Style="{StaticResource MainListDataGrid}"
+                  ItemsSource="{Binding GrowthQueueView}"
+                  CanUserSortColumns="False"
+                  IsReadOnly="True"
+                  RowHeight="52"
+                  VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                  VirtualizingPanel.ScrollUnit="Pixel"
+                  AutomationProperties.Name="쩔 대기열"
+                  SizeChanged="QueueGrid_SizeChanged"
+                  Visibility="{Binding HasGrowthQueue, Converter={StaticResource BoolToVisibilityConverter}}">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding StatusKind}" Value="out">
+                            <Setter Property="Opacity" Value="0.62" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <Border Background="{DynamicResource InputBrush}" Padding="14,6"
+                                    BorderBrush="{DynamicResource SubtleLineBrush}" BorderThickness="0,1,0,0">
+                                <TextBlock FontSize="11">
+                                    <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" Foreground="{DynamicResource SecondaryTextBrush}" />
+                                    <Run Text="{Binding Items[0].GroupNote, Mode=OneWay}" Foreground="{DynamicResource MutedBrush}" />
+                                    <Run Text="{Binding ItemCount, Mode=OneWay, StringFormat=· {0:N0}척}" Foreground="{DynamicResource MutedBrush}" />
+                                </TextBlock>
+                            </Border>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="#" Width="46" MinWidth="46" CellStyle="{StaticResource CenteredDataGridCell}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource QueueRankBadge}" Margin="8,0,0,0" MinWidth="24" Width="Auto" Padding="5,0">
+                                <TextBlock Text="{Binding Rank}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="함선" Width="192" MinWidth="192" CellStyle="{StaticResource FullHeightDataGridCell}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid VerticalAlignment="Center" Margin="0,0,8,0" Cursor="Hand" ToolTip="함선 상세 보기">
+                                <Grid.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick"
+                                                  Command="{Binding DataContext.OpenShipCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                  CommandParameter="{Binding ShipUid}" />
+                                </Grid.InputBindings>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Border CornerRadius="2" Margin="0,6" Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=bar}" />
+                                <Border Grid.Column="1" Style="{StaticResource Portrait}" Width="36" Height="36" Margin="8,0,10,0" BorderThickness="0">
+                                    <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                           RenderOptions.BitmapScalingMode="HighQuality" />
+                                </Border>
+                                <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" TextTrimming="CharacterEllipsis" />
+                                    <TextBlock Text="{Binding HeaderText}" FontSize="12" Foreground="{DynamicResource MutedBrush}"
+                                               TextTrimming="CharacterEllipsis" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="ReasonColumn" Header="이유" Width="300" MinWidth="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ItemsControl ItemsSource="{Binding ReasonTags}" ItemTemplate="{StaticResource PlannerTagTemplate}"
+                                          ItemsPanel="{StaticResource WrapRowPanel}" VerticalAlignment="Center" Margin="0,4,0,0"
+                                          Focusable="False" ClipToBounds="True" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="다음 단계 · 120 진행도" Width="168" MinWidth="168">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" views:ExpFeedback.Scope="growth"
+                                        views:ExpFeedback.Floater="{Binding Gauge}">
+                                <TextBlock FontSize="12" TextTrimming="CharacterEllipsis">
+                                    <Run Text="{Binding StepText, Mode=OneWay}" FontWeight="Bold" />
+                                    <Run Text="{Binding StepNote, Mode=OneWay}" FontSize="11" Foreground="{DynamicResource MutedBrush}" />
+                                </TextBlock>
+                                <ProgressBar Width="140" Height="5" Margin="0,5,0,0" HorizontalAlignment="Left" Minimum="0" Maximum="1"
+                                             views:ExpFeedback.ReadyBar="{Binding Gauge}" ToolTip="{Binding Ship.ExperienceSummary}"
+                                             Foreground="{DynamicResource AccentBrush}"
+                                             Background="{DynamicResource InputBrush}" BorderThickness="0" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="예상 · 남은 EXP" Width="120" MinWidth="120">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,14,0">
+                                <TextBlock Text="{Binding BattlesText}" FontWeight="SemiBold" HorizontalAlignment="Right" />
+                                <TextBlock FontSize="11" Foreground="{DynamicResource MutedBrush}" HorizontalAlignment="Right">
+                                    <Run Text="{Binding ExperienceText, Mode=OneWay}" />
+                                    <Run Text="{Binding BattlesNote, Mode=OneWay}" />
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="이 해역" Width="118" MinWidth="118">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource QueueStatusChip}">
+                                <TextBlock Text="{Binding StatusText}" />
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="목표" Width="100" MinWidth="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource QueuePinButton}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                    Padding="10,0" Margin="0,0,8,0"
+                                    Command="{Binding DataContext.TogglePinCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding ShipUid}"
+                                    AutomationProperties.Name="{Binding Name, StringFormat={}{0} 육성 목표 고정}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="2" Style="{StaticResource SectionPanel}"
+                Visibility="{Binding HasNoGrowthQueue, Converter={StaticResource BoolToVisibilityConverter}}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40">
+                <TextBlock Text="키울 함선이 없습니다" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                <TextBlock Text="Lv.120 미만인 잠금 함선이 대기열에 들어옵니다. 게임에서 도크를 열고 새로고침해 주세요."
+                           Style="{StaticResource MutedText}" Margin="0,4,0,0" HorizontalAlignment="Center" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

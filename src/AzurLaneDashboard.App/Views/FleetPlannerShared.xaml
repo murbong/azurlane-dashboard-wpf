@@ -1,0 +1,279 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:AzurLaneDashboard.App.Converters">
+    <!-- Shared by the 편성·육성 tabs: standard contents, 쫄작 and META 보스전. -->
+    <converters:StringEqualsConverter x:Key="StringEqualsConverter" />
+
+    <!-- Rating letter pinned to the portrait corner; gold is reserved for SS/EX so it still means something. -->
+    <Style x:Key="RatingCorner" TargetType="Border">
+        <Setter Property="MinWidth" Value="22" />
+        <Setter Property="Height" Value="18" />
+        <Setter Property="Padding" Value="4,0" />
+        <Setter Property="CornerRadius" Value="6,0,6,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Background" Value="{DynamicResource ShellBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource MutedBrush}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RatingTier}" Value="top">
+                <Setter Property="Background" Value="{DynamicResource RatingTopFillBrush}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource RatingTopTextBrush}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding RatingTier}" Value="high">
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource RatingHighTextBrush}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding RatingTier}" Value="mid">
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource TextBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Portrait" TargetType="Border">
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BorderThickness" Value="0,0,0,3" />
+        <Setter Property="ClipToBounds" Value="True" />
+        <Setter Property="Background" Value="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=cell}" />
+        <Setter Property="BorderBrush" Value="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=edge}" />
+    </Style>
+
+    <Style x:Key="SectionHeading" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <ItemsPanelTemplate x:Key="SlotRowPanel">
+        <UniformGrid Columns="3" />
+    </ItemsPanelTemplate>
+
+    <ItemsPanelTemplate x:Key="WrapRowPanel">
+        <WrapPanel />
+    </ItemsPanelTemplate>
+
+    <!-- Small fact pairs in the context bar: a muted label over a bold value. -->
+    <Style x:Key="FactLabel" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
+    </Style>
+
+    <Style x:Key="FactValue" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="0,1,0,0" />
+    </Style>
+
+    <Style x:Key="FactUnit" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
+        <Setter Property="Margin" Value="4,0,0,1" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+
+    <!-- Pill chips; the colour carries a word with it, never meaning on its own. -->
+    <Style x:Key="PlannerChip" TargetType="Border">
+        <Setter Property="CornerRadius" Value="11" />
+        <Setter Property="Padding" Value="9,2" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{DynamicResource InputBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+        <Setter Property="TextElement.FontSize" Value="11" />
+        <Setter Property="TextElement.FontWeight" Value="SemiBold" />
+    </Style>
+
+    <Style x:Key="GoodChip" TargetType="Border" BasedOn="{StaticResource PlannerChip}">
+        <Setter Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource GoodBrush}" />
+    </Style>
+
+    <Style x:Key="WarnChip" TargetType="Border" BasedOn="{StaticResource PlannerChip}">
+        <Setter Property="Background" Value="{DynamicResource WarnSubtleBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource WarnBrush}" />
+    </Style>
+
+    <Style x:Key="AccentChip" TargetType="Border" BasedOn="{StaticResource PlannerChip}">
+        <Setter Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource AccentBrush}" />
+    </Style>
+
+    <!-- Queue tags: goal gold, content accent, warnings amber, the rest muted. -->
+    <Style x:Key="PlannerTag" TargetType="Border">
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="6,1" />
+        <Setter Property="Margin" Value="0,0,4,4" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource BgBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SubtleLineBrush}" />
+        <Setter Property="TextElement.FontSize" Value="11" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Kind}" Value="goal">
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource RatingHighTextBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource RatingHighTextBrush}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Kind}" Value="content">
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource AccentBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentSubtleBrush}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Kind}" Value="warn">
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource WarnBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource WarnSubtleBrush}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Kind}" Value="info">
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource MutedBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate x:Key="PlannerTagTemplate">
+        <Border Style="{StaticResource PlannerTag}" ToolTip="{Binding ToolTip}" ToolTipService.IsEnabled="{Binding HasToolTip}">
+            <TextBlock Text="{Binding Text}" />
+        </Border>
+    </DataTemplate>
+
+    <!-- Segmented control button; Tag carries whether it is the current choice. -->
+    <Style x:Key="SegmentButton" TargetType="Button">
+        <Setter Property="MinWidth" Value="30" />
+        <Setter Property="Height" Value="24" />
+        <Setter Property="Padding" Value="8,0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Face" Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}"
+                            BorderThickness="1" BorderBrush="Transparent">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="Face" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}}" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ControlPressedBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="SegmentFrame" TargetType="Border">
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource LineBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BgBrush}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- A hint line with an "i" marker: the planner's reasoning, kept to one or two sentences. -->
+    <Style x:Key="HintPanel" TargetType="Border">
+        <Setter Property="Margin" Value="0,12,0,0" />
+        <Setter Property="Padding" Value="12,9" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SubtleLineBrush}" />
+    </Style>
+
+    <Style x:Key="StatTile" TargetType="Border">
+        <Setter Property="Padding" Value="12,9" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Background" Value="{DynamicResource InputBrush}" />
+    </Style>
+
+    <converters:QueueInfoConverter x:Key="QueueInfoConverter" />
+
+    <!-- Queue status: in the fleet green, next rotation accent, not farmable here amber, waiting muted. -->
+    <Style x:Key="QueueStatusChip" TargetType="Border" BasedOn="{StaticResource PlannerChip}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding StatusKind}" Value="in">
+                <Setter Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource GoodBrush}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding StatusKind}" Value="next">
+                <Setter Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource AccentBrush}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding StatusKind}" Value="out">
+                <Setter Property="Background" Value="{DynamicResource WarnSubtleBrush}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource WarnBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Queue rank disc; pinned goals are gold so they read as the player's own choice. -->
+    <Style x:Key="QueueRankBadge" TargetType="Border">
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{DynamicResource InputBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+        <Setter Property="TextElement.FontSize" Value="11" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsGoal}" Value="True">
+                <Setter Property="Background" Value="{DynamicResource RatingTopFillBrush}" />
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource RatingTopTextBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Pin toggle on a queue row: "☆ 고정" makes the ship a Lv.120 goal, "★ 목표" releases it. -->
+    <Style x:Key="QueuePinButton" TargetType="Button" BasedOn="{StaticResource QuietButton}">
+        <Setter Property="Height" Value="28" />
+        <Setter Property="MinWidth" Value="72" />
+        <Setter Property="Content" Value="☆ 고정" />
+        <Setter Property="ToolTip" Value="육성 목표로 고정하면 대기열 맨 위로 올라갑니다" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsGoal}" Value="True">
+                <Setter Property="Content" Value="★ 목표" />
+                <Setter Property="Foreground" Value="{DynamicResource RatingHighTextBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource RatingHighTextBrush}" />
+                <Setter Property="ToolTip" Value="누르면 육성 목표에서 풉니다" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- "★ 육성 목표" next to cards outside the queue; gold like the goal tag inside it. -->
+    <!-- Standalone (not BasedOn PlannerTag) because PlannerTag's triggers read a LevelingTag's Kind. -->
+    <Style x:Key="GoalTag" TargetType="Border">
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="6,1" />
+        <Setter Property="Margin" Value="0,0,4,4" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource BgBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource RatingHighTextBrush}" />
+        <Setter Property="TextElement.FontSize" Value="11" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource RatingHighTextBrush}" />
+    </Style>
+
+    <Style x:Key="QueueRankTag" TargetType="Border" BasedOn="{StaticResource GoalTag}">
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentSubtleBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource AccentBrush}" />
+    </Style>
+
+    <Style x:Key="PlanTag" TargetType="Border" BasedOn="{StaticResource GoalTag}">
+        <Setter Property="BorderBrush" Value="{DynamicResource SubtleLineBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+    </Style>
+
+    <Style x:Key="QueueGroupLabel" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
+        <Setter Property="Margin" Value="16,10,16,4" />
+    </Style>
+</ResourceDictionary>

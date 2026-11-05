@@ -1,0 +1,56 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Surfaces: shell is lightest, content background is a cool gray, cards are white. -->
+    <SolidColorBrush x:Key="BgBrush" Color="#F2F4F7" />
+    <SolidColorBrush x:Key="ShellBrush" Color="#FAFBFC" />
+    <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Surface2Brush" Color="#F1F3F6" />
+    <SolidColorBrush x:Key="InputBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="LineBrush" Color="#DCE1E8" />
+    <SolidColorBrush x:Key="SubtleLineBrush" Color="#EAEDF2" />
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="TextBrush" Color="#18202B" />
+    <SolidColorBrush x:Key="SecondaryTextBrush" Color="#3D4959" />
+    <SolidColorBrush x:Key="MutedBrush" Color="#677285" />
+
+    <!-- Accent: interaction, focus and selection only -->
+    <SolidColorBrush x:Key="AccentBrush" Color="#2563EB" />
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="#1D4FD0" />
+    <SolidColorBrush x:Key="AccentSubtleBrush" Color="#E8EFFD" />
+    <SolidColorBrush x:Key="PrimaryBrush" Color="#2563EB" />
+    <SolidColorBrush x:Key="PrimaryHoverBrush" Color="#1F56D6" />
+    <SolidColorBrush x:Key="PrimaryPressedBrush" Color="#1A49B8" />
+    <SolidColorBrush x:Key="OnPrimaryBrush" Color="#FFFFFF" />
+
+    <!-- Semantic states -->
+    <SolidColorBrush x:Key="GoodBrush" Color="#16803C" />
+    <SolidColorBrush x:Key="GoodSubtleBrush" Color="#E7F5EC" />
+    <SolidColorBrush x:Key="WarnBrush" Color="#B25B06" />
+    <SolidColorBrush x:Key="WarnSubtleBrush" Color="#FDF2E3" />
+    <SolidColorBrush x:Key="DangerBrush" Color="#C2334A" />
+    <SolidColorBrush x:Key="DangerSubtleBrush" Color="#FCEBEE" />
+    <SolidColorBrush x:Key="ProposedShipNameBrush" Color="#C23B7D" />
+
+    <!-- Community rating chips -->
+    <SolidColorBrush x:Key="GoodLineBrush" Color="#9FD3B2" />
+    <SolidColorBrush x:Key="RatingTopFillBrush" Color="#E2B23F" />
+    <SolidColorBrush x:Key="RatingTopTextBrush" Color="#2A1D00" />
+    <SolidColorBrush x:Key="RatingHighTextBrush" Color="#8A5A00" />
+    <SolidColorBrush x:Key="CommunityHighBrush" Color="#FFF5DA" />
+    <SolidColorBrush x:Key="CommunityHighBorderBrush" Color="#D2A23E" />
+    <SolidColorBrush x:Key="CommunityMidBrush" Color="#E8F2FD" />
+    <SolidColorBrush x:Key="CommunityMidBorderBrush" Color="#6AA2DA" />
+    <SolidColorBrush x:Key="CommunityLowBrush" Color="#F5F0F0" />
+    <SolidColorBrush x:Key="CommunityLowBorderBrush" Color="#BDA6A6" />
+
+    <!-- Tables and interaction states -->
+    <SolidColorBrush x:Key="DataGridHeaderBrush" Color="#F7F8FA" />
+    <SolidColorBrush x:Key="DataGridAltBrush" Color="#FAFBFC" />
+    <SolidColorBrush x:Key="DataGridGridBrush" Color="#ECEFF3" />
+    <SolidColorBrush x:Key="SelectionBrush" Color="#E3ECFD" />
+    <SolidColorBrush x:Key="ControlHoverBrush" Color="#EFF2F6" />
+    <SolidColorBrush x:Key="ControlPressedBrush" Color="#E5E9EF" />
+    <SolidColorBrush x:Key="RarityBadgeTextBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="OverlayBrush" Color="#66101828" />
+</ResourceDictionary>

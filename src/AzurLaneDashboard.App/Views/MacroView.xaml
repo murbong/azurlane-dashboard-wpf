@@ -1,0 +1,541 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.MacroView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Foreground="{DynamicResource TextBrush}"
+             FontSize="13">
+    <!-- 앱 관리 › 매크로. DataContext is the MacroViewModel. Layout follows Reports/UI/macro-page-mockup. -->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="FleetPlannerShared.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="CardTitle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="SmallLabel" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="StopButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Background" Value="{DynamicResource DangerSubtleBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource DangerBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Padding" Value="16,0" />
+            </Style>
+
+            <DataTemplate x:Key="ReadinessTemplate">
+                <Border Style="{StaticResource KpiCard}" Padding="12,10" Margin="0">
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Content="{Binding ActionText}" Height="28" Padding="10,0" Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                Command="{Binding DataContext.StartCaptureCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                Visibility="{Binding ShowsAction, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <Border x:Name="Mark" Width="22" Height="22" CornerRadius="11" Margin="0,0,10,0" VerticalAlignment="Center"
+                                Background="{DynamicResource Surface2Brush}">
+                            <TextBlock x:Name="MarkText" Text="{Binding MarkText}" FontWeight="Bold" FontSize="12"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource MutedBrush}" />
+                        </Border>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding Detail}" FontSize="12" Foreground="{DynamicResource MutedBrush}"
+                                       TextTrimming="CharacterEllipsis" ToolTip="{Binding Detail}" />
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+                <DataTemplate.Triggers>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding IsChecked}" Value="True" />
+                            <Condition Binding="{Binding IsOk}" Value="True" />
+                        </MultiDataTrigger.Conditions>
+                        <Setter TargetName="Mark" Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+                        <Setter TargetName="MarkText" Property="Foreground" Value="{DynamicResource GoodBrush}" />
+                    </MultiDataTrigger>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding IsChecked}" Value="True" />
+                            <Condition Binding="{Binding IsOk}" Value="False" />
+                        </MultiDataTrigger.Conditions>
+                        <Setter TargetName="Mark" Property="Background" Value="{DynamicResource DangerSubtleBrush}" />
+                        <Setter TargetName="MarkText" Property="Foreground" Value="{DynamicResource DangerBrush}" />
+                    </MultiDataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <DataTemplate x:Key="MacroItemTemplate">
+                <StackPanel Margin="2,4">
+                    <TextBlock TextTrimming="CharacterEllipsis">
+                        <Run Text="{Binding Title, Mode=OneWay}" FontWeight="Bold" FontSize="14" />
+                        <Run Text="{Binding FileName, Mode=OneWay}" FontSize="11" Foreground="{DynamicResource MutedBrush}" />
+                    </TextBlock>
+                    <TextBlock Text="{Binding Description}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"
+                               TextWrapping="Wrap" Margin="0,2,0,4"
+                               Visibility="{Binding HasDescription, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    <WrapPanel>
+                        <Border Style="{StaticResource AccentChip}" Margin="0,0,4,0" ToolTip="캡처한 패킷으로 결과와 정지 시점을 판단합니다"
+                                Visibility="{Binding UsesPackets, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <TextBlock Text="패킷" />
+                        </Border>
+                        <Border Style="{StaticResource PlannerChip}" Margin="0,0,4,0" ToolTip="화면 이미지를 찾아 누릅니다"
+                                Visibility="{Binding UsesScreen, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <TextBlock Text="화면" />
+                        </Border>
+                        <Border Style="{StaticResource WarnChip}" Margin="0,0,4,0" ToolTip="{Binding UnsupportedReason}"
+                                Visibility="{Binding IsUnsupported, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <TextBlock Text="실행 불가" />
+                        </Border>
+                        <TextBlock Text="{Binding LastRunText}" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                                   VerticalAlignment="Center" Margin="2,0,0,0" />
+                    </WrapPanel>
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 1. Readiness: what would block a start, before the player looks for it. -->
+        <Grid Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ContentControl Content="{Binding DeviceCheck}" ContentTemplate="{StaticResource ReadinessTemplate}" Focusable="False" />
+            <ContentControl Grid.Column="2" Content="{Binding CaptureCheck}" ContentTemplate="{StaticResource ReadinessTemplate}" Focusable="False" />
+            <ContentControl Grid.Column="4" Content="{Binding AssetsCheck}" ContentTemplate="{StaticResource ReadinessTemplate}" Focusable="False" />
+            <ContentControl Grid.Column="6" Content="{Binding FleetCheck}" ContentTemplate="{StaticResource ReadinessTemplate}" Focusable="False" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="268" />
+                <ColumnDefinition Width="12" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- 2. Macro list: ALAuto's macros folder as it is. -->
+            <Border Style="{StaticResource SectionPanel}" Padding="0">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Margin="14,12,10,8">
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Content="다시 읽기" Command="{Binding RefreshCommand}" Style="{StaticResource QuietButton}"
+                                    Height="26" ToolTip="macros 폴더를 다시 읽고 기기를 다시 확인합니다" />
+                            <TextBlock Text="매크로" Style="{StaticResource CardTitle}" />
+                        </DockPanel>
+                        <DockPanel Margin="0,4,0,0">
+                            <Button DockPanel.Dock="Right" Content="폴더" Command="{Binding BrowseAlautoCommand}" Style="{StaticResource QuietButton}"
+                                    Height="24" Padding="8,0" AutomationProperties.Name="ALAuto 폴더 선택" />
+                            <TextBlock Text="{Binding AlautoRootText}" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                                       TextTrimming="CharacterEllipsis" VerticalAlignment="Center" ToolTip="{Binding AlautoRootText}" />
+                        </DockPanel>
+                    </StackPanel>
+                    <ListBox ItemsSource="{Binding Macros}" SelectedItem="{Binding SelectedMacro}" ItemTemplate="{StaticResource MacroItemTemplate}"
+                             MinWidth="0" BorderThickness="0,1,0,0" Background="Transparent" HorizontalContentAlignment="Stretch"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled" IsHitTestVisible="{Binding IsIdle}"
+                             AutomationProperties.Name="매크로 목록">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Padding" Value="12,6" />
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="AutomationProperties.Name" Value="{Binding Title}" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBoxItem">
+                                            <Border x:Name="Row" Background="Transparent" BorderBrush="{DynamicResource SubtleLineBrush}"
+                                                    BorderThickness="0,0,0,1">
+                                                <Grid>
+                                                    <Rectangle x:Name="Bar" Width="3" HorizontalAlignment="Left" Fill="{DynamicResource AccentBrush}"
+                                                               Visibility="Collapsed" />
+                                                    <ContentPresenter Margin="{TemplateBinding Padding}" />
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="Row" Property="Background" Value="{DynamicResource ControlHoverBrush}" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="Row" Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                                                    <Setter TargetName="Bar" Property="Visibility" Value="Visible" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </DockPanel>
+            </Border>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- 3. Run head: start and stop in one place. -->
+                <Border Style="{StaticResource SectionPanel}" Padding="16,12" Margin="0,0,0,12">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel VerticalAlignment="Center" Margin="0,0,16,0">
+                            <TextBlock TextTrimming="CharacterEllipsis">
+                                <Run Text="{Binding SelectedMacro.Title, Mode=OneWay}" FontSize="18" FontWeight="Bold" />
+                                <Run Text="{Binding SelectedMacro.FileName, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                            </TextBlock>
+                            <TextBlock FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}" TextWrapping="Wrap" Margin="0,3,0,0"
+                                       Text="게임에서 해역, 함대, 자동 전투와 반복 출격을 맞춰 둔 뒤 시작하세요. 누를 곳은 화면으로 찾고, 전투가 실제로 끝났는지와 멈출 때는 패킷으로 판단합니다." />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                            <CheckBox Content="끝나면 알림" IsChecked="{Binding NotifyOnEnd}" FontSize="12" Margin="0,0,16,0"
+                                      ToolTip="매크로가 스스로 멈추면 Windows 알림을 띄우고 작업 표시줄의 앱을 깜빡입니다. 정지 버튼이나 F8로 멈출 때는 알리지 않습니다."
+                                      AutomationProperties.Name="매크로가 끝나면 Windows 알림" />
+                            <StackPanel Orientation="Horizontal" Margin="0,0,10,0"
+                                        Visibility="{Binding ShowMaxCycles, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBlock Text="최대 반복" Style="{StaticResource SmallLabel}" Margin="0,0,6,0" />
+                                <TextBox Text="{Binding MaxCyclesText, UpdateSourceTrigger=PropertyChanged}" Width="68" Height="34" Padding="4,0"
+                                         TextAlignment="Center" VerticalContentAlignment="Center" IsEnabled="{Binding IsIdle}"
+                                         AutomationProperties.Name="최대 반복 횟수" />
+                            </StackPanel>
+                            <Button Content="▶ 시작" Command="{Binding StartCommand}" Style="{StaticResource PrimaryButton}" Height="36"
+                                    Padding="18,0" FontWeight="Bold"
+                                    Visibility="{Binding IsIdle, Converter={StaticResource BoolToVisibilityConverter}}" />
+                            <Button Command="{Binding StopCommand}" Style="{StaticResource StopButton}" Height="36"
+                                    Visibility="{Binding IsRunning, Converter={StaticResource BoolToVisibilityConverter}}"
+                                    ToolTip="지금 단계가 끝나면 멈춥니다. 어느 창에서든 F8로도 멈출 수 있습니다.">
+                                <TextBlock><Run Text="■ 정지" /><Run Text="  F8" FontSize="11" FontWeight="Normal" /></TextBlock>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Banners: why it cannot start, or why it stopped and what to do next. -->
+                <StackPanel Grid.Row="1">
+                    <Border CornerRadius="8" BorderThickness="1" Padding="14,10" Margin="0,0,0,12"
+                            Background="{DynamicResource DangerSubtleBrush}" BorderBrush="{DynamicResource DangerBrush}"
+                            Visibility="{Binding HasStartBlock, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Content="다시 확인" Command="{Binding RefreshCommand}" VerticalAlignment="Center"
+                                    Height="30" Margin="12,0,0,0" />
+                            <StackPanel>
+                                <TextBlock Text="시작하려면 다음이 필요합니다" FontWeight="Bold" />
+                                <ItemsControl ItemsSource="{Binding StartBlockReasons}" Focusable="False" Margin="0,4,0,0">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding StringFormat=· {0}}" FontSize="12" TextWrapping="Wrap"
+                                                       Foreground="{DynamicResource SecondaryTextBrush}" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
+                    <Border CornerRadius="8" BorderThickness="1" Padding="14,10" Margin="0,0,0,12"
+                            Visibility="{Binding IsEnded, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+                                <Setter Property="BorderBrush" Value="{DynamicResource GoodLineBrush}" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding EndedIsError}" Value="True">
+                                        <Setter Property="Background" Value="{DynamicResource WarnSubtleBrush}" />
+                                        <Setter Property="BorderBrush" Value="{DynamicResource WarnBrush}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Content="▶ 다시 시작" Command="{Binding StartCommand}" Style="{StaticResource PrimaryButton}"
+                                    VerticalAlignment="Center" Height="32" Margin="12,0,0,0" />
+                            <StackPanel>
+                                <TextBlock Text="{Binding EndedTitle}" FontWeight="Bold" TextWrapping="Wrap" />
+                                <TextBlock Text="{Binding EndedDetail}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"
+                                           TextWrapping="Wrap" Margin="0,3,0,0" />
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" MinWidth="300" />
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="4*" MinWidth="250" MaxWidth="336" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 4. Progress: what it is doing, what the packets confirmed, and when it will stop. -->
+                    <Border Style="{StaticResource SectionPanel}" Padding="0">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel Margin="16,14">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Margin="0,0,10,0">
+                                        <Border.Style>
+                                            <Style TargetType="Border" BasedOn="{StaticResource PlannerChip}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsRunning}" Value="True">
+                                                        <Setter Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+                                                        <Setter Property="TextElement.Foreground" Value="{DynamicResource GoodBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <TextBlock Text="{Binding StateText, StringFormat=● {0}}" FontWeight="Bold" />
+                                    </Border>
+                                    <TextBlock Text="{Binding RunStartedText}" Style="{StaticResource SmallLabel}" FontWeight="Normal" />
+                                </StackPanel>
+
+                                <UniformGrid Columns="3" Margin="0,12,0,0">
+                                    <Border Style="{StaticResource InsetPanel}" Margin="0,0,8,0">
+                                        <StackPanel>
+                                            <TextBlock Text="반복" Style="{StaticResource SmallLabel}" />
+                                            <TextBlock>
+                                                <Run Text="{Binding CyclesText, Mode=OneWay}" FontSize="20" FontWeight="Bold" />
+                                                <Run Text="{Binding CyclesTotalText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                                            </TextBlock>
+                                            <ProgressBar Height="5" Margin="0,6,0,0" Minimum="0" Maximum="1" Value="{Binding CyclesFraction, Mode=OneWay}"
+                                                         Visibility="{Binding HasCycles, Converter={StaticResource BoolToVisibilityConverter}}" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource InsetPanel}" Margin="0,0,8,0">
+                                        <StackPanel>
+                                            <TextBlock Text="확인된 전투" Style="{StaticResource SmallLabel}" TextTrimming="CharacterEllipsis"
+                                                       ToolTip="캡처한 전투 결과 패킷으로 센 전투 수" />
+                                            <TextBlock>
+                                                <Run Text="{Binding ConfirmedBattlesText, Mode=OneWay}" FontSize="20" FontWeight="Bold" />
+                                                <Run Text="{Binding ConfirmedBattlesNote, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource InsetPanel}">
+                                        <StackPanel>
+                                            <TextBlock Text="새 함선" Style="{StaticResource SmallLabel}" />
+                                            <TextBlock>
+                                                <Run Text="{Binding NewShipsText, Mode=OneWay}" FontSize="20" FontWeight="Bold" />
+                                                <Run Text="척" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Border>
+                                </UniformGrid>
+
+                                <Border BorderBrush="{DynamicResource LineBrush}" BorderThickness="1" CornerRadius="6" Padding="12,10" Margin="0,12,0,0"
+                                        Background="{DynamicResource BgBrush}">
+                                    <StackPanel>
+                                        <TextBlock Text="지금 하는 일" Style="{StaticResource SmallLabel}" />
+                                        <TextBlock Text="{Binding NowText}" FontSize="14" FontWeight="Bold" TextWrapping="Wrap" Margin="0,2,0,2" />
+                                        <TextBlock Text="{Binding NowTrail}" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                                                   TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                </Border>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,14,0,6">
+                                    <TextBlock Text="마지막 전투" Style="{StaticResource SmallLabel}" Margin="0,0,6,0" />
+                                    <Border Style="{StaticResource AccentChip}" Padding="6,0"><TextBlock Text="패킷" FontSize="10" /></Border>
+                                </StackPanel>
+                                <TextBlock Text="아직 전투 결과가 없습니다. 캡처 중에 전투가 끝나면 여기에 나옵니다." FontSize="12"
+                                           Foreground="{DynamicResource MutedBrush}" TextWrapping="Wrap"
+                                           Visibility="{Binding HasNoLastBattle, Converter={StaticResource BoolToVisibilityConverter}}" />
+                                <Border Style="{StaticResource InsetPanel}"
+                                        Visibility="{Binding HasLastBattle, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <DockPanel>
+                                        <Border DockPanel.Dock="Left" Width="34" Height="34" CornerRadius="8" Margin="0,0,12,0"
+                                                Background="{DynamicResource WarnSubtleBrush}">
+                                            <TextBlock Text="{Binding LastBattleRank}" FontSize="18" FontWeight="Black" Foreground="{DynamicResource WarnBrush}"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <TextBlock DockPanel.Dock="Right" Text="{Binding LastBattleAgo}" Style="{StaticResource SmallLabel}" FontWeight="Normal" />
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding LastBattleStage}" FontWeight="Bold" TextTrimming="CharacterEllipsis" />
+                                            <TextBlock Text="{Binding LastBattleDetail}" FontSize="12" Foreground="{DynamicResource MutedBrush}"
+                                                       TextTrimming="CharacterEllipsis" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                </Border>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,14,0,6"
+                                            Visibility="{Binding HasFleet, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <TextBlock Text="{Binding FleetTitle}" Style="{StaticResource SmallLabel}" Margin="0,0,6,0" />
+                                    <Border Style="{StaticResource AccentChip}" Padding="6,0"><TextBlock Text="패킷" FontSize="10" /></Border>
+                                </StackPanel>
+                                <ItemsControl ItemsSource="{Binding FleetRows}" Focusable="False"
+                                              Visibility="{Binding HasFleet, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate><UniformGrid Columns="3" /></ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Style="{StaticResource InsetPanel}" Padding="8,6" Margin="0,0,6,6" ToolTip="{Binding ToolTip}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="30" />
+                                                        <ColumnDefinition Width="8" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Width="30" Height="30" CornerRadius="6" ClipToBounds="True" Background="{DynamicResource InputBrush}">
+                                                        <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                                               RenderOptions.BitmapScalingMode="HighQuality" />
+                                                    </Border>
+                                                    <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                                        <TextBlock Text="{Binding Name}" FontSize="12" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                                                        <TextBlock x:Name="Level" Text="{Binding LevelText}" FontSize="11" Foreground="{DynamicResource MutedBrush}" />
+                                                        <ProgressBar x:Name="Exp" Height="3" Margin="0,3,0,0" Minimum="0" Maximum="1"
+                                                                     Value="{Binding ExpFraction, Mode=OneWay}" />
+                                                    </StackPanel>
+                                                </Grid>
+                                            </Border>
+                                            <DataTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding IsWaiting}" Value="True">
+                                                    <Setter TargetName="Level" Property="Text" Value="{Binding LevelText, StringFormat={}{0} · 각성 대기}" />
+                                                    <Setter TargetName="Level" Property="Foreground" Value="{DynamicResource WarnBrush}" />
+                                                    <Setter TargetName="Level" Property="FontWeight" Value="Bold" />
+                                                    <Setter TargetName="Exp" Property="Foreground" Value="{DynamicResource MutedBrush}" />
+                                                </DataTrigger>
+                                            </DataTemplate.Triggers>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <TextBlock Text="이럴 때 멈춤" Style="{StaticResource SmallLabel}" Margin="0,8,0,6"
+                                           Visibility="{Binding HasStops, Converter={StaticResource BoolToVisibilityConverter}}" />
+                                <ItemsControl ItemsSource="{Binding StopRows}" Focusable="False">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,0,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="16" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Ellipse Width="7" Height="7" Fill="{DynamicResource AccentBrush}" VerticalAlignment="Center" />
+                                                <TextBlock Grid.Column="1" Text="{Binding Text}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"
+                                                           TextWrapping="Wrap" />
+                                                <TextBlock Grid.Column="2" Text="{Binding Detail}" FontSize="12" Foreground="{DynamicResource MutedBrush}"
+                                                           Margin="12,0,0,0" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Border>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="12" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- 5. Last screen: what the macro saw and where it found the image. -->
+                        <Border Style="{StaticResource SectionPanel}" Padding="14,12">
+                            <StackPanel>
+                                <TextBlock Text="마지막 화면" Style="{StaticResource CardTitle}" />
+                                <Viewbox Stretch="Uniform" MaxWidth="304" Margin="0,8,0,6" HorizontalAlignment="Left">
+                                <Grid Width="304" Height="171">
+                                    <Border CornerRadius="6" Background="{DynamicResource Surface2Brush}" BorderBrush="{DynamicResource LineBrush}"
+                                            BorderThickness="1" ClipToBounds="True">
+                                        <Image Source="{Binding ScreenImage}" Stretch="Fill" RenderOptions.BitmapScalingMode="HighQuality" />
+                                    </Border>
+                                    <Canvas ClipToBounds="True" Visibility="{Binding HasMatch, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Border Canvas.Left="{Binding MatchLeft}" Canvas.Top="{Binding MatchTop}" Width="{Binding MatchWidth}"
+                                                Height="{Binding MatchHeight}" BorderBrush="{DynamicResource GoodBrush}" BorderThickness="2" CornerRadius="3" />
+                                    </Canvas>
+                                    <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="6" Padding="5,1" CornerRadius="3"
+                                            Background="{DynamicResource GoodBrush}"
+                                            Visibility="{Binding HasMatch, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <TextBlock Text="{Binding MatchLabel}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource ShellBrush}" />
+                                    </Border>
+                                </Grid>
+                                </Viewbox>
+                                <TextBlock Text="{Binding ScreenAgeText}" FontSize="12" Foreground="{DynamicResource MutedBrush}" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- 6. Log: macro, screen and packet lines, filterable by source. -->
+                        <Border Grid.Row="2" Style="{StaticResource SectionPanel}" Padding="0">
+                            <DockPanel>
+                                <DockPanel DockPanel.Dock="Top" Margin="14,12,10,6">
+                                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                        <Button Content="전체" Style="{StaticResource SegmentButton}" Command="{Binding SetLogFilterCommand}"
+                                                CommandParameter="전체" Tag="{Binding IsLogAll}" />
+                                        <Button Content="패킷" Style="{StaticResource SegmentButton}" Command="{Binding SetLogFilterCommand}"
+                                                CommandParameter="패킷" Tag="{Binding IsLogPacket}" />
+                                        <Button Content="화면" Style="{StaticResource SegmentButton}" Command="{Binding SetLogFilterCommand}"
+                                                CommandParameter="화면" Tag="{Binding IsLogScreen}" />
+                                    </StackPanel>
+                                    <TextBlock Text="기록" Style="{StaticResource CardTitle}" />
+                                </DockPanel>
+                                <ListBox ItemsSource="{Binding LogView}" MinWidth="0" BorderThickness="0" Background="Transparent"
+                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" Focusable="False"
+                                         AutomationProperties.Name="매크로 기록">
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="Padding" Value="12,3" />
+                                            <Setter Property="Focusable" Value="False" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                        <Border Padding="{TemplateBinding Padding}" BorderBrush="{DynamicResource SubtleLineBrush}"
+                                                                BorderThickness="0,0,0,1">
+                                                            <ContentPresenter />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="56" />
+                                                    <ColumnDefinition Width="40" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="{Binding TimeText}" FontSize="11" Foreground="{DynamicResource MutedBrush}" />
+                                                <Border x:Name="Chip" Grid.Column="1" CornerRadius="4" Padding="3,0" Margin="0,0,6,0" VerticalAlignment="Top"
+                                                        Background="{DynamicResource InputBrush}">
+                                                    <TextBlock x:Name="ChipText" Text="{Binding SourceText}" FontSize="10" FontWeight="Bold"
+                                                               HorizontalAlignment="Center" Foreground="{DynamicResource SecondaryTextBrush}" />
+                                                </Border>
+                                                <TextBlock Grid.Column="2" Text="{Binding Message}" FontSize="12" TextWrapping="Wrap"
+                                                           Foreground="{DynamicResource SecondaryTextBrush}" />
+                                            </Grid>
+                                            <DataTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding SourceText}" Value="패킷">
+                                                    <Setter TargetName="Chip" Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                                                    <Setter TargetName="ChipText" Property="Foreground" Value="{DynamicResource AccentBrush}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding SourceText}" Value="매크로">
+                                                    <Setter TargetName="Chip" Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+                                                    <Setter TargetName="ChipText" Property="Foreground" Value="{DynamicResource GoodBrush}" />
+                                                </DataTrigger>
+                                            </DataTemplate.Triggers>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

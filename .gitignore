@@ -1,0 +1,53 @@
+# .NET build output
+bin/
+obj/
+dist/
+artifacts/
+
+# Local IDE files
+.vs/
+.idea/
+.vscode/
+.codex/
+pet-runs/
+*.user
+*.suo
+
+# Runtime output
+*.log
+logs/
+azurlane_tcp_export/
+captures/
+*.pcap
+*.pcapng
+*.flow
+*.har
+*.sqlite
+*.sqlite3
+*.db
+*.jsonl
+*.xlsx
+/settings.json
+
+# Local secrets and signing material
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+*.snk
+
+# Local game data and extracted assets
+external/
+game_resources/
+static/game-assets/
+maps/local_assets.json
+maps/update_state.json
+# Regal community ratings: downloaded by the data update, not redistributed here.
+maps/regal_*.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

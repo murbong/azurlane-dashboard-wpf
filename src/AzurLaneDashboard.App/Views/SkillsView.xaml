@@ -1,0 +1,58 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.SkillsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="스킬작 후보 · 최대 레벨이 1인 스킬은 제외하고, 레벨/등급/부족 레벨 기준으로 정렬된 후보입니다."
+                   Style="{StaticResource MutedText}"
+                   TextTrimming="CharacterEllipsis"
+                   Margin="0,0,0,10" />
+
+        <DataGrid Grid.Row="1"
+                  Style="{StaticResource MainListDataGrid}"
+                  ItemsSource="{Binding SkillPriorities}"
+                  RowHeight="46">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="함선" Width="2*"
+                                        CellStyle="{StaticResource FullHeightDataGridCell}"
+                                        CellTemplate="{StaticResource ShipIdentityCellTemplate}" />
+                <DataGridTemplateColumn Header="등급" Width="82"
+                                        CellStyle="{StaticResource CenteredDataGridCell}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource RarityBadge}"
+                                    Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                <TextBlock Text="{Binding Rarity}" Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                           HorizontalAlignment="Center" />
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="스킬" Width="2*"
+                                        CellStyle="{StaticResource CenteredDataGridCell}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center">
+                                <Image Source="{Binding SkillIconUrl, Converter={StaticResource AssetImageConverter}}" Width="30" Height="30" Stretch="Uniform"
+                                       Margin="0,0,8,0" />
+                                <StackPanel>
+                                    <TextBlock Text="{Binding SkillName}" FontWeight="SemiBold"
+                                               TextTrimming="CharacterEllipsis" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Lv" Binding="{Binding SkillLevel}" Width="58" />
+                <DataGridTextColumn Header="최대" Binding="{Binding SkillMaxLevel}" Width="58" />
+                <DataGridTextColumn Header="EXP" Binding="{Binding SkillExp, StringFormat={}{0:N0}}" Width="90" />
+                <DataGridTextColumn Header="이유" Binding="{Binding Reason}" Width="2*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

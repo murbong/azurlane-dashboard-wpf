@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AzurLaneDashboard.Core\AzurLaneDashboard.Core.csproj" />
+    <ProjectReference Include="..\AzurLaneDashboard.Data\AzurLaneDashboard.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AssetsTools.NET" Version="3.0.4" />
+    <PackageReference Include="AssetsTools.NET.Texture" Version="3.0.2" />
+    <PackageReference Include="StbImageWriteSharp" Version="1.16.7" />
+  </ItemGroup>
+
+</Project>

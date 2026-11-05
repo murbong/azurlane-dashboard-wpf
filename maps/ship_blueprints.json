@@ -1,0 +1,284 @@
+{
+  "29901": {
+    "id": 29901,
+    "blueprint_version": 1,
+    "is_pursuing": 1,
+    "strengthen_item": 42001
+  },
+  "29902": {
+    "id": 29902,
+    "blueprint_version": 1,
+    "is_pursuing": 1,
+    "strengthen_item": 42002
+  },
+  "39901": {
+    "id": 39901,
+    "blueprint_version": 1,
+    "is_pursuing": 1,
+    "strengthen_item": 42003
+  },
+  "39902": {
+    "id": 39902,
+    "blueprint_version": 1,
+    "is_pursuing": 1,
+    "strengthen_item": 42004
+  },
+  "49901": {
+    "id": 49901,
+    "blueprint_version": 1,
+    "is_pursuing": 1,
+    "strengthen_item": 42005
+  },
+  "89901": {
+    "id": 89901,
+    "blueprint_version": 1,
+    "is_pursuing": 1,
+    "strengthen_item": 42006
+  },
+  "19901": {
+    "id": 19901,
+    "blueprint_version": 2,
+    "is_pursuing": 1,
+    "strengthen_item": 42011
+  },
+  "19902": {
+    "id": 19902,
+    "blueprint_version": 2,
+    "is_pursuing": 1,
+    "strengthen_item": 42012
+  },
+  "39903": {
+    "id": 39903,
+    "blueprint_version": 2,
+    "is_pursuing": 1,
+    "strengthen_item": 42013
+  },
+  "39904": {
+    "id": 39904,
+    "blueprint_version": 2,
+    "is_pursuing": 1,
+    "strengthen_item": 42014
+  },
+  "49902": {
+    "id": 49902,
+    "blueprint_version": 2,
+    "is_pursuing": 1,
+    "strengthen_item": 42015
+  },
+  "99901": {
+    "id": 99901,
+    "blueprint_version": 2,
+    "is_pursuing": 1,
+    "strengthen_item": 42016
+  },
+  "29903": {
+    "id": 29903,
+    "blueprint_version": 3,
+    "is_pursuing": 1,
+    "strengthen_item": 42021
+  },
+  "29904": {
+    "id": 29904,
+    "blueprint_version": 3,
+    "is_pursuing": 1,
+    "strengthen_item": 42022
+  },
+  "49903": {
+    "id": 49903,
+    "blueprint_version": 3,
+    "is_pursuing": 1,
+    "strengthen_item": 42023
+  },
+  "49904": {
+    "id": 49904,
+    "blueprint_version": 3,
+    "is_pursuing": 1,
+    "strengthen_item": 42024
+  },
+  "89902": {
+    "id": 89902,
+    "blueprint_version": 3,
+    "is_pursuing": 1,
+    "strengthen_item": 42025
+  },
+  "19903": {
+    "id": 19903,
+    "blueprint_version": 4,
+    "is_pursuing": 1,
+    "strengthen_item": 42031
+  },
+  "39905": {
+    "id": 39905,
+    "blueprint_version": 4,
+    "is_pursuing": 1,
+    "strengthen_item": 42032
+  },
+  "49905": {
+    "id": 49905,
+    "blueprint_version": 4,
+    "is_pursuing": 1,
+    "strengthen_item": 42033
+  },
+  "49906": {
+    "id": 49906,
+    "blueprint_version": 4,
+    "is_pursuing": 1,
+    "strengthen_item": 42034
+  },
+  "69901": {
+    "id": 69901,
+    "blueprint_version": 4,
+    "is_pursuing": 1,
+    "strengthen_item": 42035
+  },
+  "29905": {
+    "id": 29905,
+    "blueprint_version": 5,
+    "is_pursuing": 1,
+    "strengthen_item": 42041
+  },
+  "49907": {
+    "id": 49907,
+    "blueprint_version": 5,
+    "is_pursuing": 1,
+    "strengthen_item": 42042
+  },
+  "59901": {
+    "id": 59901,
+    "blueprint_version": 5,
+    "is_pursuing": 1,
+    "strengthen_item": 42043
+  },
+  "79901": {
+    "id": 79901,
+    "blueprint_version": 5,
+    "is_pursuing": 1,
+    "strengthen_item": 42044
+  },
+  "89903": {
+    "id": 89903,
+    "blueprint_version": 5,
+    "is_pursuing": 1,
+    "strengthen_item": 42045
+  },
+  "19904": {
+    "id": 19904,
+    "blueprint_version": 6,
+    "is_pursuing": 0,
+    "strengthen_item": 42051
+  },
+  "39906": {
+    "id": 39906,
+    "blueprint_version": 6,
+    "is_pursuing": 1,
+    "strengthen_item": 42052
+  },
+  "49908": {
+    "id": 49908,
+    "blueprint_version": 6,
+    "is_pursuing": 1,
+    "strengthen_item": 42053
+  },
+  "49909": {
+    "id": 49909,
+    "blueprint_version": 6,
+    "is_pursuing": 0,
+    "strengthen_item": 42054
+  },
+  "99902": {
+    "id": 99902,
+    "blueprint_version": 6,
+    "is_pursuing": 1,
+    "strengthen_item": 42055
+  },
+  "19905": {
+    "id": 19905,
+    "blueprint_version": 7,
+    "is_pursuing": 0,
+    "strengthen_item": 42061
+  },
+  "39907": {
+    "id": 39907,
+    "blueprint_version": 7,
+    "is_pursuing": 0,
+    "strengthen_item": 42062
+  },
+  "69902": {
+    "id": 69902,
+    "blueprint_version": 7,
+    "is_pursuing": 0,
+    "strengthen_item": 42063
+  },
+  "79902": {
+    "id": 79902,
+    "blueprint_version": 7,
+    "is_pursuing": 0,
+    "strengthen_item": 42064
+  },
+  "89904": {
+    "id": 89904,
+    "blueprint_version": 7,
+    "is_pursuing": 0,
+    "strengthen_item": 42065
+  },
+  "19906": {
+    "id": 19906,
+    "blueprint_version": 8,
+    "is_pursuing": 0,
+    "strengthen_item": 42071
+  },
+  "49910": {
+    "id": 49910,
+    "blueprint_version": 8,
+    "is_pursuing": 0,
+    "strengthen_item": 42072
+  },
+  "69903": {
+    "id": 69903,
+    "blueprint_version": 8,
+    "is_pursuing": 0,
+    "strengthen_item": 42073
+  },
+  "79903": {
+    "id": 79903,
+    "blueprint_version": 8,
+    "is_pursuing": 0,
+    "strengthen_item": 42074
+  },
+  "119901": {
+    "id": 119901,
+    "blueprint_version": 8,
+    "is_pursuing": 0,
+    "strengthen_item": 42075
+  },
+  "29906": {
+    "id": 29906,
+    "blueprint_version": 9,
+    "is_pursuing": 0,
+    "strengthen_item": 42081
+  },
+  "39908": {
+    "id": 39908,
+    "blueprint_version": 9,
+    "is_pursuing": 0,
+    "strengthen_item": 42082
+  },
+  "49911": {
+    "id": 49911,
+    "blueprint_version": 9,
+    "is_pursuing": 0,
+    "strengthen_item": 42083
+  },
+  "89905": {
+    "id": 89905,
+    "blueprint_version": 9,
+    "is_pursuing": 0,
+    "strengthen_item": 42084
+  },
+  "129901": {
+    "id": 129901,
+    "blueprint_version": 9,
+    "is_pursuing": 0,
+    "strengthen_item": 42085
+  }
+}

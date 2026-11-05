@@ -1,0 +1,694 @@
+{
+  "101": {
+    "collect_time": 1800,
+    "oil": 0
+  },
+  "102": {
+    "collect_time": 1800,
+    "oil": 0
+  },
+  "103": {
+    "collect_time": 18000,
+    "oil": 0
+  },
+  "104": {
+    "collect_time": 1200,
+    "oil": 0
+  },
+  "105": {
+    "collect_time": 1800,
+    "oil": 0
+  },
+  "106": {
+    "collect_time": 9600,
+    "oil": 0
+  },
+  "107": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "108": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "109": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "110": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "201": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "202": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "203": {
+    "collect_time": 21600,
+    "oil": 0
+  },
+  "204": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "205": {
+    "collect_time": 5400,
+    "oil": 0
+  },
+  "206": {
+    "collect_time": 12000,
+    "oil": 0
+  },
+  "207": {
+    "collect_time": 18000,
+    "oil": 0
+  },
+  "208": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "209": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "210": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "301": {
+    "collect_time": 5400,
+    "oil": 0
+  },
+  "302": {
+    "collect_time": 5400,
+    "oil": 0
+  },
+  "303": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "304": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "305": {
+    "collect_time": 10800,
+    "oil": 0
+  },
+  "306": {
+    "collect_time": 19200,
+    "oil": 0
+  },
+  "307": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "308": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "309": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "310": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "10101": {
+    "collect_time": 1800,
+    "oil": 5
+  },
+  "10102": {
+    "collect_time": 1800,
+    "oil": 5
+  },
+  "10103": {
+    "collect_time": 3600,
+    "oil": 5
+  },
+  "10104": {
+    "collect_time": 5400,
+    "oil": 5
+  },
+  "10105": {
+    "collect_time": 3600,
+    "oil": 5
+  },
+  "10106": {
+    "collect_time": 3600,
+    "oil": 5
+  },
+  "10201": {
+    "collect_time": 3600,
+    "oil": 10
+  },
+  "10202": {
+    "collect_time": 3600,
+    "oil": 10
+  },
+  "10203": {
+    "collect_time": 4200,
+    "oil": 10
+  },
+  "10204": {
+    "collect_time": 6300,
+    "oil": 10
+  },
+  "10205": {
+    "collect_time": 7200,
+    "oil": 10
+  },
+  "10206": {
+    "collect_time": 7200,
+    "oil": 10
+  },
+  "10207": {
+    "collect_time": 10800,
+    "oil": 30
+  },
+  "10301": {
+    "collect_time": 4800,
+    "oil": 15
+  },
+  "10302": {
+    "collect_time": 4800,
+    "oil": 15
+  },
+  "10303": {
+    "collect_time": 5400,
+    "oil": 15
+  },
+  "10304": {
+    "collect_time": 8100,
+    "oil": 15
+  },
+  "10305": {
+    "collect_time": 10800,
+    "oil": 15
+  },
+  "10306": {
+    "collect_time": 10800,
+    "oil": 15
+  },
+  "10401": {
+    "collect_time": 6000,
+    "oil": 20
+  },
+  "10402": {
+    "collect_time": 6000,
+    "oil": 20
+  },
+  "10403": {
+    "collect_time": 7200,
+    "oil": 20
+  },
+  "10404": {
+    "collect_time": 10800,
+    "oil": 20
+  },
+  "10405": {
+    "collect_time": 14400,
+    "oil": 20
+  },
+  "10406": {
+    "collect_time": 14400,
+    "oil": 20
+  },
+  "10407": {
+    "collect_time": 21600,
+    "oil": 50
+  },
+  "10501": {
+    "collect_time": 7200,
+    "oil": 25
+  },
+  "10502": {
+    "collect_time": 7200,
+    "oil": 25
+  },
+  "10503": {
+    "collect_time": 9600,
+    "oil": 25
+  },
+  "10504": {
+    "collect_time": 14400,
+    "oil": 25
+  },
+  "10505": {
+    "collect_time": 21600,
+    "oil": 25
+  },
+  "10506": {
+    "collect_time": 21600,
+    "oil": 25
+  },
+  "10601": {
+    "collect_time": 9000,
+    "oil": 30
+  },
+  "10602": {
+    "collect_time": 9000,
+    "oil": 30
+  },
+  "10603": {
+    "collect_time": 14400,
+    "oil": 30
+  },
+  "10604": {
+    "collect_time": 21600,
+    "oil": 30
+  },
+  "10605": {
+    "collect_time": 28800,
+    "oil": 30
+  },
+  "10606": {
+    "collect_time": 28800,
+    "oil": 30
+  },
+  "10607": {
+    "collect_time": 43200,
+    "oil": 70
+  },
+  "20101": {
+    "collect_time": 28800,
+    "oil": 800
+  },
+  "20102": {
+    "collect_time": 32400,
+    "oil": 1000
+  },
+  "20103": {
+    "collect_time": 36000,
+    "oil": 1200
+  },
+  "20104": {
+    "collect_time": 28800,
+    "oil": 800
+  },
+  "20105": {
+    "collect_time": 32400,
+    "oil": 1000
+  },
+  "20106": {
+    "collect_time": 36000,
+    "oil": 1200
+  },
+  "20107": {
+    "collect_time": 28800,
+    "oil": 800
+  },
+  "20108": {
+    "collect_time": 32400,
+    "oil": 1000
+  },
+  "20109": {
+    "collect_time": 36000,
+    "oil": 1200
+  },
+  "20110": {
+    "collect_time": 28800,
+    "oil": 800
+  },
+  "20111": {
+    "collect_time": 32400,
+    "oil": 1000
+  },
+  "20112": {
+    "collect_time": 36000,
+    "oil": 1200
+  },
+  "20113": {
+    "collect_time": 28800,
+    "oil": 800
+  },
+  "20114": {
+    "collect_time": 32400,
+    "oil": 1000
+  },
+  "20115": {
+    "collect_time": 36000,
+    "oil": 1200
+  },
+  "20116": {
+    "collect_time": 28800,
+    "oil": 800
+  },
+  "20117": {
+    "collect_time": 32400,
+    "oil": 1000
+  },
+  "20118": {
+    "collect_time": 36000,
+    "oil": 1200
+  },
+  "30101": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30102": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30103": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30104": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30105": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30106": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30107": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30108": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30109": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30110": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30201": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30202": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30203": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30204": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30205": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30206": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30207": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30208": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30209": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30210": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30301": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30302": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30303": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30304": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30305": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30306": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30307": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30308": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30309": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30310": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30401": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30402": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30403": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30404": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30405": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "30406": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30407": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30408": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30409": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "30410": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "40101": {
+    "collect_time": 21600,
+    "oil": 0
+  },
+  "40102": {
+    "collect_time": 21600,
+    "oil": 0
+  },
+  "40103": {
+    "collect_time": 21600,
+    "oil": 0
+  },
+  "40104": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40105": {
+    "collect_time": 21600,
+    "oil": 0
+  },
+  "40106": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40201": {
+    "collect_time": 25200,
+    "oil": 0
+  },
+  "40202": {
+    "collect_time": 25200,
+    "oil": 0
+  },
+  "40203": {
+    "collect_time": 25200,
+    "oil": 0
+  },
+  "40204": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40205": {
+    "collect_time": 25200,
+    "oil": 0
+  },
+  "40206": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40301": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40302": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40303": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40304": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40305": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "40306": {
+    "collect_time": 28800,
+    "oil": 0
+  },
+  "50001": {
+    "collect_time": 1800,
+    "oil": 0
+  },
+  "50002": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "50003": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50004": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50005": {
+    "collect_time": 10800,
+    "oil": 0
+  },
+  "50006": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "50007": {
+    "collect_time": 1800,
+    "oil": 0
+  },
+  "50008": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "50009": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50010": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50011": {
+    "collect_time": 10800,
+    "oil": 0
+  },
+  "50012": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "50013": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "50014": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50015": {
+    "collect_time": 1800,
+    "oil": 0
+  },
+  "50016": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "50017": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50018": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50019": {
+    "collect_time": 10800,
+    "oil": 0
+  },
+  "50020": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "50021": {
+    "collect_time": 1800,
+    "oil": 0
+  },
+  "50022": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "50023": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50024": {
+    "collect_time": 7200,
+    "oil": 0
+  },
+  "50025": {
+    "collect_time": 10800,
+    "oil": 0
+  },
+  "50026": {
+    "collect_time": 14400,
+    "oil": 0
+  },
+  "50027": {
+    "collect_time": 3600,
+    "oil": 0
+  },
+  "50028": {
+    "collect_time": 7200,
+    "oil": 0
+  }
+}

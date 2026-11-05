@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "note": "Hand-curated META Showdown strategy. Fleet slots list Regal uids in the guide's order. Set verified only after checking the entry against its source; unverified entries are ignored by the app.",
+  "bosses": {
+    "24": {
+      "verified": true,
+      "lastReviewed": "2026-10-17",
+      "armorAlternates": [
+        "Medium",
+        "Heavy"
+      ],
+      "armorPeriodSeconds": 25,
+      "mechanics": [
+        {
+          "title": "장갑 교대 공습",
+          "text": "25초마다 중형↔중장갑으로 바뀌고(시작은 중형), 바뀔 때마다 공습한다.",
+          "response": ""
+        },
+        {
+          "title": "록온은 선두만",
+          "text": "궤도 지원의 록온은 전위 선두(메인 탱커)만 받는 피해를 늘린다.",
+          "response": "가장 단단한 함선을 선두에"
+        },
+        {
+          "title": "항모 편성 비추천",
+          "text": "공략은 전함 코어를 기본으로 하고 항모 코어는 약하다고 본다.",
+          "response": "항모를 쓰면 헬레나 동반"
+        }
+      ],
+      "fleet": {
+        "main": [
+          [
+            "405074_Götz von Berlichingen"
+          ],
+          [
+            "205164_Lion",
+            "499104_Mecklenburg",
+            "1299014_Valparaíso",
+            "605084_Raffaello"
+          ],
+          [
+            "304094_Azuchi",
+            "499104_Mecklenburg",
+            "1299014_Valparaíso",
+            "605084_Raffaello"
+          ]
+        ],
+        "vanguard": [
+          [
+            "201384_Trafalgar"
+          ],
+          [
+            "202384_Tiger",
+            "299044_Drake",
+            "299054_Plymouth",
+            "202994_Belfast (Retrofit)",
+            "202124_Belfast",
+            "401524_Z52"
+          ],
+          [
+            "101994_Eldridge (Retrofit)",
+            "101264_Eldridge"
+          ]
+        ],
+        "flagship": 0,
+        "notes": "괴츠에게 +13 메클렌부르크 포 2~3개를 권장한다. 아즈치를 다 키우기 전에는 메클렌부르크를 쓴다."
+      },
+      "sources": [
+        {
+          "title": "Suchiguma META Showdown strategy",
+          "url": "https://docs.google.com/document/d/e/2PACX-1vQef0LlJ4Mm5Q0lxW2rn8LrmvcZXUi5Iz3daifcy3b7EA2xKWU7BtKbWV9TARSsBbdaDRyXat_WTh4m/pub",
+          "sourceUpdated": "2026-09-16"
+        }
+      ]
+    }
+  },
+  "regalStarRules": [
+    {
+      "regalUid": "202154_Aurora",
+      "hulls": [
+        "DD",
+        "CL"
+      ],
+      "armors": []
+    },
+    {
+      "regalUid": "702034_Chapayev",
+      "hulls": [
+        "DD"
+      ],
+      "armors": []
+    },
+    {
+      "regalUid": "207044_Victorious",
+      "hulls": [
+        "BB"
+      ],
+      "armors": []
+    },
+    {
+      "regalUid": "307084_Shinano",
+      "hulls": [],
+      "armors": [
+        "Heavy"
+      ]
+    }
+  ]
+}

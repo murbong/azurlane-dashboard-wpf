@@ -1,0 +1,129 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.AuctionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:AzurLaneDashboard.App.Converters">
+    <UserControl.Resources>
+        <converters:NumberOrDashConverter x:Key="NumberOrDash" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1.15*" />
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource SectionPanel}" Margin="0,0,0,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="{Binding Auction.Status}"
+                               Style="{StaticResource SectionTitle}" FontSize="17" />
+                    <TextBlock Text="{Binding Auction.Detail}"
+                               Style="{StaticResource MutedText}"
+                               Margin="0,5,0,0" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="낙찰가 " Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.WinningBid, Converter={StaticResource NumberOrDash}}"
+                               FontWeight="SemiBold"
+                               Margin="4,0,16,0" />
+                    <TextBlock Text="실가 " Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.ActualValue, Converter={StaticResource NumberOrDash}}"
+                               FontWeight="SemiBold"
+                               Margin="4,0,16,0" />
+                    <TextBlock Text="손익 " Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.Profit, Converter={StaticResource NumberOrDash}}"
+                               FontWeight="SemiBold"
+                               Margin="4,0,0,0" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <UniformGrid Grid.Row="1" Columns="5" Margin="0,0,0,12">
+            <Border Style="{StaticResource KpiCard}">
+                <StackPanel>
+                    <TextBlock Text="현재 라운드" Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.Round, Converter={StaticResource NumberOrDash}, ConverterParameter=R}"
+                               FontSize="22" FontWeight="SemiBold" Margin="0,2,0,0" />
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource KpiCard}">
+                <StackPanel>
+                    <TextBlock Text="추정 최소" Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.MinimumValue, Converter={StaticResource NumberOrDash}}"
+                               FontSize="22" FontWeight="SemiBold" Margin="0,2,0,0" />
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource KpiCard}">
+                <StackPanel>
+                    <TextBlock Text="추정 기대값" Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.ExpectedValue, Converter={StaticResource NumberOrDash}}"
+                               FontSize="22" FontWeight="SemiBold" Margin="0,2,0,0" />
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource KpiCard}">
+                <StackPanel>
+                    <TextBlock Text="추정 최대" Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.MaximumValue, Converter={StaticResource NumberOrDash}}"
+                               FontSize="22" FontWeight="SemiBold" Margin="0,2,0,0" />
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource KpiCard}" Margin="0">
+                <StackPanel>
+                    <TextBlock Text="최근 최고 입찰" Style="{StaticResource MutedText}" />
+                    <TextBlock Text="{Binding Auction.LatestHighBid, Converter={StaticResource NumberOrDash}}"
+                               FontSize="22" FontWeight="SemiBold" Margin="0,2,0,0" />
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+
+        <Border Grid.Row="2" Style="{StaticResource SectionPanel}" Margin="0,0,0,8">
+            <DockPanel LastChildFill="True">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="현재 공개된 물품"
+                           Style="{StaticResource SectionTitle}"
+                           Margin="0,0,0,10" />
+                <DataGrid ItemsSource="{Binding Auction.Items}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="#" Binding="{Binding Uid}" Width="54" />
+                        <DataGridTextColumn Header="물품" Binding="{Binding Name}" Width="*" />
+                        <DataGridTextColumn Header="등급" Binding="{Binding RarityText}" Width="72" />
+                        <DataGridTextColumn Header="윤곽" Binding="{Binding ContourText}" Width="72" />
+                        <DataGridTextColumn Header="공개 근거" Binding="{Binding Evidence}" Width="1.2*" />
+                        <DataGridTextColumn Header="최소" Binding="{Binding MinimumValue, StringFormat={}{0:N0}}" Width="105" />
+                        <DataGridTextColumn Header="기대" Binding="{Binding ExpectedValue, StringFormat={}{0:N0}}" Width="105" />
+                        <DataGridTextColumn Header="최대" Binding="{Binding MaximumValue, StringFormat={}{0:N0}}" Width="105" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="3" Style="{StaticResource SectionPanel}" Margin="0,8,0,0">
+            <DockPanel LastChildFill="True">
+                <StackPanel DockPanel.Dock="Top" Margin="0,0,0,10">
+                    <TextBlock Text="현재 세션 추천 입찰가"
+                               Style="{StaticResource SectionTitle}" />
+                    <TextBlock Text="봇 입찰 범위와 낙찰 실패 시 15% 배당을 반영한 참고값입니다. 실제 플레이어 행동은 예측할 수 없습니다."
+                               Style="{StaticResource MutedText}"
+                               Margin="0,4,0,0" />
+                </StackPanel>
+                <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}" Visibility="{Binding Auction.HasNoEstimates, Converter={StaticResource BoolToVisibilityConverter}}" Text="아직 추정할 공개 정보가 없습니다. 물품이 공개되면 세션별 추천 입찰가를 계산합니다." />
+                <DataGrid ItemsSource="{Binding Auction.Recommendations}" Visibility="{Binding Auction.HasEstimates, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="세션" Binding="{Binding Session}" Width="70" />
+                        <DataGridTextColumn Header="추천 입찰" Binding="{Binding RecommendedBid, StringFormat={}{0:N0}}" Width="120" />
+                        <DataGridTextColumn Header="안전 상한" Binding="{Binding SafetyCeiling, StringFormat={}{0:N0}}" Width="120" />
+                        <DataGridTextColumn Header="손익분기 상한" Binding="{Binding BreakEvenCeiling, StringFormat={}{0:N0}}" Width="130" />
+                        <DataGridTextColumn Header="예상 승률" Binding="{Binding WinProbability, StringFormat={}{0:P0}}" Width="100" />
+                        <DataGridTextColumn Header="기대 순가치" Binding="{Binding ExpectedNetValue, StringFormat={}{0:N0}}" Width="120" />
+                        <DataGridTextColumn Header="판단" Binding="{Binding Guidance}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </Border>
+    </Grid>
+</UserControl>

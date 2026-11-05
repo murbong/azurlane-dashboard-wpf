@@ -1,0 +1,420 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.EquipmentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:AzurLaneDashboard.App.Views">
+    <UserControl.Resources>
+        <DataTemplate x:Key="EquipmentAttributeChipTemplate">
+            <Border Style="{StaticResource AttributeChip}">
+                <TextBlock Text="{Binding DisplayText}"
+                           FontSize="11"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource SecondaryTextBrush}" />
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="EquippedShipsCellTemplate">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        ToolTip="{Binding EquippedShipsToolTip}">
+                <ItemsControl ItemsSource="{Binding VisibleEquippedShips}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource AttributeChip}"
+                                    Cursor="Hand"
+                                    Margin="0,0,4,0">
+                                <Border.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick"
+                                                  Command="{Binding DataContext.OpenShipDetailCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                                  CommandParameter="{Binding}" />
+                                </Border.InputBindings>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding ShipIconUrl, Converter={StaticResource AssetImageConverter}}"
+                                           Width="18"
+                                           Height="18"
+                                           Stretch="UniformToFill"
+                                           Margin="0,0,5,0" />
+                                    <TextBlock Text="{Binding ShipName}"
+                                               FontSize="12"
+                                               FontWeight="SemiBold"
+                                               MaxWidth="92"
+                                               TextTrimming="CharacterEllipsis" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource AttributeChip}"
+                        Visibility="{Binding HasHiddenEquippedShips, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <TextBlock Text="{Binding HiddenEquippedShipLabel}"
+                               FontSize="12"
+                               FontWeight="SemiBold" />
+                </Border>
+                <TextBlock Text="{Binding EquippedByText}"
+                           VerticalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock" BasedOn="{StaticResource MutedText}">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding EquippedCount}" Value="0">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="EquipmentIdentityCellTemplate">
+            <Border Style="{StaticResource FullHeightRarityAccentCell}"
+                    ToolTip="{Binding ToolTipText}">
+                <Grid VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Width="40"
+                          Height="40"
+                          Margin="0,0,8,0">
+                        <Border Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=cell}"
+                                BorderBrush="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=bar}"
+                                BorderThickness="1"
+                                CornerRadius="6"
+                                Padding="2">
+                            <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                   Stretch="Uniform" />
+                        </Border>
+
+                        <Border Style="{StaticResource EquipmentTypeGlyphBadge}"
+                                Width="18"
+                                Height="18"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                ToolTip="{Binding EquipmentTypeLabel}">
+                            <TextBlock Text="{Binding EquipmentTypeIcon}"
+                                       FontSize="11"
+                                       FontWeight="Bold"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Bottom"
+                                    ToolTip="{Binding EquippedShipsToolTip}">
+                            <ItemsControl ItemsSource="{Binding VisibleEquippedShips}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Width="12"
+                                                Height="12"
+                                                Background="{DynamicResource SurfaceBrush}"
+                                                BorderBrush="{DynamicResource LineBrush}"
+                                                BorderThickness="1"
+                                                CornerRadius="2"
+                                                Cursor="Hand"
+                                                Margin="0,0,1,0">
+                                            <Border.InputBindings>
+                                                <MouseBinding MouseAction="LeftClick"
+                                                              Command="{Binding DataContext.OpenShipDetailCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                                              CommandParameter="{Binding}" />
+                                            </Border.InputBindings>
+                                            <Image Source="{Binding ShipIconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                   Stretch="UniformToFill" />
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <Border MinWidth="13"
+                                    Height="12"
+                                    Background="{DynamicResource SurfaceBrush}"
+                                    BorderBrush="{DynamicResource LineBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="2"
+                                    Visibility="{Binding HasHiddenEquippedShips, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBlock Text="{Binding HiddenEquippedShipLabel}"
+                                           FontSize="8"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Grid.Column="1"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Name}"
+                                   FontWeight="SemiBold"
+                                   TextTrimming="CharacterEllipsis" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding EquipmentTypeLabel}"
+                                       Style="{StaticResource MutedText}" />
+                        </StackPanel>
+                        <ItemsControl ItemsSource="{Binding Attributes}"
+                                      ItemTemplate="{StaticResource EquipmentAttributeChipTemplate}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding EquipmentUsageText}"
+                   Foreground="{DynamicResource MutedBrush}"
+                   Margin="0,0,0,8" />
+
+        <TabControl x:Name="EquipmentSections" Grid.Row="1" SelectedIndex="{Binding SelectedEquipmentSectionIndex, Mode=TwoWay}">
+            <views:TabTools.Content>
+                <views:InventorySearchBar Visibility="{Binding IsInventorySearchVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
+            </views:TabTools.Content>
+            <TabItem Header="보유 장비">
+                <DataGrid x:Name="EquipmentDataGrid"
+                          Style="{StaticResource MainListDataGrid}"
+                          ItemsSource="{Binding EquipmentView}"
+                          SelectedItem="{Binding SelectedEquipment}"
+                          Sorting="EquipmentDataGrid_Sorting"
+                          RowHeight="70">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="장비" Width="2.6*"
+                                                SortMemberPath="Name"
+                                                CellStyle="{StaticResource FullHeightDataGridCell}"
+                                                CellTemplate="{StaticResource EquipmentIdentityCellTemplate}" />
+                        <DataGridTemplateColumn Header="등급" Width="82"
+                                                SortMemberPath="RarityTier"
+                                                CellStyle="{StaticResource CenteredDataGridCell}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Style="{StaticResource RarityBadge}"
+                                            Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                        <TextBlock Text="{Binding Rarity}"
+                                                   Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                   HorizontalAlignment="Center" />
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="강화" Binding="{Binding EnhanceLevel, StringFormat=+{0}}" Width="76" />
+                        <DataGridTextColumn Header="개수" Binding="{Binding Count}" Width="76" />
+                        <DataGridTextColumn Header="창고" Binding="{Binding BagCount}" Width="76" />
+                        <DataGridTextColumn Header="장착" Binding="{Binding EquippedCount}" Width="76" />
+                        <DataGridTemplateColumn Header="장착 함선" Width="2*"
+                                                CellStyle="{StaticResource CenteredDataGridCell}"
+                                                CellTemplate="{StaticResource EquippedShipsCellTemplate}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="추천 강화">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top"
+                               Text="{Binding FilteredEquipmentRecommendationText}"
+                               Foreground="{DynamicResource MutedBrush}"
+                               Margin="0,0,0,8" />
+                    <DataGrid x:Name="EquipmentRecommendationsDataGrid"
+                              Style="{StaticResource MainListDataGrid}"
+                              ItemsSource="{Binding EquipmentRecommendationsView}"
+                              Sorting="EquipmentRecommendationsDataGrid_Sorting"
+                              RowHeight="70">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="장비" Width="2.6*"
+                                                    SortMemberPath="Name"
+                                                    CellStyle="{StaticResource FullHeightDataGridCell}"
+                                                    CellTemplate="{StaticResource EquipmentIdentityCellTemplate}" />
+                            <DataGridTemplateColumn Header="등급" Width="82"
+                                                    SortMemberPath="RarityTier"
+                                                    CellStyle="{StaticResource CenteredDataGridCell}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource RarityBadge}"
+                                                Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                            <TextBlock Text="{Binding Rarity}"
+                                                       Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                       HorizontalAlignment="Center" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="강화" Binding="{Binding EnhanceLevel, StringFormat=+{0}}"
+                                                Width="76" />
+                            <DataGridTextColumn Header="개수" Binding="{Binding Count}" Width="76" />
+                            <DataGridTextColumn Header="판정" Binding="{Binding Action}" Width="*" />
+                            <DataGridTemplateColumn Header="장착 함선" Width="2*"
+                                                    CellStyle="{StaticResource CenteredDataGridCell}"
+                                                    CellTemplate="{StaticResource EquippedShipsCellTemplate}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Header="특수장비">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top"
+                               Text="{Binding FilteredSpecialEquipmentText}"
+                               Foreground="{DynamicResource MutedBrush}"
+                               Margin="0,0,0,8" />
+                    <DataGrid Style="{StaticResource MainListDataGrid}"
+                              ItemsSource="{Binding SpecialEquipmentView}" RowHeight="46">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="특수장비" Width="2*"
+                                                    CellStyle="{StaticResource FullHeightDataGridCell}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource FullHeightRarityAccentCell}"
+                                                ToolTip="{Binding ToolTipText}">
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center">
+                                                <Image
+                                                    Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                    Width="30" Height="30" Stretch="Uniform"
+                                                    Margin="0,0,8,0" />
+                                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"
+                                                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="등급" Width="82"
+                                                    CellStyle="{StaticResource CenteredDataGridCell}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource RarityBadge}"
+                                                Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                            <TextBlock Text="{Binding Rarity}"
+                                                       Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                       HorizontalAlignment="Center" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="강화" Binding="{Binding EnhanceLevel, StringFormat=+{0}}"
+                                                Width="76" />
+                            <DataGridTextColumn Header="효과" Binding="{Binding Effect}" Width="120" />
+                            <DataGridTextColumn Header="PT" Binding="{Binding Pt}" Width="70" />
+                            <DataGridTemplateColumn Header="장착 함선" Width="1.4*"
+                                                    CellStyle="{StaticResource CenteredDataGridCell}"
+                                                    CellTemplate="{StaticResource EquippedShipsCellTemplate}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Header="장비스킨">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top"
+                               Text="{Binding FilteredEquipmentSkinText}"
+                               Foreground="{DynamicResource MutedBrush}"
+                               Margin="0,0,0,8" />
+                    <DataGrid Style="{StaticResource MainListDataGrid}"
+                              ItemsSource="{Binding EquipmentSkinsView}" RowHeight="46">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="스킨" Width="2*"
+                                                    CellStyle="{StaticResource FullHeightDataGridCell}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource FullHeightRarityAccentCell}"
+                                                ToolTip="{Binding ToolTipText}">
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center">
+                                                <Image
+                                                    Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                    Width="30" Height="30" Stretch="Uniform"
+                                                    Margin="0,0,8,0" />
+                                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"
+                                                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="등급" Width="82"
+                                                    CellStyle="{StaticResource CenteredDataGridCell}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource RarityBadge}"
+                                                Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                            <TextBlock Text="{Binding Rarity}"
+                                                       Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                       HorizontalAlignment="Center" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="개수" Binding="{Binding Count}" Width="76" />
+                            <DataGridTextColumn Header="테마" Binding="{Binding ThemeId}" Width="96" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Header="부족 장비">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top"
+                               Text="{Binding FilteredCommunityGearShortageText}"
+                               Foreground="{DynamicResource MutedBrush}"
+                               Margin="0,0,0,8" />
+                    <DataGrid Style="{StaticResource MainListDataGrid}"
+                              ItemsSource="{Binding CommunityGearShortagesView}" RowHeight="44">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="장비" Width="2*"
+                                                    CellStyle="{StaticResource FullHeightDataGridCell}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource FullHeightRarityAccentCell}"
+                                                ToolTip="{Binding ToolTipText}">
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center">
+                                                <Image
+                                                    Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                    Width="30" Height="30" Stretch="Uniform"
+                                                    Margin="0,0,8,0" />
+                                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"
+                                                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="등급" Width="82"
+                                                    CellStyle="{StaticResource CenteredDataGridCell}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource RarityBadge}"
+                                                Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}}">
+                                            <TextBlock Text="{Binding Rarity}"
+                                                       Foreground="{DynamicResource RarityBadgeTextBrush}"
+                                                       HorizontalAlignment="Center" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="부족 대상" Binding="{Binding MissingForCount}" Width="96" />
+                            <DataGridTextColumn Header="주요 함선" Binding="{Binding TopShipNames}" Width="2*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

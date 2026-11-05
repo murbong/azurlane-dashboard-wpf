@@ -1,0 +1,110 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Publish Windows x64
+    runs-on: windows-latest
+
+    steps:
+      - name: Validate release ref
+        if: ${{ github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/v') }}
+        shell: pwsh
+        run: throw 'Run this workflow from a v* tag.'
+
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Publish standalone ZIP
+        shell: pwsh
+        run: >-
+          .\scripts\build_wpf_standalone.ps1
+          -Clean
+          -Zip
+
+      - name: Prepare release assets
+        id: assets
+        shell: pwsh
+        run: |
+          $source = Get-ChildItem -LiteralPath .\dist -File -Filter 'AzurLaneDashboard-win-x64-standalone-*.zip' |
+              Sort-Object LastWriteTimeUtc -Descending |
+              Select-Object -First 1
+
+          if (-not $source) {
+              throw 'Standalone publish ZIP was not created.'
+          }
+
+          $releaseDirectory = Join-Path $PWD 'artifacts\release'
+          New-Item -ItemType Directory -Path $releaseDirectory -Force | Out-Null
+
+          $tag = $env:GITHUB_REF_NAME
+          $zipName = "AzurLaneDashboard-$tag-win-x64.zip"
+          $zipPath = Join-Path $releaseDirectory $zipName
+          Copy-Item -LiteralPath $source.FullName -Destination $zipPath -Force
+
+          $checksumName = "$zipName.sha256"
+          $checksumPath = Join-Path $releaseDirectory $checksumName
+          $hash = (Get-FileHash -LiteralPath $zipPath -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  $zipName" | Set-Content -LiteralPath $checksumPath -Encoding utf8
+
+          "zip_path=$zipPath" >> $env:GITHUB_OUTPUT
+          "checksum_path=$checksumPath" >> $env:GITHUB_OUTPUT
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: AzurLaneDashboard-${{ github.ref_name }}-win-x64
+          path: artifacts/release/*
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Create or update GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ZIP_PATH: ${{ steps.assets.outputs.zip_path }}
+          CHECKSUM_PATH: ${{ steps.assets.outputs.checksum_path }}
+        run: |
+          $tag = $env:GITHUB_REF_NAME
+          $assets = @($env:ZIP_PATH, $env:CHECKSUM_PATH)
+
+          & gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) {
+              & gh release upload $tag @assets --clobber
+          }
+          else {
+              $arguments = @(
+                  'release', 'create', $tag,
+                  '--verify-tag',
+                  '--title', "Azur Lane Dashboard $tag",
+                  '--generate-notes'
+              )
+
+              if ($tag -match '-') {
+                  $arguments += '--prerelease'
+              }
+
+              $arguments += $assets
+              & gh @arguments
+          }
+
+          if ($LASTEXITCODE -ne 0) {
+              throw "GitHub Release command failed with exit code $LASTEXITCODE."
+          }

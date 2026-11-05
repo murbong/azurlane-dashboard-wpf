@@ -1,0 +1,62 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.InventorySearchBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <StackPanel Margin="0,0,0,12">
+  <Grid>
+   <Grid.ColumnDefinitions><ColumnDefinition Width="*" MaxWidth="520" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+   <Grid>
+    <TextBox x:Name="SearchBox" Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="현재 목록 검색" Padding="34,0,10,0" MinHeight="34" ToolTip="{Binding SearchHint}" />
+    <TextBlock Text="&#xE721;" Style="{StaticResource IconText}" FontSize="13" Foreground="{DynamicResource MutedBrush}" Margin="12,0,0,0" HorizontalAlignment="Left" IsHitTestVisible="False" />
+    <TextBlock Text="{Binding SearchHint}" Foreground="{DynamicResource MutedBrush}" Margin="35,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False" TextTrimming="CharacterEllipsis">
+     <TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Visibility" Value="Collapsed" /><Style.Triggers><DataTrigger Binding="{Binding Query}" Value=""><Setter Property="Visibility" Value="Visible" /></DataTrigger></Style.Triggers></Style></TextBlock.Style>
+    </TextBlock>
+   </Grid>
+   <ToggleButton x:Name="FilterToggle" Grid.Column="1" Style="{StaticResource FilterToggle}" MinHeight="34" Margin="8,0,0,0" ToolTip="정렬과 상세 필터 열기" AutomationProperties.Name="정렬 및 상세 필터">
+    <StackPanel Orientation="Horizontal">
+     <TextBlock Text="&#xE71C;" Style="{StaticResource IconText}" FontSize="12" Margin="0,0,7,0" />
+     <TextBlock Text="정렬·필터" VerticalAlignment="Center" />
+     <Ellipse Width="6" Height="6" Fill="{DynamicResource AccentBrush}" Margin="7,0,0,0" VerticalAlignment="Center"
+              Visibility="{Binding HasActiveFilters, Converter={StaticResource BoolToVisibilityConverter}}" />
+    </StackPanel>
+   </ToggleButton>
+   <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+    <TextBlock Text="{Binding FilterSummary}" VerticalAlignment="Center" FontSize="12" Margin="12,0,8,0">
+     <TextBlock.Style>
+      <Style TargetType="TextBlock">
+       <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
+       <Style.Triggers>
+        <DataTrigger Binding="{Binding HasActiveFilters}" Value="True"><Setter Property="Foreground" Value="{DynamicResource AccentBrush}" /></DataTrigger>
+       </Style.Triggers>
+      </Style>
+     </TextBlock.Style>
+    </TextBlock>
+    <Button Content="초기화" Command="{Binding ResetFiltersCommand}" IsEnabled="{Binding HasActiveFilters}" Style="{StaticResource QuietButton}" ToolTip="검색어와 현재 목록의 필터 초기화" />
+   </StackPanel>
+  </Grid>
+
+  <Border Style="{StaticResource InsetPanel}" Margin="0,10,0,0" Padding="14,12,14,4"
+          Visibility="{Binding IsChecked, ElementName=FilterToggle, Converter={StaticResource BoolToVisibilityConverter}}">
+   <WrapPanel>
+    <StackPanel Width="110" Margin="0,0,12,8">
+     <TextBlock Text="등급" Style="{StaticResource FieldLabel}" />
+     <ComboBox ItemsSource="{Binding RarityFilters}" SelectedItem="{Binding SelectedRarityFilter}" AutomationProperties.Name="등급 필터" />
+    </StackPanel>
+    <WrapPanel Visibility="{Binding IsShipFilterVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+     <StackPanel Width="180" Margin="0,0,12,8" Visibility="{Binding IsShipSortVisible, Converter={StaticResource BoolToVisibilityConverter}}"><TextBlock Text="정렬" Style="{StaticResource FieldLabel}" />
+      <DockPanel><Button DockPanel.Dock="Right" Content="{Binding ShipSortDirectionLabel}" Command="{Binding ToggleShipSortDirectionCommand}" ToolTip="{Binding ShipSortDirectionToolTip}" Width="34" Padding="0" Margin="6,0,0,0" /><ComboBox ItemsSource="{Binding ShipSortOptions}" SelectedItem="{Binding SelectedShipSortOption}" AutomationProperties.Name="함선 정렬" /></DockPanel>
+     </StackPanel>
+     <StackPanel Width="110" Margin="0,0,12,8"><TextBlock Text="함종" Style="{StaticResource FieldLabel}" /><ComboBox ItemsSource="{Binding ShipTypeFilters}" SelectedItem="{Binding SelectedShipTypeFilter}" AutomationProperties.Name="함종 필터" /></StackPanel>
+     <StackPanel Width="124" Margin="0,0,12,8"><TextBlock Text="진영" Style="{StaticResource FieldLabel}" /><ComboBox ItemsSource="{Binding NationFilters}" SelectedItem="{Binding SelectedNationFilter}" AutomationProperties.Name="진영 필터" /></StackPanel>
+     <StackPanel Width="130" Margin="0,0,12,8"><TextBlock Text="함선 상태" Style="{StaticResource FieldLabel}" /><ComboBox ItemsSource="{Binding ShipExtraFilters}" SelectedItem="{Binding SelectedShipExtraFilter}" AutomationProperties.Name="함선 상태 필터" /></StackPanel>
+    </WrapPanel>
+    <WrapPanel Visibility="{Binding IsEquipmentFilterVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+     <StackPanel Width="170" Margin="0,0,12,8"><TextBlock Text="정렬" Style="{StaticResource FieldLabel}" />
+      <DockPanel><Button DockPanel.Dock="Right" Content="{Binding EquipmentSortDirectionLabel}" Command="{Binding ToggleEquipmentSortDirectionCommand}" ToolTip="{Binding EquipmentSortDirectionToolTip}" Width="34" Padding="0" Margin="6,0,0,0" /><ComboBox ItemsSource="{Binding EquipmentSortOptions}" SelectedItem="{Binding SelectedEquipmentSortOption}" AutomationProperties.Name="장비 정렬" /></DockPanel>
+     </StackPanel>
+     <StackPanel Width="124" Margin="0,0,12,8"><TextBlock Text="장비 종류" Style="{StaticResource FieldLabel}" /><ComboBox ItemsSource="{Binding EquipmentTypeFilters}" SelectedItem="{Binding SelectedEquipmentTypeFilter}" AutomationProperties.Name="장비 종류 필터" /></StackPanel>
+     <StackPanel Width="124" Margin="0,0,12,8"><TextBlock Text="강화 및 보유" Style="{StaticResource FieldLabel}" /><ComboBox ItemsSource="{Binding EquipmentExtraFilters}" SelectedItem="{Binding SelectedEquipmentExtraFilter}" AutomationProperties.Name="장비 상태 필터" /></StackPanel>
+    </WrapPanel>
+   </WrapPanel>
+  </Border>
+ </StackPanel>
+</UserControl>

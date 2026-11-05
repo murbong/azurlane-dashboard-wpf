@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AzurLaneDashboard.Core\AzurLaneDashboard.Core.csproj" />
+    <ProjectReference Include="..\AzurLaneDashboard.Data\AzurLaneDashboard.Data.csproj" />
+    <ProjectReference Include="..\AzurLaneDashboard.Protocol\AzurLaneDashboard.Protocol.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SharpPcap" Version="6.3.1" />
+  </ItemGroup>
+
+</Project>

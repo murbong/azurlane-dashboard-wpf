@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\AzurLaneDashboard.Capture\AzurLaneDashboard.Capture.csproj" />
+    <ProjectReference Include="..\..\src\AzurLaneDashboard.Core\AzurLaneDashboard.Core.csproj" />
+    <ProjectReference Include="..\..\src\AzurLaneDashboard.Data\AzurLaneDashboard.Data.csproj" />
+    <ProjectReference Include="..\..\src\AzurLaneDashboard.Protocol\AzurLaneDashboard.Protocol.csproj" />
+    <ProjectReference Include="..\..\src\AzurLaneDashboard.Resources\AzurLaneDashboard.Resources.csproj" />
+  </ItemGroup>
+</Project>

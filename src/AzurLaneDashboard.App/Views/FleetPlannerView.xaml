@@ -1,0 +1,530 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.FleetPlannerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:AzurLaneDashboard.App.Views"
+             Foreground="{DynamicResource TextBrush}"
+             FontSize="13"
+             SizeChanged="OnSizeChanged">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="FleetPlannerShared.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="ContentTab" TargetType="RadioButton">
+                <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid Background="Transparent">
+                                <ContentPresenter Margin="12,7,12,10" />
+                                <Border x:Name="Indicator" Height="3" VerticalAlignment="Bottom" Margin="10,0"
+                                        CornerRadius="2,2,0,0" Background="{DynamicResource AccentBrush}" Visibility="Collapsed" />
+                                <Border x:Name="Focus" BorderBrush="{DynamicResource AccentBrush}" BorderThickness="2"
+                                        CornerRadius="6" Visibility="Collapsed" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="Focus" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <DataTemplate x:Key="ContentTabTemplate">
+                <RadioButton Style="{StaticResource ContentTab}" GroupName="FleetContent" Content="{Binding Label}"
+                             IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                             AutomationProperties.Name="{Binding Label, StringFormat={}{0} 목표 콘텐츠}" />
+            </DataTemplate>
+
+
+
+            <DataTemplate x:Key="SlotTemplate">
+                <Border x:Name="Tile" Margin="0,0,8,0" Padding="4" CornerRadius="8" Background="Transparent"
+                        BorderBrush="Transparent" BorderThickness="1" ToolTip="{Binding ToolTipText}"
+                        AutomationProperties.Name="{Binding ToolTipText}">
+                    <StackPanel>
+                        <Grid Height="76">
+                            <Border Style="{StaticResource Portrait}">
+                                <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="Uniform"
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </Border>
+                            <Border Style="{StaticResource RatingCorner}">
+                                <TextBlock Text="{Binding Rating}" FontWeight="Bold" FontSize="11" VerticalAlignment="Center"
+                                           HorizontalAlignment="Center" />
+                            </Border>
+                            <Border Width="18" Height="18" CornerRadius="0,6,0,6" HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Background="{DynamicResource GoodBrush}"
+                                    Visibility="{Binding HasUpgrade, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBlock Text="↑" FontWeight="Bold" FontSize="11" Foreground="{DynamicResource ShellBrush}"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </Grid>
+                        <TextBlock Text="{Binding Name}" Margin="0,6,0,0" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{Binding SubText}" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                                   TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{Binding PositionText}" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource AccentBrush}"
+                                   TextTrimming="CharacterEllipsis"
+                                   Visibility="{Binding HasPositionText, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    </StackPanel>
+                </Border>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="True">
+                        <DataTrigger.Binding>
+                            <MultiBinding Converter="{StaticResource StringEqualsConverter}">
+                                <Binding Path="ShipUid" />
+                                <Binding Path="DataContext.HighlightedShipUid"
+                                         RelativeSource="{RelativeSource AncestorType=UserControl}" />
+                            </MultiBinding>
+                        </DataTrigger.Binding>
+                        <Setter TargetName="Tile" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                        <Setter TargetName="Tile" Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <DataTemplate x:Key="FleetTemplate">
+                <StackPanel Margin="0,0,0,22">
+                    <DockPanel Margin="0,0,0,8">
+                        <TextBlock x:Name="Overlap" DockPanel.Dock="Right" Text="{Binding OverlapText}" FontSize="12"
+                                   Foreground="{DynamicResource MutedBrush}" VerticalAlignment="Bottom"
+                                   ToolTip="게임에 저장된 편성 중 가장 많이 겹치는 함대와 비교했습니다" />
+                        <TextBlock VerticalAlignment="Bottom" ToolTip="{Binding RoleSummary}">
+                            <Run Text="{Binding Title, Mode=OneWay}" FontSize="14" FontWeight="Bold" />
+                            <Run Text="{Binding ContextLabel, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                        </TextBlock>
+                    </DockPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="17" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="주력" FontSize="11" Foreground="{DynamicResource MutedBrush}" Margin="5,0,0,2" />
+                            <ItemsControl ItemsSource="{Binding MainSlots}" ItemTemplate="{StaticResource SlotTemplate}"
+                                          ItemsPanel="{StaticResource SlotRowPanel}" Focusable="False" />
+                        </StackPanel>
+                        <Rectangle Grid.Column="1" Width="1" Margin="0,18,8,4" HorizontalAlignment="Center"
+                                   Fill="{DynamicResource SubtleLineBrush}" />
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="전위" FontSize="11" Foreground="{DynamicResource MutedBrush}" Margin="5,0,0,2" />
+                            <ItemsControl ItemsSource="{Binding VanguardSlots}" ItemTemplate="{StaticResource SlotTemplate}"
+                                          ItemsPanel="{StaticResource SlotRowPanel}" Focusable="False" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding MatchesGameFleet}" Value="True">
+                        <Setter TargetName="Overlap" Property="Foreground" Value="{DynamicResource GoodBrush}" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding DiffersFromGameFleet}" Value="True">
+                        <Setter TargetName="Overlap" Property="Foreground" Value="{DynamicResource WarnBrush}" />
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <DataTemplate x:Key="TopCandidateTemplate">
+                <Border x:Name="Row" Padding="18,16" Background="Transparent"
+                        MouseEnter="OnCandidateEnter" MouseLeave="OnCandidateLeave"
+                        IsKeyboardFocusWithinChanged="OnCandidateFocusChanged">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="64" />
+                            <ColumnDefinition Width="14" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Style="{StaticResource Portrait}" Width="64" Height="64" VerticalAlignment="Top">
+                            <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="Uniform"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock TextWrapping="Wrap">
+                                <Run Text="{Binding Name, Mode=OneWay}" FontSize="16" FontWeight="Bold" />
+                                <Run Text="{Binding TitleSubText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                            </TextBlock>
+                            <TextBlock Margin="0,3,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}">
+                                <Run Text="{Binding EffectText, Mode=OneWay}" />
+                                <Run Text="·" />
+                                <Run Text="{Binding ReplacesText, Mode=OneWay}" />
+                            </TextBlock>
+                            <TextBlock Margin="0,6,0,0" TextWrapping="Wrap">
+                                <Run Text="{Binding GainText, Mode=OneWay}" Foreground="{DynamicResource GoodBrush}" FontWeight="SemiBold"
+                                     ToolTip="커뮤니티 추정치를 교체될 함선과 비교했습니다" />
+                                <Run Text="{Binding ReachSuffix, Mode=OneWay}" Foreground="{DynamicResource SecondaryTextBrush}" />
+                            </TextBlock>
+                            <WrapPanel Margin="0,8,0,0">
+                                <Border Style="{StaticResource GoalTag}">
+                                    <Border.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="isgoalvisible"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Border.Visibility>
+                                    <TextBlock Text="★ 육성 목표" />
+                                </Border>
+                                <Border Style="{StaticResource QueueRankTag}">
+                                    <Border.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="present"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Border.Visibility>
+                                    <TextBlock><TextBlock.Text><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="rank"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></TextBlock.Text></TextBlock>
+                                </Border>
+                                <Border Style="{StaticResource PlanTag}">
+                                    <Border.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="present"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Border.Visibility>
+                                    <TextBlock><TextBlock.Text><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="plan"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></TextBlock.Text></TextBlock>
+                                </Border>
+                                <TextBlock FontSize="12">
+                                    <TextBlock.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="missing"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></TextBlock.Visibility>
+                                    <Run Text="{Binding CostText, Mode=OneWay}" />
+                                    <Run Text="{Binding BasisText, Mode=OneWay}" FontSize="11" Foreground="{DynamicResource MutedBrush}" />
+                                </TextBlock>
+                            </WrapPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                                <Button Style="{StaticResource QueuePinButton}" Height="30" MinWidth="92"
+                                        Command="{Binding DataContext.TogglePinCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding ShipUid}"
+                                        AutomationProperties.Name="{Binding Name, StringFormat={}{0} 육성 목표 고정}">
+                                    <Button.DataContext><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="row"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Button.DataContext>
+                                    <Button.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="present"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Button.Visibility>
+                                </Button>
+                                <Button Content="목표에 추가" Style="{StaticResource PrimaryButton}" Height="30" MinWidth="92"
+                                        Command="{Binding DataContext.AddGoalCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        AutomationProperties.Name="{Binding Name, StringFormat={}{0} 육성 목표에 추가}">
+                                    <Button.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="missing"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Button.Visibility>
+                                </Button>
+                                <Button Content="대기열에서 보기" Style="{StaticResource QuietButton}" Height="30" Margin="6,0,0,0"
+                                        Command="{Binding DataContext.OpenGrowthQueueCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                                    <Button.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="present"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Button.Visibility>
+                                </Button>
+                                <Button Content="함선 상세" Style="{StaticResource QuietButton}" Height="30" Margin="6,0,0,0"
+                                        Command="{Binding DataContext.OpenShipCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        AutomationProperties.Name="{Binding Name, StringFormat={}{0} 함선 상세 열기}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <DataTemplate.Triggers>
+                    <Trigger SourceName="Row" Property="IsMouseOver" Value="True">
+                        <Setter TargetName="Row" Property="Background" Value="{DynamicResource ControlHoverBrush}" />
+                    </Trigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <DataTemplate x:Key="CandidateRowTemplate">
+                <Border x:Name="Row" Padding="18,10,10,10" Background="Transparent"
+                        BorderBrush="{DynamicResource SubtleLineBrush}" BorderThickness="0,1,0,0"
+                        MouseEnter="OnCandidateEnter" MouseLeave="OnCandidateLeave"
+                        IsKeyboardFocusWithinChanged="OnCandidateFocusChanged">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="12" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Border Style="{StaticResource Portrait}" Width="40" Height="40" BorderThickness="0,0,0,2"
+                                VerticalAlignment="Center">
+                            <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="Uniform"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                            <TextBlock TextTrimming="CharacterEllipsis">
+                                <Run Text="{Binding Name, Mode=OneWay}" FontWeight="SemiBold" />
+                                <Run Text="{Binding TitleSubText, Mode=OneWay}" FontSize="11" Foreground="{DynamicResource MutedBrush}" />
+                            </TextBlock>
+                            <TextBlock FontSize="12" TextTrimming="CharacterEllipsis">
+                                <Run Text="{Binding EffectText, Mode=OneWay}" Foreground="{DynamicResource SecondaryTextBrush}" />
+                                <Run Text="{Binding ReplacesText, Mode=OneWay}" Foreground="{DynamicResource MutedBrush}" />
+                                <Run Text="{Binding GainText, Mode=OneWay}" Foreground="{DynamicResource GoodBrush}" FontWeight="SemiBold" />
+                            </TextBlock>
+                            <TextBlock FontSize="11" Foreground="{DynamicResource MutedBrush}" TextTrimming="CharacterEllipsis">
+                                <Run>
+                                    <Run.Text><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="rankplan" Mode="OneWay"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /><Binding Path="CostText" /></MultiBinding></Run.Text>
+                                </Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center" Margin="8,0,0,0">
+                            <Button Style="{StaticResource QueuePinButton}"
+                                    Command="{Binding DataContext.TogglePinCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding ShipUid}"
+                                    AutomationProperties.Name="{Binding Name, StringFormat={}{0} 육성 목표 고정}">
+                                <Button.DataContext><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="row"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Button.DataContext>
+                                <Button.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="present"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Button.Visibility>
+                            </Button>
+                            <Button Content="목표에 추가" Style="{StaticResource QuietButton}" Height="28"
+                                    Command="{Binding DataContext.AddGoalCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    AutomationProperties.Name="{Binding Name, StringFormat={}{0} 육성 목표에 추가}">
+                                <Button.Visibility><MultiBinding Converter="{StaticResource QueueInfoConverter}" ConverterParameter="missing"><Binding Path="ShipUid" /><Binding Path="DataContext.QueueIndex" RelativeSource="{RelativeSource AncestorType=UserControl}" /></MultiBinding></Button.Visibility>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <DataTemplate.Triggers>
+                    <Trigger SourceName="Row" Property="IsMouseOver" Value="True">
+                        <Setter TargetName="Row" Property="Background" Value="{DynamicResource ControlHoverBrush}" />
+                    </Trigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ChangePartTemplate">
+                <StackPanel Orientation="Horizontal" Margin="0,0,14,0">
+                    <TextBlock Text="{Binding Label}" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12" />
+                    <TextBlock x:Name="Delta" Text="{Binding DeltaText}" Margin="5,0,0,0" FontWeight="SemiBold" FontSize="12"
+                               Foreground="{DynamicResource DangerBrush}" />
+                </StackPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding HasDelta}" Value="False">
+                        <Setter TargetName="Delta" Property="Visibility" Value="Collapsed" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding IsUp}" Value="True">
+                        <Setter TargetName="Delta" Property="Foreground" Value="{DynamicResource GoodBrush}" />
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <!-- Always two lines (ships, then changes) so rows keep one rhythm at every width. -->
+            <DataTemplate x:Key="ChangeTemplate">
+                <Grid Margin="0,0,0,10" Background="Transparent" ToolTip="{Binding OriginalText}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding DateText}" FontSize="12" Foreground="{DynamicResource MutedBrush}" Margin="0,1,0,0" />
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="{Binding ShipText}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                        <ItemsControl ItemsSource="{Binding Parts}" ItemTemplate="{StaticResource ChangePartTemplate}" Focusable="False"
+                                      ClipToBounds="True">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate x:Key="FinishTemplate">
+                <DockPanel>
+                    <Button DockPanel.Dock="Right" Content="목표에 추가" Style="{StaticResource QuietButton}" Height="28"
+                            Command="{Binding DataContext.AddGoalCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            CommandParameter="{Binding}"
+                            AutomationProperties.Name="{Binding Name, StringFormat={}{0} 마무리 목표에 추가}" />
+                    <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                        <Run Text="{Binding Name, Mode=OneWay}" FontWeight="SemiBold" />
+                        <Run Text="{Binding Detail, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}" />
+                    </TextBlock>
+                </DockPanel>
+            </DataTemplate>
+
+            <Style x:Key="ShowWhenNoCandidates" TargetType="FrameworkElement">
+                <Setter Property="Visibility" Value="Collapsed" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding SelectedContent.HasCandidates}" Value="False">
+                        <Setter Property="Visibility" Value="Visible" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="ShowWhenNoFleets" TargetType="FrameworkElement">
+                <Setter Property="Visibility" Value="Collapsed" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding SelectedContent.HasFleets}" Value="False">
+                        <Setter Property="Visibility" Value="Visible" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="ShowWhenNoChanges" TargetType="FrameworkElement">
+                <Setter Property="Visibility" Value="Collapsed" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding HasRatingChanges}" Value="False">
+                        <Setter Property="Visibility" Value="Visible" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Focusable="False">
+        <Grid Margin="0,0,14,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Target content tabs -->
+            <Border BorderBrush="{DynamicResource SubtleLineBrush}" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <WrapPanel KeyboardNavigation.TabNavigation="Once">
+                        <StackPanel Margin="0,0,20,0">
+                            <TextBlock Text="해역" FontSize="11" Foreground="{DynamicResource MutedBrush}" Margin="12,0,0,0" />
+                            <ItemsControl ItemsSource="{Binding ChapterTabs}" ItemTemplate="{StaticResource ContentTabTemplate}"
+                                          Focusable="False">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                        <StackPanel Margin="0,0,20,0">
+                            <TextBlock Text="단일 보스전" FontSize="11" Foreground="{DynamicResource MutedBrush}" Margin="12,0,0,0" />
+                            <ItemsControl ItemsSource="{Binding BossTabs}" ItemTemplate="{StaticResource ContentTabTemplate}"
+                                          Focusable="False">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="레벨링" FontSize="11" Foreground="{DynamicResource MutedBrush}" Margin="12,0,0,0" />
+                            <ItemsControl ItemsSource="{Binding LevelingTabs}" ItemTemplate="{StaticResource ContentTabTemplate}"
+                                          Focusable="False">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                    </WrapPanel>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Bottom" Margin="16,0,0,10" Background="Transparent"
+                                ToolTipService.ShowDuration="30000">
+                        <StackPanel.ToolTip>
+                            <TextBlock MaxWidth="360" TextWrapping="Wrap"
+                                       Text="등급과 피해량은 커뮤니티 사이트 Regal의 평가입니다. 추천 편성은 Lv.120 이상 보유 함선을 콘텐츠 등급, 같은 등급이면 예상 피해량 순으로 고릅니다. 다음 육성은 편성 개선 효과를 필요 EXP로 나눈 순서이며, 스킬 간 세부 시너지는 반영하지 않습니다." />
+                        </StackPanel.ToolTip>
+                        <TextBlock HorizontalAlignment="Right" FontSize="12" Foreground="{DynamicResource MutedBrush}">
+                            <Run Text="커뮤니티 평가" />
+                            <Run Text="{Binding RatingSourceText, Mode=OneWay}" Foreground="{DynamicResource SecondaryTextBrush}" />
+                            <Run Text="&#xE946;" FontFamily="{StaticResource IconFontFamily}" FontSize="11" />
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Right" Text="{Binding RosterText}" FontSize="12"
+                                   Foreground="{DynamicResource MutedBrush}" Margin="0,2,0,0" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- No data at all -->
+            <StackPanel Grid.Row="1" Margin="0,24,0,0" MaxWidth="520" HorizontalAlignment="Left"
+                        Visibility="{Binding IsEmpty, Converter={StaticResource BoolToVisibilityConverter}}">
+                <TextBlock Text="편성 추천을 만들 데이터가 아직 없습니다" FontSize="16" FontWeight="SemiBold" />
+                <TextBlock Margin="0,6,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}"
+                           Text="게임에서 도크를 열어 함선 정보를 수집하고, 설정 → 업데이트로 커뮤니티 평가를 받은 뒤 새로고침하세요." />
+            </StackPanel>
+
+            <!-- 쫄작 and META 보스전 have their own layouts; the other contents share the body below. -->
+            <views:LevelingPlanView Grid.Row="1" Margin="0,18,0,0"
+                                    Visibility="{Binding ShowsLevelingBody, Converter={StaticResource BoolToVisibilityConverter}}" />
+            <views:MetaBossPlanView Grid.Row="1" Margin="0,18,0,0"
+                                    Visibility="{Binding ShowsMetaBody, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+            <Grid x:Name="Body" Grid.Row="1" Margin="0,18,0,0"
+                  Visibility="{Binding ShowsStandardBody, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="MainColumn" Width="3*" />
+                    <ColumnDefinition x:Name="GapColumn" Width="20" />
+                    <ColumnDefinition x:Name="SideColumn" Width="2*" MinWidth="340" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Recommended fleets -->
+                <StackPanel x:Name="FleetSection">
+                    <TextBlock Text="추천 편성" Style="{StaticResource SectionHeading}" Margin="0,0,0,10" />
+                    <Border Style="{StaticResource SectionPanel}" Padding="18,16,10,14">
+                        <StackPanel>
+                            <ItemsControl ItemsSource="{Binding SelectedContent.Fleets}" ItemTemplate="{StaticResource FleetTemplate}"
+                                          Focusable="False" />
+                            <TextBlock Style="{StaticResource ShowWhenNoFleets}" Margin="0,0,0,16" TextWrapping="Wrap"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       Text="이 콘텐츠의 커뮤니티 등급이 있는 Lv.120 이상 함선이 없습니다. 다음 육성 목록의 함선을 먼저 키워 보세요." />
+                            <DockPanel Margin="0,0,8,0">
+                                <TextBlock DockPanel.Dock="Right" Text="* 특정 보스·상황 한정 등급" FontSize="11"
+                                           Foreground="{DynamicResource MutedBrush}" VerticalAlignment="Center" />
+                                <TextBlock x:Name="Completion" Text="{Binding SelectedContent.CompletionText}" FontSize="12"
+                                           VerticalAlignment="Center"
+                                           Visibility="{Binding SelectedContent.HasFleets, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding SelectedContent.IsFleetFinished}" Value="True">
+                                                    <Setter Property="Foreground" Value="{DynamicResource GoodBrush}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DockPanel>
+                            <!-- Missing gear is not a growth goal, so it is one summary line with names in the tooltip. -->
+                            <TextBlock Text="{Binding SelectedContent.EquipmentGapText}" Margin="0,6,8,0" FontSize="12"
+                                       Foreground="{DynamicResource WarnBrush}" TextTrimming="CharacterEllipsis"
+                                       ToolTip="{Binding SelectedContent.EquipmentGapToolTip}"
+                                       Visibility="{Binding SelectedContent.HasEquipmentGaps, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <!-- Next growth steps and rating changes -->
+                <StackPanel x:Name="SideSection" Grid.Column="2">
+                    <!-- The confirmation shares the heading line so adding a goal never shifts the list. -->
+                    <DockPanel Margin="0,0,0,10">
+                        <TextBlock DockPanel.Dock="Left">
+                            <Run Text="다음 육성" FontSize="16" FontWeight="Bold" />
+                            <Run Text="{Binding SelectedContent.CandidateCountText, Mode=OneWay}" FontSize="12"
+                                 Foreground="{DynamicResource MutedBrush}" />
+                        </TextBlock>
+                        <TextBlock Text="{Binding Feedback}" Foreground="{DynamicResource GoodBrush}" FontSize="12"
+                                   FontWeight="SemiBold" TextTrimming="CharacterEllipsis" TextAlignment="Right"
+                                   VerticalAlignment="Bottom" Margin="12,0,0,1" ToolTip="{Binding Feedback}"
+                                   AutomationProperties.LiveSetting="Polite" />
+                    </DockPanel>
+                    <Border Style="{StaticResource SectionPanel}" Padding="0" ClipToBounds="True">
+                        <StackPanel>
+                            <ContentControl Content="{Binding SelectedContent.TopCandidate}" Focusable="False"
+                                            ContentTemplate="{StaticResource TopCandidateTemplate}"
+                                            Visibility="{Binding SelectedContent.HasCandidates, Converter={StaticResource BoolToVisibilityConverter}}" />
+                            <ItemsControl ItemsSource="{Binding SelectedContent.OtherCandidates}"
+                                          ItemTemplate="{StaticResource CandidateRowTemplate}" Focusable="False" />
+                            <StackPanel Margin="18,16" Style="{StaticResource ShowWhenNoCandidates}">
+                                <TextBlock Text="지금 키울 함선이 없습니다" FontWeight="SemiBold" />
+                                <TextBlock Margin="0,4,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}"
+                                           Text="보유 함선 중 이 콘텐츠의 편성을 바꿀 후보가 없습니다. 새 함선을 얻으면 다시 계산합니다." />
+                            </StackPanel>
+                            <Border Padding="18,12,10,10" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,1,0,0"
+                                    Visibility="{Binding SelectedContent.HasFinishItems, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <StackPanel>
+                                    <TextBlock Text="편성 함선 마무리" FontSize="12" FontWeight="SemiBold"
+                                               Foreground="{DynamicResource MutedBrush}" Margin="0,0,0,2" />
+                                    <ItemsControl ItemsSource="{Binding SelectedContent.FinishItems}"
+                                                  ItemTemplate="{StaticResource FinishTemplate}" Focusable="False" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Margin="0,22,0,10">
+                        <Run Text="평가 변화" FontSize="16" FontWeight="Bold" />
+                        <Run Text="최근 4주 · 내 함선" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                    </TextBlock>
+                    <ItemsControl ItemsSource="{Binding RatingChanges}" ItemTemplate="{StaticResource ChangeTemplate}"
+                                  Focusable="False" />
+                    <TextBlock Style="{StaticResource ShowWhenNoChanges}" TextWrapping="Wrap"
+                               Foreground="{DynamicResource SecondaryTextBrush}"
+                               Text="최근 4주 동안 보유 함선과 관련된 평가 변화가 없습니다." />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

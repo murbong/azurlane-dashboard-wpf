@@ -1,0 +1,160 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.SystemsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ItemsControl ItemsSource="{Binding SystemStatuses}" Margin="0,0,-8,0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="4" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource KpiCard}" Margin="0,0,8,8" Padding="14,10">
+                        <StackPanel>
+                            <DockPanel>
+                                <Grid DockPanel.Dock="Right" Margin="8,0,0,0" VerticalAlignment="Center">
+                                    <Ellipse Width="7" Height="7" Fill="{DynamicResource GoodBrush}" ToolTip="{Binding StatusLabel}"
+                                             HorizontalAlignment="Right"
+                                             Visibility="{Binding IsRoutine, Converter={StaticResource BoolToVisibilityConverter}}" />
+                                    <Border Style="{StaticResource StatusBadgeChip}" Margin="0" MinHeight="20" Padding="7,1"
+                                            Visibility="{Binding IsNotable, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <TextBlock Text="{Binding StatusLabel}" FontSize="11" FontWeight="SemiBold" />
+                                    </Border>
+                                </Grid>
+                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                            </DockPanel>
+                            <TextBlock Text="{Binding Detail}"
+                                       Style="{StaticResource MutedText}"
+                                       TextTrimming="CharacterEllipsis"
+                                       ToolTip="{Binding Detail}"
+                                       Margin="0,4,0,0" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TabControl Grid.Row="1" Margin="0,8,0,0">
+            <TabItem Header="스킬 교실">
+                <DataGrid ItemsSource="{Binding AcademyRooms}" RowHeight="46">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="방" Binding="{Binding RoomId}" Width="60" />
+                        <DataGridTemplateColumn Header="함선" Width="2*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                Cursor="Hand">
+                                        <StackPanel.InputBindings>
+                                            <MouseBinding MouseAction="LeftClick"
+                                                          Command="{Binding DataContext.OpenShipDetailCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                                          CommandParameter="{Binding}" />
+                                        </StackPanel.InputBindings>
+                                        <Image Source="{Binding ShipIconUrl, Converter={StaticResource AssetImageConverter}}" Width="30" Height="30" Stretch="UniformToFill" Margin="0,0,8,0" />
+                                        <TextBlock Text="{Binding ShipName}" FontWeight="SemiBold" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="스킬" Binding="{Binding SkillName}" Width="220"
+                                            ElementStyle="{StaticResource CenteredDataGridText}" />
+                        <DataGridTextColumn Header="완료" Binding="{Binding FinishAt}" Width="130" />
+                        <DataGridTextColumn Header="남은 시간" Binding="{Binding Remaining}" Width="130" />
+                        <DataGridTextColumn Header="EXP" Binding="{Binding Exp, StringFormat={}{0:N0}}" Width="100" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="연구">
+                <DataGrid ItemsSource="{Binding ResearchQueue}" RowHeight="42">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="순서" Binding="{Binding Order}" Width="70" />
+                        <DataGridTextColumn Header="연구 ID" Binding="{Binding Id}" Width="120" />
+                        <DataGridTextColumn Header="완료" Binding="{Binding FinishAt}" Width="140" />
+                        <DataGridTextColumn Header="남은 시간" Binding="{Binding Remaining}" Width="140" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="의뢰">
+                <DataGrid ItemsSource="{Binding Commissions}" RowHeight="42">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="의뢰 ID" Binding="{Binding Id}" Width="120" />
+                        <DataGridTextColumn Header="완료" Binding="{Binding FinishAt}" Width="140" />
+                        <DataGridTextColumn Header="남은 시간" Binding="{Binding Remaining}" Width="140" />
+                        <DataGridTextColumn Header="함선" Binding="{Binding ShipNames}" Width="2*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="건조">
+                <DataGrid ItemsSource="{Binding Builds}" RowHeight="42">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="슬롯" Binding="{Binding Slot}" Width="80" />
+                        <DataGridTextColumn Header="상태" Binding="{Binding StatusLabel}" Width="120" />
+                        <DataGridTextColumn Header="시작" Binding="{Binding StartedAt}" Width="140" />
+                        <DataGridTextColumn Header="완료" Binding="{Binding FinishAt}" Width="140" />
+                        <DataGridTextColumn Header="남은 시간" Binding="{Binding Remaining}" Width="140" />
+                        <DataGridTextColumn Header="결과" Binding="{Binding ResultName}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="자원">
+                <DataGrid ItemsSource="{Binding Resources}" RowHeight="46">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="자원" Width="2*" SortMemberPath="Label">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <!-- The item's icon on its rarity frame, as the game lists rewards. -->
+                                        <Border Width="36"
+                                                Height="36"
+                                                Margin="0,0,10,0"
+                                                Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=cell}"
+                                                BorderBrush="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=bar}"
+                                                BorderThickness="1"
+                                                CornerRadius="6"
+                                                Padding="2">
+                                            <Grid>
+                                                <TextBlock Text="{Binding Initial}"
+                                                           FontWeight="Bold"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Foreground="{DynamicResource MutedBrush}" />
+                                                <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                       Stretch="Uniform"
+                                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                                            </Grid>
+                                        </Border>
+                                        <TextBlock Text="{Binding Label}"
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="SemiBold"
+                                                   TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="구분" Binding="{Binding GroupLabel}" Width="110" />
+                        <DataGridTemplateColumn Header="수량" Width="140" SortMemberPath="Count">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Count, StringFormat={}{0:N0}}"
+                                               HorizontalAlignment="Right"
+                                               VerticalAlignment="Center"
+                                               Margin="0,0,12,0"
+                                               FontWeight="SemiBold" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

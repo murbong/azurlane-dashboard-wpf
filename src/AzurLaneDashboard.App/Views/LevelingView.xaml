@@ -1,0 +1,118 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.LevelingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:AzurLaneDashboard.App.Views">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Kept visible on every section so the tab row does not jump when switching sections. -->
+        <TextBlock Text="{Binding BattleSummaryText}"
+                   Style="{StaticResource MutedText}"
+                   TextTrimming="CharacterEllipsis"
+                   Margin="0,0,0,6" />
+
+        <TabControl x:Name="LevelSections" Grid.Row="1" SelectedIndex="{Binding SelectedLevelSectionIndex, Mode=TwoWay}">
+            <views:TabTools.Content>
+                <views:InventorySearchBar Visibility="{Binding IsInventorySearchVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
+            </views:TabTools.Content>
+            <TabItem Header="쩔 대기열">
+                <views:GrowthQueueView DataContext="{Binding FleetPlanner}" />
+            </TabItem>
+            <TabItem Header="내 육성 목표">
+                <views:GrowthPlannerView DataContext="{Binding GrowthPlanner}" />
+            </TabItem>
+            <TabItem Header="전투 기록">
+                <DataGrid Style="{StaticResource MainListDataGrid}"
+                          ItemsSource="{Binding BattleRuns}"
+                          RowHeight="46">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="스테이지" Binding="{Binding StageLabel}" Width="2*" ElementStyle="{StaticResource CenteredDataGridText}" />
+                        <DataGridTextColumn Header="상세" Binding="{Binding StageDetail}" Width="90" />
+                        <DataGridTextColumn Header="시간" Binding="{Binding TotalTime, StringFormat={}{0:N0}s}" Width="86" />
+                        <DataGridTextColumn Header="총 EXP" Binding="{Binding ShipExpTotal, StringFormat={}{0:N0}}" Width="100" />
+                        <DataGridTextColumn Header="평균 EXP" Binding="{Binding ShipExpAvg, StringFormat={}{0:N0}}" Width="100" />
+                        <DataGridTextColumn Header="MVP" Binding="{Binding MvpName}" Width="*" ElementStyle="{StaticResource CenteredDataGridText}" />
+                        <DataGridTextColumn Header="주요 EXP" Binding="{Binding TopExpSummary}" Width="2.4*" ElementStyle="{StaticResource CenteredDataGridText}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="장비 빈칸">
+                <DataGrid Style="{StaticResource MainListDataGrid}"
+                          ItemsSource="{Binding GearGapsView}"
+                          SelectedItem="{Binding SelectedGearGap, Mode=TwoWay}"
+                          RowHeight="58">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="함선" Width="210" MinWidth="180"
+                                                CellStyle="{StaticResource FullHeightDataGridCell}"
+                                                CellTemplate="{StaticResource ShipIdentityCellTemplate}" />
+                        <DataGridTextColumn Header="Lv" Binding="{Binding Level}" Width="60" />
+                        <DataGridTextColumn Header="빈칸" Binding="{Binding EmptySlots}" Width="70" />
+                        <DataGridTemplateColumn Header="장착 장비" Width="3*"
+                                                CellStyle="{StaticResource CenteredDataGridCell}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding LoadoutSlots}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Width="44"
+                                                        Height="44"
+                                                        Background="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=cell}"
+                                                        BorderBrush="{Binding Rarity, Converter={StaticResource RarityBrushConverter}, ConverterParameter=bar}"
+                                                        BorderThickness="3,0,0,0"
+                                                        CornerRadius="7"
+                                                        Padding="3"
+                                                        Margin="0,0,6,0"
+                                                        ToolTip="{Binding ToolTipText}">
+                                                    <Grid>
+                                                        <Image Source="{Binding DisplayIconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                               Stretch="Uniform" />
+                                                        <Border Width="18"
+                                                                Height="18"
+                                                                HorizontalAlignment="Left"
+                                                                VerticalAlignment="Bottom"
+                                                                Background="{DynamicResource SurfaceBrush}"
+                                                                BorderBrush="{DynamicResource LineBrush}"
+                                                                BorderThickness="1"
+                                                                CornerRadius="4"
+                                                                Visibility="{Binding ShowSkinThumbnail, Converter={StaticResource BoolToVisibilityConverter}}">
+                                                            <Image Source="{Binding SkinIconUrl, Converter={StaticResource AssetImageConverter}}"
+                                                                   Stretch="UniformToFill" />
+                                                        </Border>
+                                                        <TextBlock Text="{Binding SlotTag}"
+                                                                   HorizontalAlignment="Left"
+                                                                   VerticalAlignment="Top"
+                                                                   FontSize="10"
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding EnhanceText}"
+                                                                   HorizontalAlignment="Right"
+                                                                   VerticalAlignment="Bottom"
+                                                                   FontSize="10"
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding SkinTag}"
+                                                                   HorizontalAlignment="Right"
+                                                                   VerticalAlignment="Top"
+                                                                   FontSize="10"
+                                                                   FontWeight="Bold" />
+                                                    </Grid>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

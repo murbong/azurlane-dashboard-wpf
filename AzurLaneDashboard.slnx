@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AzurLaneDashboard.Capture/AzurLaneDashboard.Capture.csproj" />
+    <Project Path="src/AzurLaneDashboard.Core/AzurLaneDashboard.Core.csproj" />
+    <Project Path="src/AzurLaneDashboard.Data/AzurLaneDashboard.Data.csproj" />
+    <Project Path="src/AzurLaneDashboard.App/AzurLaneDashboard.App.csproj" />
+    <Project Path="src/AzurLaneDashboard.Automation/AzurLaneDashboard.Automation.csproj" />
+    <Project Path="src/AzurLaneDashboard.Protocol/AzurLaneDashboard.Protocol.csproj" />
+    <Project Path="src/AzurLaneDashboard.Resources/AzurLaneDashboard.Resources.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AzurLaneDashboard.App.Checks/AzurLaneDashboard.App.Checks.csproj" />
+    <Project Path="tests/AzurLaneDashboard.Automation.Checks/AzurLaneDashboard.Automation.Checks.csproj" />
+    <Project Path="tests/AzurLaneDashboard.Core.Checks/AzurLaneDashboard.Core.Checks.csproj" />
+  </Folder>
+</Solution>

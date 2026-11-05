@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "verified": true,
+  "lastReviewed": "2026-11-06",
+  "note": "Hand-curated. Roles and talent priorities summarise the sources below in our own words; no source text is copied. Talents are KR commander_ability_template group ids (maps/commanders.json). The update flow must not overwrite this file. Research notes: docs/meowfficer-guide-sources.md.",
+  "sources": [
+    {
+      "title": "Riceist · Meowfficer Guide",
+      "url": "https://azurlane.koumakan.jp/wiki/User:Riceist/CatGuide",
+      "author": "Riceist",
+      "revision": "2024-11-25",
+      "license": "CC BY-NC-SA 4.0",
+      "role": "primary"
+    },
+    {
+      "title": "아카라이브 벽람항로 채널 · 간단 지휘냥 가이드",
+      "url": "https://arca.live/b/azurlane/27309030",
+      "author": "Enterprise",
+      "revision": "2023-04-10 (작성자 2025-12-10 재확인)",
+      "license": "",
+      "role": "secondary"
+    }
+  ],
+  "rubric": {
+    "usable": 2,
+    "good": 3,
+    "god": 4,
+    "note": "Starting talents: points of wanted talents for the cat's fleet. Good and God also need a special talent (the fleet's own or Flame)."
+  },
+  "fleetTypes": {
+    "BB": { "label": "전함", "core": [502, 510, 12, 202], "filler": [513, 511, 63, 509], "special": [502] },
+    "CV": { "label": "항모", "core": [510, 504, 203, 30], "filler": [513, 511, 64, 213, 211, 509], "special": [504] },
+    "CL_TORP": { "label": "순양(뇌격)", "core": [510, 22, 201], "filler": [513, 213, 511, 503, 509, 91, 214], "special": [503, 501] },
+    "CL_GUN": { "label": "순양(포격)", "core": [510, 501, 11, 201], "filler": [513, 511, 509, 214, 212, 91], "special": [501] },
+    "DD_TORP": { "label": "구축(뇌격)", "core": [503, 510, 21, 200], "filler": [513, 213, 511, 512, 214], "special": [503] },
+    "DD_GUN": { "label": "구축(포격)", "core": [513, 510, 10], "filler": [511, 214, 212], "special": [503] },
+    "SS": { "label": "잠수", "core": [505, 204, 60, 20], "filler": [513, 214, 213], "special": [505] },
+    "ANY": { "label": "범용", "core": [510], "filler": [513, 511, 509, 512], "special": [] }
+  },
+  "flameGroup": 510,
+  "roles": {
+    "10021": { "fleet": "BB", "slot": "지휘", "stance": "top", "summary": "전함 함대 지휘 최상" },
+    "20011": { "fleet": "BB", "slot": "참모", "stance": "top", "summary": "화력 버프와 피해 증가 · 보스전" },
+    "40021": { "fleet": "BB", "slot": "참모", "stance": "top", "summary": "선제공격 · 잡몹 주회에 가장 좋고 보스전도 견실" },
+    "21041": { "fleet": "BB", "slot": "참모", "stance": "ok", "summary": "전함 참모 대용" },
+    "20021": { "fleet": "BB", "slot": "지휘", "stance": "ok", "summary": "HMS 4척 조건 · 생존용", "disputed": "중국 BWIKI와 아카 2021 글은 육성 비추천" },
+    "30011": { "fleet": "CV", "slot": "참모", "stance": "top", "summary": "항공·장전 · 이벤트 주회" },
+    "31011": { "fleet": "CV", "slot": "참모", "stance": "top", "summary": "선제공습 · 잡몹 주회" },
+    "11021": { "fleet": "CV", "slot": "참모", "stance": "ok", "summary": "항공·장전" },
+    "21031": { "fleet": "CV", "slot": "참모", "stance": "ok", "summary": "명중·항공" },
+    "30021": { "fleet": "CL_GUN", "slot": "지휘", "stance": "top", "summary": "전열에 필요한 스탯을 모두 줌" },
+    "21011": { "fleet": "CL_GUN", "slot": "참모", "stance": "ok", "summary": "무난한 순양 참모" },
+    "31021": { "fleet": "DD_TORP", "slot": "참모", "stance": "top", "summary": "뇌장을 주는 유일한 구축 냥" },
+    "11011": { "fleet": "DD_TORP", "slot": "지휘", "stance": "ok", "summary": "선제공격·탄막 · 선두가 구축일 때" },
+    "10011": { "fleet": "DD_TORP", "slot": "지휘", "stance": "ok", "summary": "선제공격 · 잡몹 함대" },
+    "40011": { "fleet": "SS", "slot": "지휘", "stance": "top", "summary": "잠수 1순위 · 출처 모두 일치" },
+    "41021": { "fleet": "SS", "slot": "참모", "stance": "top", "summary": "잠수 참모 · 헤일보다 위" },
+    "41031": { "fleet": "SS", "slot": "참모", "stance": "ok", "summary": "잠수 참모 · 모허 다음" },
+    "960011": { "fleet": "BB", "slot": "지휘", "stance": "ok", "summary": "전함 함대에서 꽤 좋음 · 불·생즉사·화력 재능을 갖춘 일반 냥이 생기면 교체" },
+    "960041": { "fleet": "ANY", "slot": "지휘", "stance": "top", "summary": "범용 지휘 · 불과 회복" },
+    "960021": { "fleet": "ANY", "slot": "지휘", "stance": "weak", "summary": "매우 빈약 · 곧 교체" },
+    "960051": { "fleet": "ANY", "slot": "지휘", "stance": "weak", "summary": "매우 빈약 · 곧 교체" },
+    "960031": { "fleet": "ANY", "slot": "지휘", "stance": "weak", "summary": "쓰지 않음" }
+  },
+  "fleetNotes": {
+    "CV.지휘": "항모 지휘용 스킬을 가진 냥은 없어 재능으로 고름"
+  }
+}

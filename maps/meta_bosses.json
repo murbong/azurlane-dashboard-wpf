@@ -1,0 +1,2860 @@
+{
+  "1": {
+    "id": 1,
+    "name": "히류·META",
+    "meta_id": 970701,
+    "boss_level_id": 1,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 7,
+    "hull": "CV",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295001,
+        "expedition_id": 296001
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295002,
+        "expedition_id": 296002
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295003,
+        "expedition_id": 296003
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295004,
+        "expedition_id": 296004
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295005,
+        "expedition_id": 296005
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295006,
+        "expedition_id": 296006
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295007,
+        "expedition_id": 296007
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295008,
+        "expedition_id": 296008
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295009,
+        "expedition_id": 296009
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295010,
+        "expedition_id": 296010
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295011,
+        "expedition_id": 296011
+      },
+      {
+        "level": 12,
+        "hp": 760000,
+        "enemy_id": 295012,
+        "expedition_id": 296012
+      },
+      {
+        "level": 13,
+        "hp": 950000,
+        "enemy_id": 295013,
+        "expedition_id": 296013
+      },
+      {
+        "level": 14,
+        "hp": 1170000,
+        "enemy_id": 295014,
+        "expedition_id": 296014
+      },
+      {
+        "level": 15,
+        "hp": 1420000,
+        "enemy_id": 295015,
+        "expedition_id": 296015
+      }
+    ],
+    "skills": [
+      {
+        "name": "어두운 빛의 하나후다",
+        "grade": 3,
+        "text": "전투 중 특수한 빛의 하나후다와 어둠의 하나후다를 발사해 지속적으로 범위 대미지를 입힌다."
+      },
+      {
+        "name": "차원의 웜홀",
+        "grade": 2,
+        "text": "전투 중 특수 구역이 출현하며 고에너지 구체를 발사해 커다란 대미지를 입힌다."
+      }
+    ]
+  },
+  "2": {
+    "id": 2,
+    "name": "아크 로열·META",
+    "meta_id": 970702,
+    "boss_level_id": 16,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 7,
+    "hull": "CV",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295016,
+        "expedition_id": 296016
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295017,
+        "expedition_id": 296017
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295018,
+        "expedition_id": 296018
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295019,
+        "expedition_id": 296019
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295020,
+        "expedition_id": 296020
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295021,
+        "expedition_id": 296021
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295022,
+        "expedition_id": 296022
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295023,
+        "expedition_id": 296023
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295024,
+        "expedition_id": 296024
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295025,
+        "expedition_id": 296025
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295026,
+        "expedition_id": 296026
+      },
+      {
+        "level": 12,
+        "hp": 760000,
+        "enemy_id": 295027,
+        "expedition_id": 296027
+      },
+      {
+        "level": 13,
+        "hp": 950000,
+        "enemy_id": 295028,
+        "expedition_id": 296028
+      },
+      {
+        "level": 14,
+        "hp": 1170000,
+        "enemy_id": 295029,
+        "expedition_id": 296029
+      },
+      {
+        "level": 15,
+        "hp": 1420000,
+        "enemy_id": 295030,
+        "expedition_id": 296030
+      }
+    ],
+    "skills": [
+      {
+        "name": "마탄의 사수",
+        "grade": 1,
+        "text": "전투 중 특수 총열이 나타나 전장에 맹렬한 공격을 퍼붓는다."
+      },
+      {
+        "name": "그림자 습격",
+        "grade": 2,
+        "text": "전투 중 양산형 구축함의 그림자가 나타나 적을 향해 돌진한다."
+      }
+    ]
+  },
+  "3": {
+    "id": 3,
+    "name": "헬레나·META",
+    "meta_id": 970201,
+    "boss_level_id": 31,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 2,
+    "hull": "CL",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 40000,
+        "enemy_id": 295031,
+        "expedition_id": 296031
+      },
+      {
+        "level": 2,
+        "hp": 44000,
+        "enemy_id": 295032,
+        "expedition_id": 296032
+      },
+      {
+        "level": 3,
+        "hp": 52000,
+        "enemy_id": 295033,
+        "expedition_id": 296033
+      },
+      {
+        "level": 4,
+        "hp": 68000,
+        "enemy_id": 295034,
+        "expedition_id": 296034
+      },
+      {
+        "level": 5,
+        "hp": 100000,
+        "enemy_id": 295035,
+        "expedition_id": 296035
+      },
+      {
+        "level": 6,
+        "hp": 140000,
+        "enemy_id": 295036,
+        "expedition_id": 296036
+      },
+      {
+        "level": 7,
+        "hp": 190000,
+        "enemy_id": 295037,
+        "expedition_id": 296037
+      },
+      {
+        "level": 8,
+        "hp": 260000,
+        "enemy_id": 295038,
+        "expedition_id": 296038
+      },
+      {
+        "level": 9,
+        "hp": 350000,
+        "enemy_id": 295039,
+        "expedition_id": 296039
+      },
+      {
+        "level": 10,
+        "hp": 460000,
+        "enemy_id": 295040,
+        "expedition_id": 296040
+      },
+      {
+        "level": 11,
+        "hp": 590000,
+        "enemy_id": 295041,
+        "expedition_id": 296041
+      },
+      {
+        "level": 12,
+        "hp": 740000,
+        "enemy_id": 295042,
+        "expedition_id": 296042
+      },
+      {
+        "level": 13,
+        "hp": 910000,
+        "enemy_id": 295043,
+        "expedition_id": 296043
+      },
+      {
+        "level": 14,
+        "hp": 1100000,
+        "enemy_id": 295044,
+        "expedition_id": 296044
+      },
+      {
+        "level": 15,
+        "hp": 1320000,
+        "enemy_id": 295045,
+        "expedition_id": 296045
+      }
+    ],
+    "skills": [
+      {
+        "name": "레이더 스캔·Hacking",
+        "grade": 2,
+        "text": "전투 중 레이더 스캔 구역을 만들며, 구역 내의 적은 받는 대미지가 증가한다."
+      },
+      {
+        "name": "「영」 사분면 전개-5%",
+        "grade": 1,
+        "text": "전투 중 해역 전체의 상태에 영향을 주는 특수 영역을 만들어, 적과 아군 모두 받는 대미지가 증가한다."
+      }
+    ]
+  },
+  "4": {
+    "id": 4,
+    "name": "소류·META",
+    "meta_id": 970703,
+    "boss_level_id": 46,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 7,
+    "hull": "CV",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295046,
+        "expedition_id": 296046
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295047,
+        "expedition_id": 296047
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295048,
+        "expedition_id": 296048
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295049,
+        "expedition_id": 296049
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295050,
+        "expedition_id": 296050
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295051,
+        "expedition_id": 296051
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295052,
+        "expedition_id": 296052
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295053,
+        "expedition_id": 296053
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295054,
+        "expedition_id": 296054
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295055,
+        "expedition_id": 296055
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295056,
+        "expedition_id": 296056
+      },
+      {
+        "level": 12,
+        "hp": 750000,
+        "enemy_id": 295057,
+        "expedition_id": 296057
+      },
+      {
+        "level": 13,
+        "hp": 930000,
+        "enemy_id": 295058,
+        "expedition_id": 296058
+      },
+      {
+        "level": 14,
+        "hp": 1140000,
+        "enemy_id": 295059,
+        "expedition_id": 296059
+      },
+      {
+        "level": 15,
+        "hp": 1380000,
+        "enemy_id": 295060,
+        "expedition_id": 296060
+      }
+    ],
+    "skills": [
+      {
+        "name": "불꽃 하나후다",
+        "grade": 3,
+        "text": "전투 중 연쇄 폭발을 일으키며 불꽃을 분출하는 특수 하나후다를 생산해 적을 공격한다."
+      },
+      {
+        "name": "불타는 바다",
+        "grade": 2,
+        "text": "해역 전체가 불길에 휩싸이며, 불길을 건드리는 적은 연소 효과를 받는다."
+      }
+    ]
+  },
+  "5": {
+    "id": 5,
+    "name": "그나이제나우·META",
+    "meta_id": 970401,
+    "boss_level_id": 61,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 4,
+    "hull": "BC",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295061,
+        "expedition_id": 296061
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295062,
+        "expedition_id": 296062
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295063,
+        "expedition_id": 296063
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295064,
+        "expedition_id": 296064
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295065,
+        "expedition_id": 296065
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295066,
+        "expedition_id": 296066
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295067,
+        "expedition_id": 296067
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295068,
+        "expedition_id": 296068
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295069,
+        "expedition_id": 296069
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295070,
+        "expedition_id": 296070
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295071,
+        "expedition_id": 296071
+      },
+      {
+        "level": 12,
+        "hp": 780000,
+        "enemy_id": 295072,
+        "expedition_id": 296072
+      },
+      {
+        "level": 13,
+        "hp": 1000000,
+        "enemy_id": 295073,
+        "expedition_id": 296073
+      },
+      {
+        "level": 14,
+        "hp": 1240000,
+        "enemy_id": 295074,
+        "expedition_id": 296074
+      },
+      {
+        "level": 15,
+        "hp": 1480000,
+        "enemy_id": 295075,
+        "expedition_id": 296075
+      }
+    ],
+    "skills": [
+      {
+        "name": "불꽃의 사슬",
+        "grade": 2,
+        "text": "전투 중 특수한 화염 사슬로 적을 공격한다. 사슬에 닿는 적은 지속적인 감속 효과를 받는다."
+      },
+      {
+        "name": "잠항 어뢰",
+        "grade": 1,
+        "text": "전투 중 수중에서 항행하는 대형 어뢰를 끊임없이 방출한다. 적 주력함선에게 명중할 경우 대량의 대미지를 입힌다."
+      }
+    ]
+  },
+  "6": {
+    "id": 6,
+    "name": "샤른호르스트·META",
+    "meta_id": 970402,
+    "boss_level_id": 76,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 4,
+    "hull": "BC",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295076,
+        "expedition_id": 296076
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295077,
+        "expedition_id": 296077
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295078,
+        "expedition_id": 296078
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295079,
+        "expedition_id": 296079
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295080,
+        "expedition_id": 296080
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295081,
+        "expedition_id": 296081
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295082,
+        "expedition_id": 296082
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295083,
+        "expedition_id": 296083
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295084,
+        "expedition_id": 296084
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295085,
+        "expedition_id": 296085
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295086,
+        "expedition_id": 296086
+      },
+      {
+        "level": 12,
+        "hp": 780000,
+        "enemy_id": 295087,
+        "expedition_id": 296087
+      },
+      {
+        "level": 13,
+        "hp": 1000000,
+        "enemy_id": 295088,
+        "expedition_id": 296088
+      },
+      {
+        "level": 14,
+        "hp": 1240000,
+        "enemy_id": 295089,
+        "expedition_id": 296089
+      },
+      {
+        "level": 15,
+        "hp": 1480000,
+        "enemy_id": 295090,
+        "expedition_id": 296090
+      }
+    ],
+    "skills": [
+      {
+        "name": "강철의 지팡이",
+        "grade": 2,
+        "text": "전투 중 전장에서 끊임없이 회전하며 연쇄 폭발을 일으키는 특수 탄막을 발동한다."
+      },
+      {
+        "name": "잠항 어뢰",
+        "grade": 1,
+        "text": "전투 중 수중에서 항행하는 대형 어뢰를 끊임없이 방출한다. 적 주력함선에게 명중할 경우 대량의 대미지를 입힌다."
+      }
+    ]
+  },
+  "7": {
+    "id": 7,
+    "name": "리펄스·META",
+    "meta_id": 970403,
+    "boss_level_id": 91,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 4,
+    "hull": "BC",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295091,
+        "expedition_id": 296091
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295092,
+        "expedition_id": 296092
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295093,
+        "expedition_id": 296093
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295094,
+        "expedition_id": 296094
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295095,
+        "expedition_id": 296095
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295096,
+        "expedition_id": 296096
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295097,
+        "expedition_id": 296097
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295098,
+        "expedition_id": 296098
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295099,
+        "expedition_id": 296099
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295100,
+        "expedition_id": 296100
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295101,
+        "expedition_id": 296101
+      },
+      {
+        "level": 12,
+        "hp": 780000,
+        "enemy_id": 295102,
+        "expedition_id": 296102
+      },
+      {
+        "level": 13,
+        "hp": 1000000,
+        "enemy_id": 295103,
+        "expedition_id": 296103
+      },
+      {
+        "level": 14,
+        "hp": 1240000,
+        "enemy_id": 295104,
+        "expedition_id": 296104
+      },
+      {
+        "level": 15,
+        "hp": 1480000,
+        "enemy_id": 295105,
+        "expedition_id": 296105
+      }
+    ],
+    "skills": [
+      {
+        "name": "파이어워크 리펄스",
+        "grade": 3,
+        "text": "전투 개시 시 3겹의 실드 생성. 각 실드는 일부 받는 대미지 감소 효과 제공.\n적이 공중 지원/전함 주포/어뢰 공격 시 자신의 전의가 2/2/1 누적된다. 전의 6/12/18 중첩 시 실드가 1겹씩 사라진다."
+      },
+      {
+        "name": "기사의 결의",
+        "grade": 1,
+        "text": "[파이어워크 리펄스]의 실드가 사라질 때마다 대미지 증가 스탯 상승. 동시에 공격 방식이 더욱 격해진다.\n실드 전부 사라진 후 모든 전의를 방출해 “총력 개방” 상태가 된다."
+      },
+      {
+        "name": "용화의 마음",
+        "grade": 2,
+        "text": "전투 중 거대한 용암 형태의 구체가 나타나며 적 주력함선에게 커다란 대미지를 입힌다. 또한 항공모함의 은폐 상태를 완전히 해제시킨다."
+      }
+    ]
+  },
+  "8": {
+    "id": 8,
+    "name": "리나운·META",
+    "meta_id": 970404,
+    "boss_level_id": 106,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 4,
+    "hull": "BC",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295106,
+        "expedition_id": 296106
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295107,
+        "expedition_id": 296107
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295108,
+        "expedition_id": 296108
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295109,
+        "expedition_id": 296109
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295110,
+        "expedition_id": 296110
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295111,
+        "expedition_id": 296111
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295112,
+        "expedition_id": 296112
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295113,
+        "expedition_id": 296113
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295114,
+        "expedition_id": 296114
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295115,
+        "expedition_id": 296115
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295116,
+        "expedition_id": 296116
+      },
+      {
+        "level": 12,
+        "hp": 780000,
+        "enemy_id": 295117,
+        "expedition_id": 296117
+      },
+      {
+        "level": 13,
+        "hp": 1000000,
+        "enemy_id": 295118,
+        "expedition_id": 296118
+      },
+      {
+        "level": 14,
+        "hp": 1240000,
+        "enemy_id": 295119,
+        "expedition_id": 296119
+      },
+      {
+        "level": 15,
+        "hp": 1480000,
+        "enemy_id": 295120,
+        "expedition_id": 296120
+      }
+    ],
+    "skills": [
+      {
+        "name": "메테오",
+        "grade": 3,
+        "text": "전투 중 하늘에서 운석 형태의 구체가 낙하하며 범위 대미지를 입힌다."
+      },
+      {
+        "name": "섬멸의 횃불-열",
+        "grade": 1,
+        "text": "차징 공격 성공 시마다, 자신의 대미지 증가 스탯 상승.\n차징 공격 누적 2회 성공 후 “총력 개방” 상태가 되어, 공격 방식이 변하며, 대미지 증가 스탯이 상승하며 받는 대미지 감소 스탯 감소. 동시에 명중 상승."
+      },
+      {
+        "name": "섬멸의 횃불-정",
+        "grade": 1,
+        "text": "차징 공격 실패 시마다, 소량의 내구도 회복 및 받는 대미지 감소 스탯 상승.\n차징 공격 누적 2회 실패 후 “침묵” 상태가 되어, 공격 방식이 변하며, 받는 대미지 감소 스탯이 상승하며 대미지 증가 스탯 감소. 동시에 명중 감소."
+      },
+      {
+        "name": "용화의 마음",
+        "grade": 2,
+        "text": "전투 중 거대한 용암 형태의 구체가 나타나며 적 주력함선에게 커다란 대미지를 입힌다. 또한 항공모함의 은폐 상태를 완전히 해제시킨다."
+      }
+    ]
+  },
+  "9": {
+    "id": 9,
+    "name": "애리조나·META",
+    "meta_id": 970503,
+    "boss_level_id": 121,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 3,
+    "armor": "Heavy",
+    "enemy_type": 5,
+    "hull": "BB",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 54000,
+        "enemy_id": 295121,
+        "expedition_id": 296121
+      },
+      {
+        "level": 2,
+        "hp": 58000,
+        "enemy_id": 295122,
+        "expedition_id": 296122
+      },
+      {
+        "level": 3,
+        "hp": 63000,
+        "enemy_id": 295123,
+        "expedition_id": 296123
+      },
+      {
+        "level": 4,
+        "hp": 76000,
+        "enemy_id": 295124,
+        "expedition_id": 296124
+      },
+      {
+        "level": 5,
+        "hp": 120000,
+        "enemy_id": 295125,
+        "expedition_id": 296125
+      },
+      {
+        "level": 6,
+        "hp": 160000,
+        "enemy_id": 295126,
+        "expedition_id": 296126
+      },
+      {
+        "level": 7,
+        "hp": 250000,
+        "enemy_id": 295127,
+        "expedition_id": 296127
+      },
+      {
+        "level": 8,
+        "hp": 340000,
+        "enemy_id": 295128,
+        "expedition_id": 296128
+      },
+      {
+        "level": 9,
+        "hp": 420000,
+        "enemy_id": 295129,
+        "expedition_id": 296129
+      },
+      {
+        "level": 10,
+        "hp": 520000,
+        "enemy_id": 295130,
+        "expedition_id": 296130
+      },
+      {
+        "level": 11,
+        "hp": 650000,
+        "enemy_id": 295131,
+        "expedition_id": 296131
+      },
+      {
+        "level": 12,
+        "hp": 840000,
+        "enemy_id": 295132,
+        "expedition_id": 296132
+      },
+      {
+        "level": 13,
+        "hp": 1080000,
+        "enemy_id": 295133,
+        "expedition_id": 296133
+      },
+      {
+        "level": 14,
+        "hp": 1340000,
+        "enemy_id": 295134,
+        "expedition_id": 296134
+      },
+      {
+        "level": 15,
+        "hp": 1600000,
+        "enemy_id": 295135,
+        "expedition_id": 296135
+      }
+    ],
+    "skills": [
+      {
+        "name": "퍼지는 슬픔",
+        "grade": 2,
+        "text": "전투 중 옅은 푸른색의 안개가 덮인 지역이 나타나며, 적이 안개 속에 머물면 항속이 감소하고 받는 대미지가 증가한다.\n안개의 효과는 적이 안개 속에 머무르는 시간에 따라 증가한다. 안개의 범위를 벗어난 후 효과도 점차 사라진다."
+      },
+      {
+        "name": "흑조의 눈물",
+        "grade": 1,
+        "text": "임의의 적의 내구도가 50% 이하로 감소한 경우, 추가 회복 효과를 받는다.\n임의의 적의 내구도가 20% 이하로 감소한 경우, 받는 모든 회복 효과가 대미지로 전환된다."
+      }
+    ]
+  },
+  "10": {
+    "id": 10,
+    "name": "퀸 엘리자베스·META",
+    "meta_id": 970504,
+    "boss_level_id": 136,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 3,
+    "armor": "Heavy",
+    "enemy_type": 5,
+    "hull": "BB",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 54000,
+        "enemy_id": 295136,
+        "expedition_id": 296136
+      },
+      {
+        "level": 2,
+        "hp": 58000,
+        "enemy_id": 295137,
+        "expedition_id": 296137
+      },
+      {
+        "level": 3,
+        "hp": 63000,
+        "enemy_id": 295138,
+        "expedition_id": 296138
+      },
+      {
+        "level": 4,
+        "hp": 76000,
+        "enemy_id": 295139,
+        "expedition_id": 296139
+      },
+      {
+        "level": 5,
+        "hp": 120000,
+        "enemy_id": 295140,
+        "expedition_id": 296140
+      },
+      {
+        "level": 6,
+        "hp": 160000,
+        "enemy_id": 295141,
+        "expedition_id": 296141
+      },
+      {
+        "level": 7,
+        "hp": 250000,
+        "enemy_id": 295142,
+        "expedition_id": 296142
+      },
+      {
+        "level": 8,
+        "hp": 340000,
+        "enemy_id": 295143,
+        "expedition_id": 296143
+      },
+      {
+        "level": 9,
+        "hp": 420000,
+        "enemy_id": 295144,
+        "expedition_id": 296144
+      },
+      {
+        "level": 10,
+        "hp": 520000,
+        "enemy_id": 295145,
+        "expedition_id": 296145
+      },
+      {
+        "level": 11,
+        "hp": 650000,
+        "enemy_id": 295146,
+        "expedition_id": 296146
+      },
+      {
+        "level": 12,
+        "hp": 840000,
+        "enemy_id": 295147,
+        "expedition_id": 296147
+      },
+      {
+        "level": 13,
+        "hp": 1080000,
+        "enemy_id": 295148,
+        "expedition_id": 296148
+      },
+      {
+        "level": 14,
+        "hp": 1340000,
+        "enemy_id": 295149,
+        "expedition_id": 296149
+      },
+      {
+        "level": 15,
+        "hp": 1600000,
+        "enemy_id": 295150,
+        "expedition_id": 296150
+      }
+    ],
+    "skills": [
+      {
+        "name": "「퀸 엘리자베스」 사분면 확장",
+        "grade": 1,
+        "text": "전투 중 전체 해역의 상태에 영향을 미치는 특수한 영역을 방출하며, 환영의 기사들을 소환한다. 환영의 기사는 비META 캐릭터의 공격에 대해 높은 대미지 감소 효과를 가진다.\n환영의 기사가 모두 처치당하면 영역이 붕괴되며 자신은 페널티를 받아, 행동이 허약해지며 받는 대미지 증가 효과가 영구 적용된다."
+      },
+      {
+        "name": "META 친화성",
+        "grade": 2,
+        "text": "비META 캐릭터에게 입히는 대미지가 증가하며, META 캐릭터로부터 더 높은 대미지를 받는다."
+      }
+    ]
+  },
+  "11": {
+    "id": 11,
+    "name": "알제리·META",
+    "meta_id": 970302,
+    "boss_level_id": 151,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 3,
+    "hull": "CA",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295151,
+        "expedition_id": 296151
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295152,
+        "expedition_id": 296152
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295153,
+        "expedition_id": 296153
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295154,
+        "expedition_id": 296154
+      },
+      {
+        "level": 5,
+        "hp": 111000,
+        "enemy_id": 295155,
+        "expedition_id": 296155
+      },
+      {
+        "level": 6,
+        "hp": 152000,
+        "enemy_id": 295156,
+        "expedition_id": 296156
+      },
+      {
+        "level": 7,
+        "hp": 233000,
+        "enemy_id": 295157,
+        "expedition_id": 296157
+      },
+      {
+        "level": 8,
+        "hp": 314000,
+        "enemy_id": 295158,
+        "expedition_id": 296158
+      },
+      {
+        "level": 9,
+        "hp": 395000,
+        "enemy_id": 295159,
+        "expedition_id": 296159
+      },
+      {
+        "level": 10,
+        "hp": 486000,
+        "enemy_id": 295160,
+        "expedition_id": 296160
+      },
+      {
+        "level": 11,
+        "hp": 608000,
+        "enemy_id": 295161,
+        "expedition_id": 296161
+      },
+      {
+        "level": 12,
+        "hp": 790000,
+        "enemy_id": 295162,
+        "expedition_id": 296162
+      },
+      {
+        "level": 13,
+        "hp": 1013000,
+        "enemy_id": 295163,
+        "expedition_id": 296163
+      },
+      {
+        "level": 14,
+        "hp": 1256000,
+        "enemy_id": 295164,
+        "expedition_id": 296164
+      },
+      {
+        "level": 15,
+        "hp": 1500000,
+        "enemy_id": 295165,
+        "expedition_id": 296165
+      }
+    ],
+    "skills": [
+      {
+        "name": "신의 기동",
+        "grade": 3,
+        "text": "전투 개시 시 '신의 기동'을 소환한다. '신의 기동'은 알제리·META가 받는 피해를 30% 경감한다.\n'신의 기동'이 피해를 받을 경우, 알제리·META가 대신 그 피해의 25%를 받는다."
+      },
+      {
+        "name": "엑스퍼게이트 플레임",
+        "grade": 1,
+        "text": "알제리·META의 공격이 명중한 적을 지속 시간이 짧고 고정 화염 피해량이 높은 특수 화염 '엑스퍼게이트 플레임' 상태로 만든다.\n또한, 전투 중 9초마다 내구가 가장 낮은 적을 '엑스퍼게이트 플레임' 상태로 만든다. 해당 효과는 주력 함대의 발견 게이지 효과를 무시한다."
+      }
+    ]
+  },
+  "12": {
+    "id": 12,
+    "name": "진츠·META",
+    "meta_id": 970205,
+    "boss_level_id": 166,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 2,
+    "hull": "CL",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295166,
+        "expedition_id": 296166
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295167,
+        "expedition_id": 296167
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295168,
+        "expedition_id": 296168
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295169,
+        "expedition_id": 296169
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295170,
+        "expedition_id": 296170
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295171,
+        "expedition_id": 296171
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295172,
+        "expedition_id": 296172
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295173,
+        "expedition_id": 296173
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295174,
+        "expedition_id": 296174
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295175,
+        "expedition_id": 296175
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295176,
+        "expedition_id": 296176
+      },
+      {
+        "level": 12,
+        "hp": 760000,
+        "enemy_id": 295177,
+        "expedition_id": 296177
+      },
+      {
+        "level": 13,
+        "hp": 950000,
+        "enemy_id": 295178,
+        "expedition_id": 296178
+      },
+      {
+        "level": 14,
+        "hp": 1170000,
+        "enemy_id": 295179,
+        "expedition_id": 296179
+      },
+      {
+        "level": 15,
+        "hp": 1420000,
+        "enemy_id": 295180,
+        "expedition_id": 296180
+      }
+    ],
+    "skills": [
+      {
+        "name": "계략의 철벽",
+        "grade": 2,
+        "text": "전투 시작 10초 후에 다음 효과를 얻는다. 전투 종료 시까지 자신이 받는 피해량을 20% 경감한다."
+      },
+      {
+        "name": "와해된 동맹",
+        "grade": 3,
+        "text": "함대 내의 소속 진영이 둘 이상인 경우, 1을 웃도는 진영 수만큼 자신의 모든 능력치가 5% 상승한다. \n(특별 계획함 이외의 콜라보 함선은 0으로 계산됨)"
+      },
+      {
+        "name": "거스를 수 없는 천명",
+        "grade": 1,
+        "text": "전투 시작 50초 후에 다음 효과를 얻는다. 4초가 경과할 때마다 전투 종료 시까지 자신이 받는 피해량이 10% 상승한다."
+      }
+    ]
+  },
+  "13": {
+    "id": 13,
+    "name": "키로프·META",
+    "meta_id": 970206,
+    "boss_level_id": 181,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 2,
+    "hull": "CL",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295181,
+        "expedition_id": 296181
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295182,
+        "expedition_id": 296182
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295183,
+        "expedition_id": 296183
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295184,
+        "expedition_id": 296184
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295185,
+        "expedition_id": 296185
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295186,
+        "expedition_id": 296186
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295187,
+        "expedition_id": 296187
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295188,
+        "expedition_id": 296188
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295189,
+        "expedition_id": 296189
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295190,
+        "expedition_id": 296190
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295191,
+        "expedition_id": 296191
+      },
+      {
+        "level": 12,
+        "hp": 760000,
+        "enemy_id": 295192,
+        "expedition_id": 296192
+      },
+      {
+        "level": 13,
+        "hp": 950000,
+        "enemy_id": 295193,
+        "expedition_id": 296193
+      },
+      {
+        "level": 14,
+        "hp": 1170000,
+        "enemy_id": 295194,
+        "expedition_id": 296194
+      },
+      {
+        "level": 15,
+        "hp": 1420000,
+        "enemy_id": 295195,
+        "expedition_id": 296195
+      }
+    ],
+    "skills": [
+      {
+        "name": "기계 지원 협정",
+        "grade": 2,
+        "text": "키로프·META는 [후스피시카]와 [카미에이터]라는 2대의 전투 기계를 배치해 협동 작전을 수행한다.\n[후스피시카]는 중장갑을 가지고 있으며, 근거리 연속 전기 충격 무기와 자기 에너지 유탄을 장착하고 있지만 더 많은 추가 뇌격 데미지를 입는다. [카미에이터]는 중형 장갑을 가지고 있으며, 장거리 빔 무기와 냉동 폭탄을 장착하고 있지만 더 많은 추가 포격 데미지를 입는다.\n전투 기계가 제거되면 지원 협정에 의해 3초 후 전장에 다시 소환된다."
+      },
+      {
+        "name": "합동 전투 프레임",
+        "grade": 1,
+        "text": "전투 기계가 살아남을 경우, 키로프·META의 포격, 뇌격, 명중이 일정량 상승한다. 전투 기계가 제거될 때마다 키로프·META의 방어력은 영구적으로 감소한다."
+      }
+    ]
+  },
+  "14": {
+    "id": 14,
+    "name": "로드니·META",
+    "meta_id": 970505,
+    "boss_level_id": 196,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 3,
+    "armor": "Heavy",
+    "enemy_type": 5,
+    "hull": "BB",
+    "battle_seconds": 90,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 383000,
+        "enemy_id": 295196,
+        "expedition_id": 296196
+      },
+      {
+        "level": 2,
+        "hp": 435000,
+        "enemy_id": 295197,
+        "expedition_id": 296197
+      },
+      {
+        "level": 3,
+        "hp": 491000,
+        "enemy_id": 295198,
+        "expedition_id": 296198
+      },
+      {
+        "level": 4,
+        "hp": 547000,
+        "enemy_id": 295199,
+        "expedition_id": 296199
+      },
+      {
+        "level": 5,
+        "hp": 599000,
+        "enemy_id": 295200,
+        "expedition_id": 296200
+      },
+      {
+        "level": 6,
+        "hp": 655000,
+        "enemy_id": 295201,
+        "expedition_id": 296201
+      },
+      {
+        "level": 7,
+        "hp": 711000,
+        "enemy_id": 295202,
+        "expedition_id": 296202
+      },
+      {
+        "level": 8,
+        "hp": 766000,
+        "enemy_id": 295203,
+        "expedition_id": 296203
+      },
+      {
+        "level": 9,
+        "hp": 819000,
+        "enemy_id": 295204,
+        "expedition_id": 296204
+      },
+      {
+        "level": 10,
+        "hp": 874000,
+        "enemy_id": 295205,
+        "expedition_id": 296205
+      },
+      {
+        "level": 11,
+        "hp": 930000,
+        "enemy_id": 295206,
+        "expedition_id": 296206
+      },
+      {
+        "level": 12,
+        "hp": 983000,
+        "enemy_id": 295207,
+        "expedition_id": 296207
+      },
+      {
+        "level": 13,
+        "hp": 1038000,
+        "enemy_id": 295208,
+        "expedition_id": 296208
+      },
+      {
+        "level": 14,
+        "hp": 1094000,
+        "enemy_id": 295209,
+        "expedition_id": 296209
+      },
+      {
+        "level": 15,
+        "hp": 1150000,
+        "enemy_id": 295210,
+        "expedition_id": 296210
+      }
+    ],
+    "skills": [
+      {
+        "name": "차원 초월",
+        "grade": 1,
+        "text": "1.5초 내에 적 「로드니」가 사격·항공 공격을 실시한 경우, 로드니·META는 차원 초월 상태가 되어 4초 동안 항속이 상승하고, 효과 대상에서 제외되어 피해를 무효화한다."
+      },
+      {
+        "name": "「나」의 투영",
+        "grade": 3,
+        "text": "전투 시작 시, 전장에 「로드니」의 투영을 7개 소환한다. \n투영은 공격하지 않으며, 받는 피해량은 1이 된다. 「로드니」의 투영이 소멸할 때마다 로드니·META가 주는 피해량이 상승하며, 받는 피해량은 경감된다. \n전투 잔여 시간이 10초가 된 경우, 「로드니」의 투영은 모두 소멸한다."
+      },
+      {
+        "name": "「로드니」의 종말",
+        "grade": 2,
+        "text": "「로드니」의 투영이 모두 소멸한 경우, 로드니·META는 차원 초월 상태가 되고, 그 후 마지막 일격을 날려 전투를 종료시킨다."
+      }
+    ]
+  },
+  "15": {
+    "id": 15,
+    "name": "위치타·META",
+    "meta_id": 970304,
+    "boss_level_id": 211,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 3,
+    "hull": "CA",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 45000,
+        "enemy_id": 295211,
+        "expedition_id": 296211
+      },
+      {
+        "level": 2,
+        "hp": 49000,
+        "enemy_id": 295212,
+        "expedition_id": 296212
+      },
+      {
+        "level": 3,
+        "hp": 52000,
+        "enemy_id": 295213,
+        "expedition_id": 296213
+      },
+      {
+        "level": 4,
+        "hp": 63000,
+        "enemy_id": 295214,
+        "expedition_id": 296214
+      },
+      {
+        "level": 5,
+        "hp": 100000,
+        "enemy_id": 295215,
+        "expedition_id": 296215
+      },
+      {
+        "level": 6,
+        "hp": 136000,
+        "enemy_id": 295216,
+        "expedition_id": 296216
+      },
+      {
+        "level": 7,
+        "hp": 209000,
+        "enemy_id": 295217,
+        "expedition_id": 296217
+      },
+      {
+        "level": 8,
+        "hp": 282000,
+        "enemy_id": 295218,
+        "expedition_id": 296218
+      },
+      {
+        "level": 9,
+        "hp": 355000,
+        "enemy_id": 295219,
+        "expedition_id": 296219
+      },
+      {
+        "level": 10,
+        "hp": 437000,
+        "enemy_id": 295220,
+        "expedition_id": 296220
+      },
+      {
+        "level": 11,
+        "hp": 547000,
+        "enemy_id": 295221,
+        "expedition_id": 296221
+      },
+      {
+        "level": 12,
+        "hp": 711000,
+        "enemy_id": 295222,
+        "expedition_id": 296222
+      },
+      {
+        "level": 13,
+        "hp": 912000,
+        "enemy_id": 295223,
+        "expedition_id": 296223
+      },
+      {
+        "level": 14,
+        "hp": 1131000,
+        "enemy_id": 295224,
+        "expedition_id": 296224
+      },
+      {
+        "level": 15,
+        "hp": 1350000,
+        "enemy_id": 295225,
+        "expedition_id": 296225
+      }
+    ],
+    "skills": [
+      {
+        "name": "용맹한 전투",
+        "grade": 3,
+        "text": "전투 중에 잃은 총 내구 수치가 최대치의 5%에 달할 때마다 자신이 주는 피해량이 5% 상승한다."
+      },
+      {
+        "name": "잿불의 사슬",
+        "grade": 2,
+        "text": "전투 중에 사슬을 날려 이에 아군이 명중한 경우, 사슬에 묶여 일정 시간 동안 공격·이동 불가 상태에 빠지며, 받는 피해량이 20% 상승한다."
+      },
+      {
+        "name": "파이널 디씨전",
+        "grade": 1,
+        "text": "전투 종료가 임박했을 때 [이사회 제식 MKXIII형 오비탈 캐논]을 사용하여 전장 전역에 있는 모든 타깃에게 큰 피해를 입힌다."
+      }
+    ]
+  },
+  "16": {
+    "id": 16,
+    "name": "나가토·META",
+    "meta_id": 970506,
+    "boss_level_id": 226,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 3,
+    "armor": "Heavy",
+    "enemy_type": 5,
+    "hull": "BB",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295226,
+        "expedition_id": 296226
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295227,
+        "expedition_id": 296227
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295228,
+        "expedition_id": 296228
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295229,
+        "expedition_id": 296229
+      },
+      {
+        "level": 5,
+        "hp": 110000,
+        "enemy_id": 295230,
+        "expedition_id": 296230
+      },
+      {
+        "level": 6,
+        "hp": 150000,
+        "enemy_id": 295231,
+        "expedition_id": 296231
+      },
+      {
+        "level": 7,
+        "hp": 230000,
+        "enemy_id": 295232,
+        "expedition_id": 296232
+      },
+      {
+        "level": 8,
+        "hp": 310000,
+        "enemy_id": 295233,
+        "expedition_id": 296233
+      },
+      {
+        "level": 9,
+        "hp": 390000,
+        "enemy_id": 295234,
+        "expedition_id": 296234
+      },
+      {
+        "level": 10,
+        "hp": 480000,
+        "enemy_id": 295235,
+        "expedition_id": 296235
+      },
+      {
+        "level": 11,
+        "hp": 600000,
+        "enemy_id": 295236,
+        "expedition_id": 296236
+      },
+      {
+        "level": 12,
+        "hp": 760000,
+        "enemy_id": 295237,
+        "expedition_id": 296237
+      },
+      {
+        "level": 13,
+        "hp": 950000,
+        "enemy_id": 295238,
+        "expedition_id": 296238
+      },
+      {
+        "level": 14,
+        "hp": 1170000,
+        "enemy_id": 295239,
+        "expedition_id": 296239
+      },
+      {
+        "level": 15,
+        "hp": 1420000,
+        "enemy_id": 295240,
+        "expedition_id": 296240
+      }
+    ],
+    "skills": [
+      {
+        "name": "차고 이지러지는 달",
+        "grade": 1,
+        "text": "전장이 15초마다 「휴월」과 「만월」 상태로 번갈아 바뀐다. \n「휴월」 상태에서는「나가토·META」가 아군에게 주는 피해량이 20% 저하하며, 아군의 회복 효과가 50% 저하한다. \n「만월」 상태에서는「나가토·META」가 아군에게 주는 피해량이 20% 상승하며, 아군의 회복 효과가 100% 상승한다."
+      },
+      {
+        "name": "피고 지는 꽃",
+        "grade": 2,
+        "text": "전투 중 전장에 결계가 출현하여 현재 전장의 「휴월」과 「만월」 상태에 따라 다른 효과를 발휘한다. \n「휴월」 상태에서는 결계에 있는 아군 함선의 내구가 계속 저하한다. \n「만월」 상태에서는 결계에 있는 아군 함선이 적에게 받는 피해량이 경감된다."
+      }
+    ]
+  },
+  "17": {
+    "id": 17,
+    "name": "다이호·META",
+    "meta_id": 970705,
+    "boss_level_id": 241,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 3,
+    "armor": "Heavy",
+    "enemy_type": 7,
+    "hull": "CV",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 54000,
+        "enemy_id": 295241,
+        "expedition_id": 296241
+      },
+      {
+        "level": 2,
+        "hp": 58000,
+        "enemy_id": 295242,
+        "expedition_id": 296242
+      },
+      {
+        "level": 3,
+        "hp": 62000,
+        "enemy_id": 295243,
+        "expedition_id": 296243
+      },
+      {
+        "level": 4,
+        "hp": 75000,
+        "enemy_id": 295244,
+        "expedition_id": 296244
+      },
+      {
+        "level": 5,
+        "hp": 118000,
+        "enemy_id": 295245,
+        "expedition_id": 296245
+      },
+      {
+        "level": 6,
+        "hp": 162000,
+        "enemy_id": 295246,
+        "expedition_id": 296246
+      },
+      {
+        "level": 7,
+        "hp": 248000,
+        "enemy_id": 295247,
+        "expedition_id": 296247
+      },
+      {
+        "level": 8,
+        "hp": 335000,
+        "enemy_id": 295248,
+        "expedition_id": 296248
+      },
+      {
+        "level": 9,
+        "hp": 421000,
+        "enemy_id": 295249,
+        "expedition_id": 296249
+      },
+      {
+        "level": 10,
+        "hp": 518000,
+        "enemy_id": 295250,
+        "expedition_id": 296250
+      },
+      {
+        "level": 11,
+        "hp": 648000,
+        "enemy_id": 295251,
+        "expedition_id": 296251
+      },
+      {
+        "level": 12,
+        "hp": 843000,
+        "enemy_id": 295252,
+        "expedition_id": 296252
+      },
+      {
+        "level": 13,
+        "hp": 1081000,
+        "enemy_id": 295253,
+        "expedition_id": 296253
+      },
+      {
+        "level": 14,
+        "hp": 1340000,
+        "enemy_id": 295254,
+        "expedition_id": 296254
+      },
+      {
+        "level": 15,
+        "hp": 1600000,
+        "enemy_id": 295255,
+        "expedition_id": 296255
+      }
+    ],
+    "skills": [
+      {
+        "name": "피안의 경계",
+        "grade": 2,
+        "text": "다이호·META가 전투 한 번에 내구를 최대치의 50%만큼 잃은 경우, 전장에 특수 영역을 전개한다. \n영역 내에 있는 다이호·META와 다이호·META의 소환물이 주는 피해량이 20% 상승하지만, 아군이 받는 회복 효과가 피해 효과로 바뀐다. \n특수 영역이 전개되는 동안에는 아군 함선이 전투 불능에 빠질 때마다 다이호·META가 주는 피해량이 상승한다."
+      },
+      {
+        "name": "백귀의 그림자",
+        "grade": 1,
+        "text": "전투 중 다이호·META는 일정 간격으로 「환영의 그림자」를 소환하여 전투에 참여시킨다. 「환영의 그림자」에게 피해를 입힌 경우, 다이호·META도 동등한 피해를 입는다. \n「환영의 그림자」는 일정 시간 후에 전장에서 소멸한다."
+      }
+    ]
+  },
+  "18": {
+    "id": 18,
+    "name": "호넷·META",
+    "meta_id": 970706,
+    "boss_level_id": 256,
+    "availability": "always",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 7,
+    "hull": "CV",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 43000,
+        "enemy_id": 295256,
+        "expedition_id": 296256
+      },
+      {
+        "level": 2,
+        "hp": 46000,
+        "enemy_id": 295257,
+        "expedition_id": 296257
+      },
+      {
+        "level": 3,
+        "hp": 50000,
+        "enemy_id": 295258,
+        "expedition_id": 296258
+      },
+      {
+        "level": 4,
+        "hp": 60000,
+        "enemy_id": 295259,
+        "expedition_id": 296259
+      },
+      {
+        "level": 5,
+        "hp": 95000,
+        "enemy_id": 295260,
+        "expedition_id": 296260
+      },
+      {
+        "level": 6,
+        "hp": 129000,
+        "enemy_id": 295261,
+        "expedition_id": 296261
+      },
+      {
+        "level": 7,
+        "hp": 198000,
+        "enemy_id": 295262,
+        "expedition_id": 296262
+      },
+      {
+        "level": 8,
+        "hp": 268000,
+        "enemy_id": 295263,
+        "expedition_id": 296263
+      },
+      {
+        "level": 9,
+        "hp": 337000,
+        "enemy_id": 295264,
+        "expedition_id": 296264
+      },
+      {
+        "level": 10,
+        "hp": 415000,
+        "enemy_id": 295265,
+        "expedition_id": 296265
+      },
+      {
+        "level": 11,
+        "hp": 518000,
+        "enemy_id": 295266,
+        "expedition_id": 296266
+      },
+      {
+        "level": 12,
+        "hp": 674000,
+        "enemy_id": 295267,
+        "expedition_id": 296267
+      },
+      {
+        "level": 13,
+        "hp": 864000,
+        "enemy_id": 295268,
+        "expedition_id": 296268
+      },
+      {
+        "level": 14,
+        "hp": 1072000,
+        "enemy_id": 295269,
+        "expedition_id": 296269
+      },
+      {
+        "level": 15,
+        "hp": 1280000,
+        "enemy_id": 295270,
+        "expedition_id": 296270
+      }
+    ],
+    "skills": [
+      {
+        "name": "저궤도 강습",
+        "grade": 2,
+        "text": "전투 중 저궤도 위성으로 지원 공격을 반복한다."
+      },
+      {
+        "name": "고스트 오퍼레이션",
+        "grade": 1,
+        "text": "전투 중 18초마다 자신에게 「광학 위장」을 부여한다(최대 3개까지). 부여된 「광학 위장」 1개당 회피율이 6% 상승한다. \n「광학 위장」이 3개 부여되면 전자 임펄스 공격을 실시하고, 5초 동안 아군에게 시야 불량 효과를 부여한다(시야가 좁아지며 주포 공격 및 항공 공격을 사용할 수 없게 됨)."
+      }
+    ]
+  },
+  "19": {
+    "id": 19,
+    "name": "카와카제·META",
+    "meta_id": 970108,
+    "boss_level_id": 271,
+    "availability": "timed",
+    "windows": [
+      {
+        "start": "2025-06-19T00:00:00",
+        "end": "2025-09-18T23:59:59"
+      }
+    ],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 1,
+    "hull": "DD",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 54000,
+        "enemy_id": 295271,
+        "expedition_id": 296271
+      },
+      {
+        "level": 2,
+        "hp": 58000,
+        "enemy_id": 295272,
+        "expedition_id": 296272
+      },
+      {
+        "level": 3,
+        "hp": 62000,
+        "enemy_id": 295273,
+        "expedition_id": 296273
+      },
+      {
+        "level": 4,
+        "hp": 75000,
+        "enemy_id": 295274,
+        "expedition_id": 296274
+      },
+      {
+        "level": 5,
+        "hp": 118000,
+        "enemy_id": 295275,
+        "expedition_id": 296275
+      },
+      {
+        "level": 6,
+        "hp": 162000,
+        "enemy_id": 295276,
+        "expedition_id": 296276
+      },
+      {
+        "level": 7,
+        "hp": 248000,
+        "enemy_id": 295277,
+        "expedition_id": 296277
+      },
+      {
+        "level": 8,
+        "hp": 335000,
+        "enemy_id": 295278,
+        "expedition_id": 296278
+      },
+      {
+        "level": 9,
+        "hp": 421000,
+        "enemy_id": 295279,
+        "expedition_id": 296279
+      },
+      {
+        "level": 10,
+        "hp": 518000,
+        "enemy_id": 295280,
+        "expedition_id": 296280
+      },
+      {
+        "level": 11,
+        "hp": 648000,
+        "enemy_id": 295281,
+        "expedition_id": 296281
+      },
+      {
+        "level": 12,
+        "hp": 843000,
+        "enemy_id": 295282,
+        "expedition_id": 296282
+      },
+      {
+        "level": 13,
+        "hp": 1081000,
+        "enemy_id": 295283,
+        "expedition_id": 296283
+      },
+      {
+        "level": 14,
+        "hp": 1340000,
+        "enemy_id": 295284,
+        "expedition_id": 296284
+      },
+      {
+        "level": 15,
+        "hp": 1600000,
+        "enemy_id": 295285,
+        "expedition_id": 296285
+      }
+    ],
+    "skills": [
+      {
+        "name": "이도류·석양",
+        "grade": 2,
+        "text": "카와카제·META는 일정 시간마다 「이도류·석양」을 발동하여, 살기를 내뿜어 0.5초간 목표의 이동속도를 대폭 감소시키며, 동시에 교차하는 참격으로 검기를 날린다. 참격 명중 시 목표의 최대 내구도 5%에 해당하는 고정 피해를 준다.\n카와카제·META의 모든 검기는 뇌격 대미지를 준다."
+      },
+      {
+        "name": "과거의 그림자",
+        "grade": 3,
+        "text": "「이도류·석양」의 참격이 누적 10회 명중 및 대미지를 가했을 때, 혹은 단일 전투에서 자신의 내구도가 20% 감소할 때마다, 카와카제·META는 「피의 그림자」를 소환하여 자신의 포격 및 뇌장 스탯을 영구적으로 강화하고 「이도류·석양」의 발동 간격을 단축시킨다."
+      }
+    ]
+  },
+  "20": {
+    "id": 20,
+    "name": "유다치·META",
+    "meta_id": 970109,
+    "boss_level_id": 286,
+    "availability": "stop",
+    "windows": [],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 1,
+    "hull": "DD",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 52000,
+        "enemy_id": 295286,
+        "expedition_id": 296286
+      },
+      {
+        "level": 2,
+        "hp": 56000,
+        "enemy_id": 295287,
+        "expedition_id": 296287
+      },
+      {
+        "level": 3,
+        "hp": 60000,
+        "enemy_id": 295288,
+        "expedition_id": 296288
+      },
+      {
+        "level": 4,
+        "hp": 72000,
+        "enemy_id": 295289,
+        "expedition_id": 296289
+      },
+      {
+        "level": 5,
+        "hp": 114000,
+        "enemy_id": 295290,
+        "expedition_id": 296290
+      },
+      {
+        "level": 6,
+        "hp": 156000,
+        "enemy_id": 295291,
+        "expedition_id": 296291
+      },
+      {
+        "level": 7,
+        "hp": 239000,
+        "enemy_id": 295292,
+        "expedition_id": 296292
+      },
+      {
+        "level": 8,
+        "hp": 322000,
+        "enemy_id": 295293,
+        "expedition_id": 296293
+      },
+      {
+        "level": 9,
+        "hp": 405000,
+        "enemy_id": 295294,
+        "expedition_id": 296294
+      },
+      {
+        "level": 10,
+        "hp": 499000,
+        "enemy_id": 295295,
+        "expedition_id": 296295
+      },
+      {
+        "level": 11,
+        "hp": 624000,
+        "enemy_id": 295296,
+        "expedition_id": 296296
+      },
+      {
+        "level": 12,
+        "hp": 811000,
+        "enemy_id": 295297,
+        "expedition_id": 296297
+      },
+      {
+        "level": 13,
+        "hp": 1040000,
+        "enemy_id": 295298,
+        "expedition_id": 296298
+      },
+      {
+        "level": 14,
+        "hp": 1290000,
+        "enemy_id": 295299,
+        "expedition_id": 296299
+      },
+      {
+        "level": 15,
+        "hp": 1540000,
+        "enemy_id": 295300,
+        "expedition_id": 296300
+      }
+    ],
+    "skills": [
+      {
+        "name": "할퀴어 주마",
+        "grade": 2,
+        "text": "유다치·META는 현재 내구가 최대치를 점하는 비율이 가장 높은 함선을 계속 목표로 삼아, 5초 후에 해당 함선에게 손톱으로 큰 피해를 주고, 100%의 확률로 20초 동안 지속되는 특수 점화 효과를 부여한다(해당 공격의 피해를 회피해도 특수 점화 효과는 부여된다. 특수 점화 효과는 2초마다 점화 피해를 준다. 해당 효과를 연속으로 받아도 지속 시간이 초기화될 뿐, 효과가 2배로 적용되지는 않는다. 해당 공격은 5초에 1번만 발동 가능.).\n 목표로 삼은 동안에 내구가 최대치를 점하는 비율이 가장 높은 함선이 바뀌면 대상이 초기화된다."
+      },
+      {
+        "name": "후려 갈겨 주마",
+        "grade": 3,
+        "text": "유다치·META의 어뢰 공격은 30%의 확률로 6초 동안 지속되는 특수 점화 효과를 부여할 수 있다 (해당 효과의 피해를 회피하더라도 특수 점화 효과는 부여된다. 특수 점화 효과는 1초마다 점화 피해를 입힌다. 해당 어뢰 공격에 의한 특수 점화 효과는 손톱에 의한 특수 점화 효과와 동시에 존재할 수 있다.). \n 유다치·META는 점화 효과를 가진 적에게 주는 피해량이 30% 상승한다. 「할퀴어 주마」, 「후려 갈겨 주마」의 특수 점화 효과를 지닌 함선이 전장에 있는 숫자만큼 받는 피해량이 10% 경감된다."
+      }
+    ]
+  },
+  "21": {
+    "id": 21,
+    "name": "요크타운·META",
+    "meta_id": 970708,
+    "boss_level_id": 301,
+    "availability": "stop",
+    "windows": [],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 7,
+    "hull": "CV",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 50000,
+        "enemy_id": 295301,
+        "expedition_id": 296301
+      },
+      {
+        "level": 2,
+        "hp": 54000,
+        "enemy_id": 295302,
+        "expedition_id": 296302
+      },
+      {
+        "level": 3,
+        "hp": 58000,
+        "enemy_id": 295303,
+        "expedition_id": 296303
+      },
+      {
+        "level": 4,
+        "hp": 70000,
+        "enemy_id": 295304,
+        "expedition_id": 296304
+      },
+      {
+        "level": 5,
+        "hp": 111000,
+        "enemy_id": 295305,
+        "expedition_id": 296305
+      },
+      {
+        "level": 6,
+        "hp": 152000,
+        "enemy_id": 295306,
+        "expedition_id": 296306
+      },
+      {
+        "level": 7,
+        "hp": 233000,
+        "enemy_id": 295307,
+        "expedition_id": 296307
+      },
+      {
+        "level": 8,
+        "hp": 314000,
+        "enemy_id": 295308,
+        "expedition_id": 296308
+      },
+      {
+        "level": 9,
+        "hp": 395000,
+        "enemy_id": 295309,
+        "expedition_id": 296309
+      },
+      {
+        "level": 10,
+        "hp": 486000,
+        "enemy_id": 295310,
+        "expedition_id": 296310
+      },
+      {
+        "level": 11,
+        "hp": 608000,
+        "enemy_id": 295311,
+        "expedition_id": 296311
+      },
+      {
+        "level": 12,
+        "hp": 790000,
+        "enemy_id": 295312,
+        "expedition_id": 296312
+      },
+      {
+        "level": 13,
+        "hp": 1013000,
+        "enemy_id": 295313,
+        "expedition_id": 296313
+      },
+      {
+        "level": 14,
+        "hp": 1256000,
+        "enemy_id": 295314,
+        "expedition_id": 296314
+      },
+      {
+        "level": 15,
+        "hp": 1500000,
+        "enemy_id": 295315,
+        "expedition_id": 296315
+      }
+    ],
+    "skills": [
+      {
+        "name": "피관측자의 철학",
+        "grade": 1,
+        "text": "전투 시작 시 요크타운·META는 「받는 피해량 60% 경감」 강화 효과를 가진다. \n전투 중 아군 유닛 1개체당 요크타운·META가 받는 피해량이 15% 증가(최대 12개체까지 적용)한다."
+      },
+      {
+        "name": "주시, 영원히",
+        "grade": 1,
+        "text": "요크타운·META가 전장에 있는 동안에는 5초마다 아군 전원의 대공 및 기동이 3% 저하한다. 해당 효과 발동 시 요크타운·META로부터 가장 가까이 있는 아군은 효과를 2배로 받는다."
+      },
+      {
+        "name": "「제로」 사분면 전개 -5%",
+        "grade": 1,
+        "text": "전투 중 해역 전체 넓이의 영역이 전개된다. 양측 모두 받는 피해량이 3% 증가한다."
+      }
+    ]
+  },
+  "22": {
+    "id": 22,
+    "name": "레겐스부르크·META",
+    "meta_id": 970211,
+    "boss_level_id": 316,
+    "availability": "stop",
+    "windows": [],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 2,
+    "hull": "CL",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 60000,
+        "enemy_id": 295316,
+        "expedition_id": 296316
+      },
+      {
+        "level": 2,
+        "hp": 64000,
+        "enemy_id": 295317,
+        "expedition_id": 296317
+      },
+      {
+        "level": 3,
+        "hp": 69000,
+        "enemy_id": 295318,
+        "expedition_id": 296318
+      },
+      {
+        "level": 4,
+        "hp": 84000,
+        "enemy_id": 295319,
+        "expedition_id": 296319
+      },
+      {
+        "level": 5,
+        "hp": 132000,
+        "enemy_id": 295320,
+        "expedition_id": 296320
+      },
+      {
+        "level": 6,
+        "hp": 180000,
+        "enemy_id": 295321,
+        "expedition_id": 296321
+      },
+      {
+        "level": 7,
+        "hp": 276000,
+        "enemy_id": 295322,
+        "expedition_id": 296322
+      },
+      {
+        "level": 8,
+        "hp": 372000,
+        "enemy_id": 295323,
+        "expedition_id": 296323
+      },
+      {
+        "level": 9,
+        "hp": 469000,
+        "enemy_id": 295324,
+        "expedition_id": 296324
+      },
+      {
+        "level": 10,
+        "hp": 577000,
+        "enemy_id": 295325,
+        "expedition_id": 296325
+      },
+      {
+        "level": 11,
+        "hp": 721000,
+        "enemy_id": 295326,
+        "expedition_id": 296326
+      },
+      {
+        "level": 12,
+        "hp": 938000,
+        "enemy_id": 295327,
+        "expedition_id": 296327
+      },
+      {
+        "level": 13,
+        "hp": 1202000,
+        "enemy_id": 295328,
+        "expedition_id": 296328
+      },
+      {
+        "level": 14,
+        "hp": 1491000,
+        "enemy_id": 295329,
+        "expedition_id": 296329
+      },
+      {
+        "level": 15,
+        "hp": 1780000,
+        "enemy_id": 295330,
+        "expedition_id": 296330
+      }
+    ],
+    "skills": [
+      {
+        "name": "강자 살육",
+        "grade": 2,
+        "text": "전투 시작 시, 레겐스부르크·META는 적의 포격·뇌장·항공·기동·명중 각각의 능력치가 가장 높은 유닛에게 [강자 살육]을 1개 부여한다. 해당 능력치가 전부 0일 경우에는 [강자 살육]이 부여되지 않는다. 함선 1척이 여러 능력치가 가장 높을 경우에는 [강자 살육]이 중복으로 부여된다.\n[강자 살육]이 부여된 함선은 보유 중인 [강자 살육] 개수에 따라 레겐스부르크·META에게 받는 피해량이 증가한다(1개 보유 시 10% 증가, 2개째부터는 1개당 추가로 받는 피해 효과가 300% 곱연산됨). [강자 살육]을 보유 중인 함선이 주력 함대에 있으면, 점화 상태가 되어 피해를 받는다(점화 피해는 [강자 살육]의 영향을 받지 않음). \n[강자 살육]이 함선에 부여되지 않았을 경우에는 1개, [강자 살육]을 가졌던 함선이 전투 불능에 빠진 경우에는 그만큼의 [강자 살육]이 레겐스부르크·META에게 부여된다. 레겐스부르크·META가 가진 [강자 살육]의 개수만큼 받는 피해량이 20% 경감된다."
+      },
+      {
+        "name": "단계적인 승리",
+        "grade": 1,
+        "text": "적 유닛이 전투 불능에 빠지거나 화면에서 이탈하면, 레겐스부르크·META의 포격과 뇌장이 15% 상승한다."
+      }
+    ]
+  },
+  "23": {
+    "id": 23,
+    "name": "브리스톨·META",
+    "meta_id": 970112,
+    "boss_level_id": 331,
+    "availability": "timed",
+    "windows": [
+      {
+        "start": "2026-06-18T00:00:00",
+        "end": "2026-09-17T12:00:00"
+      }
+    ],
+    "armor_type": 1,
+    "armor": "Light",
+    "enemy_type": 1,
+    "hull": "DD",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 54000,
+        "enemy_id": 295331,
+        "expedition_id": 296331
+      },
+      {
+        "level": 2,
+        "hp": 58000,
+        "enemy_id": 295332,
+        "expedition_id": 296332
+      },
+      {
+        "level": 3,
+        "hp": 62000,
+        "enemy_id": 295333,
+        "expedition_id": 296333
+      },
+      {
+        "level": 4,
+        "hp": 75000,
+        "enemy_id": 295334,
+        "expedition_id": 296334
+      },
+      {
+        "level": 5,
+        "hp": 118000,
+        "enemy_id": 295335,
+        "expedition_id": 296335
+      },
+      {
+        "level": 6,
+        "hp": 162000,
+        "enemy_id": 295336,
+        "expedition_id": 296336
+      },
+      {
+        "level": 7,
+        "hp": 248000,
+        "enemy_id": 295337,
+        "expedition_id": 296337
+      },
+      {
+        "level": 8,
+        "hp": 335000,
+        "enemy_id": 295338,
+        "expedition_id": 296338
+      },
+      {
+        "level": 9,
+        "hp": 421000,
+        "enemy_id": 295339,
+        "expedition_id": 296339
+      },
+      {
+        "level": 10,
+        "hp": 518000,
+        "enemy_id": 295340,
+        "expedition_id": 296340
+      },
+      {
+        "level": 11,
+        "hp": 648000,
+        "enemy_id": 295341,
+        "expedition_id": 296341
+      },
+      {
+        "level": 12,
+        "hp": 843000,
+        "enemy_id": 295342,
+        "expedition_id": 296342
+      },
+      {
+        "level": 13,
+        "hp": 1081000,
+        "enemy_id": 295343,
+        "expedition_id": 296343
+      },
+      {
+        "level": 14,
+        "hp": 1340000,
+        "enemy_id": 295344,
+        "expedition_id": 296344
+      },
+      {
+        "level": 15,
+        "hp": 1600000,
+        "enemy_id": 295345,
+        "expedition_id": 296345
+      }
+    ],
+    "skills": [
+      {
+        "name": "램프 사용 - 관찰력 올인",
+        "grade": 3,
+        "text": "전투 중 브리스톨·META는 램프를 사용해 특정 구역을 밝게 비추며, 해당 구역에 있는 아군의 회피율을 크게 감소시킨다."
+      },
+      {
+        "name": "차원을 쫓는 사냥",
+        "grade": 2,
+        "text": "DATA-857이 브리스톨·META를 수행 중일 때 브리스톨·META가 주는 피해량이 20% 증가하고 받는 피해량은 20% 감소한다. \n임의의 아군이 [완전 회피] 또는 [무적] 상태가 되면, DATA-857은 브리스톨·META 수행을 해제하고, [완전 회피] 또는 [무적] 상태인 아군 1명(선봉함대 선두 함선 및 주력함대 기함을 우선적으로 선택)에게 대상의 최대 내구 수치에 비례한 지속 피해를 가한다. 해당 아군의 [완전 회피] 또는 [무적] 상태가 해제되면 DATA-857은 다시 브리스톨·META 수행에 돌아간다."
+      },
+      {
+        "name": "등잔 밑이 어둡다",
+        "grade": 1,
+        "text": "전투 시작 후 일정 시간이 지나면 램프 주변에 수수께끼의 생물이 출현한다. 이 생물은 전장의 적과 아군 모두에게 약간의 영향을 끼칠 수 있다. \n수수께끼의 생물이 전장에 존재하는 동안, 전장에 있는 모든 유닛의 명중이 소폭 감소한다."
+      }
+    ]
+  },
+  "24": {
+    "id": 24,
+    "name": "새러토가·META",
+    "meta_id": 970710,
+    "boss_level_id": 346,
+    "availability": "timed",
+    "windows": [
+      {
+        "start": "2026-09-17T00:00:00",
+        "end": "2026-12-24T12:00:00"
+      }
+    ],
+    "armor_type": 2,
+    "armor": "Medium",
+    "enemy_type": 7,
+    "hull": "CV",
+    "battle_seconds": 80,
+    "levels": [
+      {
+        "level": 1,
+        "hp": 61000,
+        "enemy_id": 295346,
+        "expedition_id": 296346
+      },
+      {
+        "level": 2,
+        "hp": 66000,
+        "enemy_id": 295347,
+        "expedition_id": 296347
+      },
+      {
+        "level": 3,
+        "hp": 71000,
+        "enemy_id": 295348,
+        "expedition_id": 296348
+      },
+      {
+        "level": 4,
+        "hp": 86000,
+        "enemy_id": 295349,
+        "expedition_id": 296349
+      },
+      {
+        "level": 5,
+        "hp": 135000,
+        "enemy_id": 295350,
+        "expedition_id": 296350
+      },
+      {
+        "level": 6,
+        "hp": 184000,
+        "enemy_id": 295351,
+        "expedition_id": 296351
+      },
+      {
+        "level": 7,
+        "hp": 282000,
+        "enemy_id": 295352,
+        "expedition_id": 296352
+      },
+      {
+        "level": 8,
+        "hp": 381000,
+        "enemy_id": 295353,
+        "expedition_id": 296353
+      },
+      {
+        "level": 9,
+        "hp": 479000,
+        "enemy_id": 295354,
+        "expedition_id": 296354
+      },
+      {
+        "level": 10,
+        "hp": 590000,
+        "enemy_id": 295355,
+        "expedition_id": 296355
+      },
+      {
+        "level": 11,
+        "hp": 737000,
+        "enemy_id": 295356,
+        "expedition_id": 296356
+      },
+      {
+        "level": 12,
+        "hp": 959000,
+        "enemy_id": 295357,
+        "expedition_id": 296357
+      },
+      {
+        "level": 13,
+        "hp": 1229000,
+        "enemy_id": 295358,
+        "expedition_id": 296358
+      },
+      {
+        "level": 14,
+        "hp": 1524000,
+        "enemy_id": 295359,
+        "expedition_id": 296359
+      },
+      {
+        "level": 15,
+        "hp": 1820000,
+        "enemy_id": 295360,
+        "expedition_id": 296360
+      }
+    ],
+    "skills": [
+      {
+        "name": "체인지★배틀 뮤직",
+        "grade": 1,
+        "text": "새러토가·META의 장갑 타입이 25초마다 중형 장갑/중장갑으로 교체된다(우측 상단에 장갑 타입 변경 카운트다운이 출현, 전투 시작 시에는 중형 장갑). 장갑 타입이 교체될 때마다 함재기에 의한 항공 공격을 퍼붓는다."
+      }
+    ]
+  }
+}

@@ -1,0 +1,419 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.LevelingPlanView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:AzurLaneDashboard.App.Views"
+             Foreground="{DynamicResource TextBrush}"
+             FontSize="13"
+             SizeChanged="OnSizeChanged">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="FleetPlannerShared.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Closed combo box: the chapter and its note; the open list adds level and EXP columns. -->
+            <DataTemplate x:Key="StageSelectedTemplate">
+                <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                    <Run Text="{Binding Title, Mode=OneWay}" FontWeight="Bold" />
+                    <Run Text="{Binding Note, Mode=OneWay}" FontSize="11" Foreground="{DynamicResource MutedBrush}" />
+                </TextBlock>
+            </DataTemplate>
+            <DataTemplate x:Key="StageChoiceTemplate">
+                <Grid MinWidth="420">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="58" />
+                        <ColumnDefinition Width="104" />
+                        <ColumnDefinition Width="70" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                        <Run Text="{Binding Title, Mode=OneWay}" FontWeight="Bold" />
+                        <Run Text="{Binding Note, Mode=OneWay}" FontSize="11" Foreground="{DynamicResource AccentBrush}" />
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Text="{Binding EnemyLevelText}" FontSize="12" Foreground="{DynamicResource MutedBrush}"
+                               VerticalAlignment="Center" />
+                    <TextBlock Grid.Column="2" Text="{Binding ExpText}" FontSize="12" TextAlignment="Right" VerticalAlignment="Center" />
+                    <TextBlock x:Name="Basis" Grid.Column="3" Text="{Binding BasisText}" FontSize="11" TextAlignment="Right"
+                               Foreground="{DynamicResource MutedBrush}" VerticalAlignment="Center" />
+                </Grid>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding HasRecords}" Value="True">
+                        <Setter TargetName="Basis" Property="Foreground" Value="{DynamicResource GoodBrush}" />
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <views:ComboBoxChoiceTemplateSelector x:Key="StageTemplateSelector"
+                                                  SelectedTemplate="{StaticResource StageSelectedTemplate}"
+                                                  DropDownTemplate="{StaticResource StageChoiceTemplate}" />
+
+            <DataTemplate x:Key="DriverChoiceTemplate">
+                <Button Style="{StaticResource SegmentButton}" Content="{Binding Label}" Tag="{Binding IsSelected}"
+                        Command="{Binding DataContext.SetDriverCountCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        CommandParameter="{Binding}"
+                        AutomationProperties.Name="{Binding Label, StringFormat=기사 {0}}" />
+            </DataTemplate>
+
+            <!-- A fleet tile is a button: choosing it opens that ship's gear card under the fleet. -->
+            <DataTemplate x:Key="LevelingSlotTemplate">
+                <Button x:Name="Tile" Margin="0,0,8,0" Cursor="Hand" ToolTip="{Binding Name}" FocusVisualStyle="{x:Null}"
+                        AutomationProperties.Name="{Binding Name, StringFormat={}{0} 장비 추천 보기}"
+                        Command="{Binding DataContext.SelectLevelingShipCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        CommandParameter="{Binding}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Face" Padding="4" CornerRadius="8" Background="Transparent" BorderBrush="Transparent"
+                                    BorderThickness="1">
+                                <ContentPresenter />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Face" Property="Background" Value="{DynamicResource ControlHoverBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="Face" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                                </Trigger>
+                                <!-- Hovering a queue row outlines the same ship. -->
+                                <DataTrigger Value="True">
+                                    <DataTrigger.Binding>
+                                        <MultiBinding Converter="{StaticResource StringEqualsConverter}">
+                                            <Binding Path="ShipUid" />
+                                            <Binding Path="DataContext.HighlightedShipUid" RelativeSource="{RelativeSource AncestorType=UserControl}" />
+                                        </MultiBinding>
+                                    </DataTrigger.Binding>
+                                    <Setter TargetName="Face" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                                </DataTrigger>
+                                <!-- The ship whose gear card is open. -->
+                                <DataTrigger Value="True">
+                                    <DataTrigger.Binding>
+                                        <MultiBinding Converter="{StaticResource StringEqualsConverter}">
+                                            <Binding Path="ShipUid" />
+                                            <Binding Path="DataContext.SelectedLevelingShipUid" RelativeSource="{RelativeSource AncestorType=UserControl}" />
+                                        </MultiBinding>
+                                    </DataTrigger.Binding>
+                                    <Setter TargetName="Face" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+                                    <Setter TargetName="Face" Property="Background" Value="{DynamicResource AccentSubtleBrush}" />
+                                </DataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <StackPanel>
+                        <Grid Height="76" views:ExpFeedback.Scope="slot" views:ExpFeedback.Floater="{Binding Gauge}">
+                            <Border Style="{StaticResource Portrait}">
+                                <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="Uniform"
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </Border>
+                            <Border x:Name="Role" MinWidth="24" Height="18" Padding="5,0" CornerRadius="6,0,6,0"
+                                    HorizontalAlignment="Left" VerticalAlignment="Top" Background="{DynamicResource GoodBrush}">
+                                <TextBlock x:Name="RoleText" Text="{Binding RoleText}" FontWeight="Bold" FontSize="11"
+                                           Foreground="{DynamicResource ShellBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <Border Height="18" Padding="5,0" CornerRadius="0,6,0,6" HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Background="{DynamicResource ShellBrush}"
+                                    Visibility="{Binding IsFlagship, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBlock Text="★ 기함" FontWeight="Bold" FontSize="11" Foreground="{DynamicResource RatingHighTextBrush}"
+                                           VerticalAlignment="Center" />
+                            </Border>
+                            <Border Height="17" Padding="5,0" Margin="0,0,0,3" CornerRadius="6,0,0,0" HorizontalAlignment="Right"
+                                    VerticalAlignment="Bottom" Background="{DynamicResource ShellBrush}" ToolTip="{Binding GearBadgeToolTip}"
+                                    Visibility="{Binding HasGearChanges, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBlock Text="{Binding GearBadgeText}" FontWeight="Bold" FontSize="10" Foreground="{DynamicResource AccentBrush}"
+                                           VerticalAlignment="Center" />
+                            </Border>
+                        </Grid>
+                        <TextBlock Text="{Binding Name}" Margin="0,6,0,0" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{Binding SubText}" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                                   TextTrimming="CharacterEllipsis" />
+                        <ProgressBar x:Name="ExpBar" Height="4" Margin="0,3,0,3" Minimum="0" Maximum="1"
+                                     views:ExpFeedback.LevelBar="{Binding Gauge}" Foreground="{DynamicResource AccentBrush}"
+                                     Background="{DynamicResource InputBrush}" BorderThickness="0"
+                                     ToolTip="{Binding Ship.ExperienceSummary}"
+                                     AutomationProperties.Name="{Binding Ship.ExperienceSummary}" />
+                        <TextBlock x:Name="Exp" Text="{Binding ExpText}" FontSize="12" FontWeight="Bold"
+                                   Foreground="{DynamicResource GoodBrush}" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                </Button>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding IsDriver}" Value="True">
+                        <Setter TargetName="Role" Property="Background" Value="{DynamicResource ControlPressedBrush}" />
+                        <Setter TargetName="RoleText" Property="Foreground" Value="{DynamicResource TextBrush}" />
+                        <Setter TargetName="Exp" Property="Foreground" Value="{DynamicResource MutedBrush}" />
+                        <Setter TargetName="Exp" Property="FontWeight" Value="SemiBold" />
+                        <Setter TargetName="ExpBar" Property="Foreground" Value="{DynamicResource MutedBrush}" />
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <DataTemplate x:Key="QueueRowTemplate">
+                <Border x:Name="Row" Padding="16,8" Background="Transparent" BorderBrush="{DynamicResource SubtleLineBrush}"
+                        BorderThickness="0,1,0,0" MouseEnter="OnQueueEnter" MouseLeave="OnQueueLeave">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Style="{StaticResource Portrait}" Width="40" Height="40" VerticalAlignment="Top" BorderThickness="0,0,0,2">
+                            <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                        <StackPanel Grid.Column="2">
+                            <DockPanel>
+                                <Border DockPanel.Dock="Right" Style="{StaticResource GoodChip}">
+                                    <TextBlock Text="{Binding StatusText}" />
+                                </Border>
+                                <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                                    <Run Text="{Binding Rank, Mode=OneWay, StringFormat={}{0}.}" FontWeight="Bold" />
+                                    <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
+                                    <Run Text="{Binding HeaderText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                                </TextBlock>
+                            </DockPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,3,0,0">
+                                <ProgressBar Width="64" Height="5" Minimum="0" Maximum="1" views:ExpFeedback.ReadyBar="{Binding Gauge}"
+                                             ToolTip="{Binding Ship.ExperienceSummary}" VerticalAlignment="Center" Foreground="{DynamicResource AccentBrush}"
+                                             Background="{DynamicResource InputBrush}" BorderThickness="0" />
+                                <TextBlock Text="{Binding GoalText}" Margin="8,0,0,0" FontSize="12"
+                                           Foreground="{DynamicResource SecondaryTextBrush}" TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                            <ItemsControl ItemsSource="{Binding Tags}" ItemTemplate="{StaticResource PlannerTagTemplate}"
+                                          ItemsPanel="{StaticResource WrapRowPanel}" Margin="0,5,0,0" Focusable="False" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <DataTemplate.Triggers>
+                    <Trigger SourceName="Row" Property="IsMouseOver" Value="True">
+                        <Setter TargetName="Row" Property="Background" Value="{DynamicResource ControlHoverBrush}" />
+                    </Trigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <DataTemplate x:Key="WaitingRowTemplate">
+                <Border x:Name="Row" Padding="16,6" Background="Transparent" BorderBrush="{DynamicResource SubtleLineBrush}"
+                        BorderThickness="0,1,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Style="{StaticResource Portrait}" Width="28" Height="28" VerticalAlignment="Top" BorderThickness="0,0,0,2">
+                            <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                        <StackPanel Grid.Column="2">
+                            <DockPanel MinHeight="28">
+                                <Border DockPanel.Dock="Right" Style="{StaticResource PlannerChip}">
+                                    <TextBlock Text="{Binding StatusText}" />
+                                </Border>
+                                <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                                    <Run Text="{Binding Rank, Mode=OneWay, StringFormat={}{0}.}" FontWeight="Bold" />
+                                    <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
+                                    <Run Text="{Binding CompactText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                                </TextBlock>
+                            </DockPanel>
+                            <ItemsControl ItemsSource="{Binding WarningTags}" ItemTemplate="{StaticResource PlannerTagTemplate}"
+                                          ItemsPanel="{StaticResource WrapRowPanel}" Margin="0,2,0,0" Focusable="False"
+                                          Visibility="{Binding HasWarning, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <!-- Stage context: which chapter is farmed and what a battle pays there. -->
+        <Border Style="{StaticResource SectionPanel}" Padding="16,12" Margin="0,0,0,16">
+            <!-- Wraps on narrow windows so no fact is cut off. -->
+            <WrapPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,4,0,4">
+                    <TextBlock Text="쫄작 해역" Style="{StaticResource FactLabel}" FontWeight="Bold" VerticalAlignment="Center"
+                               Margin="0,0,12,0" />
+                    <ComboBox ItemsSource="{Binding StageChoices}" SelectedItem="{Binding SelectedStage, Mode=TwoWay}"
+                              ItemTemplateSelector="{StaticResource StageTemplateSelector}" MinWidth="300" MaxWidth="460"
+                              VerticalAlignment="Center" AutomationProperties.Name="쫄작 해역" />
+                </StackPanel>
+                <Rectangle Width="1" Margin="16,4" Fill="{DynamicResource SubtleLineBrush}" />
+                <StackPanel Margin="0,0,22,0">
+                    <TextBlock Text="적 레벨" Style="{StaticResource FactLabel}" />
+                    <TextBlock Text="{Binding LevelingPlan.Stage.EnemyLevel, StringFormat=Lv.{0}}" Style="{StaticResource FactValue}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,22,0">
+                    <TextBlock Text="잡몹 1전 (S랭크)" Style="{StaticResource FactLabel}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LevelingPlan.Stage.SRankExp, StringFormat={}{0:N0}}" Style="{StaticResource FactValue}" />
+                        <TextBlock Text="EXP" Style="{StaticResource FactUnit}" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="0,0,22,0">
+                    <TextBlock Text="전의 120 초과" Style="{StaticResource FactLabel}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LevelingPlan.Stage.BonusExp, StringFormat={}{0:N0}}" Style="{StaticResource FactValue}" />
+                        <TextBlock Text="×1.2" Style="{StaticResource FactUnit}" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="0,0,22,0">
+                    <TextBlock Text="기함 · MVP" Style="{StaticResource FactLabel}" />
+                    <TextBlock Text="×1.5 · ×2" Style="{StaticResource FactValue}" />
+                </StackPanel>
+                <Border VerticalAlignment="Center" Margin="0,4,0,4"
+                        Visibility="{Binding LevelingPlan.HasRecordChip, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource WarnChip}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding LevelingPlan.IsRecordAllSRank}" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource GoodSubtleBrush}" />
+                                    <Setter Property="TextElement.Foreground" Value="{DynamicResource GoodBrush}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <TextBlock Text="{Binding LevelingPlan.RecordChipText}" />
+                </Border>
+            </WrapPanel>
+        </Border>
+
+        <Grid x:Name="Body">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="MainColumn" Width="3*" />
+                <ColumnDefinition x:Name="GapColumn" Width="20" />
+                <ColumnDefinition x:Name="SideColumn" Width="2*" MinWidth="360" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel x:Name="FleetSection">
+                <TextBlock Margin="0,0,0,10" TextTrimming="CharacterEllipsis">
+                    <Run Text="추천 쫄작 함대" FontSize="16" FontWeight="Bold" />
+                    <Run Text="쩔은 대기열 위에서부터 · 주력 1번(기함)에 가장 급한 쩔" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                </TextBlock>
+                <Border Style="{StaticResource SectionPanel}" Padding="18,14,10,16">
+                    <StackPanel>
+                        <DockPanel Margin="0,0,8,10">
+                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                <Border Style="{StaticResource SegmentFrame}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="기사" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource MutedBrush}"
+                                                   VerticalAlignment="Center" Margin="8,0,6,0" />
+                                        <ItemsControl ItemsSource="{Binding DriverChoices}" ItemTemplate="{StaticResource DriverChoiceTemplate}"
+                                                      Focusable="False">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+                                <Border Style="{StaticResource WarnChip}" Margin="10,0,0,0"
+                                        ToolTip="최근 쫄작 해역 전투에 나간 함선과 가장 많이 겹치는 게임 함대와 비교했습니다">
+                                    <TextBlock Text="{Binding LevelingPlan.OverlapText}" />
+                                </Border>
+                            </StackPanel>
+                            <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                                <Run Text="쫄작 함대" FontSize="14" FontWeight="Bold" />
+                                <Run Text="{Binding LevelingPlan.FleetSummaryText, Mode=OneWay}" FontSize="12"
+                                     Foreground="{DynamicResource MutedBrush}" />
+                            </TextBlock>
+                        </DockPanel>
+
+                        <Grid Visibility="{Binding HasLevelingShips, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="17" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="주력" FontSize="11" Foreground="{DynamicResource MutedBrush}" Margin="5,0,0,2" />
+                                <ItemsControl ItemsSource="{Binding LevelingMainSlots}" ItemTemplate="{StaticResource LevelingSlotTemplate}"
+                                              ItemsPanel="{StaticResource SlotRowPanel}" Focusable="False" />
+                            </StackPanel>
+                            <Rectangle Grid.Column="1" Width="1" Margin="0,18,8,4" HorizontalAlignment="Center"
+                                       Fill="{DynamicResource SubtleLineBrush}" />
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="전위" FontSize="11" Foreground="{DynamicResource MutedBrush}" Margin="5,0,0,2" />
+                                <ItemsControl ItemsSource="{Binding LevelingVanguardSlots}" ItemTemplate="{StaticResource LevelingSlotTemplate}"
+                                              ItemsPanel="{StaticResource SlotRowPanel}" Focusable="False" />
+                            </StackPanel>
+                        </Grid>
+                        <TextBlock Margin="0,0,8,6" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}"
+                                   Visibility="{Binding HasNoLevelingShips, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Text="Lv.120 미만 잠금 함선이 없거나, 쫄작 함대를 짤 함선 정보가 아직 없습니다." />
+
+                        <UniformGrid Columns="3" Margin="0,14,8,0"
+                                     Visibility="{Binding HasLevelingShips, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <Border Style="{StaticResource StatTile}" Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding LevelingPlan.LeechCountText}" Style="{StaticResource FactLabel}" />
+                                    <TextBlock TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding LevelingPlan.TotalExpText, Mode=OneWay}" FontSize="14" FontWeight="Bold" />
+                                        <Run Text="{Binding LevelingPlan.TotalAfterBonusText, Mode=OneWay}" FontSize="11"
+                                             Foreground="{DynamicResource MutedBrush}" />
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                            <Border Style="{StaticResource StatTile}" Margin="0,0,10,0">
+                                <StackPanel>
+                                    <TextBlock Text="전의 보너스 (120 초과)" Style="{StaticResource FactLabel}" />
+                                    <TextBlock Text="{Binding LevelingPlan.BonusBattlesText}" FontSize="14" FontWeight="Bold" />
+                                </StackPanel>
+                            </Border>
+                            <Border Style="{StaticResource StatTile}">
+                                <StackPanel>
+                                    <TextBlock Text="전의 0까지 (휴식 없이)" Style="{StaticResource FactLabel}" />
+                                    <TextBlock TextTrimming="CharacterEllipsis">
+                                        <Run Text="{Binding LevelingPlan.ExhaustText, Mode=OneWay}" FontSize="14" FontWeight="Bold" />
+                                        <Run Text="{Binding LevelingPlan.LowestMoraleText, Mode=OneWay}" FontSize="11"
+                                             Foreground="{DynamicResource MutedBrush}" />
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </UniformGrid>
+
+                        <Border Style="{StaticResource HintPanel}" Margin="0,12,8,0">
+                            <DockPanel>
+                                <TextBlock Text="i" FontWeight="Bold" Foreground="{DynamicResource AccentBrush}" Margin="0,0,8,0" />
+                                <TextBlock Text="{Binding LevelingPlan.DriverReasonText}" TextWrapping="Wrap" FontSize="12"
+                                           Foreground="{DynamicResource SecondaryTextBrush}" />
+                            </DockPanel>
+                        </Border>
+                        <TextBlock Margin="0,10,8,0" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                                   Text="EXP는 S랭크 기준 예상치입니다. 전의 보너스는 전투 전 전의로 판정한다고 가정했습니다(확인 필요). 한계돌파 전 함선은 상한 레벨까지만 계산합니다." />
+                    </StackPanel>
+                </Border>
+
+                <StackPanel Margin="0,20,0,0" Visibility="{Binding HasLevelingShips, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <TextBlock Margin="0,0,0,10" TextTrimming="CharacterEllipsis">
+                        <Run Text="장비 추천" FontSize="16" FontWeight="Bold" />
+                        <Run Text="{Binding LevelingGearBasisText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                    </TextBlock>
+                    <views:GearPanelView Panel="{Binding LevelingGearPanel}" />
+                    <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                               Text="함선을 누르면 그 함선의 장비가 열립니다. 해역을 치우는 기사가 먼저 장비를 받고, 그다음 기함과 쩔 순서로 배정합니다." />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="SideSection" Grid.Column="2">
+                <DockPanel Margin="0,0,0,10">
+                    <!-- The whole queue lives on 육성 계획; this side panel shows the part next to the fleet. -->
+                    <Button DockPanel.Dock="Right" Content="{Binding QueueShowAllText}" Style="{StaticResource LinkButton}"
+                            VerticalAlignment="Bottom"
+                            Command="{Binding DataContext.OpenGrowthQueueCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
+                    <TextBlock TextTrimming="CharacterEllipsis" VerticalAlignment="Bottom">
+                        <Run Text="쩔 대기열" FontSize="16" FontWeight="Bold" />
+                        <Run Text="육성 계획과 같은 순서" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                    </TextBlock>
+                </DockPanel>
+                <Border Style="{StaticResource SectionPanel}" Padding="0,0,0,4" ClipToBounds="True">
+                    <StackPanel>
+                        <TextBlock Text="{Binding FleetQueue.Count, StringFormat=편성 중 {0}척}" Style="{StaticResource QueueGroupLabel}" />
+                        <ItemsControl ItemsSource="{Binding FleetQueue}" ItemTemplate="{StaticResource QueueRowTemplate}" Focusable="False" />
+                        <TextBlock Text="다음 교대 · 대기" Style="{StaticResource QueueGroupLabel}"
+                                   Visibility="{Binding HasWaitingQueue, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <ItemsControl ItemsSource="{Binding WaitingQueue}" ItemTemplate="{StaticResource WaitingRowTemplate}" Focusable="False" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>

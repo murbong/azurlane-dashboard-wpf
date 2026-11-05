@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Windows x64
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore .\AzurLaneDashboard.slnx
+
+      - name: Build
+        run: dotnet build .\AzurLaneDashboard.slnx --configuration Release --no-restore
+
+      - name: Core regression checks
+        run: dotnet run --project tests/AzurLaneDashboard.Core.Checks --configuration Release --no-build
+
+      - name: WPF state and rendering checks
+        run: dotnet run --project tests/AzurLaneDashboard.App.Checks --configuration Release --no-build -- artifacts/refactor-qa

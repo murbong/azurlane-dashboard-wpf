@@ -1,0 +1,175 @@
+<UserControl x:Class="AzurLaneDashboard.App.Views.OverviewView"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:views="clr-namespace:AzurLaneDashboard.App.Views">
+ <UserControl.Resources>
+  <ResourceDictionary>
+   <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="FleetPlannerShared.xaml" />
+   </ResourceDictionary.MergedDictionaries>
+  </ResourceDictionary>
+ </UserControl.Resources>
+ <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+  <StackPanel Margin="0,0,6,8">
+   <!-- First run: no data yet -->
+   <Border Style="{StaticResource SectionPanel}" Margin="0,0,0,12" BorderBrush="{DynamicResource AccentBrush}"
+           Visibility="{Binding HasNoShips, Converter={StaticResource BoolToVisibilityConverter}}">
+    <DockPanel>
+     <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="12,0,0,0" VerticalAlignment="Center">
+      <Button Content="기존 데이터 열기" Command="{Binding BrowseDatabaseCommand}" Margin="0,0,8,0" />
+      <Button Content="연결 설정" Command="{Binding NavigateCommand}" CommandParameter="9" Style="{StaticResource PrimaryButton}" />
+     </StackPanel>
+     <TextBlock DockPanel.Dock="Left" Text="&#xE946;" Style="{StaticResource IconText}" FontSize="18" Foreground="{DynamicResource AccentBrush}" Margin="0,0,12,0" />
+     <StackPanel VerticalAlignment="Center">
+      <TextBlock Text="함대 데이터를 연결해 주세요" Style="{StaticResource SectionTitle}" />
+      <TextBlock Text="기존 데이터를 열거나, 연결 설정을 마친 뒤 게임의 도크를 열어 주세요." Style="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,3,0,0" />
+     </StackPanel>
+    </DockPanel>
+   </Border>
+
+   <!-- Key numbers -->
+   <ItemsControl ItemsSource="{Binding Kpis}" Margin="0,0,-8,4">
+    <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Columns="3" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+    <ItemsControl.ItemTemplate><DataTemplate>
+     <Border Style="{StaticResource KpiCard}" Margin="0,0,8,8">
+      <StackPanel>
+       <TextBlock Text="{Binding Title}" Style="{StaticResource MutedText}" />
+       <TextBlock Text="{Binding Value}" FontSize="22" FontWeight="SemiBold" Margin="0,2,0,0" />
+       <TextBlock Text="{Binding Detail}" Style="{StaticResource CaptionText}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Detail}" Margin="0,2,0,0" />
+      </StackPanel>
+     </Border>
+    </DataTemplate></ItemsControl.ItemTemplate>
+   </ItemsControl>
+
+   <Grid>
+    <Grid.ColumnDefinitions><ColumnDefinition Width="1.2*" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+    <!-- Growth goals: sized to its content so a short plan never leaves a hollow card beside the activity list. -->
+    <Border Style="{StaticResource SectionPanel}" Margin="0,0,12,0" VerticalAlignment="Top">
+     <StackPanel>
+      <DockPanel>
+       <Button DockPanel.Dock="Right" Content="목표 관리" Command="{Binding OpenGrowthGoalsCommand}" Style="{StaticResource LinkButton}" VerticalAlignment="Top" />
+       <StackPanel><TextBlock Text="내 육성 계획" Style="{StaticResource SectionTitle}" /><TextBlock Text="{Binding GrowthPlanner.Summary}" Style="{StaticResource MutedText}" Margin="0,3,0,0" /></StackPanel>
+      </DockPanel>
+      <Border Style="{StaticResource InsetPanel}" Margin="0,14,0,2" Padding="14,12"
+              Visibility="{Binding GrowthPlanner.IsEmpty, Converter={StaticResource BoolToVisibilityConverter}}">
+       <StackPanel>
+        <TextBlock Text="다음에 키울 함선은 누구인가요?" FontWeight="SemiBold" />
+        <TextBlock Text="목표 레벨·스킬을 정하면 남은 육성과 다음 할 일을 안내합니다." Style="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,3,0,10" />
+        <Button Content="첫 육성 목표 만들기" Command="{Binding OpenGrowthGoalsCommand}" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Left" />
+       </StackPanel>
+      </Border>
+      <ItemsControl ItemsSource="{Binding GrowthPlanner.PreviewPlans}" Margin="0,8,0,0">
+       <ItemsControl.ItemTemplate><DataTemplate>
+        <Border BorderBrush="{DynamicResource SubtleLineBrush}" BorderThickness="0,1,0,0" Padding="0,10">
+         <StackPanel>
+          <DockPanel>
+           <Border DockPanel.Dock="Right" Style="{StaticResource InsetPanel}" Padding="8,2" CornerRadius="10">
+            <TextBlock Text="{Binding Status}" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource AccentBrush}" />
+           </Border>
+           <TextBlock Text="{Binding ShipName}" FontWeight="SemiBold" VerticalAlignment="Center" />
+          </DockPanel>
+          <TextBlock Text="{Binding LevelSummary}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}" Margin="0,4,0,0" />
+          <TextBlock Text="{Binding SkillSummary}" Style="{StaticResource MutedText}" Margin="0,2,0,0" />
+         </StackPanel>
+        </Border>
+       </DataTemplate></ItemsControl.ItemTemplate>
+      </ItemsControl>
+     </StackPanel>
+    </Border>
+
+    <!-- Ongoing activities -->
+    <Border Grid.Column="1" Style="{StaticResource SectionPanel}">
+     <StackPanel>
+      <DockPanel>
+       <Button DockPanel.Dock="Right" Content="운영 현황" Command="{Binding NavigateCommand}" CommandParameter="5" Style="{StaticResource LinkButton}" VerticalAlignment="Top" />
+       <StackPanel><TextBlock Text="진행 중인 활동" Style="{StaticResource SectionTitle}" /><TextBlock Text="게임에서 마지막으로 수집한 상태입니다." Style="{StaticResource MutedText}" Margin="0,3,0,0" /></StackPanel>
+      </DockPanel>
+      <ItemsControl ItemsSource="{Binding SystemStatuses}" Margin="0,10,0,0">
+       <ItemsControl.ItemTemplate><DataTemplate>
+        <Border BorderBrush="{DynamicResource SubtleLineBrush}" BorderThickness="0,1,0,0" Padding="0,9">
+         <DockPanel>
+          <Grid DockPanel.Dock="Right" Margin="10,0,0,0" VerticalAlignment="Center">
+           <Ellipse Width="7" Height="7" Fill="{DynamicResource GoodBrush}" ToolTip="{Binding StatusLabel}" HorizontalAlignment="Right"
+                    Visibility="{Binding IsRoutine, Converter={StaticResource BoolToVisibilityConverter}}" />
+           <Border Style="{StaticResource StatusBadgeChip}" Margin="0" Visibility="{Binding IsNotable, Converter={StaticResource BoolToVisibilityConverter}}">
+            <TextBlock Text="{Binding StatusLabel}" FontSize="11" FontWeight="SemiBold" />
+           </Border>
+          </Grid>
+          <StackPanel><TextBlock Text="{Binding Name}" FontWeight="SemiBold" /><TextBlock Text="{Binding Detail}" Style="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,2,0,0" /></StackPanel>
+         </DockPanel>
+        </Border>
+       </DataTemplate></ItemsControl.ItemTemplate>
+      </ItemsControl>
+     </StackPanel>
+    </Border>
+   </Grid>
+
+   <Grid Margin="0,12,0,0">
+    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+    <Border Style="{StaticResource SectionPanel}" Margin="0,0,12,0">
+     <StackPanel>
+      <StackPanel><TextBlock Text="최근 전투" Style="{StaticResource SectionTitle}" /><TextBlock Text="{Binding BattleSummaryText}" Style="{StaticResource MutedText}" TextTrimming="CharacterEllipsis" Margin="0,3,0,0" /></StackPanel>
+      <DataGrid ItemsSource="{Binding OverviewBattleRuns}" RowHeight="34" Height="228" MinWidth="0" Margin="0,12,0,0">
+       <DataGrid.Columns>
+        <DataGridTextColumn Header="해역" Binding="{Binding StageLabel}" Width="*" />
+        <DataGridTextColumn Header="평균 EXP" Binding="{Binding ShipExpAvg, StringFormat={}{0:N0}}" Width="90" />
+        <DataGridTextColumn Header="MVP" Binding="{Binding MvpName}" Width="*" />
+       </DataGrid.Columns>
+      </DataGrid>
+     </StackPanel>
+    </Border>
+    <!-- The top of the 쩔 대기열: the same order as 육성 계획 and the 쫄작 tab, never a separate score. -->
+    <Border Grid.Column="1" Style="{StaticResource SectionPanel}" Padding="0,16,0,8">
+     <DockPanel>
+      <DockPanel DockPanel.Dock="Top" Margin="16,0,16,0">
+       <Button DockPanel.Dock="Right" Content="쫄작 편성 ›" Command="{Binding OpenLevelingPlanCommand}" Style="{StaticResource LinkButton}" VerticalAlignment="Top" />
+       <StackPanel>
+        <TextBlock Text="쩔 대기열" Style="{StaticResource SectionTitle}" />
+        <TextBlock Style="{StaticResource MutedText}" TextTrimming="CharacterEllipsis" Margin="0,3,0,0">
+         <Run Text="{Binding FleetPlanner.QueueStageTitle, Mode=OneWay}" />
+         <Run Text="기준 · 상위 5척" />
+        </TextBlock>
+       </StackPanel>
+      </DockPanel>
+      <Button DockPanel.Dock="Bottom" Content="{Binding FleetPlanner.QueueShowAllText}" Command="{Binding OpenGrowthQueueCommand}"
+              Style="{StaticResource LinkButton}" HorizontalAlignment="Left" Margin="10,6,0,0" />
+      <Grid Height="232" Margin="0,10,0,0">
+       <ItemsControl ItemsSource="{Binding FleetPlanner.HomeQueue}" Focusable="False">
+        <ItemsControl.ItemTemplate><DataTemplate>
+         <Border Padding="16,6" BorderBrush="{DynamicResource SubtleLineBrush}" BorderThickness="0,1,0,0" Height="46">
+          <Grid>
+           <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="34" />
+            <ColumnDefinition Width="42" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+           </Grid.ColumnDefinitions>
+           <Border Style="{StaticResource QueueRankBadge}">
+            <TextBlock Text="{Binding Rank}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+           </Border>
+           <Border Grid.Column="1" Style="{StaticResource Portrait}" Width="32" Height="32" BorderThickness="0" HorizontalAlignment="Left">
+            <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                   RenderOptions.BitmapScalingMode="HighQuality" />
+           </Border>
+           <StackPanel Grid.Column="2" VerticalAlignment="Center" Margin="0,0,8,0"
+                       views:ExpFeedback.Scope="home" views:ExpFeedback.Floater="{Binding Gauge}">
+            <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+            <TextBlock Text="{Binding CompactText}" FontSize="11" Foreground="{DynamicResource MutedBrush}" TextTrimming="CharacterEllipsis" />
+           </StackPanel>
+           <Border Grid.Column="3" Style="{StaticResource QueueStatusChip}">
+            <TextBlock Text="{Binding StatusText}" />
+           </Border>
+          </Grid>
+         </Border>
+        </DataTemplate></ItemsControl.ItemTemplate>
+       </ItemsControl>
+       <TextBlock Text="Lv.120 미만 잠금 함선이 없거나 아직 데이터가 없습니다." Style="{StaticResource MutedText}"
+                  Margin="16,8" TextWrapping="Wrap"
+                  Visibility="{Binding FleetPlanner.HasNoGrowthQueue, Converter={StaticResource BoolToVisibilityConverter}}" />
+      </Grid>
+     </DockPanel>
+    </Border>
+   </Grid>
+  </StackPanel>
+ </ScrollViewer>
+</UserControl>

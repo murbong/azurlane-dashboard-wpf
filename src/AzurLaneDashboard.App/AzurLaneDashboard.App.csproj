@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <SatelliteResourceLanguages>ko;en</SatelliteResourceLanguages>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <!-- The file description; Windows names the app by it in notifications and Task Manager. -->
+    <AssemblyTitle>Azur Lane Dashboard</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AzurLaneDashboard.Core\AzurLaneDashboard.Core.csproj" />
+    <ProjectReference Include="..\AzurLaneDashboard.Automation\AzurLaneDashboard.Automation.csproj" />
+    <ProjectReference Include="..\AzurLaneDashboard.Capture\AzurLaneDashboard.Capture.csproj" />
+    <ProjectReference Include="..\AzurLaneDashboard.Data\AzurLaneDashboard.Data.csproj" />
+    <ProjectReference Include="..\AzurLaneDashboard.Resources\AzurLaneDashboard.Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\maps\*.json"
+             Exclude="..\..\maps\local_assets.json;..\..\maps\update_state.json"
+             Link="defaults\maps\%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+    <Resource Include="Assets\app-icon.png" />
+    <None Remove="Assets\Fonts\*.ttf" />
+    <Resource Include="Assets\Fonts\*.ttf" />
+  </ItemGroup>
+
+</Project>
