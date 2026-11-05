@@ -39,7 +39,8 @@ public sealed class GearPanel
             Rarity = rarity,
             Rows = plan is null
                 ? []
-                : GearPlanPresenter.Rows(plan, inputs.GearItems, inputs.GearInventory, mode, alternateArmorLabel),
+                : GearPlanPresenter.Rows(plan, inputs.GearItems, inputs.GearInventory, mode, alternateArmorLabel,
+                    inputs.AugmentItems),
             FootText = plan is null ? "" : GearPlanPresenter.FootText(plan, mode),
             ArmorNote = plan is null || alternateArmorLabel.Length == 0
                 ? ""

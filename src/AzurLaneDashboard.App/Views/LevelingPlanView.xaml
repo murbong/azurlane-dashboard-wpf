@@ -218,6 +218,32 @@
                     </Grid>
                 </Border>
             </DataTemplate>
+
+            <!-- A courtyard line: the ship, why it is listed, and where it sits or should go. -->
+            <DataTemplate x:Key="DormRowTemplate">
+                <Border Padding="16,6" BorderBrush="{DynamicResource SubtleLineBrush}" BorderThickness="0,1,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Border Style="{StaticResource Portrait}" Width="28" Height="28" VerticalAlignment="Center" BorderThickness="0,0,0,2">
+                            <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" TextTrimming="CharacterEllipsis" ToolTip="{Binding Name}" />
+                            <TextBlock Text="{Binding SubText}" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                                       TextTrimming="CharacterEllipsis" ToolTip="{Binding SubText}" />
+                        </StackPanel>
+                        <Border Grid.Column="3" Style="{StaticResource QueueStatusChip}" Margin="8,0,0,0">
+                            <TextBlock Text="{Binding StatusText}" />
+                        </Border>
+                    </Grid>
+                </Border>
+            </DataTemplate>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -413,6 +439,35 @@
                         <ItemsControl ItemsSource="{Binding WaitingQueue}" ItemTemplate="{StaticResource WaitingRowTemplate}" Focusable="False" />
                     </StackPanel>
                 </Border>
+
+                <!-- Courtyard: the farming fleet rests on floor 2, the waiting ships train on floor 1. -->
+                <TextBlock Margin="0,20,0,10" TextTrimming="CharacterEllipsis">
+                    <Run Text="숙소" FontSize="16" FontWeight="Bold" />
+                    <Run Text="{Binding DormPlan.HeaderText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource MutedBrush}" />
+                </TextBlock>
+                <Border Style="{StaticResource SectionPanel}" Padding="0,0,0,10" ClipToBounds="True"
+                        Visibility="{Binding DormPlan.IsKnown, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding DormPlan.RestTitle}" Style="{StaticResource QueueGroupLabel}" />
+                        <ItemsControl ItemsSource="{Binding DormPlan.RestRows}" ItemTemplate="{StaticResource DormRowTemplate}" Focusable="False" />
+                        <TextBlock Text="{Binding DormPlan.RestAdvice}" Margin="16,6,16,4" TextWrapping="Wrap" FontSize="12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"
+                                   Visibility="{Binding DormPlan.HasRestAdvice, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBlock Text="{Binding DormPlan.TrainTitle}" Style="{StaticResource QueueGroupLabel}" Margin="16,14,16,4" />
+                        <ItemsControl ItemsSource="{Binding DormPlan.TrainRows}" ItemTemplate="{StaticResource DormRowTemplate}" Focusable="False" />
+                        <TextBlock Text="지금 1층 · 추천 밖" Style="{StaticResource QueueGroupLabel}"
+                                   Visibility="{Binding DormPlan.HasTrainOthers, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <ItemsControl ItemsSource="{Binding DormPlan.TrainOthers}" ItemTemplate="{StaticResource DormRowTemplate}" Focusable="False" />
+                        <TextBlock Text="{Binding DormPlan.TrainAdvice}" Margin="16,6,16,0" TextWrapping="Wrap" FontSize="12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"
+                                   Visibility="{Binding DormPlan.HasTrainAdvice, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    </StackPanel>
+                </Border>
+                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource MutedBrush}"
+                           Text="마지막 캡처 기준입니다. 1층은 EXP와 전의를 주고, 2층은 EXP 없이 전의를 더 빨리 회복합니다. 1층 추천 순서는 성장 목표, 콘텐츠 후보, 지금 훈련 중, 평가 상위입니다. 쫄작 함대와 레벨 상한에 걸린 함선은 뺍니다." />
+                <TextBlock Margin="0,4,0,0" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"
+                           Text="숙소 기록이 없습니다. 게임에 다시 접속하면 채워집니다."
+                           Visibility="{Binding DormPlan.IsUnknown, Converter={StaticResource BoolToVisibilityConverter}}" />
             </StackPanel>
         </Grid>
     </StackPanel>

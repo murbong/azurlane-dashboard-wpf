@@ -23,7 +23,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="{Binding Slot}" FontSize="11" FontWeight="Bold" Foreground="{DynamicResource MutedBrush}"
+                            <TextBlock Text="{Binding SlotText}" FontSize="11" FontWeight="Bold" Foreground="{DynamicResource MutedBrush}"
                                        HorizontalAlignment="Center" />
                             <TextBlock Text="{Binding SlotLabel}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}"
                                        HorizontalAlignment="Center" />

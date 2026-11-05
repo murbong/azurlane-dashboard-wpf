@@ -10,6 +10,8 @@ public sealed record FleetPlannerShip
     public string RegalUid { get; init; } = "";
     /// <summary>Key into regal_gear_map.json's ship table; 0 when unknown.</summary>
     public int RegalGearId { get; init; }
+    /// <summary>The same table's key for the special equipment (augment) ranking; 0 when unknown.</summary>
+    public int RegalAugmentId { get; init; }
     public string Name { get; init; } = "";
     public string IconUrl { get; init; } = "";
     public string Rarity { get; init; } = "";

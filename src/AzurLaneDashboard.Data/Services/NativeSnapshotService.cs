@@ -185,7 +185,8 @@ public sealed partial class NativeSnapshotService
         var communityMatched = ships.Count(ship => !string.IsNullOrWhiteSpace(ship.CommunityLabel));
         var battleSummary = battle.SummaryText;
 
-        var fleetPlan = BuildFleetPlan(connection, ships, maps, fleetCompositionGroups, equipment, projectRoot);
+        var fleetPlan = BuildFleetPlan(connection, ships, maps, fleetCompositionGroups, equipment, specialEquipment,
+            projectRoot);
         var snapshot = new DashboardSnapshot
         {
             Auction = auction,

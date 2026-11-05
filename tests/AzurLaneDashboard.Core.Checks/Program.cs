@@ -27,6 +27,7 @@ var unknown = AuctionBidCalculator.Calculate("A", 1, 0, 0, 0);
 GrowthPlannerChecks.Run();
 FleetPlanChecks.Run();
 LevelingPlanChecks.Run();
+DormPlanChecks.Run();
 MetaBossChecks.Run();
 MetaFightChecks.Run();
 MeowfficerChecks.Run();

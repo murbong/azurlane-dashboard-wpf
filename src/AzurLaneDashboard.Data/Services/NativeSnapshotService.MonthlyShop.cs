@@ -200,6 +200,8 @@ public sealed partial class NativeSnapshotService
                         {
                             foreach (var baseId in rows[rank])
                             {
+                                // A piece this limit break cannot equip is no reason to buy it now.
+                                if (!GearAllocator.Fits(shipPlan.Ship, slot.Slot, baseId, inputs.GearInventory)) continue;
                                 if (!counted.Add((baseId, shipPlan.Ship.Uid, slot.Slot))) continue;
                                 var (count, example) = demand.GetValueOrDefault(baseId);
                                 demand[baseId] = (count + 1, example ?? $"{shipPlan.Ship.Name} {slot.Slot}번 칸 ({content.Label})");

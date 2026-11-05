@@ -34,6 +34,10 @@ public sealed class FleetPlannerInputs
     public GearInventory GearInventory { get; init; } = new();
     public IReadOnlyDictionary<string, GearFleetShip> GearShips { get; init; } = new Dictionary<string, GearFleetShip>();
     public IReadOnlyDictionary<int, GearItemInfo> GearItems { get; init; } = new Dictionary<int, GearItemInfo>();
+    /// <summary>Courtyard floors as of the last capture, for the 숙소 card on the 쫄작 tab.</summary>
+    public DormState Dorm { get; init; } = new();
+    /// <summary>Special equipment by base id; kept apart from <see cref="GearItems"/> because the ids overlap.</summary>
+    public IReadOnlyDictionary<int, GearItemInfo> AugmentItems { get; init; } = new Dictionary<int, GearItemInfo>();
 }
 
 public sealed record LevelingStageOption(LevelingStage Stage, IReadOnlyList<LevelingBattleRecord> Records);

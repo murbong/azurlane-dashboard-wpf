@@ -11,6 +11,7 @@ public sealed partial class FleetPlannerViewModel
     private string selectedStageKey;
     private LevelingStageChoice? selectedStage;
     private LevelingPlan? levelingPlan;
+    private DormPlan dormPlan = DormPlan.Unknown;
 
     public BulkObservableCollection<LevelingStageChoice> StageChoices { get; } = [];
     public BulkObservableCollection<DriverChoice> DriverChoices { get; } = [];
@@ -19,6 +20,8 @@ public sealed partial class FleetPlannerViewModel
     public RelayCommand SetDriverCountCommand { get; }
 
     public LevelingPlan? LevelingPlan => levelingPlan;
+    /// <summary>The 숙소 card: the farming fleet on floor 2 and the waiting ships for floor 1.</summary>
+    public DormPlan DormPlan => dormPlan;
     public bool HasLevelingShips => levelingPlan?.HasShips == true;
     public bool HasNoLevelingShips => !HasLevelingShips;
     public bool HasWaitingQueue => WaitingQueue.Count > 0;
@@ -58,19 +61,17 @@ public sealed partial class FleetPlannerViewModel
     private void RebuildLeveling()
     {
         var option = selectedStage?.Option;
-        if (option is null)
-        {
-            levelingPlan = null;
-        }
-        else
-        {
-            var goals = growthPlanner.LevelGoalShipUids();
-            var ships = plan.Inputs.LevelingShips
-                .Select(ship => goals.Contains(ship.Uid) ? ship with { IsGrowthGoal = true } : ship)
-                .ToList();
-            levelingPlan = LevelingPlanBuilder.Build(ships, option.Stage, option.Records, shipLevelCaps, driverOverride,
+        var goals = growthPlanner.LevelGoalShipUids();
+        var ships = plan.Inputs.LevelingShips
+            .Select(ship => goals.Contains(ship.Uid) ? ship with { IsGrowthGoal = true } : ship)
+            .ToList();
+        levelingPlan = option is null
+            ? null
+            : LevelingPlanBuilder.Build(ships, option.Stage, option.Records, shipLevelCaps, driverOverride,
                 plan.Inputs.FarmFleetId, plan.Inputs.FarmFleetUids.ToHashSet(StringComparer.Ordinal));
-        }
+        // Ships the planned farming fleet levels earn EXP in battle; the training floor is for the ones waiting.
+        dormPlan = DormPlanBuilder.Build(plan.Inputs.Dorm, ships,
+            levelingPlan?.Slots.Select(slot => slot.ShipUid).ToHashSet(StringComparer.Ordinal) ?? [], shipLevelCaps);
 
         // The 쫄작 tab lists the fleet and the next few; the 육성 계획 page lists the whole queue.
         var nearby = levelingPlan?.Queue.Take(LevelingPlanBuilder.QueueLength).ToList() ?? [];
@@ -80,6 +81,7 @@ public sealed partial class FleetPlannerViewModel
         DriverChoices.ReplaceRange(BuildDriverChoices());
         RebuildLevelingGear();
         OnPropertyChanged(nameof(LevelingPlan));
+        OnPropertyChanged(nameof(DormPlan));
         OnPropertyChanged(nameof(HasLevelingShips));
         OnPropertyChanged(nameof(HasNoLevelingShips));
         OnPropertyChanged(nameof(HasWaitingQueue));

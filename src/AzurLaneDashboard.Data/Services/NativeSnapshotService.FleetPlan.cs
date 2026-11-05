@@ -13,6 +13,7 @@ public sealed partial class NativeSnapshotService
         SnapshotMaps maps,
         IReadOnlyList<FleetCompositionGroupRow> fleetCompositionGroups,
         IReadOnlyList<EquipmentRow> equipment,
+        IReadOnlyList<SpecialEquipmentRow> specialEquipment,
         string projectRoot)
     {
         // Regal's ratings are downloaded by the data update and are not shipped, so before the first update no ship
@@ -45,6 +46,7 @@ public sealed partial class NativeSnapshotService
                 GroupKey = regalGroup,
                 RegalUid = JsonString(regal, "uid"),
                 RegalGearId = JsonInt(regal, "gear"),
+                RegalAugmentId = JsonInt(regal, "aug"),
                 Name = name,
                 IconUrl = ship.IconUrl,
                 Rarity = ship.Rarity,
@@ -78,7 +80,7 @@ public sealed partial class NativeSnapshotService
             CommunityRatingChangeParser.Parse(maps.RegalChangelog, englishToKorean),
             latest.Length > 0 ? $"Regal · {latest}" : "Regal");
         return plan.WithInputs(BuildFleetPlannerInputs(connection, ships, maps, plannerShips, levelingShips, plan,
-            fleetCompositionGroups, equipment, projectRoot));
+            fleetCompositionGroups, equipment, specialEquipment, projectRoot));
     }
 
     private static string BaseRegalName(string name)

@@ -179,7 +179,7 @@ public sealed partial class NativeSnapshotService
             Rarity = rarity,
             RarityTier = RarityFilterTier(rarity),
             RarityClass = $"rarity-{RarityFilterTier(rarity)}",
-            EnhanceLevel = Int(reader, "enhance_level"),
+            EnhanceLevel = FirstPositive(Int(reader, "enhance_level"), EquipmentEnhanceLevel(JsonInt(info, "enhance_level"))),
             Effect = Text(reader, "effect"),
             Pt = Int(reader, "pt")
         };

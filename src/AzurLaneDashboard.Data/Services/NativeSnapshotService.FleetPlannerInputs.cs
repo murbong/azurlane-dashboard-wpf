@@ -51,6 +51,7 @@ public sealed partial class NativeSnapshotService
         FleetPlanDashboard plan,
         IReadOnlyList<FleetCompositionGroupRow> groups,
         IReadOnlyList<EquipmentRow> equipment,
+        IReadOnlyList<SpecialEquipmentRow> specialEquipment,
         string projectRoot)
     {
         var levelByUid = ships.Where(ship => ship.Uid.Length > 0)
@@ -88,7 +89,8 @@ public sealed partial class NativeSnapshotService
                 .Where(uid => !string.IsNullOrWhiteSpace(uid)).ToHashSet(StringComparer.Ordinal))
             .Where(set => set.Count > 0)
             .ToList();
-        var (gearShips, inventory, items) = BuildGearInputs(ships, plannerShips, maps, equipment, projectRoot);
+        var (gearShips, inventory, items, augmentItems) =
+            BuildGearInputs(ships, plannerShips, maps, equipment, specialEquipment, projectRoot);
         var metaFights = ReadMetaBossFights(connection, maps);
         return new FleetPlannerInputs
         {
@@ -107,7 +109,9 @@ public sealed partial class NativeSnapshotService
             GearMap =maps.RegalGearMap.ValueKind == JsonValueKind.Object ? new RegalGearMap(maps.RegalGearMap) : null,
             GearInventory = inventory,
             GearShips = gearShips,
-            GearItems = items
+            GearItems = items,
+            AugmentItems = augmentItems,
+            Dorm = ReadDormState(connection, ships, farmFleetId, groups)
         };
     }
 
@@ -315,17 +319,25 @@ public sealed partial class NativeSnapshotService
     }
 
     private static (IReadOnlyDictionary<string, GearFleetShip> Ships, GearInventory Inventory,
-        IReadOnlyDictionary<int, GearItemInfo> Items) BuildGearInputs(
+        IReadOnlyDictionary<int, GearItemInfo> Items, IReadOnlyDictionary<int, GearItemInfo> AugmentItems) BuildGearInputs(
             List<ShipState> ships,
             IReadOnlyList<FleetPlannerShip> plannerShips,
             SnapshotMaps maps,
             IReadOnlyList<EquipmentRow> equipment,
+            IReadOnlyList<SpecialEquipmentRow> specialEquipment,
             string projectRoot)
     {
         // Enhanced pieces have their own template ids; Regal ranks the base piece.
         int Base(int templateId) => FirstPositive(JsonInt(MapObject(maps.Equipment, templateId), "base"), templateId);
 
         var gearIdByUid = plannerShips.ToDictionary(ship => ship.Uid, ship => ship.RegalGearId, StringComparer.Ordinal);
+        var augmentIdByUid = plannerShips.ToDictionary(ship => ship.Uid, ship => ship.RegalAugmentId, StringComparer.Ordinal);
+        var augmentHolders = new List<GearHolder>();
+        var augmentBaseIds = new HashSet<int>();
+        var wornAugmentIds = new HashSet<string>(StringComparer.Ordinal);
+        var templates = LoadShipTemplateSlots(projectRoot);
+        var templateFamilies = templates.Values.ToLookup(template => template.BreakFamily);
+        var templateGroups = templates.Values.ToLookup(template => template.Group);
         var gearShips = new Dictionary<string, GearFleetShip>(StringComparer.Ordinal);
         var holders = new List<GearHolder>();
         var baseIds = new HashSet<int>();
@@ -341,9 +353,22 @@ public sealed partial class NativeSnapshotService
                     ship.Level, ship.FleetId > 0));
             }
 
+            GearItemCopy? augment = null;
+            if (ship.SpecialEquipment is { } special && ToInt(special.TemplateId) is var specialId and > 0)
+            {
+                var (augmentBase, augmentEnhance) = SpWeaponBase(maps.SpWeapons, specialId);
+                augment = new GearItemCopy(augmentBase, augmentEnhance);
+                augmentBaseIds.Add(augmentBase);
+                if (special.Id.Length > 0) wornAugmentIds.Add(special.Id);
+                augmentHolders.Add(new GearHolder(ship.Uid, ship.Name.Trim(), GearAllocator.AugmentSlot, augmentBase,
+                    augmentEnhance, ship.Level, ship.FleetId > 0));
+            }
+
             if (gearIdByUid.TryGetValue(ship.Uid, out var gearId))
             {
-                gearShips[ship.Uid] = new GearFleetShip(ship.Uid, ship.Name.Trim(), gearId, false, current);
+                gearShips[ship.Uid] = new GearFleetShip(ship.Uid, ship.Name.Trim(), gearId, false, current,
+                    GearSlotRulesFor(ship.TemplateId, ship.LimitBreak, templates, templateFamilies, templateGroups),
+                    augmentIdByUid.GetValueOrDefault(ship.Uid), augment);
             }
         }
 
@@ -358,15 +383,34 @@ public sealed partial class NativeSnapshotService
             copies.AddRange(Enumerable.Repeat(row.EnhanceLevel, row.BagCount));
         }
 
+        // Special equipment in the warehouse: rows no ship wears. The template id carries the enhancement
+        // (1070130 is 1070120 +10), so base and level come from the map rather than the stored column.
+        var augmentSpare = new Dictionary<int, List<int>>();
+        foreach (var row in specialEquipment.Where(row => row.EquippedShips.Count == 0 && !wornAugmentIds.Contains(row.Id)))
+        {
+            var templateId = ToInt(row.TemplateId);
+            if (templateId <= 0) continue;
+            var (augmentBase, augmentEnhance) = SpWeaponBase(maps.SpWeapons, templateId);
+            augmentBaseIds.Add(augmentBase);
+            if (!augmentSpare.TryGetValue(augmentBase, out var copies)) augmentSpare[augmentBase] = copies = [];
+            copies.Add(augmentEnhance);
+        }
+
         foreach (var entry in EnumerateGearMapIds(maps.RegalGearMap))
         {
             baseIds.Add(entry);
+            // The gear map shares one id table between gear and special equipment; base special ids end at +0.
+            if (MapObject(maps.SpWeapons, entry) is { ValueKind: JsonValueKind.Object } spWeapon &&
+                JsonInt(spWeapon, "enhance_level") == 0)
+                augmentBaseIds.Add(entry);
         }
 
         var items = new Dictionary<int, GearItemInfo>();
+        var types = new Dictionary<int, int>();
         foreach (var baseId in baseIds)
         {
             var info = MapObject(maps.Equipment, baseId);
+            if (JsonInt(info, "type") is var type and > 0) types[baseId] = type;
             items[baseId] = new GearItemInfo(baseId,
                 FirstNonEmpty(JsonString(info, "name"), $"equip:{baseId}"),
                 Asset(JsonString(info, "icon_url"), projectRoot),
@@ -374,13 +418,36 @@ public sealed partial class NativeSnapshotService
                 EquipmentTypeGroup(JsonInt(info, "type")));
         }
 
+        var augmentItems = new Dictionary<int, GearItemInfo>();
+        foreach (var baseId in augmentBaseIds)
+        {
+            var info = MapObject(maps.SpWeapons, baseId);
+            augmentItems[baseId] = new GearItemInfo(baseId,
+                FirstNonEmpty(JsonString(info, "name"), $"spweapon:{baseId}"),
+                Asset(JsonString(info, "icon_url"), projectRoot),
+                SpWeaponRarityTier(JsonInt(info, "rarity"), JsonInt(info, "unique") > 0),
+                "special");
+        }
+
         return (gearShips,
             new GearInventory
             {
                 Spare = spare.ToDictionary(pair => pair.Key, pair => (IReadOnlyList<int>)pair.Value),
-                Equipped = holders
+                Equipped = holders,
+                Types = types,
+                AugmentSpare = augmentSpare.ToDictionary(pair => pair.Key, pair => (IReadOnlyList<int>)pair.Value),
+                AugmentEquipped = augmentHolders
             },
-            items);
+            items,
+            augmentItems);
+    }
+
+    /// <summary>A special equipment template's +0 id and enhancement: each +N is its own template, N above the base.</summary>
+    private static (int BaseId, int Enhance) SpWeaponBase(JsonElement spWeapons, int templateId)
+    {
+        var enhance = Math.Max(0, JsonInt(MapObject(spWeapons, templateId), "enhance_level"));
+        var baseId = templateId - enhance;
+        return MapObject(spWeapons, baseId).ValueKind == JsonValueKind.Object ? (baseId, enhance) : (templateId, 0);
     }
 
     private static IEnumerable<int> EnumerateGearMapIds(JsonElement gearMap)
