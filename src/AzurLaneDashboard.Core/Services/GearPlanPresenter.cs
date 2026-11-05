@@ -22,6 +22,8 @@ public sealed class GearSlotRow
     public bool DiffersInAlternateArmor { get; init; }
 
     public bool HasAlt => AltText.Length > 0;
+    public bool HasRarity => Rarity.Length > 0;
+    public string IconToolTip => HasRarity ? $"{Name} · {Rarity}" : Name;
 }
 
 public static class GearPlanPresenter
