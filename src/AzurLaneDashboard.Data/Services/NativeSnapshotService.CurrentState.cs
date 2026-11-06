@@ -225,6 +225,7 @@ public sealed partial class NativeSnapshotService
             MonthlyShop = BuildMonthlyShop(connection, maps, ships, fleetPlan),
             Meowfficers = BuildMeowfficers(connection, ships, maps, fleetPlan.Inputs.FarmFleetId),
             Opsi = BuildOpsi(connection, maps),
+            PersonalTasks = BuildPersonalTasks(connection, ships, maps),
             SkillPriorities = new ObservableCollection<SkillPriorityRow>(skillPriorities),
             SystemStatuses = new ObservableCollection<SystemStatusRow>(systems.Statuses),
             AcademyRooms = new ObservableCollection<AcademyRoomRow>(systems.AcademyRooms),

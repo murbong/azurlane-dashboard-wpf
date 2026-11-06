@@ -10,6 +10,7 @@ public sealed class DashboardSnapshot
     public MonthlyShopDashboard MonthlyShop { get; init; } = new();
     public MeowfficerDashboard Meowfficers { get; init; } = MeowfficerDashboard.Empty;
     public OpsiDashboard Opsi { get; init; } = OpsiDashboard.Empty;
+    public PersonalTaskDashboard PersonalTasks { get; init; } = PersonalTaskDashboard.Empty;
     public ObservableCollection<DashboardKpiRow> Kpis { get; init; } = [];
     public ObservableCollection<ShipRow> Ships { get; init; } = [];
     public ObservableCollection<EquipmentRow> Equipment { get; init; } = [];

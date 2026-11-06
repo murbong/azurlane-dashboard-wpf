@@ -52,6 +52,7 @@ public sealed partial class NativeSnapshotService
             Map("commanders.json"),
             Map("meowfficer_guide.json"),
             Map("world_targets.json"),
+            Map("personal_tasks.json"),
             Map("month_shop.json"),
             Map("oil_costs.json"),
             Map("commissions.json"),

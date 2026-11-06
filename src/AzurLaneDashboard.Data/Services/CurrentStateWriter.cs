@@ -84,6 +84,7 @@ public static class StatePacketRegistry
             [25016] = (25017, "commanders"),
             [25020] = (25021, "commanders"),
             [33602] = (33603, "world"),
+            [20005] = (20006, "tasks"),
             [40001] = (40002, "battle_begin"),
             [40003] = (40004, "battle_result")
         };
@@ -111,6 +112,11 @@ public static class StatePacketRegistry
         [22013] = "academy",
         [25001] = "commanders",
         [25039] = "commanders",
+        [20001] = "tasks",
+        [20002] = "tasks",
+        [20003] = "tasks",
+        [20004] = "tasks",
+        [20012] = "tasks",
         [33001] = "world",
         [33601] = "world",
         [63000] = "research",
@@ -133,6 +139,7 @@ public sealed partial class CurrentStateWriter
         EnsureMetaBossFightTable();
         EnsureCommanderTable();
         EnsureWorldTables();
+        EnsureTaskTable();
         DropShipsMissingFromLogin();
     }
 
@@ -189,7 +196,10 @@ public sealed partial class CurrentStateWriter
                 var request = TakePendingRequest(transaction, packet, packet.PacketId);
                 result = request.HasValue
                     ? ApplyResponsePacket(transaction, packet, json, request.Value, requestInfo.Area)
-                    : StateApplyResult.Deferred(requestInfo.Area, "matching CS request missing", packet.DecodedRowId);
+                    // A task reward still feeds oil and courtyard food, so it reloads without its request.
+                    : packet.PacketId == 20006
+                        ? StateApplyResult.Applied("live_resources", "oil/food input", packet.DecodedRowId)
+                        : StateApplyResult.Deferred(requestInfo.Area, "matching CS request missing", packet.DecodedRowId);
             }
             else if (packet.Direction == "SC" &&
                      StatePacketRegistry.SnapshotAreas.ContainsKey(packet.PacketId))
