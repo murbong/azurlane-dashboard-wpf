@@ -73,7 +73,7 @@ public sealed class MeowfficerViewModel : ObservableObject
             .Select(kind => new MeowfficerKindRow
             {
                 TemplateId = kind.TemplateId, Name = kind.Name, Rarity = kind.Rarity, RoleText = kind.RoleText,
-                HasRole = kind.HasRole, Copies = kind.Copies.Where(match).ToList()
+                HasRole = kind.HasRole, IconUrl = kind.IconUrl, Copies = kind.Copies.Where(match).ToList()
             })
             .Where(kind => kind.Copies.Count > 0));
         OnPropertyChanged(nameof(CountText));
