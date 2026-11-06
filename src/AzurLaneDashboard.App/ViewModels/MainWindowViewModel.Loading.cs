@@ -215,6 +215,7 @@ public sealed partial class MainWindowViewModel
         Auction = snapshot.Auction;
         MonthlyShop = snapshot.MonthlyShop;
         Meowfficers.ApplySnapshot(snapshot.Meowfficers);
+        Opsi.ApplySnapshot(snapshot.Opsi);
         Replace(Kpis, snapshot.Kpis);
         Replace(Ships, snapshot.Ships);
         Replace(Equipment, snapshot.Equipment);

@@ -277,6 +277,8 @@ public sealed partial class CurrentStateWriter
                 return StateApplyResult.Applied(area, "battle result", packet.DecodedRowId);
             case 25005 or 25007 or 25009 or 25013 or 25015 or 25017 or 25021:
                 return ApplyCommanderResponse(tx, packet, json, request, area);
+            case 33603:
+                return ApplyWorldStarClaim(tx, packet, json, request, area);
             default:
                 return StateApplyResult.Deferred(area, "response handler not implemented", packet.DecodedRowId);
         }

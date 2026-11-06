@@ -34,6 +34,7 @@ public static class MapFileStore
         "meta_boss_guides.json",
         "commanders.json",
         "meowfficer_guide.json",
+        "world_targets.json",
         "month_shop.json",
         "oil_costs.json",
         "commissions.json",

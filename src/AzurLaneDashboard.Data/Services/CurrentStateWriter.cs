@@ -83,6 +83,7 @@ public static class StatePacketRegistry
             [25014] = (25015, "commanders"),
             [25016] = (25017, "commanders"),
             [25020] = (25021, "commanders"),
+            [33602] = (33603, "world"),
             [40001] = (40002, "battle_begin"),
             [40003] = (40004, "battle_result")
         };
@@ -110,6 +111,8 @@ public static class StatePacketRegistry
         [22013] = "academy",
         [25001] = "commanders",
         [25039] = "commanders",
+        [33001] = "world",
+        [33601] = "world",
         [63000] = "research",
         [64000] = "fleet_tech"
     };
@@ -129,6 +132,7 @@ public sealed partial class CurrentStateWriter
         EnsureSchema();
         EnsureMetaBossFightTable();
         EnsureCommanderTable();
+        EnsureWorldTables();
         DropShipsMissingFromLogin();
     }
 

@@ -110,6 +110,7 @@ public sealed partial class NativeSnapshotService
         JsonElement MetaBossGuides,
         JsonElement Commanders,
         JsonElement MeowfficerGuide,
+        JsonElement WorldTargets,
         JsonElement MonthShop,
         JsonElement OilCosts,
         JsonElement Commissions,

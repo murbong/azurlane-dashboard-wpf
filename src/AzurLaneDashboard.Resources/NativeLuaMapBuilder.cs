@@ -67,6 +67,7 @@ internal sealed partial class NativeLuaMapBuilder
         var shipUpgradeMap = BuildShipUpgradeMap(luaDirectory);
         var monthShopMap = BuildMonthShopMap(luaDirectory);
         var commanderMap = BuildCommanderMap(luaDirectory);
+        var worldTargetMap = BuildWorldTargetMap(luaDirectory);
         var metaBossMap = BuildMetaBossMap(data.MetaBosses, data.MetaBossLevels, data.EnemyStatisticsPath,
             data.DungeonDirectory);
 
@@ -91,6 +92,7 @@ internal sealed partial class NativeLuaMapBuilder
         WriteJson(Path.Combine(outputDirectory, "ship_upgrades.json"), shipUpgradeMap);
         WriteJson(Path.Combine(outputDirectory, "month_shop.json"), monthShopMap);
         WriteJson(Path.Combine(outputDirectory, "commanders.json"), commanderMap);
+        WriteJson(Path.Combine(outputDirectory, "world_targets.json"), worldTargetMap);
 
         var counts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase)
         {
@@ -112,7 +114,8 @@ internal sealed partial class NativeLuaMapBuilder
             ["oil_costs"] = ((System.Collections.IDictionary)oilCostMap["ships"]!).Count,
             ["commissions"] = commissionMap.Count,
             ["month_shop"] = ((System.Collections.IDictionary)monthShopMap["goods"]!).Count,
-            ["commanders"] = ((System.Collections.IDictionary)commanderMap["commanders"]!).Count
+            ["commanders"] = ((System.Collections.IDictionary)commanderMap["commanders"]!).Count,
+            ["world_targets"] = ((System.Collections.IDictionary)worldTargetMap["areas"]!).Count
         };
 
         logs.Add($"maps built: ships={shipMap.Count}, equipment={equipmentMap.Count}, spweapons={spWeaponMap.Count}");

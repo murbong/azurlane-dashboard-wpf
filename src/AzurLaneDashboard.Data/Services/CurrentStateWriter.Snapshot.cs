@@ -24,6 +24,7 @@ public sealed partial class CurrentStateWriter
             22001 => ApplyAcademy(tx, packet, json),
             22013 => ApplyAcademyStatus(tx, packet, json),
             25001 or 25039 => ApplyCommanderSnapshot(tx, packet, json),
+            33001 or 33601 => ApplyWorldSnapshot(tx, packet, json),
             63000 => ApplyResearch(tx, packet, json),
             64000 => ApplyFleetTechSnapshot(tx, packet, json),
             _ => StateApplyResult.Ignored("no snapshot handler", packet.DecodedRowId)

@@ -28,6 +28,7 @@ GrowthPlannerChecks.Run();
 FleetPlanChecks.Run();
 LevelingPlanChecks.Run();
 DormPlanChecks.Run();
+OpsiChecks.Run();
 MetaBossChecks.Run();
 MetaFightChecks.Run();
 MeowfficerChecks.Run();

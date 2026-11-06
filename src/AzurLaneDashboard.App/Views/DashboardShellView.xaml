@@ -38,6 +38,7 @@
      <TabItem><views:MacroView DataContext="{Binding Macros}" /></TabItem>
      <TabItem><views:MonthlyShopView DataContext="{Binding MonthlyShop}" /></TabItem>
      <TabItem><views:MeowfficerView DataContext="{Binding Meowfficers}" /></TabItem>
+     <TabItem><views:OpsiView DataContext="{Binding Opsi}" /></TabItem>
     </TabControl>
    </Grid>
 

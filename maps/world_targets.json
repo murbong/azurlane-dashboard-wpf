@@ -1,0 +1,7347 @@
+{
+  "areas": {
+    "11": {
+      "id": 11,
+      "serial": "11",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        1101,
+        1102,
+        1103
+      ],
+      "cryptic": [
+        1104,
+        1105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "12": {
+      "id": 12,
+      "serial": "12",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        1201,
+        1202,
+        1203
+      ],
+      "cryptic": [
+        1204,
+        1205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "13": {
+      "id": 13,
+      "serial": "13",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        1301,
+        1302,
+        1303
+      ],
+      "cryptic": [
+        1304,
+        1305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "14": {
+      "id": 14,
+      "serial": "14",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        1401,
+        1402,
+        1403
+      ],
+      "cryptic": [
+        1404,
+        1405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 160
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "21": {
+      "id": 21,
+      "serial": "21",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        2101,
+        2102,
+        2103
+      ],
+      "cryptic": [
+        2104,
+        2105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 80
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "22": {
+      "id": 22,
+      "serial": "22",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        2201,
+        2202,
+        2203
+      ],
+      "cryptic": [
+        2204,
+        2205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 10
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        }
+      ]
+    },
+    "23": {
+      "id": 23,
+      "serial": "23",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        2301,
+        2302,
+        2303
+      ],
+      "cryptic": [
+        2304,
+        2305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "24": {
+      "id": 24,
+      "serial": "24",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        2401,
+        2402,
+        2403
+      ],
+      "cryptic": [
+        2404,
+        2405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 120
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "25": {
+      "id": 25,
+      "serial": "25",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        2501,
+        2502,
+        2503
+      ],
+      "cryptic": [
+        2504,
+        2505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "31": {
+      "id": 31,
+      "serial": "31",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        3101,
+        3102,
+        3103
+      ],
+      "cryptic": [
+        3104,
+        3105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "32": {
+      "id": 32,
+      "serial": "32",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        3201,
+        3202,
+        3203
+      ],
+      "cryptic": [
+        3204,
+        3205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "33": {
+      "id": 33,
+      "serial": "33",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        3301,
+        3302,
+        3303
+      ],
+      "cryptic": [
+        3304,
+        3305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 180
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "34": {
+      "id": 34,
+      "serial": "34",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        3401,
+        3402,
+        3403
+      ],
+      "cryptic": [
+        3404,
+        3405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 20
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "41": {
+      "id": 41,
+      "serial": "41",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        4101,
+        4102,
+        4103
+      ],
+      "cryptic": [
+        4104,
+        4105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 120
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "42": {
+      "id": 42,
+      "serial": "42",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        4201,
+        4202,
+        4203
+      ],
+      "cryptic": [
+        4204,
+        4205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 160
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "43": {
+      "id": 43,
+      "serial": "43",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        4301,
+        4302,
+        4303
+      ],
+      "cryptic": [
+        4304,
+        4305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 120
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "44": {
+      "id": 44,
+      "serial": "44",
+      "region": "NA해역 사우스웨스트",
+      "normal": [
+        4401,
+        4402,
+        4403
+      ],
+      "cryptic": [
+        4404,
+        4405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 10
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        }
+      ]
+    },
+    "51": {
+      "id": 51,
+      "serial": "51",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        5101,
+        5102,
+        5103
+      ],
+      "cryptic": [
+        5104,
+        5105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 160
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "52": {
+      "id": 52,
+      "serial": "52",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        5201,
+        5202,
+        5203
+      ],
+      "cryptic": [
+        5204,
+        5205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "53": {
+      "id": 53,
+      "serial": "53",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        5301,
+        5302,
+        5303
+      ],
+      "cryptic": [
+        5304,
+        5305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "54": {
+      "id": 54,
+      "serial": "54",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        5401,
+        5402,
+        5403
+      ],
+      "cryptic": [
+        5404,
+        5405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "61": {
+      "id": 61,
+      "serial": "61",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        6101,
+        6102,
+        6103
+      ],
+      "cryptic": [
+        6104,
+        6105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 160
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "62": {
+      "id": 62,
+      "serial": "62",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        6201,
+        6202,
+        6203
+      ],
+      "cryptic": [
+        6204,
+        6205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 120
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54016,
+          "count": 30
+        }
+      ]
+    },
+    "63": {
+      "id": 63,
+      "serial": "63",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        6301,
+        6302,
+        6303
+      ],
+      "cryptic": [
+        6304,
+        6305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 160
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "64": {
+      "id": 64,
+      "serial": "64",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        6401,
+        6402,
+        6403
+      ],
+      "cryptic": [
+        6404,
+        6405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "65": {
+      "id": 65,
+      "serial": "65",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        6501,
+        6502,
+        6503
+      ],
+      "cryptic": [
+        6504,
+        6505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "66": {
+      "id": 66,
+      "serial": "66",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        6601,
+        6602,
+        6603
+      ],
+      "cryptic": [
+        6604,
+        6605
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 180
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "71": {
+      "id": 71,
+      "serial": "71",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        7101,
+        7102,
+        7103
+      ],
+      "cryptic": [
+        7104,
+        7105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2015,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "72": {
+      "id": 72,
+      "serial": "72",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        7201,
+        7202,
+        7203
+      ],
+      "cryptic": [
+        7204,
+        7205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "73": {
+      "id": 73,
+      "serial": "73",
+      "region": "NA해역 사우스이스트",
+      "normal": [
+        7301,
+        7302,
+        7303
+      ],
+      "cryptic": [
+        7304,
+        7305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2015,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "81": {
+      "id": 81,
+      "serial": "81",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        8101,
+        8102,
+        8103
+      ],
+      "cryptic": [
+        8104,
+        8105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 120
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "82": {
+      "id": 82,
+      "serial": "82",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        8201,
+        8202,
+        8203
+      ],
+      "cryptic": [
+        8204,
+        8205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "83": {
+      "id": 83,
+      "serial": "83",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        8301,
+        8302,
+        8303
+      ],
+      "cryptic": [
+        8304,
+        8305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 80
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 120
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "84": {
+      "id": 84,
+      "serial": "84",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        8401,
+        8402,
+        8403
+      ],
+      "cryptic": [
+        8404,
+        8405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54016,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 120
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54018,
+          "count": 6
+        }
+      ]
+    },
+    "85": {
+      "id": 85,
+      "serial": "85",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        8501,
+        8502,
+        8503
+      ],
+      "cryptic": [
+        8504,
+        8505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "91": {
+      "id": 91,
+      "serial": "91",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        9101,
+        9102,
+        9103
+      ],
+      "cryptic": [
+        9104,
+        9105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "92": {
+      "id": 92,
+      "serial": "92",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        9201,
+        9202,
+        9203
+      ],
+      "cryptic": [
+        9204,
+        9205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "93": {
+      "id": 93,
+      "serial": "93",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        9301,
+        9302,
+        9303
+      ],
+      "cryptic": [
+        9304,
+        9305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "94": {
+      "id": 94,
+      "serial": "94",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        9401,
+        9402,
+        9403
+      ],
+      "cryptic": [
+        9404,
+        9405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 180
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54016,
+          "count": 30
+        }
+      ]
+    },
+    "95": {
+      "id": 95,
+      "serial": "95",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        9501,
+        9502,
+        9503
+      ],
+      "cryptic": [
+        9504,
+        9505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 20
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 54016,
+          "count": 30
+        }
+      ]
+    },
+    "101": {
+      "id": 101,
+      "serial": "101",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        10101,
+        10102,
+        10103
+      ],
+      "cryptic": [
+        10104,
+        10105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2015,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "102": {
+      "id": 102,
+      "serial": "102",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        10201,
+        10202,
+        10203
+      ],
+      "cryptic": [
+        10204,
+        10205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2015,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "103": {
+      "id": 103,
+      "serial": "103",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        10301,
+        10302,
+        10303
+      ],
+      "cryptic": [
+        10304,
+        10305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "104": {
+      "id": 104,
+      "serial": "104",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        10401,
+        10402,
+        10403
+      ],
+      "cryptic": [
+        10404,
+        10405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "105": {
+      "id": 105,
+      "serial": "105",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        10501,
+        10502,
+        10503
+      ],
+      "cryptic": [
+        10504,
+        10505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 20
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "106": {
+      "id": 106,
+      "serial": "106",
+      "region": "NA해역 노스웨스트",
+      "normal": [
+        10601,
+        10602,
+        10603
+      ],
+      "cryptic": [
+        10604,
+        10605
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "111": {
+      "id": 111,
+      "serial": "111",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        11101,
+        11102,
+        11103
+      ],
+      "cryptic": [
+        11104,
+        11105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "112": {
+      "id": 112,
+      "serial": "112",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        11201,
+        11202,
+        11203
+      ],
+      "cryptic": [
+        11204,
+        11205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "113": {
+      "id": 113,
+      "serial": "113",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        11301,
+        11302,
+        11303
+      ],
+      "cryptic": [
+        11304,
+        11305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "114": {
+      "id": 114,
+      "serial": "114",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        11401,
+        11402,
+        11403
+      ],
+      "cryptic": [
+        11404,
+        11405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 180
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 600
+        }
+      ]
+    },
+    "121": {
+      "id": 121,
+      "serial": "121",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        12101,
+        12102,
+        12103
+      ],
+      "cryptic": [
+        12104,
+        12105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "122": {
+      "id": 122,
+      "serial": "122",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        12201,
+        12202,
+        12203
+      ],
+      "cryptic": [
+        12204,
+        12205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 80
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "123": {
+      "id": 123,
+      "serial": "123",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        12301,
+        12302,
+        12303
+      ],
+      "cryptic": [
+        12304,
+        12305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 20
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 600
+        }
+      ]
+    },
+    "124": {
+      "id": 124,
+      "serial": "124",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        12401,
+        12402,
+        12403
+      ],
+      "cryptic": [
+        12404,
+        12405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "125": {
+      "id": 125,
+      "serial": "125",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        12501,
+        12502,
+        12503
+      ],
+      "cryptic": [
+        12504,
+        12505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 20
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 600
+        }
+      ]
+    },
+    "131": {
+      "id": 131,
+      "serial": "131",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        13101,
+        13102,
+        13103
+      ],
+      "cryptic": [
+        13104,
+        13105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "132": {
+      "id": 132,
+      "serial": "132",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        13201,
+        13202,
+        13203
+      ],
+      "cryptic": [
+        13204,
+        13205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 80
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "133": {
+      "id": 133,
+      "serial": "133",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        13301,
+        13302,
+        13303
+      ],
+      "cryptic": [
+        13304,
+        13305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 600
+        }
+      ]
+    },
+    "134": {
+      "id": 134,
+      "serial": "134",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        13401,
+        13402,
+        13403
+      ],
+      "cryptic": [
+        13404,
+        13405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 1
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 80
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54016,
+          "count": 10
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 59001,
+          "count": 400
+        }
+      ]
+    },
+    "135": {
+      "id": 135,
+      "serial": "135",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        13501,
+        13502,
+        13503
+      ],
+      "cryptic": [
+        13504,
+        13505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 59001,
+          "count": 180
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "141": {
+      "id": 141,
+      "serial": "141",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        14101,
+        14102,
+        14103
+      ],
+      "cryptic": [
+        14104,
+        14105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 100
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "142": {
+      "id": 142,
+      "serial": "142",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        14201,
+        14202,
+        14203
+      ],
+      "cryptic": [
+        14204,
+        14205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 50
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 1
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2014,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "143": {
+      "id": 143,
+      "serial": "143",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        14301,
+        14302,
+        14303
+      ],
+      "cryptic": [
+        14304,
+        14305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 12,
+          "id": 101,
+          "count": 20
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 61001,
+          "count": 2
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 54018,
+          "count": 4
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2006,
+          "count": 2
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        }
+      ]
+    },
+    "144": {
+      "id": 144,
+      "serial": "144",
+      "region": "NA해역 노스이스트",
+      "normal": [
+        14401,
+        14402,
+        14403
+      ],
+      "cryptic": [
+        14404,
+        14405
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "151": {
+      "id": 151,
+      "serial": "151",
+      "region": "NA해역 센터",
+      "normal": [
+        15101,
+        15102,
+        15103
+      ],
+      "cryptic": [
+        15104,
+        15105
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2015,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "152": {
+      "id": 152,
+      "serial": "152",
+      "region": "NA해역 센터",
+      "normal": [
+        15201,
+        15202,
+        15203
+      ],
+      "cryptic": [
+        15204,
+        15205
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "153": {
+      "id": 153,
+      "serial": "153",
+      "region": "NA해역 센터",
+      "normal": [
+        15301,
+        15302,
+        15303
+      ],
+      "cryptic": [
+        15304,
+        15305
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "155": {
+      "id": 155,
+      "serial": "155",
+      "region": "NA해역 센터",
+      "normal": [
+        15501,
+        15502,
+        15503
+      ],
+      "cryptic": [
+        15504,
+        15505
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "156": {
+      "id": 156,
+      "serial": "156",
+      "region": "NA해역 센터",
+      "normal": [
+        15601,
+        15602,
+        15603
+      ],
+      "cryptic": [
+        15604,
+        15605
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "157": {
+      "id": 157,
+      "serial": "157",
+      "region": "NA해역 센터",
+      "normal": [
+        15701,
+        15702,
+        15703
+      ],
+      "cryptic": [
+        15704,
+        15705
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 54018,
+          "count": 5
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 3
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2016,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 2
+        }
+      ]
+    },
+    "158": {
+      "id": 158,
+      "serial": "158",
+      "region": "NA해역 센터",
+      "normal": [
+        15801,
+        15802,
+        15803
+      ],
+      "cryptic": [
+        15804,
+        15805
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 101,
+          "count": 250
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    },
+    "159": {
+      "id": 159,
+      "serial": "159",
+      "region": "NA해역 센터",
+      "normal": [
+        15901,
+        15902,
+        15903
+      ],
+      "cryptic": [
+        15904,
+        15905
+      ],
+      "awards": [
+        {
+          "star": 1,
+          "type": 2,
+          "id": 61001,
+          "count": 3
+        },
+        {
+          "star": 2,
+          "type": 2,
+          "id": 59001,
+          "count": 200
+        },
+        {
+          "star": 3,
+          "type": 2,
+          "id": 20001,
+          "count": 2
+        },
+        {
+          "star": 4,
+          "type": 12,
+          "id": 2015,
+          "count": 1
+        },
+        {
+          "star": 5,
+          "type": 2,
+          "id": 20013,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "targets": {
+    "1101": {
+      "id": 1101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 1101,
+          "count": 1
+        }
+      ]
+    },
+    "1102": {
+      "id": 1102,
+      "name": "2차 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 1102,
+          "count": 19
+        }
+      ]
+    },
+    "1103": {
+      "id": 1103,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 15개 격파",
+      "conditions": [
+        {
+          "trigger": 1103,
+          "count": 15
+        }
+      ]
+    },
+    "1104": {
+      "id": 1104,
+      "name": "1차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 1104,
+          "count": 2
+        }
+      ]
+    },
+    "1105": {
+      "id": 1105,
+      "name": "2차 탐색",
+      "desc": "에너지 매트릭스 3회 리셋",
+      "conditions": [
+        {
+          "trigger": 1105,
+          "count": 3
+        }
+      ]
+    },
+    "1201": {
+      "id": 1201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 1201,
+          "count": 1
+        }
+      ]
+    },
+    "1202": {
+      "id": 1202,
+      "name": "2차 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 1202,
+          "count": 19
+        }
+      ]
+    },
+    "1203": {
+      "id": 1203,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 12개 격파",
+      "conditions": [
+        {
+          "trigger": 1203,
+          "count": 12
+        }
+      ]
+    },
+    "1204": {
+      "id": 1204,
+      "name": "1차 탐색",
+      "desc": "지휘냥 물자 탐색 16회 진행",
+      "conditions": [
+        {
+          "trigger": 1204,
+          "count": 16
+        }
+      ]
+    },
+    "1205": {
+      "id": 1205,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 1205,
+          "count": 2
+        }
+      ]
+    },
+    "1301": {
+      "id": 1301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 1301,
+          "count": 1
+        }
+      ]
+    },
+    "1302": {
+      "id": 1302,
+      "name": "2차 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 1302,
+          "count": 19
+        }
+      ]
+    },
+    "1303": {
+      "id": 1303,
+      "name": "완전 확보",
+      "desc": "전투 승리 150회 달성",
+      "conditions": [
+        {
+          "trigger": 1303,
+          "count": 150
+        }
+      ]
+    },
+    "1304": {
+      "id": 1304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 1304,
+          "count": 1
+        }
+      ]
+    },
+    "1305": {
+      "id": 1305,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 1305,
+          "count": 2
+        }
+      ]
+    },
+    "1401": {
+      "id": 1401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 1401,
+          "count": 1
+        }
+      ]
+    },
+    "1402": {
+      "id": 1402,
+      "name": "2차 확보",
+      "desc": "전투 승리 48회 달성",
+      "conditions": [
+        {
+          "trigger": 1402,
+          "count": 48
+        }
+      ]
+    },
+    "1403": {
+      "id": 1403,
+      "name": "완전 확보",
+      "desc": "자원 포인트 48개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 1403,
+          "count": 48
+        }
+      ]
+    },
+    "1404": {
+      "id": 1404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 1404,
+          "count": 1
+        }
+      ]
+    },
+    "1405": {
+      "id": 1405,
+      "name": "2차 탐색",
+      "desc": "세이렌 탐지 장치 6회 사용",
+      "conditions": [
+        {
+          "trigger": 1405,
+          "count": 6
+        }
+      ]
+    },
+    "2101": {
+      "id": 2101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 2101,
+          "count": 1
+        }
+      ]
+    },
+    "2102": {
+      "id": 2102,
+      "name": "2차 확보",
+      "desc": "전투 승리 16회 달성",
+      "conditions": [
+        {
+          "trigger": 2102,
+          "count": 16
+        }
+      ]
+    },
+    "2103": {
+      "id": 2103,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 3개 격파",
+      "conditions": [
+        {
+          "trigger": 2103,
+          "count": 3
+        }
+      ]
+    },
+    "2104": {
+      "id": 2104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 2104,
+          "count": 1
+        }
+      ]
+    },
+    "2105": {
+      "id": 2105,
+      "name": "2차 탐색",
+      "desc": "세이렌 탐지 장치 4회 사용",
+      "conditions": [
+        {
+          "trigger": 2105,
+          "count": 4
+        }
+      ]
+    },
+    "2201": {
+      "id": 2201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 2201,
+          "count": 1
+        }
+      ]
+    },
+    "2202": {
+      "id": 2202,
+      "name": "2차 확보",
+      "desc": "전투 승리 16회 달성",
+      "conditions": [
+        {
+          "trigger": 2202,
+          "count": 16
+        }
+      ]
+    },
+    "2203": {
+      "id": 2203,
+      "name": "완전 확보",
+      "desc": "비정상 구역 7개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 2203,
+          "count": 7
+        }
+      ]
+    },
+    "2204": {
+      "id": 2204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 2204,
+          "count": 1
+        }
+      ]
+    },
+    "2205": {
+      "id": 2205,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 2205,
+          "count": 2
+        }
+      ]
+    },
+    "2301": {
+      "id": 2301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 2301,
+          "count": 1
+        }
+      ]
+    },
+    "2302": {
+      "id": 2302,
+      "name": "2차 확보",
+      "desc": "비정상 구역 3개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 2302,
+          "count": 3
+        }
+      ]
+    },
+    "2303": {
+      "id": 2303,
+      "name": "완전 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 2303,
+          "count": 18
+        }
+      ]
+    },
+    "2304": {
+      "id": 2304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 2304,
+          "count": 1
+        }
+      ]
+    },
+    "2305": {
+      "id": 2305,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 2305,
+          "count": 2
+        }
+      ]
+    },
+    "2401": {
+      "id": 2401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 2401,
+          "count": 1
+        }
+      ]
+    },
+    "2402": {
+      "id": 2402,
+      "name": "2차 확보",
+      "desc": "비정상 구역 3개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 2402,
+          "count": 3
+        }
+      ]
+    },
+    "2403": {
+      "id": 2403,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 3개 격파",
+      "conditions": [
+        {
+          "trigger": 2403,
+          "count": 3
+        }
+      ]
+    },
+    "2404": {
+      "id": 2404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 2404,
+          "count": 1
+        }
+      ]
+    },
+    "2405": {
+      "id": 2405,
+      "name": "2차 탐색",
+      "desc": "기관 1회 활성화",
+      "conditions": [
+        {
+          "trigger": 2405,
+          "count": 1
+        }
+      ]
+    },
+    "2501": {
+      "id": 2501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 2501,
+          "count": 1
+        }
+      ]
+    },
+    "2502": {
+      "id": 2502,
+      "name": "2차 확보",
+      "desc": "비정상 구역 5개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 2502,
+          "count": 5
+        }
+      ]
+    },
+    "2503": {
+      "id": 2503,
+      "name": "완전 확보",
+      "desc": "전투 승리 60회 달성",
+      "conditions": [
+        {
+          "trigger": 2503,
+          "count": 60
+        }
+      ]
+    },
+    "2504": {
+      "id": 2504,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 2504,
+          "count": 1
+        }
+      ]
+    },
+    "2505": {
+      "id": 2505,
+      "name": "2차 탐색",
+      "desc": "지휘냥 물자 탐색 10회 진행",
+      "conditions": [
+        {
+          "trigger": 2505,
+          "count": 10
+        }
+      ]
+    },
+    "3101": {
+      "id": 3101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 3101,
+          "count": 1
+        }
+      ]
+    },
+    "3102": {
+      "id": 3102,
+      "name": "2차 확보",
+      "desc": "비정상 구역 3개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 3102,
+          "count": 3
+        }
+      ]
+    },
+    "3103": {
+      "id": 3103,
+      "name": "완전 확보",
+      "desc": "전투 승리 36회 달성",
+      "conditions": [
+        {
+          "trigger": 3103,
+          "count": 36
+        }
+      ]
+    },
+    "3104": {
+      "id": 3104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 3104,
+          "count": 1
+        }
+      ]
+    },
+    "3105": {
+      "id": 3105,
+      "name": "2차 탐색",
+      "desc": "에너지 매트릭스 1회 리셋",
+      "conditions": [
+        {
+          "trigger": 3105,
+          "count": 1
+        }
+      ]
+    },
+    "3201": {
+      "id": 3201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 3201,
+          "count": 1
+        }
+      ]
+    },
+    "3202": {
+      "id": 3202,
+      "name": "2차 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 3202,
+          "count": 18
+        }
+      ]
+    },
+    "3203": {
+      "id": 3203,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 6개 격파",
+      "conditions": [
+        {
+          "trigger": 3203,
+          "count": 6
+        }
+      ]
+    },
+    "3204": {
+      "id": 3204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 3204,
+          "count": 1
+        }
+      ]
+    },
+    "3205": {
+      "id": 3205,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 3205,
+          "count": 2
+        }
+      ]
+    },
+    "3301": {
+      "id": 3301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 3301,
+          "count": 1
+        }
+      ]
+    },
+    "3302": {
+      "id": 3302,
+      "name": "2차 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 3302,
+          "count": 18
+        }
+      ]
+    },
+    "3303": {
+      "id": 3303,
+      "name": "완전 확보",
+      "desc": "전투 승리 60회 달성",
+      "conditions": [
+        {
+          "trigger": 3303,
+          "count": 60
+        }
+      ]
+    },
+    "3304": {
+      "id": 3304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 3304,
+          "count": 1
+        }
+      ]
+    },
+    "3305": {
+      "id": 3305,
+      "name": "2차 탐색",
+      "desc": "세이렌 탐지 장치 6회 사용",
+      "conditions": [
+        {
+          "trigger": 3305,
+          "count": 6
+        }
+      ]
+    },
+    "3401": {
+      "id": 3401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 3401,
+          "count": 1
+        }
+      ]
+    },
+    "3402": {
+      "id": 3402,
+      "name": "2차 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 3402,
+          "count": 18
+        }
+      ]
+    },
+    "3403": {
+      "id": 3403,
+      "name": "완전 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 3403,
+          "count": 10
+        }
+      ]
+    },
+    "3404": {
+      "id": 3404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 3404,
+          "count": 1
+        }
+      ]
+    },
+    "3405": {
+      "id": 3405,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 3405,
+          "count": 2
+        }
+      ]
+    },
+    "4101": {
+      "id": 4101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 4101,
+          "count": 1
+        }
+      ]
+    },
+    "4102": {
+      "id": 4102,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 4개 격파",
+      "conditions": [
+        {
+          "trigger": 4102,
+          "count": 4
+        }
+      ]
+    },
+    "4103": {
+      "id": 4103,
+      "name": "완전 확보",
+      "desc": "전투 승리 60회 달성",
+      "conditions": [
+        {
+          "trigger": 4103,
+          "count": 60
+        }
+      ]
+    },
+    "4104": {
+      "id": 4104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 4104,
+          "count": 1
+        }
+      ]
+    },
+    "4105": {
+      "id": 4105,
+      "name": "2차 탐색",
+      "desc": "기관 1회 활성화",
+      "conditions": [
+        {
+          "trigger": 4105,
+          "count": 1
+        }
+      ]
+    },
+    "4201": {
+      "id": 4201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 4201,
+          "count": 1
+        }
+      ]
+    },
+    "4202": {
+      "id": 4202,
+      "name": "2차 확보",
+      "desc": "전투 승리 48회 달성",
+      "conditions": [
+        {
+          "trigger": 4202,
+          "count": 48
+        }
+      ]
+    },
+    "4203": {
+      "id": 4203,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 8개 격파",
+      "conditions": [
+        {
+          "trigger": 4203,
+          "count": 8
+        }
+      ]
+    },
+    "4204": {
+      "id": 4204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 4204,
+          "count": 1
+        }
+      ]
+    },
+    "4205": {
+      "id": 4205,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 4205,
+          "count": 2
+        }
+      ]
+    },
+    "4301": {
+      "id": 4301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 4301,
+          "count": 1
+        }
+      ]
+    },
+    "4302": {
+      "id": 4302,
+      "name": "2차 확보",
+      "desc": "자원 포인트 8개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 4302,
+          "count": 8
+        }
+      ]
+    },
+    "4303": {
+      "id": 4303,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 3개 격파",
+      "conditions": [
+        {
+          "trigger": 4303,
+          "count": 3
+        }
+      ]
+    },
+    "4304": {
+      "id": 4304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 4304,
+          "count": 1
+        }
+      ]
+    },
+    "4305": {
+      "id": 4305,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 1회 격파",
+      "conditions": [
+        {
+          "trigger": 4305,
+          "count": 1
+        }
+      ]
+    },
+    "4401": {
+      "id": 4401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 4401,
+          "count": 1
+        }
+      ]
+    },
+    "4402": {
+      "id": 4402,
+      "name": "2차 확보",
+      "desc": "전투 승리 16회 달성",
+      "conditions": [
+        {
+          "trigger": 4402,
+          "count": 16
+        }
+      ]
+    },
+    "4403": {
+      "id": 4403,
+      "name": "완전 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 4403,
+          "count": 18
+        }
+      ]
+    },
+    "4404": {
+      "id": 4404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 4404,
+          "count": 1
+        }
+      ]
+    },
+    "4405": {
+      "id": 4405,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 4405,
+          "count": 2
+        }
+      ]
+    },
+    "5101": {
+      "id": 5101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 5101,
+          "count": 1
+        }
+      ]
+    },
+    "5102": {
+      "id": 5102,
+      "name": "2차 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 5102,
+          "count": 10
+        }
+      ]
+    },
+    "5103": {
+      "id": 5103,
+      "name": "완전 확보",
+      "desc": "자원 포인트 48개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 5103,
+          "count": 48
+        }
+      ]
+    },
+    "5104": {
+      "id": 5104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 5104,
+          "count": 1
+        }
+      ]
+    },
+    "5105": {
+      "id": 5105,
+      "name": "2차 탐색",
+      "desc": "기관 2회 활성화",
+      "conditions": [
+        {
+          "trigger": 5105,
+          "count": 2
+        }
+      ]
+    },
+    "5201": {
+      "id": 5201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 5201,
+          "count": 1
+        }
+      ]
+    },
+    "5202": {
+      "id": 5202,
+      "name": "2차 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 5202,
+          "count": 10
+        }
+      ]
+    },
+    "5203": {
+      "id": 5203,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 8개 격파",
+      "conditions": [
+        {
+          "trigger": 5203,
+          "count": 8
+        }
+      ]
+    },
+    "5204": {
+      "id": 5204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 5204,
+          "count": 1
+        }
+      ]
+    },
+    "5205": {
+      "id": 5205,
+      "name": "2차 탐색",
+      "desc": "에너지 매트릭스 2회 리셋",
+      "conditions": [
+        {
+          "trigger": 5205,
+          "count": 2
+        }
+      ]
+    },
+    "5301": {
+      "id": 5301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 5301,
+          "count": 1
+        }
+      ]
+    },
+    "5302": {
+      "id": 5302,
+      "name": "2차 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 5302,
+          "count": 10
+        }
+      ]
+    },
+    "5303": {
+      "id": 5303,
+      "name": "완전 확보",
+      "desc": "전투 승리 96회 달성",
+      "conditions": [
+        {
+          "trigger": 5303,
+          "count": 96
+        }
+      ]
+    },
+    "5304": {
+      "id": 5304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 5304,
+          "count": 1
+        }
+      ]
+    },
+    "5305": {
+      "id": 5305,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 2회 격파",
+      "conditions": [
+        {
+          "trigger": 5305,
+          "count": 2
+        }
+      ]
+    },
+    "5401": {
+      "id": 5401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 5401,
+          "count": 1
+        }
+      ]
+    },
+    "5402": {
+      "id": 5402,
+      "name": "2차 확보",
+      "desc": "자원 포인트 24개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 5402,
+          "count": 24
+        }
+      ]
+    },
+    "5403": {
+      "id": 5403,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 8개 격파",
+      "conditions": [
+        {
+          "trigger": 5403,
+          "count": 8
+        }
+      ]
+    },
+    "5404": {
+      "id": 5404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 5404,
+          "count": 1
+        }
+      ]
+    },
+    "5405": {
+      "id": 5405,
+      "name": "2차 탐색",
+      "desc": "물자 인양 4회 완료",
+      "conditions": [
+        {
+          "trigger": 5405,
+          "count": 4
+        }
+      ]
+    },
+    "6101": {
+      "id": 6101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 6101,
+          "count": 1
+        }
+      ]
+    },
+    "6102": {
+      "id": 6102,
+      "name": "2차 확보",
+      "desc": "자원 포인트 24개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 6102,
+          "count": 24
+        }
+      ]
+    },
+    "6103": {
+      "id": 6103,
+      "name": "완전 확보",
+      "desc": "전투 승리 96회 달성",
+      "conditions": [
+        {
+          "trigger": 6103,
+          "count": 96
+        }
+      ]
+    },
+    "6104": {
+      "id": 6104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 6104,
+          "count": 1
+        }
+      ]
+    },
+    "6105": {
+      "id": 6105,
+      "name": "2차 탐색",
+      "desc": "지휘냥 물자 탐색 10회 진행",
+      "conditions": [
+        {
+          "trigger": 6105,
+          "count": 10
+        }
+      ]
+    },
+    "6201": {
+      "id": 6201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 6201,
+          "count": 1
+        }
+      ]
+    },
+    "6202": {
+      "id": 6202,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 4개 격파",
+      "conditions": [
+        {
+          "trigger": 6202,
+          "count": 4
+        }
+      ]
+    },
+    "6203": {
+      "id": 6203,
+      "name": "완전 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 6203,
+          "count": 10
+        }
+      ]
+    },
+    "6204": {
+      "id": 6204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 6204,
+          "count": 1
+        }
+      ]
+    },
+    "6205": {
+      "id": 6205,
+      "name": "2차 탐색",
+      "desc": "에너지 매트릭스 1회 리셋",
+      "conditions": [
+        {
+          "trigger": 6205,
+          "count": 1
+        }
+      ]
+    },
+    "6301": {
+      "id": 6301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 6301,
+          "count": 1
+        }
+      ]
+    },
+    "6302": {
+      "id": 6302,
+      "name": "2차 확보",
+      "desc": "자원 포인트 24개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 6302,
+          "count": 24
+        }
+      ]
+    },
+    "6303": {
+      "id": 6303,
+      "name": "완전 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 6303,
+          "count": 19
+        }
+      ]
+    },
+    "6304": {
+      "id": 6304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 6304,
+          "count": 1
+        }
+      ]
+    },
+    "6305": {
+      "id": 6305,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 6305,
+          "count": 2
+        }
+      ]
+    },
+    "6401": {
+      "id": 6401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 6401,
+          "count": 1
+        }
+      ]
+    },
+    "6402": {
+      "id": 6402,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 6개 격파",
+      "conditions": [
+        {
+          "trigger": 6402,
+          "count": 6
+        }
+      ]
+    },
+    "6403": {
+      "id": 6403,
+      "name": "완전 확보",
+      "desc": "전투 승리 96회 달성",
+      "conditions": [
+        {
+          "trigger": 6403,
+          "count": 96
+        }
+      ]
+    },
+    "6404": {
+      "id": 6404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 6404,
+          "count": 1
+        }
+      ]
+    },
+    "6405": {
+      "id": 6405,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 6405,
+          "count": 2
+        }
+      ]
+    },
+    "6501": {
+      "id": 6501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 6501,
+          "count": 1
+        }
+      ]
+    },
+    "6502": {
+      "id": 6502,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 4개 격파",
+      "conditions": [
+        {
+          "trigger": 6502,
+          "count": 4
+        }
+      ]
+    },
+    "6503": {
+      "id": 6503,
+      "name": "완전 확보",
+      "desc": "자원 포인트 36개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 6503,
+          "count": 36
+        }
+      ]
+    },
+    "6504": {
+      "id": 6504,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 6504,
+          "count": 1
+        }
+      ]
+    },
+    "6505": {
+      "id": 6505,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 1회 격파",
+      "conditions": [
+        {
+          "trigger": 6505,
+          "count": 1
+        }
+      ]
+    },
+    "6601": {
+      "id": 6601,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 6601,
+          "count": 1
+        }
+      ]
+    },
+    "6602": {
+      "id": 6602,
+      "name": "2차 확보",
+      "desc": "전투 승리 30회 달성",
+      "conditions": [
+        {
+          "trigger": 6602,
+          "count": 30
+        }
+      ]
+    },
+    "6603": {
+      "id": 6603,
+      "name": "완전 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 6603,
+          "count": 10
+        }
+      ]
+    },
+    "6604": {
+      "id": 6604,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 6604,
+          "count": 1
+        }
+      ]
+    },
+    "6605": {
+      "id": 6605,
+      "name": "2차 탐색",
+      "desc": "물자 인양 3회 완료",
+      "conditions": [
+        {
+          "trigger": 6605,
+          "count": 3
+        }
+      ]
+    },
+    "7101": {
+      "id": 7101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 7101,
+          "count": 1
+        }
+      ]
+    },
+    "7102": {
+      "id": 7102,
+      "name": "2차 확보",
+      "desc": "자원 포인트 40개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 7102,
+          "count": 40
+        }
+      ]
+    },
+    "7103": {
+      "id": 7103,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 12개 격파",
+      "conditions": [
+        {
+          "trigger": 7103,
+          "count": 12
+        }
+      ]
+    },
+    "7104": {
+      "id": 7104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 7104,
+          "count": 1
+        }
+      ]
+    },
+    "7105": {
+      "id": 7105,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 7105,
+          "count": 2
+        }
+      ]
+    },
+    "7201": {
+      "id": 7201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 7201,
+          "count": 1
+        }
+      ]
+    },
+    "7202": {
+      "id": 7202,
+      "name": "2차 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 7202,
+          "count": 19
+        }
+      ]
+    },
+    "7203": {
+      "id": 7203,
+      "name": "완전 확보",
+      "desc": "전투 승리 180회 달성",
+      "conditions": [
+        {
+          "trigger": 7203,
+          "count": 180
+        }
+      ]
+    },
+    "7204": {
+      "id": 7204,
+      "name": "1차 탐색",
+      "desc": "세이렌 탐지 장치 5회 사용",
+      "conditions": [
+        {
+          "trigger": 7204,
+          "count": 5
+        }
+      ]
+    },
+    "7205": {
+      "id": 7205,
+      "name": "2차 탐색",
+      "desc": "물자 인양 8회 완료",
+      "conditions": [
+        {
+          "trigger": 7205,
+          "count": 8
+        }
+      ]
+    },
+    "7301": {
+      "id": 7301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 7301,
+          "count": 1
+        }
+      ]
+    },
+    "7302": {
+      "id": 7302,
+      "name": "2차 확보",
+      "desc": "자원 포인트 40개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 7302,
+          "count": 40
+        }
+      ]
+    },
+    "7303": {
+      "id": 7303,
+      "name": "완전 확보",
+      "desc": "전투 승리 150회 달성",
+      "conditions": [
+        {
+          "trigger": 7303,
+          "count": 150
+        }
+      ]
+    },
+    "7304": {
+      "id": 7304,
+      "name": "1차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 7304,
+          "count": 2
+        }
+      ]
+    },
+    "7305": {
+      "id": 7305,
+      "name": "2차 탐색",
+      "desc": "세이렌 탐지 장치 8회 사용",
+      "conditions": [
+        {
+          "trigger": 7305,
+          "count": 8
+        }
+      ]
+    },
+    "8101": {
+      "id": 8101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 8101,
+          "count": 1
+        }
+      ]
+    },
+    "8102": {
+      "id": 8102,
+      "name": "2차 확보",
+      "desc": "자원 포인트 8개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 8102,
+          "count": 8
+        }
+      ]
+    },
+    "8103": {
+      "id": 8103,
+      "name": "완전 확보",
+      "desc": "전투 승리 36회 달성",
+      "conditions": [
+        {
+          "trigger": 8103,
+          "count": 36
+        }
+      ]
+    },
+    "8104": {
+      "id": 8104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 8104,
+          "count": 1
+        }
+      ]
+    },
+    "8105": {
+      "id": 8105,
+      "name": "2차 탐색",
+      "desc": "물자 인양 2회 완료",
+      "conditions": [
+        {
+          "trigger": 8105,
+          "count": 2
+        }
+      ]
+    },
+    "8201": {
+      "id": 8201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 8201,
+          "count": 1
+        }
+      ]
+    },
+    "8202": {
+      "id": 8202,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 6개 격파",
+      "conditions": [
+        {
+          "trigger": 8202,
+          "count": 6
+        }
+      ]
+    },
+    "8203": {
+      "id": 8203,
+      "name": "완전 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 8203,
+          "count": 19
+        }
+      ]
+    },
+    "8204": {
+      "id": 8204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 8204,
+          "count": 1
+        }
+      ]
+    },
+    "8205": {
+      "id": 8205,
+      "name": "2차 탐색",
+      "desc": "세이렌 탐지 장치 6회 사용",
+      "conditions": [
+        {
+          "trigger": 8205,
+          "count": 6
+        }
+      ]
+    },
+    "8301": {
+      "id": 8301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 8301,
+          "count": 1
+        }
+      ]
+    },
+    "8302": {
+      "id": 8302,
+      "name": "2차 확보",
+      "desc": "자원 포인트 8개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 8302,
+          "count": 8
+        }
+      ]
+    },
+    "8303": {
+      "id": 8303,
+      "name": "완전 확보",
+      "desc": "비정상 구역 7개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 8303,
+          "count": 7
+        }
+      ]
+    },
+    "8304": {
+      "id": 8304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 8304,
+          "count": 1
+        }
+      ]
+    },
+    "8305": {
+      "id": 8305,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 8305,
+          "count": 2
+        }
+      ]
+    },
+    "8401": {
+      "id": 8401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 8401,
+          "count": 1
+        }
+      ]
+    },
+    "8402": {
+      "id": 8402,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 2개 격파",
+      "conditions": [
+        {
+          "trigger": 8402,
+          "count": 2
+        }
+      ]
+    },
+    "8403": {
+      "id": 8403,
+      "name": "완전 확보",
+      "desc": "전투 승리 36회 달성",
+      "conditions": [
+        {
+          "trigger": 8403,
+          "count": 36
+        }
+      ]
+    },
+    "8404": {
+      "id": 8404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 8404,
+          "count": 1
+        }
+      ]
+    },
+    "8405": {
+      "id": 8405,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 8405,
+          "count": 2
+        }
+      ]
+    },
+    "8501": {
+      "id": 8501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 8501,
+          "count": 1
+        }
+      ]
+    },
+    "8502": {
+      "id": 8502,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 6개 격파",
+      "conditions": [
+        {
+          "trigger": 8502,
+          "count": 6
+        }
+      ]
+    },
+    "8503": {
+      "id": 8503,
+      "name": "완전 확보",
+      "desc": "자원 포인트 48개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 8503,
+          "count": 48
+        }
+      ]
+    },
+    "8504": {
+      "id": 8504,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 8504,
+          "count": 1
+        }
+      ]
+    },
+    "8505": {
+      "id": 8505,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 8505,
+          "count": 2
+        }
+      ]
+    },
+    "9101": {
+      "id": 9101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 9101,
+          "count": 1
+        }
+      ]
+    },
+    "9102": {
+      "id": 9102,
+      "name": "2차 확보",
+      "desc": "전투 승리 48회 달성",
+      "conditions": [
+        {
+          "trigger": 9102,
+          "count": 48
+        }
+      ]
+    },
+    "9103": {
+      "id": 9103,
+      "name": "완전 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 9103,
+          "count": 19
+        }
+      ]
+    },
+    "9104": {
+      "id": 9104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 9104,
+          "count": 1
+        }
+      ]
+    },
+    "9105": {
+      "id": 9105,
+      "name": "2차 탐색",
+      "desc": "기관 2회 활성화",
+      "conditions": [
+        {
+          "trigger": 9105,
+          "count": 2
+        }
+      ]
+    },
+    "9201": {
+      "id": 9201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 9201,
+          "count": 1
+        }
+      ]
+    },
+    "9202": {
+      "id": 9202,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 2개 격파",
+      "conditions": [
+        {
+          "trigger": 9202,
+          "count": 2
+        }
+      ]
+    },
+    "9203": {
+      "id": 9203,
+      "name": "완전 확보",
+      "desc": "비정상 구역 7개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 9203,
+          "count": 7
+        }
+      ]
+    },
+    "9204": {
+      "id": 9204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 9204,
+          "count": 1
+        }
+      ]
+    },
+    "9205": {
+      "id": 9205,
+      "name": "2차 탐색",
+      "desc": "세이렌 탐지 장치 4회 사용",
+      "conditions": [
+        {
+          "trigger": 9205,
+          "count": 4
+        }
+      ]
+    },
+    "9301": {
+      "id": 9301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 9301,
+          "count": 1
+        }
+      ]
+    },
+    "9302": {
+      "id": 9302,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 2개 격파",
+      "conditions": [
+        {
+          "trigger": 9302,
+          "count": 2
+        }
+      ]
+    },
+    "9303": {
+      "id": 9303,
+      "name": "완전 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 9303,
+          "count": 18
+        }
+      ]
+    },
+    "9304": {
+      "id": 9304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 9304,
+          "count": 1
+        }
+      ]
+    },
+    "9305": {
+      "id": 9305,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 9305,
+          "count": 2
+        }
+      ]
+    },
+    "9401": {
+      "id": 9401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 9401,
+          "count": 1
+        }
+      ]
+    },
+    "9402": {
+      "id": 9402,
+      "name": "2차 확보",
+      "desc": "전투 승리 30회 달성",
+      "conditions": [
+        {
+          "trigger": 9402,
+          "count": 30
+        }
+      ]
+    },
+    "9403": {
+      "id": 9403,
+      "name": "완전 확보",
+      "desc": "자원 포인트 36개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 9403,
+          "count": 36
+        }
+      ]
+    },
+    "9404": {
+      "id": 9404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 9404,
+          "count": 1
+        }
+      ]
+    },
+    "9405": {
+      "id": 9405,
+      "name": "2차 탐색",
+      "desc": "지휘냥 물자 탐색 10회 진행",
+      "conditions": [
+        {
+          "trigger": 9405,
+          "count": 10
+        }
+      ]
+    },
+    "9501": {
+      "id": 9501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 9501,
+          "count": 1
+        }
+      ]
+    },
+    "9502": {
+      "id": 9502,
+      "name": "2차 확보",
+      "desc": "전투 승리 30회 달성",
+      "conditions": [
+        {
+          "trigger": 9502,
+          "count": 30
+        }
+      ]
+    },
+    "9503": {
+      "id": 9503,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 6개 격파",
+      "conditions": [
+        {
+          "trigger": 9503,
+          "count": 6
+        }
+      ]
+    },
+    "9504": {
+      "id": 9504,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 9504,
+          "count": 1
+        }
+      ]
+    },
+    "9505": {
+      "id": 9505,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 9505,
+          "count": 2
+        }
+      ]
+    },
+    "10101": {
+      "id": 10101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 10101,
+          "count": 1
+        }
+      ]
+    },
+    "10102": {
+      "id": 10102,
+      "name": "2차 확보",
+      "desc": "자원 포인트 40개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 10102,
+          "count": 40
+        }
+      ]
+    },
+    "10103": {
+      "id": 10103,
+      "name": "완전 확보",
+      "desc": "비정상 구역 36개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 10103,
+          "count": 36
+        }
+      ]
+    },
+    "10104": {
+      "id": 10104,
+      "name": "1차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 10104,
+          "count": 2
+        }
+      ]
+    },
+    "10105": {
+      "id": 10105,
+      "name": "2차 탐색",
+      "desc": "기관 2회 활성화",
+      "conditions": [
+        {
+          "trigger": 10105,
+          "count": 2
+        }
+      ]
+    },
+    "10201": {
+      "id": 10201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 10201,
+          "count": 1
+        }
+      ]
+    },
+    "10202": {
+      "id": 10202,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 10개 격파",
+      "conditions": [
+        {
+          "trigger": 10202,
+          "count": 10
+        }
+      ]
+    },
+    "10203": {
+      "id": 10203,
+      "name": "완전 확보",
+      "desc": "전투 승리 150회 달성",
+      "conditions": [
+        {
+          "trigger": 10203,
+          "count": 150
+        }
+      ]
+    },
+    "10204": {
+      "id": 10204,
+      "name": "1차 탐색",
+      "desc": "세이렌 탐지 장치 5회 사용",
+      "conditions": [
+        {
+          "trigger": 10204,
+          "count": 5
+        }
+      ]
+    },
+    "10205": {
+      "id": 10205,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 2회 격파",
+      "conditions": [
+        {
+          "trigger": 10205,
+          "count": 2
+        }
+      ]
+    },
+    "10301": {
+      "id": 10301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 10301,
+          "count": 1
+        }
+      ]
+    },
+    "10302": {
+      "id": 10302,
+      "name": "2차 확보",
+      "desc": "전투 승리 48회 달성",
+      "conditions": [
+        {
+          "trigger": 10302,
+          "count": 48
+        }
+      ]
+    },
+    "10303": {
+      "id": 10303,
+      "name": "완전 확보",
+      "desc": "자원 포인트 48개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 10303,
+          "count": 48
+        }
+      ]
+    },
+    "10304": {
+      "id": 10304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 10304,
+          "count": 1
+        }
+      ]
+    },
+    "10305": {
+      "id": 10305,
+      "name": "2차 탐색",
+      "desc": "에너지 매트릭스 2회 리셋",
+      "conditions": [
+        {
+          "trigger": 10305,
+          "count": 2
+        }
+      ]
+    },
+    "10401": {
+      "id": 10401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 10401,
+          "count": 1
+        }
+      ]
+    },
+    "10402": {
+      "id": 10402,
+      "name": "2차 확보",
+      "desc": "전투 승리 48회 달성",
+      "conditions": [
+        {
+          "trigger": 10402,
+          "count": 48
+        }
+      ]
+    },
+    "10403": {
+      "id": 10403,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 8개 격파",
+      "conditions": [
+        {
+          "trigger": 10403,
+          "count": 8
+        }
+      ]
+    },
+    "10404": {
+      "id": 10404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 10404,
+          "count": 1
+        }
+      ]
+    },
+    "10405": {
+      "id": 10405,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 2회 격파",
+      "conditions": [
+        {
+          "trigger": 10405,
+          "count": 2
+        }
+      ]
+    },
+    "10501": {
+      "id": 10501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 10501,
+          "count": 1
+        }
+      ]
+    },
+    "10502": {
+      "id": 10502,
+      "name": "2차 확보",
+      "desc": "비정상 구역 5개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 10502,
+          "count": 5
+        }
+      ]
+    },
+    "10503": {
+      "id": 10503,
+      "name": "완전 확보",
+      "desc": "자원 포인트 36개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 10503,
+          "count": 36
+        }
+      ]
+    },
+    "10504": {
+      "id": 10504,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 10504,
+          "count": 1
+        }
+      ]
+    },
+    "10505": {
+      "id": 10505,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 10505,
+          "count": 2
+        }
+      ]
+    },
+    "10601": {
+      "id": 10601,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 10601,
+          "count": 1
+        }
+      ]
+    },
+    "10602": {
+      "id": 10602,
+      "name": "2차 확보",
+      "desc": "자원 포인트 40개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 10602,
+          "count": 40
+        }
+      ]
+    },
+    "10603": {
+      "id": 10603,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 15개 격파",
+      "conditions": [
+        {
+          "trigger": 10603,
+          "count": 15
+        }
+      ]
+    },
+    "10604": {
+      "id": 10604,
+      "name": "1차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 10604,
+          "count": 2
+        }
+      ]
+    },
+    "10605": {
+      "id": 10605,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 3회 조우",
+      "conditions": [
+        {
+          "trigger": 10605,
+          "count": 3
+        }
+      ]
+    },
+    "11101": {
+      "id": 11101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 11101,
+          "count": 1
+        }
+      ]
+    },
+    "11102": {
+      "id": 11102,
+      "name": "2차 확보",
+      "desc": "비정상 구역 5개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 11102,
+          "count": 5
+        }
+      ]
+    },
+    "11103": {
+      "id": 11103,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 6개 격파",
+      "conditions": [
+        {
+          "trigger": 11103,
+          "count": 6
+        }
+      ]
+    },
+    "11104": {
+      "id": 11104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 11104,
+          "count": 1
+        }
+      ]
+    },
+    "11105": {
+      "id": 11105,
+      "name": "2차 탐색",
+      "desc": "세이렌 탐지 장치 6회 사용",
+      "conditions": [
+        {
+          "trigger": 11105,
+          "count": 6
+        }
+      ]
+    },
+    "11201": {
+      "id": 11201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 11201,
+          "count": 1
+        }
+      ]
+    },
+    "11202": {
+      "id": 11202,
+      "name": "2차 확보",
+      "desc": "전투 승리 16회 달성",
+      "conditions": [
+        {
+          "trigger": 11202,
+          "count": 16
+        }
+      ]
+    },
+    "11203": {
+      "id": 11203,
+      "name": "완전 확보",
+      "desc": "비정상 구역 7개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 11203,
+          "count": 7
+        }
+      ]
+    },
+    "11204": {
+      "id": 11204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 11204,
+          "count": 1
+        }
+      ]
+    },
+    "11205": {
+      "id": 11205,
+      "name": "2차 탐색",
+      "desc": "기관 1회 활성화",
+      "conditions": [
+        {
+          "trigger": 11205,
+          "count": 1
+        }
+      ]
+    },
+    "11301": {
+      "id": 11301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 11301,
+          "count": 1
+        }
+      ]
+    },
+    "11302": {
+      "id": 11302,
+      "name": "2차 확보",
+      "desc": "비정상 구역 5개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 11302,
+          "count": 5
+        }
+      ]
+    },
+    "11303": {
+      "id": 11303,
+      "name": "완전 확보",
+      "desc": "전투 승리 60회 달성",
+      "conditions": [
+        {
+          "trigger": 11303,
+          "count": 60
+        }
+      ]
+    },
+    "11304": {
+      "id": 11304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 11304,
+          "count": 1
+        }
+      ]
+    },
+    "11305": {
+      "id": 11305,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 11305,
+          "count": 2
+        }
+      ]
+    },
+    "11401": {
+      "id": 11401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 11401,
+          "count": 1
+        }
+      ]
+    },
+    "11402": {
+      "id": 11402,
+      "name": "2차 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 11402,
+          "count": 18
+        }
+      ]
+    },
+    "11403": {
+      "id": 11403,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 6개 격파",
+      "conditions": [
+        {
+          "trigger": 11403,
+          "count": 6
+        }
+      ]
+    },
+    "11404": {
+      "id": 11404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 11404,
+          "count": 1
+        }
+      ]
+    },
+    "11405": {
+      "id": 11405,
+      "name": "2차 탐색",
+      "desc": "기관 1회 활성화",
+      "conditions": [
+        {
+          "trigger": 11405,
+          "count": 1
+        }
+      ]
+    },
+    "12101": {
+      "id": 12101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 12101,
+          "count": 1
+        }
+      ]
+    },
+    "12102": {
+      "id": 12102,
+      "name": "2차 확보",
+      "desc": "자원 포인트 40개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 12102,
+          "count": 40
+        }
+      ]
+    },
+    "12103": {
+      "id": 12103,
+      "name": "완전 확보",
+      "desc": "전투 승리 180회 달성",
+      "conditions": [
+        {
+          "trigger": 12103,
+          "count": 180
+        }
+      ]
+    },
+    "12104": {
+      "id": 12104,
+      "name": "1차 탐색",
+      "desc": "기관 2회 활성화",
+      "conditions": [
+        {
+          "trigger": 12104,
+          "count": 2
+        }
+      ]
+    },
+    "12105": {
+      "id": 12105,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 3회 파괴",
+      "conditions": [
+        {
+          "trigger": 12105,
+          "count": 3
+        }
+      ]
+    },
+    "12201": {
+      "id": 12201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 12201,
+          "count": 1
+        }
+      ]
+    },
+    "12202": {
+      "id": 12202,
+      "name": "2차 확보",
+      "desc": "전투 승리 16회 달성",
+      "conditions": [
+        {
+          "trigger": 12202,
+          "count": 16
+        }
+      ]
+    },
+    "12203": {
+      "id": 12203,
+      "name": "완전 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 12203,
+          "count": 18
+        }
+      ]
+    },
+    "12204": {
+      "id": 12204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 12204,
+          "count": 1
+        }
+      ]
+    },
+    "12205": {
+      "id": 12205,
+      "name": "2차 탐색",
+      "desc": "에너지 매트릭스 1회 리셋",
+      "conditions": [
+        {
+          "trigger": 12205,
+          "count": 1
+        }
+      ]
+    },
+    "12301": {
+      "id": 12301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 12301,
+          "count": 1
+        }
+      ]
+    },
+    "12302": {
+      "id": 12302,
+      "name": "2차 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 12302,
+          "count": 18
+        }
+      ]
+    },
+    "12303": {
+      "id": 12303,
+      "name": "완전 확보",
+      "desc": "전투 승리 60회 달성",
+      "conditions": [
+        {
+          "trigger": 12303,
+          "count": 60
+        }
+      ]
+    },
+    "12304": {
+      "id": 12304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 12304,
+          "count": 1
+        }
+      ]
+    },
+    "12305": {
+      "id": 12305,
+      "name": "2차 탐색",
+      "desc": "에너지 매트릭스 1회 리셋",
+      "conditions": [
+        {
+          "trigger": 12305,
+          "count": 1
+        }
+      ]
+    },
+    "12401": {
+      "id": 12401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 12401,
+          "count": 1
+        }
+      ]
+    },
+    "12402": {
+      "id": 12402,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 10개 격파",
+      "conditions": [
+        {
+          "trigger": 12402,
+          "count": 10
+        }
+      ]
+    },
+    "12403": {
+      "id": 12403,
+      "name": "완전 확보",
+      "desc": "비정상 구역 36개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 12403,
+          "count": 36
+        }
+      ]
+    },
+    "12404": {
+      "id": 12404,
+      "name": "1차 탐색",
+      "desc": "기관 2회 활성화",
+      "conditions": [
+        {
+          "trigger": 12404,
+          "count": 2
+        }
+      ]
+    },
+    "12405": {
+      "id": 12405,
+      "name": "2차 탐색",
+      "desc": "지휘냥 물자 탐색 25회 진행",
+      "conditions": [
+        {
+          "trigger": 12405,
+          "count": 25
+        }
+      ]
+    },
+    "12501": {
+      "id": 12501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 12501,
+          "count": 1
+        }
+      ]
+    },
+    "12502": {
+      "id": 12502,
+      "name": "2차 확보",
+      "desc": "자원 포인트 30개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 12502,
+          "count": 30
+        }
+      ]
+    },
+    "12503": {
+      "id": 12503,
+      "name": "완전 확보",
+      "desc": "비정상 구역 29개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 12503,
+          "count": 29
+        }
+      ]
+    },
+    "12504": {
+      "id": 12504,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 12504,
+          "count": 1
+        }
+      ]
+    },
+    "12505": {
+      "id": 12505,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 2회 격파",
+      "conditions": [
+        {
+          "trigger": 12505,
+          "count": 2
+        }
+      ]
+    },
+    "13101": {
+      "id": 13101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 13101,
+          "count": 1
+        }
+      ]
+    },
+    "13102": {
+      "id": 13102,
+      "name": "2차 확보",
+      "desc": "전투 승리 16회 달성",
+      "conditions": [
+        {
+          "trigger": 13102,
+          "count": 16
+        }
+      ]
+    },
+    "13103": {
+      "id": 13103,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 3개 격파",
+      "conditions": [
+        {
+          "trigger": 13103,
+          "count": 3
+        }
+      ]
+    },
+    "13104": {
+      "id": 13104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 13104,
+          "count": 1
+        }
+      ]
+    },
+    "13105": {
+      "id": 13105,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 1회 격파",
+      "conditions": [
+        {
+          "trigger": 13105,
+          "count": 1
+        }
+      ]
+    },
+    "13201": {
+      "id": 13201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 13201,
+          "count": 1
+        }
+      ]
+    },
+    "13202": {
+      "id": 13202,
+      "name": "2차 확보",
+      "desc": "비정상 구역 3개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 13202,
+          "count": 3
+        }
+      ]
+    },
+    "13203": {
+      "id": 13203,
+      "name": "완전 확보",
+      "desc": "자원 포인트 18개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 13203,
+          "count": 18
+        }
+      ]
+    },
+    "13204": {
+      "id": 13204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 13204,
+          "count": 1
+        }
+      ]
+    },
+    "13205": {
+      "id": 13205,
+      "name": "2차 탐색",
+      "desc": "물자 인양 2회 완료",
+      "conditions": [
+        {
+          "trigger": 13205,
+          "count": 2
+        }
+      ]
+    },
+    "13301": {
+      "id": 13301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 13301,
+          "count": 1
+        }
+      ]
+    },
+    "13302": {
+      "id": 13302,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 4개 격파",
+      "conditions": [
+        {
+          "trigger": 13302,
+          "count": 4
+        }
+      ]
+    },
+    "13303": {
+      "id": 13303,
+      "name": "완전 확보",
+      "desc": "전투 승리 60회 달성",
+      "conditions": [
+        {
+          "trigger": 13303,
+          "count": 60
+        }
+      ]
+    },
+    "13304": {
+      "id": 13304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 13304,
+          "count": 1
+        }
+      ]
+    },
+    "13305": {
+      "id": 13305,
+      "name": "2차 탐색",
+      "desc": "물자 인양 3회 완료",
+      "conditions": [
+        {
+          "trigger": 13305,
+          "count": 3
+        }
+      ]
+    },
+    "13401": {
+      "id": 13401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 13401,
+          "count": 1
+        }
+      ]
+    },
+    "13402": {
+      "id": 13402,
+      "name": "2차 확보",
+      "desc": "비정상 구역 3개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 13402,
+          "count": 3
+        }
+      ]
+    },
+    "13403": {
+      "id": 13403,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 3개 격파",
+      "conditions": [
+        {
+          "trigger": 13403,
+          "count": 3
+        }
+      ]
+    },
+    "13404": {
+      "id": 13404,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 13404,
+          "count": 1
+        }
+      ]
+    },
+    "13405": {
+      "id": 13405,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 13405,
+          "count": 2
+        }
+      ]
+    },
+    "13501": {
+      "id": 13501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 13501,
+          "count": 1
+        }
+      ]
+    },
+    "13502": {
+      "id": 13502,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 4개 격파",
+      "conditions": [
+        {
+          "trigger": 13502,
+          "count": 4
+        }
+      ]
+    },
+    "13503": {
+      "id": 13503,
+      "name": "완전 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 13503,
+          "count": 10
+        }
+      ]
+    },
+    "13504": {
+      "id": 13504,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 13504,
+          "count": 1
+        }
+      ]
+    },
+    "13505": {
+      "id": 13505,
+      "name": "2차 탐색",
+      "desc": "지휘냥 물자 탐색 10회 진행",
+      "conditions": [
+        {
+          "trigger": 13505,
+          "count": 10
+        }
+      ]
+    },
+    "14101": {
+      "id": 14101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 14101,
+          "count": 1
+        }
+      ]
+    },
+    "14102": {
+      "id": 14102,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 4개 격파",
+      "conditions": [
+        {
+          "trigger": 14102,
+          "count": 4
+        }
+      ]
+    },
+    "14103": {
+      "id": 14103,
+      "name": "완전 확보",
+      "desc": "자원 포인트 36개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 14103,
+          "count": 36
+        }
+      ]
+    },
+    "14104": {
+      "id": 14104,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 14104,
+          "count": 1
+        }
+      ]
+    },
+    "14105": {
+      "id": 14105,
+      "name": "2차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 14105,
+          "count": 2
+        }
+      ]
+    },
+    "14201": {
+      "id": 14201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 14201,
+          "count": 1
+        }
+      ]
+    },
+    "14202": {
+      "id": 14202,
+      "name": "2차 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 14202,
+          "count": 10
+        }
+      ]
+    },
+    "14203": {
+      "id": 14203,
+      "name": "완전 확보",
+      "desc": "자원 포인트 48개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 14203,
+          "count": 48
+        }
+      ]
+    },
+    "14204": {
+      "id": 14204,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 14204,
+          "count": 1
+        }
+      ]
+    },
+    "14205": {
+      "id": 14205,
+      "name": "2차 탐색",
+      "desc": "물자 인양 4회 완료",
+      "conditions": [
+        {
+          "trigger": 14205,
+          "count": 4
+        }
+      ]
+    },
+    "14301": {
+      "id": 14301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 14301,
+          "count": 1
+        }
+      ]
+    },
+    "14302": {
+      "id": 14302,
+      "name": "2차 확보",
+      "desc": "전투 승리 30회 달성",
+      "conditions": [
+        {
+          "trigger": 14302,
+          "count": 30
+        }
+      ]
+    },
+    "14303": {
+      "id": 14303,
+      "name": "완전 확보",
+      "desc": "비정상 구역 10개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 14303,
+          "count": 10
+        }
+      ]
+    },
+    "14304": {
+      "id": 14304,
+      "name": "1차 탐색",
+      "desc": "파일 1개 회수",
+      "conditions": [
+        {
+          "trigger": 14304,
+          "count": 1
+        }
+      ]
+    },
+    "14305": {
+      "id": 14305,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 14305,
+          "count": 2
+        }
+      ]
+    },
+    "14401": {
+      "id": 14401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 14401,
+          "count": 1
+        }
+      ]
+    },
+    "14402": {
+      "id": 14402,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 10개 격파",
+      "conditions": [
+        {
+          "trigger": 14402,
+          "count": 10
+        }
+      ]
+    },
+    "14403": {
+      "id": 14403,
+      "name": "완전 확보",
+      "desc": "자원 포인트 75개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 14403,
+          "count": 75
+        }
+      ]
+    },
+    "14404": {
+      "id": 14404,
+      "name": "1차 탐색",
+      "desc": "에너지 매트릭스 2회 리셋",
+      "conditions": [
+        {
+          "trigger": 14404,
+          "count": 2
+        }
+      ]
+    },
+    "14405": {
+      "id": 14405,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 14405,
+          "count": 2
+        }
+      ]
+    },
+    "15101": {
+      "id": 15101,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15101,
+          "count": 1
+        }
+      ]
+    },
+    "15102": {
+      "id": 15102,
+      "name": "2차 확보",
+      "desc": "전투 승리 80회 달성",
+      "conditions": [
+        {
+          "trigger": 15102,
+          "count": 80
+        }
+      ]
+    },
+    "15103": {
+      "id": 15103,
+      "name": "완전 확보",
+      "desc": "비정상 구역 36개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 15103,
+          "count": 36
+        }
+      ]
+    },
+    "15104": {
+      "id": 15104,
+      "name": "1차 탐색",
+      "desc": "강화형 「장기말」 매복 2회 격파",
+      "conditions": [
+        {
+          "trigger": 15104,
+          "count": 2
+        }
+      ]
+    },
+    "15105": {
+      "id": 15105,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 15105,
+          "count": 2
+        }
+      ]
+    },
+    "15201": {
+      "id": 15201,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15201,
+          "count": 1
+        }
+      ]
+    },
+    "15202": {
+      "id": 15202,
+      "name": "2차 확보",
+      "desc": "전투 승리 80회 달성",
+      "conditions": [
+        {
+          "trigger": 15202,
+          "count": 80
+        }
+      ]
+    },
+    "15203": {
+      "id": 15203,
+      "name": "완전 확보",
+      "desc": "자원 포인트 75개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 15203,
+          "count": 75
+        }
+      ]
+    },
+    "15204": {
+      "id": 15204,
+      "name": "1차 탐색",
+      "desc": "물자 인양 5회 완료",
+      "conditions": [
+        {
+          "trigger": 15204,
+          "count": 5
+        }
+      ]
+    },
+    "15205": {
+      "id": 15205,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 2회 격파",
+      "conditions": [
+        {
+          "trigger": 15205,
+          "count": 2
+        }
+      ]
+    },
+    "15301": {
+      "id": 15301,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15301,
+          "count": 1
+        }
+      ]
+    },
+    "15302": {
+      "id": 15302,
+      "name": "2차 확보",
+      "desc": "자원 포인트 40개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 15302,
+          "count": 40
+        }
+      ]
+    },
+    "15303": {
+      "id": 15303,
+      "name": "완전 확보",
+      "desc": "비정상 구역 43개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 15303,
+          "count": 43
+        }
+      ]
+    },
+    "15304": {
+      "id": 15304,
+      "name": "1차 탐색",
+      "desc": "에너지 매트릭스 2회 리셋",
+      "conditions": [
+        {
+          "trigger": 15304,
+          "count": 2
+        }
+      ]
+    },
+    "15305": {
+      "id": 15305,
+      "name": "2차 탐색",
+      "desc": "강화형 「장기말」 매복 3회 격파",
+      "conditions": [
+        {
+          "trigger": 15305,
+          "count": 3
+        }
+      ]
+    },
+    "15401": {
+      "id": 15401,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15401,
+          "count": 1
+        }
+      ]
+    },
+    "15402": {
+      "id": 15402,
+      "name": "2차 확보",
+      "desc": "전투 승리 130회 달성",
+      "conditions": [
+        {
+          "trigger": 15402,
+          "count": 130
+        }
+      ]
+    },
+    "15403": {
+      "id": 15403,
+      "name": "완전 확보",
+      "desc": "비정상 구역 58개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 15403,
+          "count": 58
+        }
+      ]
+    },
+    "15404": {
+      "id": 15404,
+      "name": "1차 탐색",
+      "desc": "세이렌 탐지 장치 6회 사용",
+      "conditions": [
+        {
+          "trigger": 15404,
+          "count": 6
+        }
+      ]
+    },
+    "15405": {
+      "id": 15405,
+      "name": "2차 탐색",
+      "desc": "물자 인양 9회 완료",
+      "conditions": [
+        {
+          "trigger": 15405,
+          "count": 9
+        }
+      ]
+    },
+    "15501": {
+      "id": 15501,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15501,
+          "count": 1
+        }
+      ]
+    },
+    "15502": {
+      "id": 15502,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 10개 격파",
+      "conditions": [
+        {
+          "trigger": 15502,
+          "count": 10
+        }
+      ]
+    },
+    "15503": {
+      "id": 15503,
+      "name": "완전 확보",
+      "desc": "전투 승리 180회 달성",
+      "conditions": [
+        {
+          "trigger": 15503,
+          "count": 180
+        }
+      ]
+    },
+    "15504": {
+      "id": 15504,
+      "name": "1차 탐색",
+      "desc": "강화형 「장기말」 매복 2회 격파",
+      "conditions": [
+        {
+          "trigger": 15504,
+          "count": 2
+        }
+      ]
+    },
+    "15505": {
+      "id": 15505,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 3회 사용",
+      "conditions": [
+        {
+          "trigger": 15505,
+          "count": 3
+        }
+      ]
+    },
+    "15601": {
+      "id": 15601,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15601,
+          "count": 1
+        }
+      ]
+    },
+    "15602": {
+      "id": 15602,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 10개 격파",
+      "conditions": [
+        {
+          "trigger": 15602,
+          "count": 10
+        }
+      ]
+    },
+    "15603": {
+      "id": 15603,
+      "name": "완전 확보",
+      "desc": "비정상 구역 43개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 15603,
+          "count": 43
+        }
+      ]
+    },
+    "15604": {
+      "id": 15604,
+      "name": "1차 탐색",
+      "desc": "물자 인양 5회 완료",
+      "conditions": [
+        {
+          "trigger": 15604,
+          "count": 5
+        }
+      ]
+    },
+    "15605": {
+      "id": 15605,
+      "name": "2차 탐색",
+      "desc": "기관 3회 활성화",
+      "conditions": [
+        {
+          "trigger": 15605,
+          "count": 3
+        }
+      ]
+    },
+    "15701": {
+      "id": 15701,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15701,
+          "count": 1
+        }
+      ]
+    },
+    "15702": {
+      "id": 15702,
+      "name": "2차 확보",
+      "desc": "강화형 「장기말」 함대 10개 격파",
+      "conditions": [
+        {
+          "trigger": 15702,
+          "count": 10
+        }
+      ]
+    },
+    "15703": {
+      "id": 15703,
+      "name": "완전 확보",
+      "desc": "자원 포인트 90개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 15703,
+          "count": 90
+        }
+      ]
+    },
+    "15704": {
+      "id": 15704,
+      "name": "1차 탐색",
+      "desc": "에너지 매트릭스 2회 리셋",
+      "conditions": [
+        {
+          "trigger": 15704,
+          "count": 2
+        }
+      ]
+    },
+    "15705": {
+      "id": 15705,
+      "name": "2차 탐색",
+      "desc": "지휘냥 물자 탐색 30회 진행",
+      "conditions": [
+        {
+          "trigger": 15705,
+          "count": 30
+        }
+      ]
+    },
+    "15801": {
+      "id": 15801,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15801,
+          "count": 1
+        }
+      ]
+    },
+    "15802": {
+      "id": 15802,
+      "name": "2차 확보",
+      "desc": "전투 승리 80회 달성",
+      "conditions": [
+        {
+          "trigger": 15802,
+          "count": 80
+        }
+      ]
+    },
+    "15803": {
+      "id": 15803,
+      "name": "완전 확보",
+      "desc": "강화형 「장기말」 함대 12개 격파",
+      "conditions": [
+        {
+          "trigger": 15803,
+          "count": 12
+        }
+      ]
+    },
+    "15804": {
+      "id": 15804,
+      "name": "1차 탐색",
+      "desc": "지휘냥 물자 탐색 16회 진행",
+      "conditions": [
+        {
+          "trigger": 15804,
+          "count": 16
+        }
+      ]
+    },
+    "15805": {
+      "id": 15805,
+      "name": "2차 탐색",
+      "desc": "세이렌 정보 수집 장치 2회 사용",
+      "conditions": [
+        {
+          "trigger": 15805,
+          "count": 2
+        }
+      ]
+    },
+    "15901": {
+      "id": 15901,
+      "name": "1차 확보",
+      "desc": "해역 1개 지점 확보 완료",
+      "conditions": [
+        {
+          "trigger": 15901,
+          "count": 1
+        }
+      ]
+    },
+    "15902": {
+      "id": 15902,
+      "name": "2차 확보",
+      "desc": "비정상 구역 19개 지점 정찰",
+      "conditions": [
+        {
+          "trigger": 15902,
+          "count": 19
+        }
+      ]
+    },
+    "15903": {
+      "id": 15903,
+      "name": "완전 확보",
+      "desc": "자원 포인트 75개 지점 조사",
+      "conditions": [
+        {
+          "trigger": 15903,
+          "count": 75
+        }
+      ]
+    },
+    "15904": {
+      "id": 15904,
+      "name": "1차 탐색",
+      "desc": "신비한 상인 2회 조우",
+      "conditions": [
+        {
+          "trigger": 15904,
+          "count": 2
+        }
+      ]
+    },
+    "15905": {
+      "id": 15905,
+      "name": "2차 탐색",
+      "desc": "세이렌 해황 통제기 2회 파괴",
+      "conditions": [
+        {
+          "trigger": 15905,
+          "count": 2
+        }
+      ]
+    }
+  },
+  "items": {
+    "12:101": "특별 교환 증빙",
+    "12:110": "세이렌 에너지 저장 용기",
+    "12:2006": "해역 좌표 기록기 R6",
+    "12:2014": "세이렌 좌표 기록기 R4",
+    "12:2015": "세이렌 좌표 기록기 R5",
+    "12:2016": "세이렌 좌표 기록기 R6",
+    "2:20001": "성정 큐브",
+    "2:20013": "냥박스 SSR형",
+    "2:54016": "랜덤 부속 T3",
+    "2:54018": "랜덤 부속 T4",
+    "2:59001": "물자",
+    "2:61001": "고효율 작전 명령서"
+  }
+}
