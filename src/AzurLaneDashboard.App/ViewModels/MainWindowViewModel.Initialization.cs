@@ -81,8 +81,8 @@ public sealed partial class MainWindowViewModel
             ? AppDefaults.DefaultUpdateStatePath
             : settings.UpdateStatePath;
         var categories = settings.Categories is { Count: > 0 } saved &&
-                         !saved.ToHashSet(StringComparer.OrdinalIgnoreCase)
-                             .SetEquals(AppDefaults.PreviousDefaultAssetCategories)
+                         !AppDefaults.PreviousDefaultAssetCategoryLists.Any(previous =>
+                             saved.ToHashSet(StringComparer.OrdinalIgnoreCase).SetEquals(previous))
             ? settings.Categories
             : AppSettings.DefaultCategories;
         categoriesText = string.Join(Environment.NewLine, NormalizeAssetCategories(categories));

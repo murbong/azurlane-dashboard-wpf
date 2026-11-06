@@ -3,17 +3,45 @@ using System.Globalization;
 namespace AzurLaneDashboard.Core.Models;
 
 /// <summary>A Meowfficer kind from maps/commanders.json (game data).</summary>
-public sealed record MeowfficerKind(int Id, string Name, int Rarity, int SkillId, int MaxLevel, bool FixedTalents)
+public sealed record MeowfficerKind(int Id, string Name, int Rarity, int SkillId, int MaxLevel, bool FixedTalents,
+    string Painting = "", int Exp = 0, int Group = 0)
 {
+    /// <summary>The face icon (commandericon/{painting}), extracted by the data update.</summary>
+    public string IconUrl => Painting.Length > 0 ? $"/static/game-assets/commandericon/{Painting}.png" : "";
     public string RarityText => Rarity switch { 5 => "SSR", 4 => "SR", 3 => "R", _ => "" };
     /// <summary>Talent points a cat of this rarity can hold: SSR 10, SR 8, R 7.</summary>
     public int TalentCap => Rarity switch { 5 => 10, 4 => 8, _ => 7 };
 }
 
 /// <summary>A talent rank: talents of one line share a group, and worth is its talent points.</summary>
-public sealed record MeowfficerTalent(int Id, string Name, int Group, int Worth, string Description);
+public sealed record MeowfficerTalent(int Id, string Name, int Group, int Worth, string Description,
+    int DestroyExp = 0, int DestroyRatio = 0);
 
-public sealed record MeowfficerSkill(int Id, string Name, int Level, string Description);
+/// <summary>A skill level; Next is the next level's id (0 at the top) and Exp the skill EXP it takes.</summary>
+public sealed record MeowfficerSkill(int Id, string Name, int Level, string Description, int Next = 0, int Exp = 0);
+
+/// <summary>A cat level's EXP requirement by rarity (commander_level), and UpgradeCommanderCommand's constants.</summary>
+public sealed class MeowfficerGrowth
+{
+    public IReadOnlyDictionary<int, (int Exp, int R, int Sr, int Ssr)> Levels { get; init; } =
+        new Dictionary<int, (int, int, int, int)>();
+    public int MaxLevel { get; init; } = 30;
+    public int ExpShare { get; init; } = 7000;
+    public int SameKindRate { get; init; } = 12000;
+    public int SkillExp { get; init; } = 1;
+
+    public int LevelExp(int level, int rarity)
+    {
+        var row = Levels.GetValueOrDefault(Math.Max(1, level));
+        var exp = rarity switch { 5 => row.Ssr, 4 => row.Sr, 3 => row.R, _ => 0 };
+        return exp > 0 ? exp : row.Exp;
+    }
+}
+
+/// <summary>
+/// A cat's EXP since the last login list: a feeding (the cats it ate, as they were) or a battle's EXP gain.
+/// </summary>
+public sealed record MeowfficerFeed(string TargetUid, IReadOnlyList<OwnedMeowfficer> Materials, int Exp = 0);
 
 public sealed record MeowfficerFleetType(string Key, string Label, IReadOnlyList<int> Core, IReadOnlyList<int> Filler,
     IReadOnlyList<int> Special);
@@ -42,7 +70,7 @@ public sealed class MeowfficerGuide
 /// <summary>A cat the player owns, as the capture last saw it.</summary>
 public sealed record OwnedMeowfficer(
     string Uid, int TemplateId, int Level, bool Locked, string Nickname, IReadOnlyList<int> Talents,
-    IReadOnlyList<int> OriginTalents, int SkillId);
+    IReadOnlyList<int> OriginTalents, int SkillId, int Exp = 0, int SkillExp = 0);
 
 /// <summary>A sortie fleet: its ships' hull codes and the cats in its 지휘 (1) and 참모 (2) slots.</summary>
 public sealed record MeowfficerFleetInput(int FleetId, IReadOnlyList<string> Hulls, string CommandUid, string StaffUid);
@@ -90,6 +118,8 @@ public sealed class MeowfficerCopyRow
     public string RoleSummary { get; init; } = "";
     public string Disputed { get; init; } = "";
     public string SkillText { get; init; } = "";
+    public int SkillLevel { get; init; }
+    public string IconUrl { get; init; } = "";
     public IReadOnlyList<MeowfficerTalentChip> Talents { get; init; } = [];
     /// <summary>Points of wanted talents now; null for Tempesta cats, which the source rates as a whole.</summary>
     public int? Score { get; init; }
@@ -103,7 +133,8 @@ public sealed class MeowfficerCopyRow
     public bool IsRaiseCandidate => !IsMaxLevel && Verdict is MeowfficerVerdict.God or MeowfficerVerdict.Good or MeowfficerVerdict.Usable;
     public string LevelText => $"Lv.{Level}";
     public string DisplayName => Nickname.Length > 0 ? $"{Name} ({Nickname})" : Name;
-    public string SubText => string.Join(" · ", new[] { Locked ? "잠금" : "", Nickname }.Where(part => part.Length > 0));
+    public string SubText => string.Join(" · ",
+        new[] { SkillLevel > 0 ? $"스킬 Lv.{SkillLevel}" : "", Locked ? "잠금" : "", Nickname }.Where(part => part.Length > 0));
     public string RoleText => HasRole ? $"{FleetLabel} {Slot}" : "출처 평가 없음";
     public string ScoreText => Score is { } score ? $"{score} / {Cap}" : "—";
     public string VerdictText => Verdict switch
@@ -142,6 +173,7 @@ public sealed class MeowfficerKindRow
     public string Rarity { get; init; } = "";
     public string RoleText { get; init; } = "";
     public bool HasRole { get; init; }
+    public string IconUrl { get; init; } = "";
     public IReadOnlyList<MeowfficerCopyRow> Copies { get; init; } = [];
 }
 
@@ -149,6 +181,7 @@ public sealed class MeowfficerSlotRow
 {
     public string Slot { get; init; } = "";
     public MeowfficerCopyRow? Current { get; init; }
+    public bool HasCurrent => Current is not null;
     public string Status { get; init; } = "";
     /// <summary>"good", "info", "warn" or "muted".</summary>
     public string StatusKind { get; init; } = "";

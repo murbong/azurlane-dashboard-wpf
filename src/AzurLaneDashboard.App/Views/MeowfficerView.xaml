@@ -86,8 +86,16 @@
                         </Grid.RowDefinitions>
                         <TextBlock Text="{Binding Slot}" FontSize="11" FontWeight="Bold" Foreground="{DynamicResource MutedBrush}"
                                    VerticalAlignment="Center" />
-                        <TextBlock Grid.Column="1" Text="{Binding CurrentText}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"
-                                   VerticalAlignment="Center" ToolTip="{Binding CurrentText}" />
+                        <DockPanel Grid.Column="1" VerticalAlignment="Center">
+                            <Border DockPanel.Dock="Left" Style="{StaticResource Portrait}" Width="24" Height="24" Margin="0,0,8,0"
+                                    BorderThickness="0,0,0,2"
+                                    Visibility="{Binding HasCurrent, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <Image Source="{Binding Current.IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </Border>
+                            <TextBlock Text="{Binding CurrentText}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"
+                                       VerticalAlignment="Center" ToolTip="{Binding CurrentText}" />
+                        </DockPanel>
                         <Border Grid.Column="2" Style="{StaticResource KindChip}" Margin="8,0,0,0">
                             <TextBlock Text="{Binding Status}" />
                         </Border>
@@ -150,7 +158,7 @@
                     </Button.Template>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="64" />
+                            <ColumnDefinition Width="92" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
@@ -178,11 +186,19 @@
             <DataTemplate x:Key="KindTemplate">
                 <Border Style="{StaticResource SectionPanel}" Padding="0,0,0,2" Margin="0,0,0,10">
                     <StackPanel>
-                        <TextBlock Margin="14,10,14,6" TextTrimming="CharacterEllipsis">
-                            <Run Text="{Binding Name, Mode=OneWay}" FontSize="14" FontWeight="Bold" />
-                            <Run Text="{Binding Rarity, Mode=OneWay}" FontSize="11" FontWeight="Bold" Foreground="{DynamicResource RatingHighTextBrush}" />
-                            <Run Text="{Binding RoleText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}" />
-                        </TextBlock>
+                        <!-- The kind's face (commandericon, from the data update) beside its name and role. -->
+                        <DockPanel Margin="14,10,14,6">
+                            <Border Style="{StaticResource Portrait}" Width="36" Height="36" Margin="0,0,10,0" VerticalAlignment="Center"
+                                    BorderThickness="0,0,0,2">
+                                <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                       RenderOptions.BitmapScalingMode="HighQuality" />
+                            </Border>
+                            <TextBlock TextTrimming="CharacterEllipsis" VerticalAlignment="Center">
+                                <Run Text="{Binding Name, Mode=OneWay}" FontSize="14" FontWeight="Bold" />
+                                <Run Text="{Binding Rarity, Mode=OneWay}" FontSize="11" FontWeight="Bold" Foreground="{DynamicResource RatingHighTextBrush}" />
+                                <Run Text="{Binding RoleText, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}" />
+                            </TextBlock>
+                        </DockPanel>
                         <ItemsControl ItemsSource="{Binding Copies}" ItemTemplate="{StaticResource CopyTemplate}" Focusable="False" />
                     </StackPanel>
                 </Border>
@@ -303,15 +319,24 @@
                     <Border x:Name="SideSection" Grid.Column="2" Style="{StaticResource SectionPanel}" Padding="16,14" VerticalAlignment="Top"
                             DataContext="{Binding SelectedCat}">
                         <StackPanel>
-                            <TextBlock Text="{Binding DisplayName}" FontSize="16" FontWeight="Bold" TextTrimming="CharacterEllipsis" />
-                            <TextBlock FontSize="12" Foreground="{DynamicResource MutedBrush}" TextWrapping="Wrap" Margin="0,2,0,10">
-                                <Run Text="{Binding Rarity, Mode=OneWay}" />
-                                <Run Text="·" />
-                                <Run Text="{Binding LevelText, Mode=OneWay}" />
-                                <Run Text="·" />
-                                <Run Text="{Binding SkillText, Mode=OneWay}" />
-                                <Run Text="{Binding AssignmentText, Mode=OneWay}" />
-                            </TextBlock>
+                            <DockPanel Margin="0,0,0,10">
+                                <Border DockPanel.Dock="Left" Style="{StaticResource Portrait}" Width="52" Height="52" Margin="0,0,12,0"
+                                        VerticalAlignment="Top" BorderThickness="0,0,0,2">
+                                    <Image Source="{Binding IconUrl, Converter={StaticResource AssetImageConverter}}" Stretch="UniformToFill"
+                                           RenderOptions.BitmapScalingMode="HighQuality" />
+                                </Border>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding DisplayName}" FontSize="16" FontWeight="Bold" TextTrimming="CharacterEllipsis" />
+                                    <TextBlock FontSize="12" Foreground="{DynamicResource MutedBrush}" TextWrapping="Wrap" Margin="0,2,0,0">
+                                        <Run Text="{Binding Rarity, Mode=OneWay}" />
+                                        <Run Text="·" />
+                                        <Run Text="{Binding LevelText, Mode=OneWay}" />
+                                        <Run Text="·" />
+                                        <Run Text="{Binding SkillText, Mode=OneWay}" />
+                                        <Run Text="{Binding AssignmentText, Mode=OneWay}" />
+                                    </TextBlock>
+                                </StackPanel>
+                            </DockPanel>
                             <WrapPanel>
                                 <StackPanel Margin="0,0,24,6">
                                     <TextBlock Text="출처 역할" Style="{StaticResource FactLabel}" />

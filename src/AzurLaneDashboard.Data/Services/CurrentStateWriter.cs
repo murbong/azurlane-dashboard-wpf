@@ -83,6 +83,7 @@ public static class StatePacketRegistry
             [25014] = (25015, "commanders"),
             [25016] = (25017, "commanders"),
             [25020] = (25021, "commanders"),
+            [25026] = (25027, "commanders"),
             [33602] = (33603, "world"),
             [20005] = (20006, "tasks"),
             [40001] = (40002, "battle_begin"),
@@ -137,7 +138,9 @@ public sealed partial class CurrentStateWriter
         this.connection = connection;
         EnsureSchema();
         EnsureMetaBossFightTable();
+        EnsureCommanderEventTable();
         EnsureCommanderTable();
+        BackfillCommanderEvents();
         EnsureWorldTables();
         EnsureTaskTable();
         DropShipsMissingFromLogin();

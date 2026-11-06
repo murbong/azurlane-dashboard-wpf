@@ -22,6 +22,7 @@ public sealed partial class NativeSnapshotService
         var owned = ReadOwnedMeowfficers(connection);
         if (owned.Count == 0) return MeowfficerDashboard.Empty;
         var catalog = MeowfficerCatalog.Parse(maps.Commanders, maps.MeowfficerGuide);
+        owned = MeowfficerFeeding.Apply(catalog, owned, ReadMeowfficerFeeds(connection));
         return MeowfficerPlanBuilder.Build(catalog, owned, ReadMeowfficerFleets(connection, ships), farmFleetId);
     }
 
@@ -33,7 +34,7 @@ public sealed partial class NativeSnapshotService
         {
             using var command = connection.CreateCommand();
             command.CommandText = """
-                                  SELECT commander_uid, template_id, level, locked, name, abilities_json, ability_origin_json, skills_json
+                                  SELECT commander_uid, template_id, level, locked, name, abilities_json, ability_origin_json, skills_json, exp
                                   FROM current_commanders
                                   """;
             using var reader = command.ExecuteReader();
@@ -44,6 +45,10 @@ public sealed partial class NativeSnapshotService
                     TextOrEmpty(reader, 4), IntList(ParseJson(TextOrEmpty(reader, 5))), IntList(ParseJson(TextOrEmpty(reader, 6))),
                     skills.ValueKind == JsonValueKind.Array
                         ? skills.EnumerateArray().Select(skill => JsonInt(skill, "id")).FirstOrDefault()
+                        : 0,
+                    reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
+                    skills.ValueKind == JsonValueKind.Array
+                        ? skills.EnumerateArray().Select(skill => JsonInt(skill, "exp")).FirstOrDefault()
                         : 0));
             }
 
@@ -61,10 +66,33 @@ public sealed partial class NativeSnapshotService
             cats.Add(new OwnedMeowfficer(uid, JsonInt(cat, "template_id"), JsonInt(cat, "level"), JsonInt(cat, "is_locked") != 0,
                 JsonString(cat, "name"), Array(cat, "ability").Select(IntValue).ToList(),
                 Array(cat, "ability_origin").Select(IntValue).ToList(),
-                Array(cat, "skill").Select(skill => JsonInt(skill, "id")).FirstOrDefault()));
+                Array(cat, "skill").Select(skill => JsonInt(skill, "id")).FirstOrDefault(), JsonInt(cat, "exp"),
+                Array(cat, "skill").Select(skill => JsonInt(skill, "exp")).FirstOrDefault()));
         }
 
         return cats;
+    }
+
+    /// <summary>Feedings and battle EXP since the last login list (current_commander_events), in order.</summary>
+    private static IReadOnlyList<MeowfficerFeed> ReadMeowfficerFeeds(SqliteConnection connection)
+    {
+        var feeds = new List<MeowfficerFeed>();
+        if (!TableExists(connection, "current_commander_events")) return feeds;
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT kind, target_uid, exp, materials_json FROM current_commander_events ORDER BY event_id";
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            var materials = ParseJson(TextOrEmpty(reader, 3));
+            feeds.Add(new MeowfficerFeed(reader.GetString(1),
+                (materials.ValueKind == JsonValueKind.Array ? materials.EnumerateArray() : [])
+                .Select(material => new OwnedMeowfficer("", JsonInt(material, "template_id"), JsonInt(material, "level"), false, "",
+                    IntList(ParseJson(JsonString(material, "abilities"))), [], 0, JsonInt(material, "exp")))
+                .ToList(),
+                reader.IsDBNull(2) ? 0 : reader.GetInt32(2)));
+        }
+
+        return feeds;
     }
 
     private static IReadOnlyList<MeowfficerFleetInput> ReadMeowfficerFleets(SqliteConnection connection, List<ShipState> ships)

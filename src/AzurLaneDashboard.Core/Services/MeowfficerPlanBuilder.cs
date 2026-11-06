@@ -43,6 +43,7 @@ public static class MeowfficerPlanBuilder
                     TemplateId = group.Key,
                     Name = first.Name,
                     Rarity = first.Rarity,
+                    IconUrl = first.IconUrl,
                     HasRole = role is not null,
                     RoleText = role is null ? "출처 평가 없음" : $"{first.FleetLabel} {role.Slot} · {role.Summary}",
                     Copies = group.OrderByDescending(copy => copy.Level).ThenByDescending(copy => copy.Score ?? -1)
@@ -104,6 +105,8 @@ public static class MeowfficerPlanBuilder
             RoleSummary = role?.Summary ?? "",
             Disputed = role?.Disputed ?? "",
             SkillText = skill is null ? "" : $"{skill.Name} Lv.{skill.Level}",
+            SkillLevel = skill?.Level ?? 0,
+            IconUrl = kind.IconUrl,
             Talents = talents.Select(talent => new MeowfficerTalentChip
             {
                 Name = talent.Name,
@@ -259,7 +262,8 @@ public static class MeowfficerPlanBuilder
         Uid = copy.Uid, TemplateId = copy.TemplateId, Name = copy.Name, Nickname = copy.Nickname, Rarity = copy.Rarity,
         Level = copy.Level, MaxLevel = copy.MaxLevel, Locked = copy.Locked, Fixed = copy.Fixed, HasRole = copy.HasRole,
         FleetLabel = copy.FleetLabel, Slot = copy.Slot, RoleSummary = $"{fleetLabel} 재능 {score}포인트",
-        Disputed = copy.Disputed, SkillText = copy.SkillText, Talents = copy.Talents, Score = score, Cap = copy.Cap,
+        Disputed = copy.Disputed, SkillText = copy.SkillText, SkillLevel = copy.SkillLevel, IconUrl = copy.IconUrl,
+        Talents = copy.Talents, Score = score, Cap = copy.Cap,
         Verdict = copy.Verdict, NextTalent = copy.NextTalent, ReplaceTalent = copy.ReplaceTalent, Assignments = copy.Assignments
     };
 }

@@ -11,7 +11,9 @@
       "support": 44,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "bokemiao"
+      "painting": "bokemiao",
+      "exp": 500,
+      "group": 1001
     },
     "10021": {
       "id": 10021,
@@ -24,7 +26,9 @@
       "support": 43,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "aogumiao"
+      "painting": "aogumiao",
+      "exp": 500,
+      "group": 1002
     },
     "11011": {
       "id": 11011,
@@ -37,7 +41,9 @@
       "support": 43,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "baiyingmiao"
+      "painting": "baiyingmiao",
+      "exp": 300,
+      "group": 1101
     },
     "11021": {
       "id": 11021,
@@ -50,7 +56,9 @@
       "support": 33,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "baiyingmiao"
+      "painting": "baiyingmiao",
+      "exp": 300,
+      "group": 1102
     },
     "12011": {
       "id": 12011,
@@ -63,7 +71,9 @@
       "support": 28,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 1201
     },
     "12021": {
       "id": 12021,
@@ -76,7 +86,9 @@
       "support": 41,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 1202
     },
     "20011": {
       "id": 20011,
@@ -89,7 +101,9 @@
       "support": 55,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "yuehanmiao"
+      "painting": "yuehanmiao",
+      "exp": 500,
+      "group": 2001
     },
     "20021": {
       "id": 20021,
@@ -102,7 +116,9 @@
       "support": 67,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "pangdemiao"
+      "painting": "pangdemiao",
+      "exp": 500,
+      "group": 2002
     },
     "21011": {
       "id": 21011,
@@ -115,7 +131,9 @@
       "support": 44,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "huangjiamiao"
+      "painting": "huangjiamiao",
+      "exp": 300,
+      "group": 2101
     },
     "21021": {
       "id": 21021,
@@ -128,7 +146,9 @@
       "support": 39,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "huangjiamiao"
+      "painting": "huangjiamiao",
+      "exp": 300,
+      "group": 2102
     },
     "21031": {
       "id": 21031,
@@ -141,7 +161,9 @@
       "support": 23,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "huangjiamiao"
+      "painting": "huangjiamiao",
+      "exp": 300,
+      "group": 2103
     },
     "21041": {
       "id": 21041,
@@ -154,7 +176,9 @@
       "support": 39,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "huangjiamiao"
+      "painting": "huangjiamiao",
+      "exp": 300,
+      "group": 2104
     },
     "22011": {
       "id": 22011,
@@ -167,7 +191,9 @@
       "support": 64,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 2201
     },
     "22021": {
       "id": 22021,
@@ -180,7 +206,9 @@
       "support": 29,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 2202
     },
     "30011": {
       "id": 30011,
@@ -193,7 +221,9 @@
       "support": 38,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "duoduowan"
+      "painting": "duoduowan",
+      "exp": 500,
+      "group": 3001
     },
     "30021": {
       "id": 30021,
@@ -206,7 +236,9 @@
       "support": 30,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "xiaozhuwan"
+      "painting": "xiaozhuwan",
+      "exp": 500,
+      "group": 3002
     },
     "31011": {
       "id": 31011,
@@ -219,7 +251,9 @@
       "support": 33,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "chongyingmiao"
+      "painting": "chongyingmiao",
+      "exp": 300,
+      "group": 3101
     },
     "31021": {
       "id": 31021,
@@ -232,7 +266,9 @@
       "support": 36,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "chongyingmiao"
+      "painting": "chongyingmiao",
+      "exp": 300,
+      "group": 3102
     },
     "32011": {
       "id": 32011,
@@ -245,7 +281,9 @@
       "support": 24,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 3201
     },
     "32021": {
       "id": 32021,
@@ -258,7 +296,9 @@
       "support": 36,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 3202
     },
     "40011": {
       "id": 40011,
@@ -271,7 +311,9 @@
       "support": 40,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "keleimiao"
+      "painting": "keleimiao",
+      "exp": 500,
+      "group": 4001
     },
     "40021": {
       "id": 40021,
@@ -284,7 +326,9 @@
       "support": 37,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "lindemiao"
+      "painting": "lindemiao",
+      "exp": 500,
+      "group": 4002
     },
     "41011": {
       "id": 41011,
@@ -297,7 +341,9 @@
       "support": 35,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "tiexuemiao"
+      "painting": "tiexuemiao",
+      "exp": 300,
+      "group": 4101
     },
     "41021": {
       "id": 41021,
@@ -310,7 +356,9 @@
       "support": 34,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "tiexuemiao"
+      "painting": "tiexuemiao",
+      "exp": 300,
+      "group": 4102
     },
     "41031": {
       "id": 41031,
@@ -323,7 +371,9 @@
       "support": 32,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "tiexuemiao"
+      "painting": "tiexuemiao",
+      "exp": 300,
+      "group": 4103
     },
     "42011": {
       "id": 42011,
@@ -336,7 +386,9 @@
       "support": 37,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 4201
     },
     "42021": {
       "id": 42021,
@@ -349,7 +401,9 @@
       "support": 28,
       "max_level": 30,
       "refresh_type": 0,
-      "painting": "shuishoumiao"
+      "painting": "shuishoumiao",
+      "exp": 200,
+      "group": 4202
     },
     "960011": {
       "id": 960011,
@@ -362,7 +416,9 @@
       "support": 39,
       "max_level": 30,
       "refresh_type": 1,
-      "painting": "deleimiao"
+      "painting": "deleimiao",
+      "exp": 500,
+      "group": 96001
     },
     "960021": {
       "id": 960021,
@@ -375,7 +431,9 @@
       "support": 53,
       "max_level": 30,
       "refresh_type": 1,
-      "painting": "jidemiao"
+      "painting": "jidemiao",
+      "exp": 500,
+      "group": 96002
     },
     "960031": {
       "id": 960031,
@@ -388,7 +446,9 @@
       "support": 35,
       "max_level": 30,
       "refresh_type": 1,
-      "painting": "beilamiao"
+      "painting": "beilamiao",
+      "exp": 300,
+      "group": 96003
     },
     "960041": {
       "id": 960041,
@@ -401,7 +461,9 @@
       "support": 33,
       "max_level": 30,
       "refresh_type": 1,
-      "painting": "aifumiao"
+      "painting": "aifumiao",
+      "exp": 500,
+      "group": 96004
     },
     "960051": {
       "id": 960051,
@@ -414,7 +476,9 @@
       "support": 31,
       "max_level": 30,
       "refresh_type": 1,
-      "painting": "luobomiao"
+      "painting": "luobomiao",
+      "exp": 300,
+      "group": 96005
     },
     "960061": {
       "id": 960061,
@@ -427,7 +491,9 @@
       "support": 40,
       "max_level": 30,
       "refresh_type": 1,
-      "painting": "diqimiao"
+      "painting": "diqimiao",
+      "exp": 500,
+      "group": 96006
     },
     "960071": {
       "id": 960071,
@@ -440,7 +506,9 @@
       "support": 55,
       "max_level": 30,
       "refresh_type": 1,
-      "painting": "bangnimiao"
+      "painting": "bangnimiao",
+      "exp": 300,
+      "group": 96007
     }
   },
   "talents": {
@@ -450,7 +518,9 @@
       "group": 10,
       "worth": 1,
       "next": 102,
-      "desc": "구축함의 포격 수치가 3 상승"
+      "desc": "구축함의 포격 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "102": {
       "id": 102,
@@ -458,7 +528,9 @@
       "group": 10,
       "worth": 2,
       "next": 103,
-      "desc": "구축함의 포격 수치가 4 상승"
+      "desc": "구축함의 포격 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "103": {
       "id": 103,
@@ -466,7 +538,9 @@
       "group": 10,
       "worth": 3,
       "next": 0,
-      "desc": "구축함의 포격 수치가 6 상승"
+      "desc": "구축함의 포격 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "111": {
       "id": 111,
@@ -474,7 +548,9 @@
       "group": 11,
       "worth": 1,
       "next": 112,
-      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 5 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "112": {
       "id": 112,
@@ -482,7 +558,9 @@
       "group": 11,
       "worth": 2,
       "next": 113,
-      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 7 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 7 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "113": {
       "id": 113,
@@ -490,7 +568,9 @@
       "group": 11,
       "worth": 3,
       "next": 0,
-      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 10 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "121": {
       "id": 121,
@@ -498,7 +578,9 @@
       "group": 12,
       "worth": 1,
       "next": 122,
-      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선M의 포격이 8 상승"
+      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선M의 포격이 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "122": {
       "id": 122,
@@ -506,7 +588,9 @@
       "group": 12,
       "worth": 2,
       "next": 123,
-      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선M의 포격이 11 상승"
+      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선M의 포격이 11 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "123": {
       "id": 123,
@@ -514,7 +598,9 @@
       "group": 12,
       "worth": 3,
       "next": 0,
-      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선M의 포격이 16 상승"
+      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선M의 포격이 16 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "131": {
       "id": 131,
@@ -522,7 +608,9 @@
       "group": 13,
       "worth": 2,
       "next": 132,
-      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선의 포격이 10 상승"
+      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선의 포격이 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "132": {
       "id": 132,
@@ -530,7 +618,9 @@
       "group": 13,
       "worth": 3,
       "next": 0,
-      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선의 포격이 14 상승"
+      "desc": "순양전함, 전함, 항공전함, 모니터함, 범선의 포격이 14 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "141": {
       "id": 141,
@@ -538,7 +628,9 @@
       "group": 14,
       "worth": 2,
       "next": 142,
-      "desc": "경순양함, 중순양함, 초갑형순양함, 범선의 포격이 6 상승"
+      "desc": "경순양함, 중순양함, 초갑형순양함, 범선의 포격이 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "142": {
       "id": 142,
@@ -546,7 +638,9 @@
       "group": 14,
       "worth": 3,
       "next": 0,
-      "desc": "경순양함, 중순양함, 초갑형순양함, 범선의 포격이 8 상승"
+      "desc": "경순양함, 중순양함, 초갑형순양함, 범선의 포격이 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "151": {
       "id": 151,
@@ -554,7 +648,9 @@
       "group": 15,
       "worth": 2,
       "next": 152,
-      "desc": "함대 전원의 포격·항공·뇌장 3 상승"
+      "desc": "함대 전원의 포격·항공·뇌장 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "152": {
       "id": 152,
@@ -562,7 +658,9 @@
       "group": 15,
       "worth": 3,
       "next": 0,
-      "desc": "함대 전원의 포격·항공·뇌장 6 상승"
+      "desc": "함대 전원의 포격·항공·뇌장 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "201": {
       "id": 201,
@@ -570,7 +668,9 @@
       "group": 20,
       "worth": 1,
       "next": 202,
-      "desc": "잠수함의 뇌장 수치가 10 상승"
+      "desc": "잠수함의 뇌장 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "202": {
       "id": 202,
@@ -578,7 +678,9 @@
       "group": 20,
       "worth": 2,
       "next": 203,
-      "desc": "잠수함의 뇌장 수치가 14 상승"
+      "desc": "잠수함의 뇌장 수치가 14 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "203": {
       "id": 203,
@@ -586,7 +688,9 @@
       "group": 20,
       "worth": 3,
       "next": 0,
-      "desc": "잠수함의 뇌장 수치가 20 상승"
+      "desc": "잠수함의 뇌장 수치가 20 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "211": {
       "id": 211,
@@ -594,7 +698,9 @@
       "group": 21,
       "worth": 1,
       "next": 212,
-      "desc": "구축함의 뇌장 수치가 10 상승"
+      "desc": "구축함의 뇌장 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "212": {
       "id": 212,
@@ -602,7 +708,9 @@
       "group": 21,
       "worth": 2,
       "next": 213,
-      "desc": "구축함의 뇌장 수치가 14 상승"
+      "desc": "구축함의 뇌장 수치가 14 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "213": {
       "id": 213,
@@ -610,7 +718,9 @@
       "group": 21,
       "worth": 3,
       "next": 0,
-      "desc": "구축함의 뇌장 수치가 20 상승"
+      "desc": "구축함의 뇌장 수치가 20 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "221": {
       "id": 221,
@@ -618,7 +728,9 @@
       "group": 22,
       "worth": 1,
       "next": 222,
-      "desc": "경순양함, 중순양함의 뇌장 수치가 6 상승"
+      "desc": "경순양함, 중순양함의 뇌장 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "222": {
       "id": 222,
@@ -626,7 +738,9 @@
       "group": 22,
       "worth": 2,
       "next": 223,
-      "desc": "경순양함, 중순양함의 뇌장 수치가 8 상승"
+      "desc": "경순양함, 중순양함의 뇌장 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "223": {
       "id": 223,
@@ -634,7 +748,9 @@
       "group": 22,
       "worth": 3,
       "next": 0,
-      "desc": "경순양함, 중순양함의 뇌장 수치가 12 상승"
+      "desc": "경순양함, 중순양함의 뇌장 수치가 12 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "301": {
       "id": 301,
@@ -642,7 +758,9 @@
       "group": 30,
       "worth": 1,
       "next": 302,
-      "desc": "경항공모함, 항공모함의 항공 수치가 10 상승"
+      "desc": "경항공모함, 항공모함의 항공 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "302": {
       "id": 302,
@@ -650,7 +768,9 @@
       "group": 30,
       "worth": 2,
       "next": 303,
-      "desc": "경항공모함, 항공모함의 항공 수치가 14 상승"
+      "desc": "경항공모함, 항공모함의 항공 수치가 14 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "303": {
       "id": 303,
@@ -658,7 +778,9 @@
       "group": 30,
       "worth": 3,
       "next": 0,
-      "desc": "경항공모함, 항공모함의 항공 수치가 20 상승"
+      "desc": "경항공모함, 항공모함의 항공 수치가 20 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "311": {
       "id": 311,
@@ -666,7 +788,9 @@
       "group": 31,
       "worth": 1,
       "next": 312,
-      "desc": "항공전함의 항공 수치가 5 상승"
+      "desc": "항공전함의 항공 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "312": {
       "id": 312,
@@ -674,7 +798,9 @@
       "group": 31,
       "worth": 2,
       "next": 313,
-      "desc": "항공전함의 항공 수치가 7 상승"
+      "desc": "항공전함의 항공 수치가 7 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "313": {
       "id": 313,
@@ -682,7 +808,9 @@
       "group": 31,
       "worth": 3,
       "next": 0,
-      "desc": "항공전함의 항공 수치가 10 상승"
+      "desc": "항공전함의 항공 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "321": {
       "id": 321,
@@ -690,7 +818,9 @@
       "group": 32,
       "worth": 2,
       "next": 322,
-      "desc": "경항공모함, 정규 항공모함의 항공 7 상승. 범선M의 포격 7 상승."
+      "desc": "경항공모함, 정규 항공모함의 항공 7 상승. 범선M의 포격 7 상승.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "322": {
       "id": 322,
@@ -698,7 +828,9 @@
       "group": 32,
       "worth": 3,
       "next": 0,
-      "desc": "경항공모함, 정규 항공모함의 항공 10 상승. 범선M의 포격 10 상승."
+      "desc": "경항공모함, 정규 항공모함의 항공 10 상승. 범선M의 포격 10 상승.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "401": {
       "id": 401,
@@ -706,7 +838,9 @@
       "group": 40,
       "worth": 1,
       "next": 402,
-      "desc": "선봉함대의 대공 수치가 8 상승"
+      "desc": "선봉함대의 대공 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "402": {
       "id": 402,
@@ -714,7 +848,9 @@
       "group": 40,
       "worth": 2,
       "next": 403,
-      "desc": "선봉함대의 대공 수치가 11 상승"
+      "desc": "선봉함대의 대공 수치가 11 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "403": {
       "id": 403,
@@ -722,7 +858,9 @@
       "group": 40,
       "worth": 3,
       "next": 0,
-      "desc": "선봉함대의 대공 수치가 16 상승"
+      "desc": "선봉함대의 대공 수치가 16 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "411": {
       "id": 411,
@@ -730,7 +868,9 @@
       "group": 41,
       "worth": 1,
       "next": 412,
-      "desc": "주력함대의 대공 수치가 10 상승"
+      "desc": "주력함대의 대공 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "412": {
       "id": 412,
@@ -738,7 +878,9 @@
       "group": 41,
       "worth": 2,
       "next": 413,
-      "desc": "주력함대의 대공 수치가 14 상승"
+      "desc": "주력함대의 대공 수치가 14 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "413": {
       "id": 413,
@@ -746,7 +888,9 @@
       "group": 41,
       "worth": 3,
       "next": 0,
-      "desc": "주력함대의 대공 수치가 20 상승"
+      "desc": "주력함대의 대공 수치가 20 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "501": {
       "id": 501,
@@ -754,7 +898,9 @@
       "group": 50,
       "worth": 1,
       "next": 502,
-      "desc": "선봉함대의 대잠 수치가 4 상승"
+      "desc": "선봉함대의 대잠 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "502": {
       "id": 502,
@@ -762,7 +908,9 @@
       "group": 50,
       "worth": 2,
       "next": 503,
-      "desc": "선봉함대의 대잠 수치가 5 상승"
+      "desc": "선봉함대의 대잠 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "503": {
       "id": 503,
@@ -770,7 +918,9 @@
       "group": 50,
       "worth": 3,
       "next": 0,
-      "desc": "선봉함대의 대잠 수치가 8 상승"
+      "desc": "선봉함대의 대잠 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "511": {
       "id": 511,
@@ -778,7 +928,9 @@
       "group": 51,
       "worth": 1,
       "next": 512,
-      "desc": "주력함대의 대잠 수치가 3 상승"
+      "desc": "주력함대의 대잠 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "512": {
       "id": 512,
@@ -786,7 +938,9 @@
       "group": 51,
       "worth": 2,
       "next": 513,
-      "desc": "주력함대의 대잠 수치가 4 상승"
+      "desc": "주력함대의 대잠 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "513": {
       "id": 513,
@@ -794,7 +948,9 @@
       "group": 51,
       "worth": 3,
       "next": 0,
-      "desc": "주력함대의 대잠 수치가 6 상승"
+      "desc": "주력함대의 대잠 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "601": {
       "id": 601,
@@ -802,7 +958,9 @@
       "group": 60,
       "worth": 1,
       "next": 602,
-      "desc": "잠수함의 장전 수치가 3 상승"
+      "desc": "잠수함의 장전 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "602": {
       "id": 602,
@@ -810,7 +968,9 @@
       "group": 60,
       "worth": 2,
       "next": 603,
-      "desc": "잠수함의 장전 수치가 4 상승"
+      "desc": "잠수함의 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "603": {
       "id": 603,
@@ -818,7 +978,9 @@
       "group": 60,
       "worth": 3,
       "next": 0,
-      "desc": "잠수함의 장전 수치가 6 상승"
+      "desc": "잠수함의 장전 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "611": {
       "id": 611,
@@ -826,7 +988,9 @@
       "group": 61,
       "worth": 1,
       "next": 612,
-      "desc": "구축함의 장전 수치가 5 상승"
+      "desc": "구축함의 장전 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "612": {
       "id": 612,
@@ -834,7 +998,9 @@
       "group": 61,
       "worth": 2,
       "next": 613,
-      "desc": "구축함의 장전 수치가 7 상승"
+      "desc": "구축함의 장전 수치가 7 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "613": {
       "id": 613,
@@ -842,7 +1008,9 @@
       "group": 61,
       "worth": 3,
       "next": 0,
-      "desc": "구축함의 장전 수치가 10 상승"
+      "desc": "구축함의 장전 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "621": {
       "id": 621,
@@ -850,7 +1018,9 @@
       "group": 62,
       "worth": 1,
       "next": 622,
-      "desc": "경순양함, 중순양함, 초갑순양함의 장전 수치가 4 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "622": {
       "id": 622,
@@ -858,7 +1028,9 @@
       "group": 62,
       "worth": 2,
       "next": 623,
-      "desc": "경순양함, 중순양함, 초갑순양함의 장전 수치가 5 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 장전 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "623": {
       "id": 623,
@@ -866,7 +1038,9 @@
       "group": 62,
       "worth": 3,
       "next": 0,
-      "desc": "경순양함, 중순양함, 초갑순양함의 장전 수치가 8 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 장전 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "631": {
       "id": 631,
@@ -874,7 +1048,9 @@
       "group": 63,
       "worth": 1,
       "next": 632,
-      "desc": "전함, 순양전함, 항공전함의 장전 수치가 3 상승"
+      "desc": "전함, 순양전함, 항공전함의 장전 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "632": {
       "id": 632,
@@ -882,7 +1058,9 @@
       "group": 63,
       "worth": 2,
       "next": 633,
-      "desc": "전함, 순양전함, 항공전함의 장전 수치가 4 상승"
+      "desc": "전함, 순양전함, 항공전함의 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "633": {
       "id": 633,
@@ -890,7 +1068,9 @@
       "group": 63,
       "worth": 3,
       "next": 0,
-      "desc": "전함, 순양전함, 항공전함의 장전 수치가 6 상승"
+      "desc": "전함, 순양전함, 항공전함의 장전 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "641": {
       "id": 641,
@@ -898,7 +1078,9 @@
       "group": 64,
       "worth": 1,
       "next": 642,
-      "desc": "경항공모함, 항공모함의 장전 수치가 3 상승"
+      "desc": "경항공모함, 항공모함의 장전 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "642": {
       "id": 642,
@@ -906,7 +1088,9 @@
       "group": 64,
       "worth": 2,
       "next": 643,
-      "desc": "경항공모함, 항공모함의 장전 수치가 4 상승"
+      "desc": "경항공모함, 항공모함의 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "643": {
       "id": 643,
@@ -914,7 +1098,9 @@
       "group": 64,
       "worth": 3,
       "next": 0,
-      "desc": "경항공모함, 항공모함의 장전 수치가 6 상승"
+      "desc": "경항공모함, 항공모함의 장전 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "651": {
       "id": 651,
@@ -922,7 +1108,9 @@
       "group": 65,
       "worth": 1,
       "next": 652,
-      "desc": "모니터함, 공작함, 운송함, 범선의 장전이 3 상승"
+      "desc": "모니터함, 공작함, 운송함, 범선의 장전이 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "652": {
       "id": 652,
@@ -930,7 +1118,9 @@
       "group": 65,
       "worth": 2,
       "next": 653,
-      "desc": "모니터함, 공작함, 운송함, 범선의 장전이 4 상승"
+      "desc": "모니터함, 공작함, 운송함, 범선의 장전이 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "653": {
       "id": 653,
@@ -938,7 +1128,9 @@
       "group": 65,
       "worth": 3,
       "next": 0,
-      "desc": "모니터함, 공작함, 운송함, 범선의 장전이 6 상승"
+      "desc": "모니터함, 공작함, 운송함, 범선의 장전이 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "701": {
       "id": 701,
@@ -946,7 +1138,9 @@
       "group": 70,
       "worth": 1,
       "next": 702,
-      "desc": "잠수함의 내구 수치가 25 상승"
+      "desc": "잠수함의 내구 수치가 25 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "702": {
       "id": 702,
@@ -954,7 +1148,9 @@
       "group": 70,
       "worth": 2,
       "next": 703,
-      "desc": "잠수함의 내구 수치가 35 상승"
+      "desc": "잠수함의 내구 수치가 35 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "703": {
       "id": 703,
@@ -962,7 +1158,9 @@
       "group": 70,
       "worth": 3,
       "next": 0,
-      "desc": "잠수함의 내구 수치가 50 상승"
+      "desc": "잠수함의 내구 수치가 50 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "711": {
       "id": 711,
@@ -970,7 +1168,9 @@
       "group": 71,
       "worth": 1,
       "next": 712,
-      "desc": "구축함의 내구 수치가 30 상승"
+      "desc": "구축함의 내구 수치가 30 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "712": {
       "id": 712,
@@ -978,7 +1178,9 @@
       "group": 71,
       "worth": 2,
       "next": 713,
-      "desc": "구축함의 내구 수치가 42 상승"
+      "desc": "구축함의 내구 수치가 42 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "713": {
       "id": 713,
@@ -986,7 +1188,9 @@
       "group": 71,
       "worth": 3,
       "next": 0,
-      "desc": "구축함의 내구 수치가 60 상승"
+      "desc": "구축함의 내구 수치가 60 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "721": {
       "id": 721,
@@ -994,7 +1198,9 @@
       "group": 72,
       "worth": 1,
       "next": 722,
-      "desc": "경순양함, 중순양함, 초갑순양함의 내구 수치가 50 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 내구 수치가 50 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "722": {
       "id": 722,
@@ -1002,7 +1208,9 @@
       "group": 72,
       "worth": 2,
       "next": 723,
-      "desc": "경순양함, 중순양함, 초갑순양함의 내구 수치가 70 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 내구 수치가 70 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "723": {
       "id": 723,
@@ -1010,7 +1218,9 @@
       "group": 72,
       "worth": 3,
       "next": 0,
-      "desc": "경순양함, 중순양함, 초갑순양함의 내구 수치가 100 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 내구 수치가 100 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "731": {
       "id": 731,
@@ -1018,7 +1228,9 @@
       "group": 73,
       "worth": 1,
       "next": 732,
-      "desc": "순양전함, 전함, 항공전함의 내구 수치가 75 상승"
+      "desc": "순양전함, 전함, 항공전함의 내구 수치가 75 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "732": {
       "id": 732,
@@ -1026,7 +1238,9 @@
       "group": 73,
       "worth": 2,
       "next": 733,
-      "desc": "순양전함, 전함, 항공전함의 내구 수치가 105 상승"
+      "desc": "순양전함, 전함, 항공전함의 내구 수치가 105 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "733": {
       "id": 733,
@@ -1034,7 +1248,9 @@
       "group": 73,
       "worth": 3,
       "next": 0,
-      "desc": "순양전함, 전함, 항공전함의 내구 수치가 150 상승"
+      "desc": "순양전함, 전함, 항공전함의 내구 수치가 150 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "741": {
       "id": 741,
@@ -1042,7 +1258,9 @@
       "group": 74,
       "worth": 1,
       "next": 742,
-      "desc": "경항공모함, 항공모함의 내구 수치가 50 상승"
+      "desc": "경항공모함, 항공모함의 내구 수치가 50 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "742": {
       "id": 742,
@@ -1050,7 +1268,9 @@
       "group": 74,
       "worth": 2,
       "next": 743,
-      "desc": "경항공모함, 항공모함의 내구 수치가 70 상승"
+      "desc": "경항공모함, 항공모함의 내구 수치가 70 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "743": {
       "id": 743,
@@ -1058,7 +1278,9 @@
       "group": 74,
       "worth": 3,
       "next": 0,
-      "desc": "경항공모함, 항공모함의 내구 수치가 100 상승"
+      "desc": "경항공모함, 항공모함의 내구 수치가 100 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "751": {
       "id": 751,
@@ -1066,7 +1288,9 @@
       "group": 75,
       "worth": 1,
       "next": 752,
-      "desc": "모니터함, 공작함, 운송함, 범선의 내구가 40 상승"
+      "desc": "모니터함, 공작함, 운송함, 범선의 내구가 40 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "752": {
       "id": 752,
@@ -1074,7 +1298,9 @@
       "group": 75,
       "worth": 2,
       "next": 753,
-      "desc": "모니터함, 공작함, 운송함, 범선의 내구가 56 상승"
+      "desc": "모니터함, 공작함, 운송함, 범선의 내구가 56 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "753": {
       "id": 753,
@@ -1082,7 +1308,9 @@
       "group": 75,
       "worth": 3,
       "next": 0,
-      "desc": "모니터함, 공작함, 운송함, 범선의 내구가 80 상승"
+      "desc": "모니터함, 공작함, 운송함, 범선의 내구가 80 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "761": {
       "id": 761,
@@ -1090,7 +1318,9 @@
       "group": 76,
       "worth": 1,
       "next": 762,
-      "desc": "잠수함, 잠수항모, 구축함, 범선의 내구가 30 상승"
+      "desc": "잠수함, 잠수항모, 구축함, 범선의 내구가 30 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "762": {
       "id": 762,
@@ -1098,7 +1328,9 @@
       "group": 76,
       "worth": 2,
       "next": 763,
-      "desc": "잠수함, 잠수항모, 구축함, 범선의 내구가 42 상승"
+      "desc": "잠수함, 잠수항모, 구축함, 범선의 내구가 42 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "763": {
       "id": 763,
@@ -1106,7 +1338,9 @@
       "group": 76,
       "worth": 3,
       "next": 0,
-      "desc": "잠수함, 잠수항모, 구축함, 범선의 내구가 60 상승"
+      "desc": "잠수함, 잠수항모, 구축함, 범선의 내구가 60 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "771": {
       "id": 771,
@@ -1114,7 +1348,9 @@
       "group": 77,
       "worth": 1,
       "next": 772,
-      "desc": "선봉의 내구 30 상승."
+      "desc": "선봉의 내구 30 상승.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "772": {
       "id": 772,
@@ -1122,7 +1358,9 @@
       "group": 77,
       "worth": 2,
       "next": 773,
-      "desc": "선봉의 내구 42 상승."
+      "desc": "선봉의 내구 42 상승.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "773": {
       "id": 773,
@@ -1130,7 +1368,9 @@
       "group": 77,
       "worth": 3,
       "next": 0,
-      "desc": "선봉의 내구 60 상승."
+      "desc": "선봉의 내구 60 상승.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "801": {
       "id": 801,
@@ -1138,7 +1378,9 @@
       "group": 80,
       "worth": 1,
       "next": 802,
-      "desc": "잠수함의 명중 수치가 2 상승"
+      "desc": "잠수함의 명중 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "802": {
       "id": 802,
@@ -1146,7 +1388,9 @@
       "group": 80,
       "worth": 2,
       "next": 803,
-      "desc": "잠수함의 명중 수치가 3 상승"
+      "desc": "잠수함의 명중 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "803": {
       "id": 803,
@@ -1154,7 +1398,9 @@
       "group": 80,
       "worth": 3,
       "next": 0,
-      "desc": "잠수함의 명중 수치가 5 상승"
+      "desc": "잠수함의 명중 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "811": {
       "id": 811,
@@ -1162,7 +1408,9 @@
       "group": 81,
       "worth": 1,
       "next": 812,
-      "desc": "선봉함대의 명중 수치가 3 상승"
+      "desc": "선봉함대의 명중 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "812": {
       "id": 812,
@@ -1170,7 +1418,9 @@
       "group": 81,
       "worth": 2,
       "next": 813,
-      "desc": "선봉함대의 명중 수치가 4 상승"
+      "desc": "선봉함대의 명중 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "813": {
       "id": 813,
@@ -1178,7 +1428,9 @@
       "group": 81,
       "worth": 3,
       "next": 0,
-      "desc": "선봉함대의 명중 수치가 6 상승"
+      "desc": "선봉함대의 명중 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "821": {
       "id": 821,
@@ -1186,7 +1438,9 @@
       "group": 82,
       "worth": 1,
       "next": 822,
-      "desc": "주력함대의 명중 수치가 1 상승"
+      "desc": "주력함대의 명중 수치가 1 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "822": {
       "id": 822,
@@ -1194,7 +1448,9 @@
       "group": 82,
       "worth": 2,
       "next": 823,
-      "desc": "주력함대의 명중 수치가 2 상승"
+      "desc": "주력함대의 명중 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "823": {
       "id": 823,
@@ -1202,7 +1458,9 @@
       "group": 82,
       "worth": 3,
       "next": 0,
-      "desc": "주력함대의 명중 수치가 3 상승"
+      "desc": "주력함대의 명중 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "831": {
       "id": 831,
@@ -1210,7 +1468,9 @@
       "group": 83,
       "worth": 1,
       "next": 832,
-      "desc": "함대 전원의 명중 1 상승"
+      "desc": "함대 전원의 명중 1 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "832": {
       "id": 832,
@@ -1218,7 +1478,9 @@
       "group": 83,
       "worth": 2,
       "next": 833,
-      "desc": "함대 전원의 명중 2 상승"
+      "desc": "함대 전원의 명중 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "833": {
       "id": 833,
@@ -1226,7 +1488,9 @@
       "group": 83,
       "worth": 3,
       "next": 0,
-      "desc": "함대 전원의 명중 3 상승"
+      "desc": "함대 전원의 명중 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "901": {
       "id": 901,
@@ -1234,7 +1498,9 @@
       "group": 90,
       "worth": 1,
       "next": 902,
-      "desc": "잠수함, 잠수항모, 구축함, 범선의 기동이 5 상승"
+      "desc": "잠수함, 잠수항모, 구축함, 범선의 기동이 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "902": {
       "id": 902,
@@ -1242,7 +1508,9 @@
       "group": 90,
       "worth": 2,
       "next": 903,
-      "desc": "잠수함, 잠수항모, 구축함, 범선의 기동이 7 상승"
+      "desc": "잠수함, 잠수항모, 구축함, 범선의 기동이 7 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "903": {
       "id": 903,
@@ -1250,7 +1518,9 @@
       "group": 90,
       "worth": 3,
       "next": 0,
-      "desc": "잠수함, 잠수항모, 구축함, 범선의 기동이 10 상승"
+      "desc": "잠수함, 잠수항모, 구축함, 범선의 기동이 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "911": {
       "id": 911,
@@ -1258,7 +1528,9 @@
       "group": 91,
       "worth": 1,
       "next": 912,
-      "desc": "경순양함, 중순양함, 경항공모함, 모니터함, 공작함의 기동 수치가 3 상승"
+      "desc": "경순양함, 중순양함, 경항공모함, 모니터함, 공작함의 기동 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "912": {
       "id": 912,
@@ -1266,7 +1538,9 @@
       "group": 91,
       "worth": 2,
       "next": 913,
-      "desc": "경순양함, 중순양함, 경항공모함, 모니터함, 공작함의 기동 수치가 4 상승"
+      "desc": "경순양함, 중순양함, 경항공모함, 모니터함, 공작함의 기동 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "913": {
       "id": 913,
@@ -1274,7 +1548,9 @@
       "group": 91,
       "worth": 3,
       "next": 0,
-      "desc": "경순양함, 중순양함, 경항공모함, 모니터함, 공작함의 기동 수치가 6 상승"
+      "desc": "경순양함, 중순양함, 경항공모함, 모니터함, 공작함의 기동 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "921": {
       "id": 921,
@@ -1282,7 +1558,9 @@
       "group": 92,
       "worth": 1,
       "next": 922,
-      "desc": "전함, 순양전함, 항공모함, 항공전함, 초갑순양함의 기동 수치가 1 상승"
+      "desc": "전함, 순양전함, 항공모함, 항공전함, 초갑순양함의 기동 수치가 1 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "922": {
       "id": 922,
@@ -1290,7 +1568,9 @@
       "group": 92,
       "worth": 2,
       "next": 923,
-      "desc": "전함, 순양전함, 항공모함, 항공전함, 초갑순양함의 기동 수치가 2 상승"
+      "desc": "전함, 순양전함, 항공모함, 항공전함, 초갑순양함의 기동 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "923": {
       "id": 923,
@@ -1298,7 +1578,9 @@
       "group": 92,
       "worth": 3,
       "next": 0,
-      "desc": "전함, 순양전함, 항공모함, 항공전함, 초갑순양함의 기동 수치가 3 상승"
+      "desc": "전함, 순양전함, 항공모함, 항공전함, 초갑순양함의 기동 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2001": {
       "id": 2001,
@@ -1306,7 +1588,9 @@
       "group": 200,
       "worth": 1,
       "next": 2002,
-      "desc": "구축함의 뇌장 수치가 8 상승, 장전 수치가 4 상승"
+      "desc": "구축함의 뇌장 수치가 8 상승, 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2002": {
       "id": 2002,
@@ -1314,7 +1598,9 @@
       "group": 200,
       "worth": 2,
       "next": 2003,
-      "desc": "구축함의 뇌장 수치가 11 상승, 장전 수치가 5 상승"
+      "desc": "구축함의 뇌장 수치가 11 상승, 장전 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2003": {
       "id": 2003,
@@ -1322,7 +1608,9 @@
       "group": 200,
       "worth": 3,
       "next": 0,
-      "desc": "구축함의 뇌장 수치가 16 상승, 장전 수치가 8 상승"
+      "desc": "구축함의 뇌장 수치가 16 상승, 장전 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2011": {
       "id": 2011,
@@ -1330,7 +1618,9 @@
       "group": 201,
       "worth": 1,
       "next": 2012,
-      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 5 상승、경순양함, 중순양함의 뇌장 수치가 5 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 5 상승、경순양함, 중순양함의 뇌장 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2012": {
       "id": 2012,
@@ -1338,7 +1628,9 @@
       "group": 201,
       "worth": 2,
       "next": 2013,
-      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 7 상승、경순양함, 중순양함의 뇌장 수치가 7 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 7 상승、경순양함, 중순양함의 뇌장 수치가 7 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2013": {
       "id": 2013,
@@ -1346,7 +1638,9 @@
       "group": 201,
       "worth": 3,
       "next": 0,
-      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 10 상승、경순양함, 중순양함의 뇌장 수치가 10 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 10 상승、경순양함, 중순양함의 뇌장 수치가 10 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2021": {
       "id": 2021,
@@ -1354,7 +1648,9 @@
       "group": 202,
       "worth": 1,
       "next": 2022,
-      "desc": "순양전함, 전함의 내구 수치가 50 상승, 포격 수치가 8 상승"
+      "desc": "순양전함, 전함의 내구 수치가 50 상승, 포격 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2022": {
       "id": 2022,
@@ -1362,7 +1658,9 @@
       "group": 202,
       "worth": 2,
       "next": 2023,
-      "desc": "순양전함, 전함의 내구 수치가 70 상승, 포격 수치가 11 상승"
+      "desc": "순양전함, 전함의 내구 수치가 70 상승, 포격 수치가 11 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2023": {
       "id": 2023,
@@ -1370,7 +1668,9 @@
       "group": 202,
       "worth": 3,
       "next": 0,
-      "desc": "순양전함, 전함의 내구 수치가 100 상승, 포격 수치가 16 상승"
+      "desc": "순양전함, 전함의 내구 수치가 100 상승, 포격 수치가 16 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2031": {
       "id": 2031,
@@ -1378,7 +1678,9 @@
       "group": 203,
       "worth": 1,
       "next": 2032,
-      "desc": "항공모함의 항공 수치가 10 상승, 장전 수치가 3 상승"
+      "desc": "항공모함의 항공 수치가 10 상승, 장전 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2032": {
       "id": 2032,
@@ -1386,7 +1688,9 @@
       "group": 203,
       "worth": 2,
       "next": 2033,
-      "desc": "항공모함의 항공 수치가 14 상승, 장전 수치가 4 상승"
+      "desc": "항공모함의 항공 수치가 14 상승, 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2033": {
       "id": 2033,
@@ -1394,7 +1698,9 @@
       "group": 203,
       "worth": 3,
       "next": 0,
-      "desc": "항공모함의 항공 수치가 20 상승, 장전 수치가 6 상승"
+      "desc": "항공모함의 항공 수치가 20 상승, 장전 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2041": {
       "id": 2041,
@@ -1402,7 +1708,9 @@
       "group": 204,
       "worth": 1,
       "next": 2042,
-      "desc": "잠수함의 뇌장 수치가 10 상승, 장전 수치가 3 상승"
+      "desc": "잠수함의 뇌장 수치가 10 상승, 장전 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2042": {
       "id": 2042,
@@ -1410,7 +1718,9 @@
       "group": 204,
       "worth": 2,
       "next": 2043,
-      "desc": "잠수함의 뇌장 수치가 14 상승, 장전 수치가 4 상승"
+      "desc": "잠수함의 뇌장 수치가 14 상승, 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2043": {
       "id": 2043,
@@ -1418,7 +1728,9 @@
       "group": 204,
       "worth": 3,
       "next": 0,
-      "desc": "잠수함의 뇌장 수치가 20 상승, 장전 수치가 6 상승"
+      "desc": "잠수함의 뇌장 수치가 20 상승, 장전 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2111": {
       "id": 2111,
@@ -1426,7 +1738,9 @@
       "group": 211,
       "worth": 1,
       "next": 2112,
-      "desc": "이글 유니온 함선의 대공 수치가 8 상승, 항공 수치가 8 상승, 장전 수치가 3 상승"
+      "desc": "이글 유니온 함선의 대공 수치가 8 상승, 항공 수치가 8 상승, 장전 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2112": {
       "id": 2112,
@@ -1434,7 +1748,9 @@
       "group": 211,
       "worth": 2,
       "next": 2113,
-      "desc": "이글 유니온 함선의 대공 수치가 11 상승, 항공 수치가 11 상승, 장전 수치가 4 상승"
+      "desc": "이글 유니온 함선의 대공 수치가 11 상승, 항공 수치가 11 상승, 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2113": {
       "id": 2113,
@@ -1442,7 +1758,9 @@
       "group": 211,
       "worth": 3,
       "next": 0,
-      "desc": "이글 유니온 함선의 대공 수치가 16 상승, 항공 수치가 16 상승, 장전 수치가 6 상승"
+      "desc": "이글 유니온 함선의 대공 수치가 16 상승, 항공 수치가 16 상승, 장전 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2121": {
       "id": 2121,
@@ -1450,7 +1768,9 @@
       "group": 212,
       "worth": 1,
       "next": 2122,
-      "desc": "로열 네이비 함선의 포격 수치가 7 상승, 대공 수치가 8 상승, 기동 수치가 1 상승"
+      "desc": "로열 네이비 함선의 포격 수치가 7 상승, 대공 수치가 8 상승, 기동 수치가 1 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2122": {
       "id": 2122,
@@ -1458,7 +1778,9 @@
       "group": 212,
       "worth": 2,
       "next": 2123,
-      "desc": "로열 네이비 함선의 포격 수치가 10 상승, 대공 수치가 11 상승, 기동 수치가 2 상승"
+      "desc": "로열 네이비 함선의 포격 수치가 10 상승, 대공 수치가 11 상승, 기동 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2123": {
       "id": 2123,
@@ -1466,7 +1788,9 @@
       "group": 212,
       "worth": 3,
       "next": 0,
-      "desc": "로열 네이비 함선의 포격 수치가 14 상승, 대공 수치가 16 상승, 기동 수치가 3 상승"
+      "desc": "로열 네이비 함선의 포격 수치가 14 상승, 대공 수치가 16 상승, 기동 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2131": {
       "id": 2131,
@@ -1474,7 +1798,9 @@
       "group": 213,
       "worth": 1,
       "next": 2132,
-      "desc": "사쿠라 엠파이어 함선의 뇌장 수치가 8 상승, 항공 수치가 6 상승, 기동 수치가 1 상승"
+      "desc": "사쿠라 엠파이어 함선의 뇌장 수치가 8 상승, 항공 수치가 6 상승, 기동 수치가 1 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2132": {
       "id": 2132,
@@ -1482,7 +1808,9 @@
       "group": 213,
       "worth": 2,
       "next": 2133,
-      "desc": "사쿠라 엠파이어 함선의 뇌장 수치가 11 상승, 항공 수치가 8 상승, 기동 수치가 2 상승"
+      "desc": "사쿠라 엠파이어 함선의 뇌장 수치가 11 상승, 항공 수치가 8 상승, 기동 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2133": {
       "id": 2133,
@@ -1490,7 +1818,9 @@
       "group": 213,
       "worth": 3,
       "next": 0,
-      "desc": "사쿠라 엠파이어 함선의 뇌장 수치가 16 상승, 항공 수치가 12 상승, 기동 수치가 3 상승"
+      "desc": "사쿠라 엠파이어 함선의 뇌장 수치가 16 상승, 항공 수치가 12 상승, 기동 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2141": {
       "id": 2141,
@@ -1498,7 +1828,9 @@
       "group": 214,
       "worth": 1,
       "next": 2142,
-      "desc": "메탈 블러드 함선의 포격 수치가 6 상승, 뇌장 수치가 7 상승, 명중 수치가 1 상승"
+      "desc": "메탈 블러드 함선의 포격 수치가 6 상승, 뇌장 수치가 7 상승, 명중 수치가 1 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2142": {
       "id": 2142,
@@ -1506,7 +1838,9 @@
       "group": 214,
       "worth": 2,
       "next": 2143,
-      "desc": "메탈 블러드 함선의 포격 수치가 8 상승, 뇌장 수치가 10 상승, 명중 수치가 2 상승"
+      "desc": "메탈 블러드 함선의 포격 수치가 8 상승, 뇌장 수치가 10 상승, 명중 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2143": {
       "id": 2143,
@@ -1514,7 +1848,9 @@
       "group": 214,
       "worth": 3,
       "next": 0,
-      "desc": "메탈 블러드 함선의 포격 수치가 12 상승, 뇌장 수치가 14 상승, 명중 수치가 3 상승"
+      "desc": "메탈 블러드 함선의 포격 수치가 12 상승, 뇌장 수치가 14 상승, 명중 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2151": {
       "id": 2151,
@@ -1522,7 +1858,9 @@
       "group": 215,
       "worth": 1,
       "next": 2152,
-      "desc": "이스트 글림 함선의 포격 수치가 7 상승, 대공 수치가 8 상승, 장전 수치가 3 상승"
+      "desc": "이스트 글림 함선의 포격 수치가 7 상승, 대공 수치가 8 상승, 장전 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2152": {
       "id": 2152,
@@ -1530,7 +1868,9 @@
       "group": 215,
       "worth": 2,
       "next": 2153,
-      "desc": "이스트 글림 함선의 포격 수치가 10 상승, 대공 수치가 11 상승, 장전 수치가 4 상승"
+      "desc": "이스트 글림 함선의 포격 수치가 10 상승, 대공 수치가 11 상승, 장전 수치가 4 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2153": {
       "id": 2153,
@@ -1538,7 +1878,9 @@
       "group": 215,
       "worth": 3,
       "next": 0,
-      "desc": "이스트 글림 함선의 포격 수치가 14 상승, 대공 수치가 16 상승, 장전 수치가 6 상승"
+      "desc": "이스트 글림 함선의 포격 수치가 14 상승, 대공 수치가 16 상승, 장전 수치가 6 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2171": {
       "id": 2171,
@@ -1546,7 +1888,9 @@
       "group": 217,
       "worth": 1,
       "next": 2172,
-      "desc": "노스 유니온 함선의 포격 수치가 8 상승, 장전 수치가 4 상승, 명중 수치가 1 상승"
+      "desc": "노스 유니온 함선의 포격 수치가 8 상승, 장전 수치가 4 상승, 명중 수치가 1 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2172": {
       "id": 2172,
@@ -1554,7 +1898,9 @@
       "group": 217,
       "worth": 2,
       "next": 2173,
-      "desc": "노스 유니온 함선의 포격 수치가 11 상승, 장전 수치가 5 상승, 명중 수치가 2 상승"
+      "desc": "노스 유니온 함선의 포격 수치가 11 상승, 장전 수치가 5 상승, 명중 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2173": {
       "id": 2173,
@@ -1562,7 +1908,9 @@
       "group": 217,
       "worth": 3,
       "next": 0,
-      "desc": "노스 유니온 함선의 포격 수치가 16 상승, 장전 수치가 8 상승, 명중 수치가 3 상승"
+      "desc": "노스 유니온 함선의 포격 수치가 16 상승, 장전 수치가 8 상승, 명중 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2181": {
       "id": 2181,
@@ -1570,7 +1918,9 @@
       "group": 218,
       "worth": 1,
       "next": 2182,
-      "desc": "아이리스 리브레 함선의 포격 수치가 8 상승, 장전 수치가 3 상승, 기동 수치가 2 상승"
+      "desc": "아이리스 리브레 함선의 포격 수치가 8 상승, 장전 수치가 3 상승, 기동 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2182": {
       "id": 2182,
@@ -1578,7 +1928,9 @@
       "group": 218,
       "worth": 2,
       "next": 2183,
-      "desc": "아이리스 리브레 함선의 포격 수치가 11 상승, 장전 수치가 4 상승, 기동 수치가 3 상승"
+      "desc": "아이리스 리브레 함선의 포격 수치가 11 상승, 장전 수치가 4 상승, 기동 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2183": {
       "id": 2183,
@@ -1586,7 +1938,9 @@
       "group": 218,
       "worth": 3,
       "next": 0,
-      "desc": "아이리스 리브레 함선의 포격 수치가 16 상승, 장전 수치가 6 상승, 기동 수치가 5 상승"
+      "desc": "아이리스 리브레 함선의 포격 수치가 16 상승, 장전 수치가 6 상승, 기동 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2191": {
       "id": 2191,
@@ -1594,7 +1948,9 @@
       "group": 219,
       "worth": 1,
       "next": 2192,
-      "desc": "비시아 도미니온 함선의 포격 수치가 8 상승, 장전 수치가 3 상승, 명중 수치가 2 상승"
+      "desc": "비시아 도미니온 함선의 포격 수치가 8 상승, 장전 수치가 3 상승, 명중 수치가 2 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2192": {
       "id": 2192,
@@ -1602,7 +1958,9 @@
       "group": 219,
       "worth": 2,
       "next": 2193,
-      "desc": "비시아 도미니온 함선의 포격 수치가 11 상승, 장전 수치가 4 상승, 명중 수치가 3 상승"
+      "desc": "비시아 도미니온 함선의 포격 수치가 11 상승, 장전 수치가 4 상승, 명중 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "2193": {
       "id": 2193,
@@ -1610,7 +1968,9 @@
       "group": 219,
       "worth": 3,
       "next": 0,
-      "desc": "비시아 도미니온 함선의 포격 수치가 16 상승, 장전 수치가 6 상승, 명중 수치가 5 상승"
+      "desc": "비시아 도미니온 함선의 포격 수치가 16 상승, 장전 수치가 6 상승, 명중 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5011": {
       "id": 5011,
@@ -1618,7 +1978,9 @@
       "group": 501,
       "worth": 1,
       "next": 0,
-      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 10 상승，장전 수치가 12 상승"
+      "desc": "경순양함, 중순양함, 초갑순양함의 포격 수치가 10 상승，장전 수치가 12 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5021": {
       "id": 5021,
@@ -1626,7 +1988,9 @@
       "group": 502,
       "worth": 1,
       "next": 0,
-      "desc": "순양전함, 전함의 포격 수치가 15 상승，주포 크리티컬 확률 수치가 3%"
+      "desc": "순양전함, 전함의 포격 수치가 15 상승，주포 크리티컬 확률 수치가 3%",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5031": {
       "id": 5031,
@@ -1634,7 +1998,9 @@
       "group": 503,
       "worth": 1,
       "next": 0,
-      "desc": "구축함, 경순양함의 뇌장 수치가 15 상승，어뢰 크리티컬 확률 수치가 3%"
+      "desc": "구축함, 경순양함의 뇌장 수치가 15 상승，어뢰 크리티컬 확률 수치가 3%",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5041": {
       "id": 5041,
@@ -1642,7 +2008,9 @@
       "group": 504,
       "worth": 1,
       "next": 0,
-      "desc": "항공모함의 항공 수치가 15 상승，장전 수치가 8 상승"
+      "desc": "항공모함의 항공 수치가 15 상승，장전 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5051": {
       "id": 5051,
@@ -1650,7 +2018,9 @@
       "group": 505,
       "worth": 1,
       "next": 0,
-      "desc": "잠수함의 뇌장 수치가 15 상승，장전 수치가 8 상승"
+      "desc": "잠수함의 뇌장 수치가 15 상승，장전 수치가 8 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5061": {
       "id": 5061,
@@ -1658,7 +2028,9 @@
       "group": 506,
       "worth": 1,
       "next": 0,
-      "desc": "전투 중 자신이 얻는 경험치 10% 상승"
+      "desc": "전투 중 자신이 얻는 경험치 10% 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5071": {
       "id": 5071,
@@ -1666,7 +2038,9 @@
       "group": 507,
       "worth": 1,
       "next": 0,
-      "desc": "지휘냥 강화 소재로써 사용할 때 획득하는 경험치 +10%"
+      "desc": "지휘냥 강화 소재로써 사용할 때 획득하는 경험치 +10%",
+      "destroy_exp": 0,
+      "destroy_ratio": 1000
     },
     "5081": {
       "id": 5081,
@@ -1674,7 +2048,9 @@
       "group": 508,
       "worth": 1,
       "next": 0,
-      "desc": "함대의 항속 수치가 3 상승"
+      "desc": "함대의 항속 수치가 3 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5091": {
       "id": 5091,
@@ -1682,7 +2058,9 @@
       "group": 509,
       "worth": 1,
       "next": 0,
-      "desc": "함대 전원의 대공 및 대잠 수치가 15 상승하고, 명중 및 기동 수치가 3 상승한다."
+      "desc": "함대 전원의 대공 및 대잠 수치가 15 상승하고, 명중 및 기동 수치가 3 상승한다.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5101": {
       "id": 5101,
@@ -1690,7 +2068,9 @@
       "group": 510,
       "worth": 1,
       "next": 0,
-      "desc": "함대 전원이 주는 대미지가 3% 상승"
+      "desc": "함대 전원이 주는 대미지가 3% 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5111": {
       "id": 5111,
@@ -1698,7 +2078,9 @@
       "group": 511,
       "worth": 1,
       "next": 0,
-      "desc": "함대 전원이 받는 대미지가 3% 감소"
+      "desc": "함대 전원이 받는 대미지가 3% 감소",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5121": {
       "id": 5121,
@@ -1706,7 +2088,9 @@
       "group": 512,
       "worth": 1,
       "next": 0,
-      "desc": "함대 전원의 행운 수치가 5 상승"
+      "desc": "함대 전원의 행운 수치가 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5131": {
       "id": 5131,
@@ -1714,7 +2098,9 @@
       "group": 513,
       "worth": 1,
       "next": 0,
-      "desc": "함대 전원의 포격, 뇌장, 항공 수치가 10 상승하고, 행운 수치가 3 감소한다."
+      "desc": "함대 전원의 포격, 뇌장, 항공 수치가 10 상승하고, 행운 수치가 3 감소한다.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5141": {
       "id": 5141,
@@ -1722,7 +2108,9 @@
       "group": 514,
       "worth": 1,
       "next": 0,
-      "desc": "전함, 순양전함, 범선M의 포격이 25 상승"
+      "desc": "전함, 순양전함, 범선M의 포격이 25 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5151": {
       "id": 5151,
@@ -1730,7 +2118,9 @@
       "group": 515,
       "worth": 1,
       "next": 0,
-      "desc": "경순양함, 중순양함, 초갑형순양함, 범선V의 포격이 10, 기동이 5 상승"
+      "desc": "경순양함, 중순양함, 초갑형순양함, 범선V의 포격이 10, 기동이 5 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5161": {
       "id": 5161,
@@ -1738,7 +2128,9 @@
       "group": 516,
       "worth": 1,
       "next": 0,
-      "desc": "순양전함, 전함, 범선M의 포격이 20 상승, 정규 항공모함의 항공이 20 상승"
+      "desc": "순양전함, 전함, 범선M의 포격이 20 상승, 정규 항공모함의 항공이 20 상승",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5171": {
       "id": 5171,
@@ -1746,7 +2138,9 @@
       "group": 517,
       "worth": 1,
       "next": 0,
-      "desc": "정규 항공모함의 항공 및 장전 10 상승, 범선의 포격 15 상승."
+      "desc": "정규 항공모함의 항공 및 장전 10 상승, 범선의 포격 15 상승.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     },
     "5181": {
       "id": 5181,
@@ -1754,7 +2148,9 @@
       "group": 518,
       "worth": 1,
       "next": 0,
-      "desc": "경순양함, 중순양함, 범선V의 포격이 10, 장전이 10 상승."
+      "desc": "경순양함, 중순양함, 범선V의 포격이 10, 장전이 10 상승.",
+      "destroy_exp": 0,
+      "destroy_ratio": 0
     }
   },
   "skills": {
@@ -1762,613 +2158,1034 @@
       "id": 10011,
       "name": "31 노트의 정의",
       "level": 1,
-      "desc": "함대에 구축함이 3척 있을 경우, 해역 지도에서의 이동력+1"
+      "desc": "함대에 구축함이 3척 있을 경우, 해역 지도에서의 이동력+1",
+      "next": 10012,
+      "exp": 1
     },
     "10012": {
       "id": 10012,
       "name": "31 노트의 정의",
       "level": 2,
-      "desc": "사령냥으로 배치되어 해역 지도에서 주력함대가 아닌 적 함대와 접촉하고, 함대에 구축함이 편성되어 있을 경우, 15% 확률로 선제 어뢰 공격을 진행한다"
+      "desc": "사령냥으로 배치되어 해역 지도에서 주력함대가 아닌 적 함대와 접촉하고, 함대에 구축함이 편성되어 있을 경우, 15% 확률로 선제 어뢰 공격을 진행한다",
+      "next": 10013,
+      "exp": 3
     },
     "10013": {
       "id": 10013,
       "name": "31 노트의 정의",
       "level": 3,
-      "desc": "사령냥으로 배치되어 함대에 구축함이 편성되어 있고, 해당 함대가 전투 중이 아니며, 옆 칸에 교전 중인 아군 함대가 존재하는 경우, 해역 지도의 지령 버튼을 통해 스킬을 발동, 해당 함대와 교전 중인 아군 함대를 교체할 수 있다."
+      "desc": "사령냥으로 배치되어 함대에 구축함이 편성되어 있고, 해당 함대가 전투 중이 아니며, 옆 칸에 교전 중인 아군 함대가 존재하는 경우, 해역 지도의 지령 버튼을 통해 스킬을 발동, 해당 함대와 교전 중인 아군 함대를 교체할 수 있다.",
+      "next": 0,
+      "exp": 0
     },
     "10021": {
       "id": 10021,
       "name": "최고의 사수",
       "level": 1,
-      "desc": "주력 함대 또는 정찰 함대와의 전투에서, 해당 함대의 전함, 순양전함, 항공 전함의 명중 수치를 상승시킨다. (큰 효과 : 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "주력 함대 또는 정찰 함대와의 전투에서, 해당 함대의 전함, 순양전함, 항공 전함의 명중 수치를 상승시킨다. (큰 효과 : 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 10022,
+      "exp": 1
     },
     "10022": {
       "id": 10022,
       "name": "최고의 사수",
       "level": 2,
-      "desc": "만약 편성된 기함이 전함, 순양전함 혹은 항공 전함일 시, 기함의 피해를 상승시킨다. (효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "만약 편성된 기함이 전함, 순양전함 혹은 항공 전함일 시, 기함의 피해를 상승시킨다. (효과는 지휘 보조 스테이터스에 비례)",
+      "next": 10023,
+      "exp": 3
     },
     "10023": {
       "id": 10023,
       "name": "최고의 사수",
       "level": 3,
-      "desc": "해당 함대의 전함, 순양전함, 항공 전함의 기동, 대공 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "해당 함대의 전함, 순양전함, 항공 전함의 기동, 대공 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "11011": {
       "id": 11011,
       "name": "셀프 리미터",
       "level": 1,
-      "desc": "사령냥으로 배치되어 해역 지도에서 주력함대가 아닌 적 함대와 접촉하고, 함대에 구축함이 편성되어 있을 경우, 15% 확률로 선제 어뢰 공격을 진행한다"
+      "desc": "사령냥으로 배치되어 해역 지도에서 주력함대가 아닌 적 함대와 접촉하고, 함대에 구축함이 편성되어 있을 경우, 15% 확률로 선제 어뢰 공격을 진행한다",
+      "next": 11012,
+      "exp": 1
     },
     "11012": {
       "id": 11012,
       "name": "셀프 리미터",
       "level": 2,
-      "desc": "선봉함대의 선두에 구축함이 있을 경우, 전투 개시 시 전투 가능한 선두 구축함이 적함에 접근했을 때, 1회 한정으로 지휘냥 탄막Ⅰ을 발동한다."
+      "desc": "선봉함대의 선두에 구축함이 있을 경우, 전투 개시 시 전투 가능한 선두 구축함이 적함에 접근했을 때, 1회 한정으로 지휘냥 탄막Ⅰ을 발동한다.",
+      "next": 11013,
+      "exp": 3
     },
     "11013": {
       "id": 11013,
       "name": "셀프 리미터",
       "level": 3,
-      "desc": "지휘냥 탄막Ⅰ을 지휘냥 탄막Ⅱ으로 강화한다."
+      "desc": "지휘냥 탄막Ⅰ을 지휘냥 탄막Ⅱ으로 강화한다.",
+      "next": 0,
+      "exp": 0
     },
     "11021": {
       "id": 11021,
       "name": "행운의 파닥파닥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 장전 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 장전 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 11022,
+      "exp": 1
     },
     "11022": {
       "id": 11022,
       "name": "행운의 파닥파닥",
       "level": 2,
-      "desc": "해당 함대가 적에게 공습당하는 경우, 일정 확률로 회피한다. (효과는 전술 보조 스테이터스에 비례)"
+      "desc": "해당 함대가 적에게 공습당하는 경우, 일정 확률로 회피한다. (효과는 전술 보조 스테이터스에 비례)",
+      "next": 11023,
+      "exp": 3
     },
     "11023": {
       "id": 11023,
       "name": "행운의 파닥파닥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "12011": {
       "id": 12011,
       "name": "항공모함 보급이다냥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 장전 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 장전 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 12012,
+      "exp": 1
     },
     "12012": {
       "id": 12012,
       "name": "항공모함 보급이다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 12013,
+      "exp": 3
     },
     "12013": {
       "id": 12013,
       "name": "항공모함 보급이다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "12021": {
       "id": 12021,
       "name": "레이더 정찰이다냥",
       "level": 1,
-      "desc": "해당 부대의 매복 함대 조우 확률을 감소시킨다. (효과는 병참 보조 스테이터스에 비례)"
+      "desc": "해당 부대의 매복 함대 조우 확률을 감소시킨다. (효과는 병참 보조 스테이터스에 비례)",
+      "next": 12022,
+      "exp": 1
     },
     "12022": {
       "id": 12022,
       "name": "레이더 정찰이다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 12023,
+      "exp": 3
     },
     "12023": {
       "id": 12023,
       "name": "레이더 정찰이다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "20011": {
       "id": 20011,
       "name": "지극한 충성심",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 포격 및 대공 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 포격 및 대공 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 20012,
+      "exp": 1
     },
     "20012": {
       "id": 20012,
       "name": "지극한 충성심",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 연안 전투(해역 지도의 통행불가 칸의 옆칸에서 진행되는 전투)에서 해당 부대 전원의 포격 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 연안 전투(해역 지도의 통행불가 칸의 옆칸에서 진행되는 전투)에서 해당 부대 전원의 포격 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 20013,
+      "exp": 3
     },
     "20013": {
       "id": 20013,
       "name": "지극한 충성심",
       "level": 3,
-      "desc": "해당 부대의 전함, 순양전함, 항공전함이 적에게 주는 대미지를 상승시킨다. (효과는 전술 보조 스테이터스에 비례)"
+      "desc": "해당 부대의 전함, 순양전함, 항공전함이 적에게 주는 대미지를 상승시킨다. (효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "20021": {
       "id": 20021,
       "name": "교활한 관",
       "level": 1,
-      "desc": "사령냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공 전함의 포격, 대공 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "사령냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공 전함의 포격, 대공 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 20022,
+      "exp": 1
     },
     "20022": {
       "id": 20022,
       "name": "교활한 관",
       "level": 2,
-      "desc": "사령냥으로 배치되어 로열 네이비 캐릭터 수가 4명 이상일 경우, 팀의 선봉 캐릭터가 받는 피해를 30초간 감소시킨다. (효과는 병참 보조 스테이터스에 비례)"
+      "desc": "사령냥으로 배치되어 로열 네이비 캐릭터 수가 4명 이상일 경우, 팀의 선봉 캐릭터가 받는 피해를 30초간 감소시킨다. (효과는 병참 보조 스테이터스에 비례)",
+      "next": 20023,
+      "exp": 3
     },
     "20023": {
       "id": 20023,
       "name": "교활한 관",
       "level": 3,
-      "desc": "사령냥으로 배치되어 있을 때, 로열 네이비 캐릭터의 기동 수치를 상승시킨다. (큰 효과: 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "사령냥으로 배치되어 있을 때, 로열 네이비 캐릭터의 기동 수치를 상승시킨다. (큰 효과: 효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "21011": {
       "id": 21011,
       "name": "돈 내놔냥!",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 21012,
+      "exp": 1
     },
     "21012": {
       "id": 21012,
       "name": "돈 내놔냥!",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 수송 함대와의 전투에서 해당 부대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (큰 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 수송 함대와의 전투에서 해당 부대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (큰 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 21013,
+      "exp": 3
     },
     "21013": {
       "id": 21013,
       "name": "돈 내놔냥!",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 뇌장 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 뇌장 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "21021": {
       "id": 21021,
       "name": "냥스카우터",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 정찰 함대와의 전투에서 해당 부대의 구축함의 명중 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 정찰 함대와의 전투에서 해당 부대의 구축함의 명중 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 21022,
+      "exp": 1
     },
     "21022": {
       "id": 21022,
       "name": "냥스카우터",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 21023,
+      "exp": 3
     },
     "21023": {
       "id": 21023,
       "name": "냥스카우터",
       "level": 3,
-      "desc": "적 정찰 함대가 해당 부대 주변 3칸 범위 내에 존재하는 경우, 해역 지도에서의 이동력＋1"
+      "desc": "적 정찰 함대가 해당 부대 주변 3칸 범위 내에 존재하는 경우, 해역 지도에서의 이동력＋1",
+      "next": 0,
+      "exp": 0
     },
     "21031": {
       "id": 21031,
       "name": "파수꾼",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함, 항공모함의 명중 수치를 상승시킨다. (작은 효과: 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함, 항공모함의 명중 수치를 상승시킨다. (작은 효과: 효과는 전술 보조 스테이터스에 비례)",
+      "next": 21032,
+      "exp": 1
     },
     "21032": {
       "id": 21032,
       "name": "파수꾼",
       "level": 2,
-      "desc": "자신 주위 2칸 범위 내에 적군 정찰대가 존재할 시, 현재 함대 이동력+1"
+      "desc": "자신 주위 2칸 범위 내에 적군 정찰대가 존재할 시, 현재 함대 이동력+1",
+      "next": 21033,
+      "exp": 3
     },
     "21033": {
       "id": 21033,
       "name": "파수꾼",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함, 항공모함의 항공 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함, 항공모함의 항공 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "21041": {
       "id": 21041,
       "name": "용맹한 기사",
       "level": 1,
-      "desc": "매복 당할 확률을 감소시킨다. (효과는 병참 보조 스테이터스에 비례)"
+      "desc": "매복 당할 확률을 감소시킨다. (효과는 병참 보조 스테이터스에 비례)",
+      "next": 21042,
+      "exp": 1
     },
     "21042": {
       "id": 21042,
       "name": "용맹한 기사",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공 전함의 장전 수치를 상승시킨다.(작은 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공 전함의 장전 수치를 상승시킨다.(작은 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 21043,
+      "exp": 3
     },
     "21043": {
       "id": 21043,
       "name": "용맹한 기사",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 로열 네이비 캐릭터의 포격 수치를 상승시킨다. (작은 효과: 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 로열 네이비 캐릭터의 포격 수치를 상승시킨다. (작은 효과: 효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "22011": {
       "id": 22011,
       "name": "전함 보급이다냥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 장전 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 장전 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 22012,
+      "exp": 1
     },
     "22012": {
       "id": 22012,
       "name": "전함 보급이다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 22013,
+      "exp": 3
     },
     "22013": {
       "id": 22013,
       "name": "전함 보급이다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "22021": {
       "id": 22021,
       "name": "순양 전술이다냥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 22022,
+      "exp": 1
     },
     "22022": {
       "id": 22022,
       "name": "순양 전술이다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 22023,
+      "exp": 3
     },
     "22023": {
       "id": 22023,
       "name": "순양 전술이다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "30011": {
       "id": 30011,
       "name": "반격모구권",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 및 장전 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 및 장전 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 30012,
+      "exp": 1
     },
     "30012": {
       "id": 30012,
       "name": "반격모구권",
       "level": 2,
-      "desc": "해당 부대의 매복 함대 조우 확률을 감소시킨다. (효과는 병참 보조 스테이터스에 비례)"
+      "desc": "해당 부대의 매복 함대 조우 확률을 감소시킨다. (효과는 병참 보조 스테이터스에 비례)",
+      "next": 30013,
+      "exp": 3
     },
     "30013": {
       "id": 30013,
       "name": "반격모구권",
       "level": 3,
-      "desc": "전투 개시 시, 해당 부대의 주력 함대가 항공모함 혹은 경항공모함 1척만 있을 경우, 첫 항공 공격의 장전 수치가 8% 상승하고, 1회 한정으로 공습에 뇌격기가 추가된다."
+      "desc": "전투 개시 시, 해당 부대의 주력 함대가 항공모함 혹은 경항공모함 1척만 있을 경우, 첫 항공 공격의 장전 수치가 8% 상승하고, 1회 한정으로 공습에 뇌격기가 추가된다.",
+      "next": 0,
+      "exp": 0
     },
     "30021": {
       "id": 30021,
       "name": "선봉장",
       "level": 1,
-      "desc": "사령냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격, 뇌장 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "사령냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격, 뇌장 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 30022,
+      "exp": 1
     },
     "30022": {
       "id": 30022,
       "name": "선봉장",
       "level": 2,
-      "desc": "사령냥으로 배치되어 있을 때, 적 주력 함대가 해당 함대 주변 2칸 범위 내에 존재하는 경우, 해당 함대의 기함이 받는 피해 수치를 감소시킨다.(효과는 지휘 보조 스테이터스에 비례)(2레벨 때 효력 발생)"
+      "desc": "사령냥으로 배치되어 있을 때, 적 주력 함대가 해당 함대 주변 2칸 범위 내에 존재하는 경우, 해당 함대의 기함이 받는 피해 수치를 감소시킨다.(효과는 지휘 보조 스테이터스에 비례)(2레벨 때 효력 발생)",
+      "next": 30023,
+      "exp": 3
     },
     "30023": {
       "id": 30023,
       "name": "선봉장",
       "level": 3,
-      "desc": "사령냥으로 배치되어 있을 때, 주력 함대와의 전투에서, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 명중, 기동 수치를 30초간 상승시킨다. (큰 효과: 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "사령냥으로 배치되어 있을 때, 주력 함대와의 전투에서, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 명중, 기동 수치를 30초간 상승시킨다. (큰 효과: 효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "31011": {
       "id": 31011,
       "name": "필살똥뱃살",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 31012,
+      "exp": 1
     },
     "31012": {
       "id": 31012,
       "name": "필살똥뱃살",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경항공모함 및 항공모함의 항공 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 31013,
+      "exp": 3
     },
     "31013": {
       "id": 31013,
       "name": "필살똥뱃살",
       "level": 3,
-      "desc": "함대에 항공모함 및 경항공모함이 편성되어 있고, 해역 지도에서 주력함대가 아닌 적 함대와 접촉하는 경우, 15% 확률로 선제 공습을 진행한다. (대미지는 전술 보조 스테이터스와 양 측 함대의 레벨 및 종합전투력에 따라 달라진다)"
+      "desc": "함대에 항공모함 및 경항공모함이 편성되어 있고, 해역 지도에서 주력함대가 아닌 적 함대와 접촉하는 경우, 15% 확률로 선제 공습을 진행한다. (대미지는 전술 보조 스테이터스와 양 측 함대의 레벨 및 종합전투력에 따라 달라진다)",
+      "next": 0,
+      "exp": 0
     },
     "31021": {
       "id": 31021,
       "name": "야생의 본능",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 31022,
+      "exp": 1
     },
     "31022": {
       "id": 31022,
       "name": "야생의 본능",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 뇌장 수치를 상승시킨다. (중간 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 뇌장 수치를 상승시킨다. (중간 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 31023,
+      "exp": 3
     },
     "31023": {
       "id": 31023,
       "name": "야생의 본능",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있고, 선봉함대가 구축함 1척 만으로만 편성되어 있을 경우, 해당 부대의 구축함의 뇌장 수치를 상승시킨다. (큰 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있고, 선봉함대가 구축함 1척 만으로만 편성되어 있을 경우, 해당 부대의 구축함의 뇌장 수치를 상승시킨다. (큰 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "32011": {
       "id": 32011,
       "name": "순양 지휘다냥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 32012,
+      "exp": 1
     },
     "32012": {
       "id": 32012,
       "name": "순양 지휘다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 32013,
+      "exp": 3
     },
     "32013": {
       "id": 32013,
       "name": "순양 지휘다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "32021": {
       "id": 32021,
       "name": "전함 보급이다냥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 32022,
+      "exp": 1
     },
     "32022": {
       "id": 32022,
       "name": "전함 보급이다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 대공 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 대공 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 32023,
+      "exp": 3
     },
     "32023": {
       "id": 32023,
       "name": "전함 보급이다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "40011": {
       "id": 40011,
       "name": "조용한 사냥꾼",
       "level": 1,
-      "desc": "해당 부대의 잠수함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 지휘 및 병참 보조 스테이터스에 비례)"
+      "desc": "해당 부대의 잠수함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 지휘 및 병참 보조 스테이터스에 비례)",
+      "next": 40012,
+      "exp": 1
     },
     "40012": {
       "id": 40012,
       "name": "조용한 사냥꾼",
       "level": 2,
-      "desc": "지원 범위 Lv＋1"
+      "desc": "지원 범위 Lv＋1",
+      "next": 40013,
+      "exp": 3
     },
     "40013": {
       "id": 40013,
       "name": "조용한 사냥꾼",
       "level": 3,
-      "desc": "지원 공격이 적에게 주는 대미지를 상승시킨다. (효과는 전술 보조 스테이터스에 비례)"
+      "desc": "지원 공격이 적에게 주는 대미지를 상승시킨다. (효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "40021": {
       "id": 40021,
       "name": "불굴의 의지",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공 전함의 포격, 명중 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공 전함의 포격, 명중 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 40022,
+      "exp": 1
     },
     "40022": {
       "id": 40022,
       "name": "불굴의 의지",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 함대 중 전함, 순양전함, 항공 전함이 있을 시 해역 지도에서 기함이 아닌 적군과 전투할 경우, 15% 확률로 주포를 1회 발사한다. (대미지는 지휘 보조 스테이터스와 양 측 함대의 레벨 및 종합 전투력에 따라 달라진다)"
+      "desc": "참모냥으로 배치되어 있을 때, 함대 중 전함, 순양전함, 항공 전함이 있을 시 해역 지도에서 기함이 아닌 적군과 전투할 경우, 15% 확률로 주포를 1회 발사한다. (대미지는 지휘 보조 스테이터스와 양 측 함대의 레벨 및 종합 전투력에 따라 달라진다)",
+      "next": 40023,
+      "exp": 3
     },
     "40023": {
       "id": 40023,
       "name": "불굴의 의지",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 주력 함대와의 전투에서, 팀의 전함, 순양전함, 항공 전함이 받는 피해를 감소시킨다. (효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 주력 함대와의 전투에서, 팀의 전함, 순양전함, 항공 전함이 받는 피해를 감소시킨다. (효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "41011": {
       "id": 41011,
       "name": "바다의 기사",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 41012,
+      "exp": 1
     },
     "41012": {
       "id": 41012,
       "name": "바다의 기사",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 명중 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 전함, 순양전함, 항공전함의 명중 수치를 상승시킨다. (중간 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 41013,
+      "exp": 3
     },
     "41013": {
       "id": 41013,
       "name": "바다의 기사",
       "level": 3,
-      "desc": "적 주력함대와 교전 시, 아군 기함이 받는 대미지를 감소시킨다. (효과는 전술 보조 스테이터스에 비례)"
+      "desc": "적 주력함대와 교전 시, 아군 기함이 받는 대미지를 감소시킨다. (효과는 전술 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "41021": {
       "id": 41021,
       "name": "바다의 용자",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 41022,
+      "exp": 1
     },
     "41022": {
       "id": 41022,
       "name": "바다의 용자",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 명중 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 명중 수치를 상승시킨다. (중간 효과 : 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 41023,
+      "exp": 3
     },
     "41023": {
       "id": 41023,
       "name": "바다의 용자",
       "level": 3,
-      "desc": "지원 범위 Lv＋1"
+      "desc": "지원 범위 Lv＋1",
+      "next": 0,
+      "exp": 0
     },
     "41031": {
       "id": 41031,
       "name": "수호의 마음",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 뇌장 수치를 상승시킨다. (작은 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 뇌장 수치를 상승시킨다. (작은 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 41032,
+      "exp": 1
     },
     "41032": {
       "id": 41032,
       "name": "수호의 마음",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 기동 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 잠수함의 기동 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 41033,
+      "exp": 3
     },
     "41033": {
       "id": 41033,
       "name": "수호의 마음",
       "level": 3,
-      "desc": "잠수함대의 참모냥으로 배치되어 있을 때, 전투 중 함대의 기함이 전함, 순양전함, 항공 전함일 시, 해당 함대의 잠수함의 명중 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)"
+      "desc": "잠수함대의 참모냥으로 배치되어 있을 때, 전투 중 함대의 기함이 전함, 순양전함, 항공 전함일 시, 해당 함대의 잠수함의 명중 수치를 상승시킨다. (중간 효과: 효과는 지휘 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "42011": {
       "id": 42011,
       "name": "순양 보급이다냥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 42012,
+      "exp": 1
     },
     "42012": {
       "id": 42012,
       "name": "순양 보급이다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 42013,
+      "exp": 3
     },
     "42013": {
       "id": 42013,
       "name": "순양 보급이다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 경순양함, 중순양함 및 초갑순양함의 포격 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "42021": {
       "id": 42021,
       "name": "구축 지휘다냥",
       "level": 1,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 기동 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 42022,
+      "exp": 1
     },
     "42022": {
       "id": 42022,
       "name": "구축 지휘다냥",
       "level": 2,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 명중 수치를 상승시킨다. (작은 효과 : 효과는 전술 보조 스테이터스에 비례)",
+      "next": 42023,
+      "exp": 3
     },
     "42023": {
       "id": 42023,
       "name": "구축 지휘다냥",
       "level": 3,
-      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)"
+      "desc": "참모냥으로 배치되어 있을 때, 해당 함대의 구축함의 뇌장 수치를 상승시킨다. (작은 효과 : 효과는 병참 보조 스테이터스에 비례)",
+      "next": 0,
+      "exp": 0
     },
     "960011": {
       "id": 960011,
       "name": "세상 끝으로 렛츠고",
       "level": 1,
-      "desc": "장착 함대의 전함·순양전함·항공전함·범선M의 포격을 상승시킨다(중간 정도의 효과. 효과는 지휘 능력치에 따름)."
+      "desc": "장착 함대의 전함·순양전함·항공전함·범선M의 포격을 상승시킨다(중간 정도의 효과. 효과는 지휘 능력치에 따름).",
+      "next": 960012,
+      "exp": 0
     },
     "960012": {
       "id": 960012,
       "name": "세상 끝으로 렛츠고",
       "level": 1,
-      "desc": "장착 함대에 범선이 있는 경우, 아군 기함이 받는 피해량을 경감한다(효과는 전술 능력치에 따름)."
+      "desc": "장착 함대에 범선이 있는 경우, 아군 기함이 받는 피해량을 경감한다(효과는 전술 능력치에 따름).",
+      "next": 960013,
+      "exp": 0
     },
     "960013": {
       "id": 960013,
       "name": "세상 끝으로 렛츠고",
       "level": 1,
-      "desc": "장착 함대의 범선V, 범선M의 기동을 상승시킨다(큰 효과. 효과는 전술 능력치에 따름)."
+      "desc": "장착 함대의 범선V, 범선M의 기동을 상승시킨다(큰 효과. 효과는 전술 능력치에 따름).",
+      "next": 0,
+      "exp": 0
     },
     "960021": {
       "id": 960021,
       "name": "사략 인가자",
       "level": 1,
-      "desc": "장착 함대의 경순양함·중순양함·초갑형순양함·범선V의 명중을 상승시킨다(중간 정도의 효과. 효과는 지휘 능력치에 따름)."
+      "desc": "장착 함대의 경순양함·중순양함·초갑형순양함·범선V의 명중을 상승시킨다(중간 정도의 효과. 효과는 지휘 능력치에 따름).",
+      "next": 960022,
+      "exp": 0
     },
     "960022": {
       "id": 960022,
       "name": "사략 인가자",
       "level": 1,
-      "desc": "장착 함대로부터 3칸 이내 거리에 적 정찰 함대가 있는 경우, 장착 함대의 이동력 +1"
+      "desc": "장착 함대로부터 3칸 이내 거리에 적 정찰 함대가 있는 경우, 장착 함대의 이동력 +1",
+      "next": 960023,
+      "exp": 0
     },
     "960023": {
       "id": 960023,
       "name": "사략 인가자",
       "level": 1,
-      "desc": "장착 함대에 범선이 있는 경우, 아군 경순양함·중순양함·범선V가 받는 피해량을 경감한다(효과는 전술 능력치에 따름)."
+      "desc": "장착 함대에 범선이 있는 경우, 아군 경순양함·중순양함·범선V가 받는 피해량을 경감한다(효과는 전술 능력치에 따름).",
+      "next": 0,
+      "exp": 0
     },
     "960031": {
       "id": 960031,
       "name": "샘 더 러시",
       "level": 1,
-      "desc": "지원 범위 +1"
+      "desc": "지원 범위 +1",
+      "next": 960032,
+      "exp": 0
     },
     "960032": {
       "id": 960032,
       "name": "샘 더 러시",
       "level": 1,
-      "desc": "잠수함대의 지휘냥으로 장착하면, 전투 시작 시 아군 범선의 내구가 최대치의 2%만큼 회복된다."
+      "desc": "잠수함대의 지휘냥으로 장착하면, 전투 시작 시 아군 범선의 내구가 최대치의 2%만큼 회복된다.",
+      "next": 960033,
+      "exp": 0
     },
     "960033": {
       "id": 960033,
       "name": "샘 더 러시",
       "level": 1,
-      "desc": "잠수함대의 지휘냥으로 장착하면, 장착 함대의 잠수함, 잠수항모, 범선S의 명중이 상승한다(중간 정도의 효과. 효과는 전술 능력치에 따름)."
+      "desc": "잠수함대의 지휘냥으로 장착하면, 장착 함대의 잠수함, 잠수항모, 범선S의 명중이 상승한다(중간 정도의 효과. 효과는 전술 능력치에 따름).",
+      "next": 0,
+      "exp": 0
     },
     "960041": {
       "id": 960041,
       "name": "환상과 약탈",
       "level": 1,
-      "desc": "함대에 범선이 있는 경우, 아군 선봉함대가 받는 피해량이 경감된다(효과는 지휘 보조 능력치에 따름)"
+      "desc": "함대에 범선이 있는 경우, 아군 선봉함대가 받는 피해량이 경감된다(효과는 지휘 보조 능력치에 따름)",
+      "next": 960042,
+      "exp": 0
     },
     "960042": {
       "id": 960042,
       "name": "환상과 약탈",
       "level": 1,
-      "desc": "지휘냥으로 장착하면, 함대 전원의 포격이 상승한다(중간 정도의 효과. 효과는 전술 보조 능력치에 따름)."
+      "desc": "지휘냥으로 장착하면, 함대 전원의 포격이 상승한다(중간 정도의 효과. 효과는 전술 보조 능력치에 따름).",
+      "next": 960043,
+      "exp": 0
     },
     "960043": {
       "id": 960043,
       "name": "환상과 약탈",
       "level": 1,
-      "desc": "함대 멤버가 전투 중에 피해를 입어 내구가 최대치의 30%를 밑도는 경우, 1회 한정으로 해당 함선의 내구를 최대치의 5%만큼 회복시킨다."
+      "desc": "함대 멤버가 전투 중에 피해를 입어 내구가 최대치의 30%를 밑도는 경우, 1회 한정으로 해당 함선의 내구를 최대치의 5%만큼 회복시킨다.",
+      "next": 0,
+      "exp": 0
     },
     "960051": {
       "id": 960051,
       "name": "굳건한 규율",
       "level": 1,
-      "desc": "지원 범위 +1"
+      "desc": "지원 범위 +1",
+      "next": 960052,
+      "exp": 0
     },
     "960052": {
       "id": 960052,
       "name": "굳건한 규율",
       "level": 1,
-      "desc": "잠수함대가 장착한 경우, 전투 시작 시에 함대 중 범선S의 포격과 잠수함 및 잠수 항공모함의 뇌장을 상승시킨다(중간 정도의 효과. 효과는 지휘 보조 능력치에 따름)."
+      "desc": "잠수함대가 장착한 경우, 전투 시작 시에 함대 중 범선S의 포격과 잠수함 및 잠수 항공모함의 뇌장을 상승시킨다(중간 정도의 효과. 효과는 지휘 보조 능력치에 따름).",
+      "next": 960053,
+      "exp": 0
     },
     "960053": {
       "id": 960053,
       "name": "굳건한 규율",
       "level": 1,
-      "desc": "소속 함대에 「로열 포춘」이 있는 경우, 전투 시작 시에 한 번만 특수 탄막을 전개한다."
+      "desc": "소속 함대에 「로열 포춘」이 있는 경우, 전투 시작 시에 한 번만 특수 탄막을 전개한다.",
+      "next": 0,
+      "exp": 0
     },
     "960061": {
       "id": 960061,
       "name": "끝나지 않은 전설",
       "level": 1,
-      "desc": "장착 함대의 전함·순양전함·항공전함·범선M의 포격을 상승시킨다(중간 정도의 효과, 효과는 전술 능력치에 따름)."
+      "desc": "장착 함대의 전함·순양전함·항공전함·범선M의 포격을 상승시킨다(중간 정도의 효과, 효과는 전술 능력치에 따름).",
+      "next": 960062,
+      "exp": 0
     },
     "960062": {
       "id": 960062,
       "name": "끝나지 않은 전설",
       "level": 1,
-      "desc": "주력 함대와 교전 시, 장착 함대의 전함·정규 항공모함·범선M의 명중을 상승시킨다(중간 정도의 효과, 효과는 전술 능력치에 따름)."
+      "desc": "주력 함대와 교전 시, 장착 함대의 전함·정규 항공모함·범선M의 명중을 상승시킨다(중간 정도의 효과, 효과는 전술 능력치에 따름).",
+      "next": 960063,
+      "exp": 0
     },
     "960063": {
       "id": 960063,
       "name": "끝나지 않은 전설",
       "level": 1,
-      "desc": "장비 함대에 퀸 앤즈 리벤지가 있는 경우, 전투 시작 시에 한 번만 특수 탄막을 전개한다."
+      "desc": "장비 함대에 퀸 앤즈 리벤지가 있는 경우, 전투 시작 시에 한 번만 특수 탄막을 전개한다.",
+      "next": 0,
+      "exp": 0
     },
     "960071": {
       "id": 960071,
       "name": "해적 신사의 전설",
       "level": 1,
-      "desc": "장착 함대가 매복을 당할 확률을 낮춘다(보조 능력치에 따름)."
+      "desc": "장착 함대가 매복을 당할 확률을 낮춘다(보조 능력치에 따름).",
+      "next": 960072,
+      "exp": 0
     },
     "960072": {
       "id": 960072,
       "name": "해적 신사의 전설",
       "level": 1,
-      "desc": "참모냥으로 장착하면, 장착 함대 중 선봉함대의 포격을 상승시킨다(효과 작음, 효과는 보조 능력치에 따름)."
+      "desc": "참모냥으로 장착하면, 장착 함대 중 선봉함대의 포격을 상승시킨다(효과 작음, 효과는 보조 능력치에 따름).",
+      "next": 960073,
+      "exp": 0
     },
     "960073": {
       "id": 960073,
       "name": "해적 신사의 전설",
       "level": 1,
-      "desc": "장착 함대의 기함이나 선봉함대의 선두함이 전투 중에 피해를 입어 내구가 최대치의 50%를 밑도는 경우에 한 번만 내구를 최대치의 5%만큼 회복한다."
+      "desc": "장착 함대의 기함이나 선봉함대의 선두함이 전투 중에 피해를 입어 내구가 최대치의 50%를 밑도는 경우에 한 번만 내구를 최대치의 5%만큼 회복한다.",
+      "next": 0,
+      "exp": 0
     }
+  },
+  "levels": [
+    {
+      "level": 1,
+      "exp": 0,
+      "exp_3": 100,
+      "exp_4": 100,
+      "exp_5": 100
+    },
+    {
+      "level": 2,
+      "exp": 0,
+      "exp_3": 200,
+      "exp_4": 200,
+      "exp_5": 200
+    },
+    {
+      "level": 3,
+      "exp": 0,
+      "exp_3": 300,
+      "exp_4": 300,
+      "exp_5": 400
+    },
+    {
+      "level": 4,
+      "exp": 0,
+      "exp_3": 400,
+      "exp_4": 400,
+      "exp_5": 700
+    },
+    {
+      "level": 5,
+      "exp": 0,
+      "exp_3": 500,
+      "exp_4": 600,
+      "exp_5": 1100
+    },
+    {
+      "level": 6,
+      "exp": 0,
+      "exp_3": 600,
+      "exp_4": 900,
+      "exp_5": 1600
+    },
+    {
+      "level": 7,
+      "exp": 0,
+      "exp_3": 800,
+      "exp_4": 1300,
+      "exp_5": 2300
+    },
+    {
+      "level": 8,
+      "exp": 0,
+      "exp_3": 1100,
+      "exp_4": 1800,
+      "exp_5": 3200
+    },
+    {
+      "level": 9,
+      "exp": 0,
+      "exp_3": 1500,
+      "exp_4": 2400,
+      "exp_5": 4300
+    },
+    {
+      "level": 10,
+      "exp": 0,
+      "exp_3": 2000,
+      "exp_4": 3200,
+      "exp_5": 5600
+    },
+    {
+      "level": 11,
+      "exp": 0,
+      "exp_3": 2600,
+      "exp_4": 4200,
+      "exp_5": 7100
+    },
+    {
+      "level": 12,
+      "exp": 0,
+      "exp_3": 3400,
+      "exp_4": 5400,
+      "exp_5": 8900
+    },
+    {
+      "level": 13,
+      "exp": 0,
+      "exp_3": 4400,
+      "exp_4": 6800,
+      "exp_5": 11000
+    },
+    {
+      "level": 14,
+      "exp": 0,
+      "exp_3": 5600,
+      "exp_4": 8400,
+      "exp_5": 13400
+    },
+    {
+      "level": 15,
+      "exp": 0,
+      "exp_3": 7000,
+      "exp_4": 10300,
+      "exp_5": 16100
+    },
+    {
+      "level": 16,
+      "exp": 0,
+      "exp_3": 8600,
+      "exp_4": 12500,
+      "exp_5": 19100
+    },
+    {
+      "level": 17,
+      "exp": 0,
+      "exp_3": 10500,
+      "exp_4": 15000,
+      "exp_5": 22500
+    },
+    {
+      "level": 18,
+      "exp": 0,
+      "exp_3": 12700,
+      "exp_4": 17800,
+      "exp_5": 26300
+    },
+    {
+      "level": 19,
+      "exp": 0,
+      "exp_3": 15200,
+      "exp_4": 20900,
+      "exp_5": 30500
+    },
+    {
+      "level": 20,
+      "exp": 0,
+      "exp_3": 18000,
+      "exp_4": 24400,
+      "exp_5": 35100
+    },
+    {
+      "level": 21,
+      "exp": 0,
+      "exp_3": 21100,
+      "exp_4": 28300,
+      "exp_5": 40100
+    },
+    {
+      "level": 22,
+      "exp": 0,
+      "exp_3": 24600,
+      "exp_4": 32600,
+      "exp_5": 45700
+    },
+    {
+      "level": 23,
+      "exp": 0,
+      "exp_3": 28500,
+      "exp_4": 37300,
+      "exp_5": 51900
+    },
+    {
+      "level": 24,
+      "exp": 0,
+      "exp_3": 32800,
+      "exp_4": 42600,
+      "exp_5": 58700
+    },
+    {
+      "level": 25,
+      "exp": 0,
+      "exp_3": 37500,
+      "exp_4": 48500,
+      "exp_5": 66100
+    },
+    {
+      "level": 26,
+      "exp": 0,
+      "exp_3": 42600,
+      "exp_4": 55000,
+      "exp_5": 74100
+    },
+    {
+      "level": 27,
+      "exp": 0,
+      "exp_3": 48300,
+      "exp_4": 62100,
+      "exp_5": 82900
+    },
+    {
+      "level": 28,
+      "exp": 0,
+      "exp_3": 54600,
+      "exp_4": 70000,
+      "exp_5": 92500
+    },
+    {
+      "level": 29,
+      "exp": 0,
+      "exp_3": 61500,
+      "exp_4": 78700,
+      "exp_5": 102900
+    },
+    {
+      "level": 30,
+      "exp": 0,
+      "exp_3": 0,
+      "exp_4": 0,
+      "exp_5": 0
+    }
+  ],
+  "growth": {
+    "exp_a": 7000,
+    "same_rate": 12000,
+    "skill_exp": 1
   }
 }

@@ -274,8 +274,9 @@ public sealed partial class CurrentStateWriter
                 return StateApplyResult.Applied(area, "build cancel accepted", packet.DecodedRowId);
             case 40004:
                 ApplyBattleResult(tx, packet, json, request);
+                RecordCommanderBattleExp(tx, packet.DecodedRowId, json);
                 return StateApplyResult.Applied(area, "battle result", packet.DecodedRowId);
-            case 25005 or 25007 or 25009 or 25013 or 25015 or 25017 or 25021:
+            case 25005 or 25007 or 25009 or 25013 or 25015 or 25017 or 25021 or 25027:
                 return ApplyCommanderResponse(tx, packet, json, request, area);
             case 20006:
                 return ApplyTaskSubmit(tx, packet, json, request, area);

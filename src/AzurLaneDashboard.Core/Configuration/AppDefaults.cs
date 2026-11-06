@@ -38,17 +38,18 @@ public static class AppDefaults
         "equips",
         "skillicon",
         "spweapon",
-        "props"
+        "props",
+        "commandericon"
     ];
 
-    /// <summary>The default before props (resource and item icons) joined; settings saved with it follow the new one.</summary>
-    public static IReadOnlyList<string> PreviousDefaultAssetCategories { get; } =
+    /// <summary>
+    /// Earlier defaults: before props (resource and item icons) and before commandericon (Meowfficer faces) joined.
+    /// Settings saved with one of them follow the new default.
+    /// </summary>
+    public static IReadOnlyList<IReadOnlyList<string>> PreviousDefaultAssetCategoryLists { get; } =
     [
-        "squareicon",
-        "shipyardicon",
-        "equips",
-        "skillicon",
-        "spweapon"
+        ["squareicon", "shipyardicon", "equips", "skillicon", "spweapon"],
+        ["squareicon", "shipyardicon", "equips", "skillicon", "spweapon", "props"]
     ];
 
     public static string PackageNameForRegion(string region)

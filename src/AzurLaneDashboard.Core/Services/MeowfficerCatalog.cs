@@ -12,21 +12,39 @@ public sealed class MeowfficerCatalog
     public IReadOnlyDictionary<int, MeowfficerKind> Kinds { get; init; } = new Dictionary<int, MeowfficerKind>();
     public IReadOnlyDictionary<int, MeowfficerTalent> Talents { get; init; } = new Dictionary<int, MeowfficerTalent>();
     public IReadOnlyDictionary<int, MeowfficerSkill> Skills { get; init; } = new Dictionary<int, MeowfficerSkill>();
+    public MeowfficerGrowth Growth { get; init; } = new();
     public MeowfficerGuide Guide { get; init; } = new();
 
     public static MeowfficerCatalog Parse(JsonElement commanders, JsonElement guide) => new()
     {
         Kinds = Rows(commanders, "commanders").Select(row => new MeowfficerKind(Int(row, "id"), Text(row, "name"),
-                Int(row, "rarity"), Int(row, "skill_id"), Int(row, "max_level"), Int(row, "refresh_type") == 1))
+                Int(row, "rarity"), Int(row, "skill_id"), Int(row, "max_level"), Int(row, "refresh_type") == 1,
+                Text(row, "painting"), Int(row, "exp"), Int(row, "group")))
             .Where(kind => kind.Id > 0).ToDictionary(kind => kind.Id),
         Talents = Rows(commanders, "talents").Select(row => new MeowfficerTalent(Int(row, "id"), Text(row, "name"),
-                Int(row, "group"), Int(row, "worth"), Text(row, "desc")))
+                Int(row, "group"), Int(row, "worth"), Text(row, "desc"), Int(row, "destroy_exp"), Int(row, "destroy_ratio")))
             .Where(talent => talent.Id > 0).ToDictionary(talent => talent.Id),
         Skills = Rows(commanders, "skills").Select(row => new MeowfficerSkill(Int(row, "id"), Text(row, "name"),
-                Int(row, "level"), Text(row, "desc")))
+                Int(row, "level"), Text(row, "desc"), Int(row, "next"), Int(row, "exp")))
             .Where(skill => skill.Id > 0).ToDictionary(skill => skill.Id),
+        Growth = ParseGrowth(commanders),
         Guide = ParseGuide(guide)
     };
+
+    private static MeowfficerGrowth ParseGrowth(JsonElement map)
+    {
+        var levels = Array(map, "levels").Where(row => Int(row, "level") > 0)
+            .ToDictionary(row => Int(row, "level"), row => (Int(row, "exp"), Int(row, "exp_3"), Int(row, "exp_4"), Int(row, "exp_5")));
+        var growth = Child(map, "growth");
+        return new MeowfficerGrowth
+        {
+            Levels = levels,
+            MaxLevel = levels.Count > 0 ? levels.Keys.Max() : 30,
+            ExpShare = Positive(Int(growth, "exp_a"), 7000),
+            SameKindRate = Positive(Int(growth, "same_rate"), 12000),
+            SkillExp = Positive(Int(growth, "skill_exp"), 1)
+        };
+    }
 
     private static MeowfficerGuide ParseGuide(JsonElement map)
     {

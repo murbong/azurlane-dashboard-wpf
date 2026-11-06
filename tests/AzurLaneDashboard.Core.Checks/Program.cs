@@ -30,6 +30,7 @@ LevelingPlanChecks.Run();
 DormPlanChecks.Run();
 OpsiChecks.Run();
 PersonalTaskChecks.Run();
+MeowfficerFeedingChecks.Run();
 MetaBossChecks.Run();
 MetaFightChecks.Run();
 MeowfficerChecks.Run();
